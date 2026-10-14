@@ -5,7 +5,9 @@
     "ng": "ng",
     "start": "ng serve",
     "start:lan": "node scripts/set-host-ip.js && ng serve --host 0.0.0.0",
+    "start:portfolio": "ng serve --configuration portfolio",
     "build": "ng build",
+    "build:portfolio": "ng build --configuration portfolio",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "chunk-report": "node scripts/chunk-report.js"

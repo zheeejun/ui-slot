@@ -1,0 +1,22 @@
+<div class="relative space-y-4">
+  <h1>Game · 38011</h1>
+  <p class="text-zinc-400">
+    靜態展示遊戲（Chicken Road, 38011）視覺素材，純畫面呈現，不連接任何遊戲伺服器或帳號服務。
+  </p>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+    @for (screen of screens; track screen.title) {
+      <div class="rounded-xl overflow-hidden border border-purple-400/50 bg-zinc-900">
+        <img
+          [src]="screen.image"
+          [alt]="'Game 38011 - ' + screen.title"
+          class="w-full h-auto block"
+        />
+        <div class="p-4 space-y-1">
+          <h3 class="text-purple-400">{{ screen.title }}</h3>
+          <p class="text-zinc-400">Game ID 38011</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>

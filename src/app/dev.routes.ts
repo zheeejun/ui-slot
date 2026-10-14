@@ -15,8 +15,11 @@ import { DevComponent } from './pages/dev-component/dev-component.component';
 import { DevMiscComponent } from './pages/dev-misc/dev-misc.component';
 import { DevMenuComponent } from './pages/dev-menu/dev-menu.component';
 import { DevCampaignDemoComponent } from './pages/dev-campaign-demo/dev-campaign-demo.component';
+import { DevOgShowcaseComponent } from './pages/dev-og-showcase/dev-og-showcase.component';
+import { Dev10098ShowcaseComponent } from './pages/dev-10098-showcase/dev-10098-showcase.component';
+import { Dev38011ShowcaseComponent } from './pages/dev-38011-showcase/dev-38011-showcase.component';
 
-const devPageRoutes: Routes = [
+export const devPageRoutes: Routes = [
   { path: 'icons', component: DevIconsComponent },
   { path: 'trn', component: DevTrnComponent },
   { path: 'feature', component: DevBuyFeatureComponent },
@@ -33,6 +36,9 @@ const devPageRoutes: Routes = [
   { path: 'component', component: DevComponent },
   { path: 'misc', component: DevMiscComponent },
   { path: 'menu', component: DevMenuComponent },
+  { path: 'og', component: DevOgShowcaseComponent },
+  { path: '10098', component: Dev10098ShowcaseComponent },
+  { path: '38011', component: Dev38011ShowcaseComponent },
   { path: '', redirectTo: 'icons', pathMatch: 'full' },
 ];
 

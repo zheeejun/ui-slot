@@ -129,6 +129,9 @@ export class LayoutDevComponent {
       ],
     },
     { name: 'Campaign Demo', path: 'campaigndemo', icon: 'gift' },
+    { name: 'OG', path: 'og', icon: 'window' },
+    { name: '10098', path: '10098', icon: 'window' },
+    { name: '38011', path: '38011', icon: 'window' },
   ];
 
   expandedMenus = signal<Set<string>>(new Set());
