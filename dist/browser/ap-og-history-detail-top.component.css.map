@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-og-history-detail-top/ap-og-history-detail-top.component.css"],
   "sourcesContent": [".history-ticket-card {\n  box-shadow: inset 0 1px 0 #ffffff08;\n}\n\n.history-ticket-divider {\n  position: relative;\n  border-top: 1px dashed #3f3f46;\n}\n\n@media (min-width: 640px) {\n  .history-detail-header-actions {\n    border-top: none;\n    padding-top: 0;\n  }\n\n  .history-detail-round-select {\n    padding-top: 0;\n  }\n}\n\n.top-bar-summary {\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n}\n\n.top-bar-summary-cell {\n  border-color: oklch(37% 0.013 285.805);\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,cAAA,MAAA,EAAA,IAAA,EAAA;AACF;AAEA,CAAA;AACE,YAAA;AACA,cAAA,IAAA,OAAA;AACF;AAEA,OAAA,CAAA,SAAA,EAAA;AACE,GAAA;AACE,gBAAA;AACA,iBAAA;AACF;AAEA,GAAA;AACE,iBAAA;AACF;AACF;AAEA,CAAA;AACE,qBAAA,WAAA;AACA,aAAA,WAAA;AACF;AAEA,CAAA;AACE,gBAAA;AACF;",
+  "mappings": ";AAAA,CAAC;AACC,cAAY,MAAM,EAAE,IAAI,EAAE;AAC5B;AAEA,CAAC;AACC,YAAU;AACV,cAAY,IAAI,OAAO;AACzB;AAEA,OAAO,CAAC,SAAS,EAAE;AACjB,GAAC;AACC,gBAAY;AACZ,iBAAa;AACf;AAEA,GAAC;AACC,iBAAa;AACf;AACF;AAEA,CAAC;AACC,qBAAmB,WAAW;AAC9B,aAAW,WAAW;AACxB;AAEA,CAAC;AACC,gBAAc;AAChB;",
   "names": []
 }

@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-ui-toc-dev/ap-ui-toc-dev.component.css"],
   "sourcesContent": ["  :host {\n    position: fixed;\n    top: 0px;\n    right: 0px;\n  }"],
-  "mappings": ";AAAE;AACE,YAAA;AACA,OAAA;AACA,SAAA;AACF;",
+  "mappings": ";AAAE;AACE,YAAU;AACV,OAAK;AACL,SAAO;AACT;",
   "names": []
 }

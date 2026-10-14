@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/ap-components-lib/ap-input-list/ap-input-list.component.css"],
   "sourcesContent": [":host {\n  display: block;\n}\n"],
-  "mappings": ";AAAA;AACE,WAAA;AACF;",
+  "mappings": ";AAAA;AACE,WAAS;AACX;",
   "names": []
 }

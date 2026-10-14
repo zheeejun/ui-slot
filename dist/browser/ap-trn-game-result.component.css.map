@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-trn-game-result/ap-trn-game-result.component.css"],
   "sourcesContent": [":host {\n  display: block;\n}"],
-  "mappings": ";AAAA;AACE,WAAA;AACF;",
+  "mappings": ";AAAA;AACE,WAAS;AACX;",
   "names": []
 }

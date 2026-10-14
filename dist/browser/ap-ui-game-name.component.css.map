@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-ui-game-name/ap-ui-game-name.component.css"],
   "sourcesContent": [".text-stroke {\n  color: oklch(96.7% 0.001 286.375);\n  text-shadow:\n        1px 1px 1px oklch(21% 0.006 285.885),\n    -1px 1px 1px oklch(21% 0.006 285.885),\n    1px -1px 1px oklch(21% 0.006 285.885),\n    -1px -1px 1px oklch(21% 0.006 285.885);\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,SAAA;AACA;;;;;AAKF;",
+  "mappings": ";AAAA,CAAC;AACC,SAAO;AACP;AAAA,IACM,IAAI,IAAI,IAAI,MAAM,IAAI,MAAM,QAAQ;AAAA,IACxC,KAAK,IAAI,IAAI,MAAM,IAAI,MAAM,QAAQ;AAAA,IACrC,IAAI,KAAK,IAAI,MAAM,IAAI,MAAM,QAAQ;AAAA,IACrC,KAAK,KAAK,IAAI,MAAM,IAAI,MAAM;AAClC;",
   "names": []
 }

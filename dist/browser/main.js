@@ -1,9 +1,9 @@
 import {
   LayoutModeSelectComponent
-} from "./chunk-KOCW3AFE.js";
+} from "./chunk-ZFFET4VX.js";
 import {
   ApMessageComponent
-} from "./chunk-JXCUC5GW.js";
+} from "./chunk-JSDRLKGF.js";
 import {
   ApIconChickenComponent
 } from "./chunk-74H6U7EF.js";
@@ -40,37 +40,36 @@ import {
   TrnCreatedNotificationComponent,
   TrnGameConfirmComponent,
   TrnGameEventLeaveConfirmComponent
-} from "./chunk-QOKWLLEK.js";
+} from "./chunk-IT3VPYOU.js";
 import "./chunk-7RUHSQL3.js";
 import {
   TrnCtrlService
-} from "./chunk-KCYX4D7Q.js";
+} from "./chunk-T55X5QHE.js";
 import {
   ApUiTabGroupComponent
 } from "./chunk-47SOIXJB.js";
 import {
   ApInputBox
-} from "./chunk-CYEAZPJ5.js";
+} from "./chunk-H6P7MZH6.js";
 import {
   ApHistoryPopupShareComponent,
-  ApIconIncDecComponent,
   ApIconSnsFacebookComponent,
   ApIconSnsLineComponent,
   ApIconSnsWhatsappComponent,
   ApIconSnsXComponent
-} from "./chunk-2CCP266M.js";
+} from "./chunk-R7TWYDOB.js";
 import {
   ApHistoryCalenderComponent,
-  ApHistoryListComponent,
-  ApTabMenuTextComponent
-} from "./chunk-WKKSI4JZ.js";
+  ApHistoryListComponent
+} from "./chunk-X6GBURL3.js";
 import {
   ApSelectComponent
-} from "./chunk-V4GGUMNZ.js";
+} from "./chunk-5KYQQMTR.js";
 import {
   ApBfCardFeatureComponent,
-  ApHistoryPopupReplayComponent
-} from "./chunk-MMAYEOJZ.js";
+  ApHistoryPopupReplayComponent,
+  ApIconIncDecComponent
+} from "./chunk-7JE6XNVC.js";
 import {
   ApButtonAutoSpinTimesComponent,
   ApButtonFreeSpinsComponent,
@@ -87,22 +86,23 @@ import {
   ApIconSpinComponent,
   ApIconTurboCircleComponent,
   ApIconYellowCircleComponent
-} from "./chunk-XYMPOXOA.js";
+} from "./chunk-QJZUQVJ4.js";
 import "./chunk-57FVUZ33.js";
 import {
+  ApTabMenuTextComponent,
   ApUiFramePopupComponent
-} from "./chunk-HUKCMLYY.js";
+} from "./chunk-N4LJSHXE.js";
 import "./chunk-JHJKX6RD.js";
-import "./chunk-AYE6H5VR.js";
+import "./chunk-4OJJGH2R.js";
 import {
   ApToastComponent
-} from "./chunk-U7TK2FIU.js";
+} from "./chunk-6XO7DG7K.js";
 import "./chunk-FCZ4RVMP.js";
 import {
   ApIconCloseCircleComponent,
   ApIconMusicCircleComponent,
   ApUiReplayModeComponent
-} from "./chunk-5GFZDTRR.js";
+} from "./chunk-HNY47POZ.js";
 import {
   RouterModule,
   RouterOutlet,
@@ -110,22 +110,22 @@ import {
   withRouterConfig
 } from "./chunk-YG42UXQC.js";
 import "./chunk-HM7QSC6E.js";
-import "./chunk-EOSIRHLO.js";
+import "./chunk-MTOHY3QQ.js";
 import {
   ApToggleSwitchComponent
 } from "./chunk-MKS37EB3.js";
 import {
   ApButtonComponent
-} from "./chunk-VX4L3GZI.js";
+} from "./chunk-3HIHH7J6.js";
 import {
   ApIconComponent,
   UTILITY_ICONS
-} from "./chunk-XOFMPJ7U.js";
-import "./chunk-TLQLKLDD.js";
-import "./chunk-CFCPEQLG.js";
+} from "./chunk-YL37OG34.js";
+import "./chunk-Q3NF4QZ2.js";
+import "./chunk-TIGXKRQH.js";
 import {
   environment
-} from "./chunk-54ITVL2G.js";
+} from "./chunk-B2M5HODU.js";
 import {
   CommonModule,
   DomRendererFactory2,
@@ -611,7 +611,7 @@ var ApIconCopiedComponent = class _ApIconCopiedComponent {
         {{ name() }}
       </h6>
     </button>
-  `, styles: ["/* angular:styles/component:css;8aa871f8d71255698e09339f64e9414833a7e4c219c17c43ba771663c0d228f5;/Users/jessielin/ui_korokke/src/app/icons/ap-icon-copied/ap-icon-copied.component.ts */\n:host {\n  display: block;\n  min-width: 0;\n}\n.card-container {\n  position: relative;\n  display: flex;\n  width: 100%;\n  aspect-ratio: 1 / 1;\n  overflow: hidden;\n  align-items: center;\n  justify-content: center;\n  border-radius: 0.5rem;\n  border: 1px solid #71717a;\n  background-color: #18181b;\n  color: #09090b;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  transition: border-color 0.15s ease-in-out;\n}\n.group:hover .card-container {\n  border-color: #d4d4d8;\n}\n.group:focus-visible .card-container {\n  border-color: #a1a1aa;\n  outline: 2px solid #71717a;\n  outline-offset: 2px;\n}\n.hover-overlay {\n  pointer-events: none;\n  position: absolute;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: rgba(9, 9, 11, 0.8);\n  padding-left: 0.75rem;\n  padding-right: 0.75rem;\n  text-align: center;\n  color: #fb923c;\n  opacity: 0;\n  transition: opacity 0.15s ease-in-out;\n}\n.group:hover .hover-overlay,\n.group:focus-visible .hover-overlay {\n  opacity: 1;\n}\n/*# sourceMappingURL=ap-icon-copied.component.css.map */\n"] }]
+  `, styles: ["/* angular:styles/component:css;8aa871f8d71255698e09339f64e9414833a7e4c219c17c43ba771663c0d228f5;/Users/jessielin/ui-slot/src/app/icons/ap-icon-copied/ap-icon-copied.component.ts */\n:host {\n  display: block;\n  min-width: 0;\n}\n.card-container {\n  position: relative;\n  display: flex;\n  width: 100%;\n  aspect-ratio: 1 / 1;\n  overflow: hidden;\n  align-items: center;\n  justify-content: center;\n  border-radius: 0.5rem;\n  border: 1px solid #71717a;\n  background-color: #18181b;\n  color: #09090b;\n  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);\n  transition: border-color 0.15s ease-in-out;\n}\n.group:hover .card-container {\n  border-color: #d4d4d8;\n}\n.group:focus-visible .card-container {\n  border-color: #a1a1aa;\n  outline: 2px solid #71717a;\n  outline-offset: 2px;\n}\n.hover-overlay {\n  pointer-events: none;\n  position: absolute;\n  inset: 0;\n  display: flex;\n  align-items: center;\n  justify-content: center;\n  background-color: rgba(9, 9, 11, 0.8);\n  padding-left: 0.75rem;\n  padding-right: 0.75rem;\n  text-align: center;\n  color: #fb923c;\n  opacity: 0;\n  transition: opacity 0.15s ease-in-out;\n}\n.group:hover .hover-overlay,\n.group:focus-visible .hover-overlay {\n  opacity: 1;\n}\n/*# sourceMappingURL=ap-icon-copied.component.css.map */\n"] }]
   }], null, null);
 })();
 (() => {
@@ -3962,6 +3962,58 @@ var ApCheckBoxListComponent = class _ApCheckBoxListComponent {
   (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ApCheckBoxListComponent, { className: "ApCheckBoxListComponent", filePath: "src/ap-components-lib/ap-check-box-list/ap-check-box-list.component.ts", lineNumber: 13 });
 })();
 
+// src/ap-components-lib/ap-input-slider/ap-input-slider.component.ts
+var ApInputSliderComponent = class _ApInputSliderComponent {
+  label = input("");
+  value = model(0);
+  min = input(0);
+  max = input(100);
+  step = input(1);
+  suffix = input("");
+  disabled = input(false);
+  updateValue(event) {
+    const value = Number(event.target.value);
+    if (Number.isFinite(value)) {
+      this.value.set(value);
+    }
+  }
+  static \u0275fac = function ApInputSliderComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ApInputSliderComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ApInputSliderComponent, selectors: [["ap-input-slider"]], inputs: { label: [1, "label"], value: [1, "value"], min: [1, "min"], max: [1, "max"], step: [1, "step"], suffix: [1, "suffix"], disabled: [1, "disabled"] }, outputs: { value: "valueChange" }, decls: 7, vars: 8, consts: [[1, "block"], [1, "mb-1", "flex", "justify-between", "text-xs", "text-slate-400"], ["type", "range", 1, "w-full", "cursor-pointer", "accent-blue-500", "disabled:cursor-not-allowed", "disabled:opacity-50", 3, "input", "min", "max", "step", "value", "disabled"]], template: function ApInputSliderComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275elementStart(0, "label", 0)(1, "div", 1)(2, "div");
+      \u0275\u0275text(3);
+      \u0275\u0275elementEnd();
+      \u0275\u0275elementStart(4, "div");
+      \u0275\u0275text(5);
+      \u0275\u0275elementEnd()();
+      \u0275\u0275elementStart(6, "input", 2);
+      \u0275\u0275listener("input", function ApInputSliderComponent_Template_input_input_6_listener($event) {
+        return ctx.updateValue($event);
+      });
+      \u0275\u0275elementEnd()();
+    }
+    if (rf & 2) {
+      \u0275\u0275advance(3);
+      \u0275\u0275textInterpolate(ctx.label());
+      \u0275\u0275advance(2);
+      \u0275\u0275textInterpolate2("", ctx.value(), "", ctx.suffix());
+      \u0275\u0275advance();
+      \u0275\u0275property("min", ctx.min())("max", ctx.max())("step", ctx.step())("value", ctx.value())("disabled", ctx.disabled());
+    }
+  }, encapsulation: 2 });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ApInputSliderComponent, [{
+    type: Component,
+    args: [{ selector: "ap-input-slider", standalone: true, imports: [], template: '<label class="block">\n  <div class="mb-1 flex justify-between text-xs text-slate-400">\n    <div>{{ label() }}</div>\n    <div>{{ value() }}{{ suffix() }}</div>\n  </div>\n\n  <input\n    type="range"\n    class="w-full cursor-pointer accent-blue-500 disabled:cursor-not-allowed disabled:opacity-50"\n    [min]="min()"\n    [max]="max()"\n    [step]="step()"\n    [value]="value()"\n    [disabled]="disabled()"\n    (input)="updateValue($event)"\n  />\n</label>\n' }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ApInputSliderComponent, { className: "ApInputSliderComponent", filePath: "src/ap-components-lib/ap-input-slider/ap-input-slider.component.ts", lineNumber: 9 });
+})();
+
 // src/app/pages/dev-input/dev-input.component.ts
 var _c07 = () => ({});
 var _forTrack04 = ($index, $item) => $item.title;
@@ -4022,6 +4074,10 @@ var DevInputComponent = class _DevInputComponent {
       component: ApInputListComponent
     },
     {
+      title: "ap-input-slider",
+      component: ApInputSliderComponent
+    },
+    {
       title: "ap-select-list",
       component: ApSelectListComponent
     },
@@ -4060,7 +4116,7 @@ var DevInputComponent = class _DevInputComponent {
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DevInputComponent, { className: "DevInputComponent", filePath: "src/app/pages/dev-input/dev-input.component.ts", lineNumber: 27 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DevInputComponent, { className: "DevInputComponent", filePath: "src/app/pages/dev-input/dev-input.component.ts", lineNumber: 28 });
 })();
 
 // src/app/pages/dev-campaign/dev-campaign.component.ts
@@ -4080,7 +4136,7 @@ function DevCampaignComponent_ng_template_16_Template(rf, ctx) {
   if (rf & 2) {
     const variant_r1 = ctx.$implicit;
     \u0275\u0275advance();
-    \u0275\u0275property("compaignData", variant_r1.data)("currency", variant_r1.currency ?? "");
+    \u0275\u0275property("campaignData", variant_r1.data)("currency", variant_r1.currency ?? "");
   }
 }
 var DevCampaignComponent = class _DevCampaignComponent {
@@ -4169,7 +4225,7 @@ var DevCampaignComponent = class _DevCampaignComponent {
   static \u0275fac = function DevCampaignComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _DevCampaignComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DevCampaignComponent, selectors: [["dev-campaign"]], decls: 18, vars: 4, consts: [["variantTemplate", ""], ["id", "ap-campaign-card", "align", "center"], [1, "w-full"], [1, "flex", "items-center", "justify-between", "px-6", "py-4", "text-orange-400"], [1, "text-left"], [1, "mx-auto", "space-y-4", "px-6"], [3, "categories", "getCodeSnippet"], ["id", "ap-campaign-list", "align", "center"], [1, "mx-auto", "max-w-7xl", "space-y-4", "px-6"], [1, "flex", "min-h-24", "items-center", "justify-center", "p-4"], [1, "block", "w-full"], [1, "block", "w-full", "scale-70", 3, "compaignData", "currency"]], template: function DevCampaignComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DevCampaignComponent, selectors: [["dev-campaign"]], decls: 18, vars: 4, consts: [["variantTemplate", ""], ["id", "ap-campaign-card", "align", "center"], [1, "w-full"], [1, "flex", "items-center", "justify-between", "px-6", "py-4", "text-orange-400"], [1, "text-left"], [1, "mx-auto", "space-y-4", "px-6"], [3, "categories", "getCodeSnippet"], ["id", "ap-campaign-list", "align", "center"], [1, "mx-auto", "max-w-7xl", "space-y-4", "px-6"], [1, "flex", "min-h-24", "items-center", "justify-center", "p-4"], [1, "block", "w-full"], [1, "block", "w-full", "scale-70", 3, "campaignData", "currency"]], template: function DevCampaignComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "ap-ui-card-dev", 1)(1, "div", 2)(2, "div", 3)(3, "h2", 4);
       \u0275\u0275text(4, "Campaign Card");
@@ -4229,7 +4285,7 @@ var DevCampaignComponent = class _DevCampaignComponent {
           <div class="flex min-h-24 items-center justify-center p-4">
             <ap-campaign-list
               class="block w-full scale-70"
-              [compaignData]="variant.data"
+              [campaignData]="variant.data"
               [currency]="variant.currency ?? ''"
             />
           </div>
@@ -5469,7 +5525,7 @@ var DevCampaignDemoComponent = class _DevCampaignDemoComponent {
   static \u0275fac = function DevCampaignDemoComponent_Factory(__ngFactoryType__) {
     return new (__ngFactoryType__ || _DevCampaignDemoComponent)();
   };
-  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DevCampaignDemoComponent, selectors: [["dev-campaign-demo"]], decls: 133, vars: 6, consts: [[1, "relative", "space-y-8", "max-w-3xl", "mx-auto"], [1, "space-y-2"], [1, "space-y-3"], [1, "flex", "justify-center"], [3, "compaignData", "currency"], [1, "text-sm", "text-yellow-400"], [1, "font-semibold"], [1, "block", "whitespace-pre-wrap", "wrap-break-word", "rounded-lg", "border", "border-zinc-700", "bg-zinc-800", "p-3", "text-xs", "text-zinc-300", "sm:text-sm"], [1, "text-sm", "font-semibold", "text-zinc-200"]], template: function DevCampaignDemoComponent_Template(rf, ctx) {
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _DevCampaignDemoComponent, selectors: [["dev-campaign-demo"]], decls: 133, vars: 6, consts: [[1, "relative", "space-y-8", "max-w-3xl", "mx-auto"], [1, "space-y-2"], [1, "space-y-3"], [1, "flex", "justify-center"], [3, "campaignData", "currency"], [1, "text-sm", "text-yellow-400"], [1, "font-semibold"], [1, "block", "whitespace-pre-wrap", "wrap-break-word", "rounded-lg", "border", "border-zinc-700", "bg-zinc-800", "p-3", "text-xs", "text-zinc-300", "sm:text-sm"], [1, "text-sm", "font-semibold", "text-zinc-200"]], template: function DevCampaignDemoComponent_Template(rf, ctx) {
     if (rf & 1) {
       \u0275\u0275elementStart(0, "div", 0)(1, "div", 1)(2, "h1");
       \u0275\u0275text(3, "Campaign Demo");
@@ -5634,22 +5690,22 @@ var DevCampaignDemoComponent = class _DevCampaignDemoComponent {
     }
     if (rf & 2) {
       \u0275\u0275advance(12);
-      \u0275\u0275property("compaignData", ctx.waitToJoinCampaign)("currency", ctx.currency);
+      \u0275\u0275property("campaignData", ctx.waitToJoinCampaign)("currency", ctx.currency);
       \u0275\u0275advance(16);
-      \u0275\u0275property("compaignData", ctx.underConditionCampaign)("currency", ctx.currency);
+      \u0275\u0275property("campaignData", ctx.underConditionCampaign)("currency", ctx.currency);
       \u0275\u0275advance(31);
-      \u0275\u0275property("compaignData", ctx.inProgressCampaign)("currency", ctx.currency);
+      \u0275\u0275property("campaignData", ctx.inProgressCampaign)("currency", ctx.currency);
     }
   }, dependencies: [ApCampaignListComponent], encapsulation: 2 });
 };
 (() => {
   (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(DevCampaignDemoComponent, [{
     type: Component,
-    args: [{ selector: "dev-campaign-demo", imports: [ApCampaignListComponent], template: '<div class="relative space-y-8 max-w-3xl mx-auto">\n  <div class="space-y-2">\n    <h1>Campaign Demo</h1>\n    <p>\u6B64\u9875\u9762\u5C1A\u5728\u5EFA\u7F6E\u4E2D\uFF0C\u7528\u4E8E\u6574\u7406\u6D3B\u52A8\uFF08Campaign\uFF09\u5404\u9636\u6BB5\u7684\u5F39\u7A97\u6587\u6848\u4E0E\u663E\u793A\u903B\u8F91\uFF0C\u65B9\u4FBF\u5F00\u53D1\u4E0E\u6D4B\u8BD5\u53C2\u8003\u3002</p>\n  </div>\n\n  <section class="space-y-3">\n    <h2>1. Wait to Join\uFF08\u7B49\u5F85\u52A0\u5165\uFF09</h2>\n    <p>\n      \u65B0\u6D3B\u52A8\uFF08campaign\uFF09\u53EF\u5206\u4E3A\u9700\u8981\u624B\u52A8\u52A0\u5165\u4E0E\u81EA\u52A8\u52A0\u5165\u4E24\u79CD\uFF1A\u624B\u52A8\u52A0\u5165\u4F1A\u663E\u793A\u300CJOIN\u300D\u6309\u94AE\uFF0C\u81EA\u52A8\u52A0\u5165\u5219\u4E0D\u9700\u8981\u624B\u52A8\u64CD\u4F5C\u3002\n    </p>\n    <div class="flex justify-center">\n      <ap-campaign-list [compaignData]="waitToJoinCampaign" [currency]="currency" />\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u624B\u52A8\u52A0\u5165\u65F6\u662F\u5426\u9700\u8981\u5F39\u7A97\u63D0\u9192\uFF1F\u5982\u9700\u8981\uFF0C\u663E\u793A\u7684\u6587\u5B57\u5185\u5BB9\u4E3A\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>2. Under Condition\uFF08\u6761\u4EF6\u672A\u8FBE\u6210\uFF09</h2>\n    <p>\u5F53\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\u4F46\u5C1A\u672A\u8FBE\u6210\u6761\u4EF6\u65F6\uFF0C\u4F1A\u6709\u5F39\u7A97\u63D0\u9192\u3002</p>\n    <div class="space-y-2">\n      <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01 \\n\\n \u76EE\u524D\u6709\u300C&#123;0&#125;\u300D\\n\u671F\u95F4\u9650\u5B9A\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\uFF01\\n\\n\u8BF7\u5728\u671F\u9650\u5185\u5B8C\u6210\u6761\u4EF6\uFF0C\u8D62\u5F97\u6D3B\u52A8\uFF01</code>\n      <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01 \\n\\n\u76EE\u524D\u6709\u591A\u4E2A\u671F\u95F4\u9650\u5B9A\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\uFF01\\n\\n\u8BF7\u5728\u671F\u95F4\u5185\u5B8C\u6210\u6761\u4EF6\uFF0C\u8D62\u5F97\u6D3B\u52A8\uFF01</code>\n    </div>\n    <div class="flex justify-center">\n      <ap-campaign-list [compaignData]="underConditionCampaign" [currency]="currency" />\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u70B9\u51FB\u786E\u8BA4\u540E\uFF0C\u662F\u5426\u9700\u8981\u81EA\u52A8\u663E\u793A\u5217\u8868\u8BA9\u73A9\u5BB6\u67E5\u770B\u8FDB\u5EA6\uFF0C\u6BCF\u65E5\u986F\u793A\u9084\u662F\u6BCF\u6B21\u767B\u5F55\u90FD\u663E\u793A\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>3. In Progress\uFF08\u8FDB\u884C\u4E2D\uFF09</h2>\n    <p>\u5F53\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\uFF0C\u4F1A\u6709\u5F39\u7A97\u63D0\u9192\u3002</p>\n\n    <h3>\u9996\u6B21\u9886\u53D6</h3>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Bonus</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n\\n\u60A8\u521A\u9886\u53D6\u4E86\u300C\u4EF7\u503C &#123;1&#125; \u7684 &#123;0&#125; \u6D3B\u52A8\u94B1\u5305\uFF01\u300D\\n\\n\u8BF7\u70B9\u51FB\u3010\u786E\u5B9A\u3011\u67E5\u8BE2\u6D3B\u52A8\u7ED3\u675F\u65F6\u95F4\u3001\u63D0\u9886\u6761\u4EF6\u548C\u63D0\u9886\u4E0A\u9650\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Spin</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n \\n \u60A8\u521A\u9886\u53D6\u4E86\u300C\u603B\u4EF7\u503C&#123;1&#125;\u7684\u514D\u8D39\u6B21\u6570&#123;0&#125;\u6B21\uFF01\u300D\\n \\n \u8BF7\u70B9\u51FB\u3010\u786E\u5B9A\u3011\u67E5\u8BE2\u6D3B\u52A8\u7ED3\u675F\u65F6\u95F4\u3001\u63D0\u9886\u6761\u4EF6\u548C\u63D0\u9886\u4E0A\u9650\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u591A\u4E2A\u6D3B\u52A8\u5408\u5E76</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n \u60A8\u521A\u521A\u9886\u53D6\u4E86\u5982\u4E0B\u6240\u793A\u7684\u591A\u4E2A\u6D3B\u52A8\uFF1A&#123;0&#125;\\n\u8BF7\u70B9\u51FB"\u786E\u5B9A"\u9009\u62E9\u60A8\u60F3\u5148\u6E38\u73A9\u7684\u6D3B\u52A8\u3002</code>\n      </div>\n    </div>\n    <p>\u70B9\u51FB\u4E4B\u540E\u53EF\u8DF3\u8F6C\u81F3\u6D3B\u52A8\u5217\u8868\u67E5\u770B\u8FDB\u5EA6\u3002</p>\n    <div class="flex justify-center">\n      <ap-campaign-list [compaignData]="inProgressCampaign" [currency]="currency" />\n    </div>\n    <p>\u73A9\u5BB6\u70B9\u51FB\u786E\u8BA4\u540E\uFF0C\u82E5\u8FD8\u6CA1\u5B8C\u6210\u6D3B\u52A8\uFF0C\u4E0B\u6B21\u767B\u5F55\u4F1A\u6709\u63D0\u793A\u3002</p>\n\n    <h3>\u518D\u6B21\u767B\u5165\u63D0\u793A</h3>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Bonus</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u6B22\u8FCE\u56DE\u6765\uFF01\\n\\n\u60A8\u9886\u53D6\u7684 &#123;0&#125; \u6D3B\u52A8\u8FD8\u5728\u8FDB\u884C\u4E2D\uFF0C\u9884\u8BA1\u7ED3\u675F\u65F6\u95F4\u4E3A\\n&#123;1&#125;\\n\u60A8\u9700\u5728\u6D3B\u52A8\u7ED3\u675F\u524D\u8FBE\u5230 &#123;2&#125;\uFF0C\u624D\u80FD\u5C06\u6D3B\u52A8\u94B1\u5305\u7684\u91D1\u989D\u63D0\u9886\u81F3\u73B0\u91D1\u94B1\u5305\uFF01</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Spin</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u6B22\u8FCE\u56DE\u6765\uFF01\\n \\n \u60A8\u9886\u53D6\u7684 &#123;0&#125; \u514D\u8D39\u6B21\u6570\u8FD8\u5728\u8FDB\u884C\u4E2D\uFF0C\u9884\u8BA1\u7ED3\u675F\u65F6\u95F4\u4E3A\\n&#123;1&#125;\\n\u8BF7\u628A\u63E1\u65F6\u95F4\u5B8C\u6210\u6D3B\u52A8\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u591A\u4E2A\u5408\u5E76</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u6B22\u8FCE\u56DE\u6765\uFF01\\n \u60A8\u4ECD\u6709\u4EE5\u4E0B\u7684\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\uFF1A&#123;0&#125;\\n\u8BF7\u628A\u63E1\u65F6\u95F4\u5B8C\u6210\u6D3B\u52A8\u3002</code>\n      </div>\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u5F48\u7A97\u986F\u793A\u662F\u8981\u6BCF\u65E5\u986F\u793A\u9084\u662F\u6BCF\u6B21\u767B\u5F55\u90FD\u663E\u793A\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>4. Free Spin to Free Bonus\uFF08\u514D\u8D39\u6B21\u6570\u8F6C\u6362\u4E3A\u514D\u8D39\u5956\u52B1\uFF09</h2>\n    <p>\u5F53\u73A9\u5BB6\u7684\u514D\u8D39\u6B21\u6570\u8F6C\u6362\u4E3A\u514D\u8D39\u5956\u52B1\u65F6\uFF0C\u4F1A\u6709\u76F8\u5E94\u7684\u63D0\u793A\u5F39\u7A97\u3002</p>\n    <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n \u60A8\u5DF2\u5B8C\u6210 &#123;0&#125; \u7684\u6240\u6709\u6B21\u6570\uFF01\\n \\n \u8BF7\u7EE7\u7EED\u5728\u6D3B\u52A8\u94B1\u5305\u8FDB\u884C\u6E38\u620F\uFF0C\u5B8C\u6210\u63D0\u9886\u6761\u4EF6\u3002</code>\n    <p>\u70B9\u51FB\u786E\u8BA4\u4E4B\u540E\uFF0C\u73A9\u5BB6\u4F1A\u7EE7\u7EED\u4EE5 Free Bonus \u6E38\u73A9\u3002</p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>5. Completed\uFF08\u6D3B\u52A8\u7ED3\u675F\uFF09</h2>\n    <p>\u4F1A\u6709\u76F8\u5E94\u7684\u63D0\u793A\u5F39\u7A97\u3002</p>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u6210\u529F</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n\u60A8\u5DF2\u8FBE\u6210 &#123;0&#125; \u7684\u63D0\u9886\u6761\u4EF6\uFF01\\n\\n\u6D3B\u52A8\u94B1\u5305\uFF1A&#123;1&#125;\\n\u63D0\u9886\u4E0A\u9650\uFF1A&#123;2&#125;</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u5931\u8D25</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u60A8\u5DF2\u5B8C\u6210\u672C\u6B21\u6D3B\u52A8\\n &#123;0&#125;\uFF01\\n \\n \u795D\u60A8\u4E0B\u6B21\u597D\u8FD0\uFF01</code>\n      </div>\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u6210\u529F\u986F\u793A\u7684\u8A0A\u606F\uFF0C\u662F\u5426\u8981\u63D0\u793A\u5165\u5E33\u9700\u8981\u6642\u9593\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>6. \u63D0\u9886\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6</h2>\n    <p>\u7B2C 2 \u6B65\u5B8C\u6210\uFF0C\u4F46\u7B2C 3 \u6B65\u65E0\u6CD5\u5B8C\u6210\u65F6\uFF0C\u4F1A\u6709\u76F8\u5E94\u7684\u63D0\u793A\u5F39\u7A97\u3002</p>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u5F53\u65E5\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u4F60\u5DF2\u5B8C\u6210\u300C&#123;0&#125;\u300D\u7684\u9886\u53D6\u6761\u4EF6\uFF01\\n\u672C\u65E5\u6D3B\u52A8\u6B21\u6570\u5DF2\u5C3D\u6570\u63D0\u9886\u5B8C\u6BD5\uFF0C\u8BF7\u660E\u65E5\u5C3D\u65E9\u6765\u9886\u53D6\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u5168\u90E8\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u5F88\u62B1\u6B49\\n\\n\u672C\u6B21\u6D3B\u52A8\u300C&#123;0&#125;\u300D\\n\u5956\u52B1\u5DF2\u5C3D\u6570\u63D0\u9886\u5B8C\u6BD5\\n\\n\u795D\u60A8\u4E0B\u6B21\u597D\u8FD0\uFF01</code>\n      </div>\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u7576\u65E5\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6\u65F6\uFF0C\u662F\u5426\u9700\u8981\u63D0\u793A\u73A9\u5BB6\u660E\u65E5\u518D\u6765\u9886\u53D6\uFF1F\n    </p>\n  </section>\n</div>\n' }]
+    args: [{ selector: "dev-campaign-demo", imports: [ApCampaignListComponent], template: '<div class="relative space-y-8 max-w-3xl mx-auto">\n  <div class="space-y-2">\n    <h1>Campaign Demo</h1>\n    <p>\u6B64\u9875\u9762\u5C1A\u5728\u5EFA\u7F6E\u4E2D\uFF0C\u7528\u4E8E\u6574\u7406\u6D3B\u52A8\uFF08Campaign\uFF09\u5404\u9636\u6BB5\u7684\u5F39\u7A97\u6587\u6848\u4E0E\u663E\u793A\u903B\u8F91\uFF0C\u65B9\u4FBF\u5F00\u53D1\u4E0E\u6D4B\u8BD5\u53C2\u8003\u3002</p>\n  </div>\n\n  <section class="space-y-3">\n    <h2>1. Wait to Join\uFF08\u7B49\u5F85\u52A0\u5165\uFF09</h2>\n    <p>\n      \u65B0\u6D3B\u52A8\uFF08campaign\uFF09\u53EF\u5206\u4E3A\u9700\u8981\u624B\u52A8\u52A0\u5165\u4E0E\u81EA\u52A8\u52A0\u5165\u4E24\u79CD\uFF1A\u624B\u52A8\u52A0\u5165\u4F1A\u663E\u793A\u300CJOIN\u300D\u6309\u94AE\uFF0C\u81EA\u52A8\u52A0\u5165\u5219\u4E0D\u9700\u8981\u624B\u52A8\u64CD\u4F5C\u3002\n    </p>\n    <div class="flex justify-center">\n      <ap-campaign-list [campaignData]="waitToJoinCampaign" [currency]="currency" />\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u624B\u52A8\u52A0\u5165\u65F6\u662F\u5426\u9700\u8981\u5F39\u7A97\u63D0\u9192\uFF1F\u5982\u9700\u8981\uFF0C\u663E\u793A\u7684\u6587\u5B57\u5185\u5BB9\u4E3A\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>2. Under Condition\uFF08\u6761\u4EF6\u672A\u8FBE\u6210\uFF09</h2>\n    <p>\u5F53\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\u4F46\u5C1A\u672A\u8FBE\u6210\u6761\u4EF6\u65F6\uFF0C\u4F1A\u6709\u5F39\u7A97\u63D0\u9192\u3002</p>\n    <div class="space-y-2">\n      <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01 \\n\\n \u76EE\u524D\u6709\u300C&#123;0&#125;\u300D\\n\u671F\u95F4\u9650\u5B9A\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\uFF01\\n\\n\u8BF7\u5728\u671F\u9650\u5185\u5B8C\u6210\u6761\u4EF6\uFF0C\u8D62\u5F97\u6D3B\u52A8\uFF01</code>\n      <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01 \\n\\n\u76EE\u524D\u6709\u591A\u4E2A\u671F\u95F4\u9650\u5B9A\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\uFF01\\n\\n\u8BF7\u5728\u671F\u95F4\u5185\u5B8C\u6210\u6761\u4EF6\uFF0C\u8D62\u5F97\u6D3B\u52A8\uFF01</code>\n    </div>\n    <div class="flex justify-center">\n      <ap-campaign-list [campaignData]="underConditionCampaign" [currency]="currency" />\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u70B9\u51FB\u786E\u8BA4\u540E\uFF0C\u662F\u5426\u9700\u8981\u81EA\u52A8\u663E\u793A\u5217\u8868\u8BA9\u73A9\u5BB6\u67E5\u770B\u8FDB\u5EA6\uFF0C\u6BCF\u65E5\u986F\u793A\u9084\u662F\u6BCF\u6B21\u767B\u5F55\u90FD\u663E\u793A\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>3. In Progress\uFF08\u8FDB\u884C\u4E2D\uFF09</h2>\n    <p>\u5F53\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\u4E2D\uFF0C\u4F1A\u6709\u5F39\u7A97\u63D0\u9192\u3002</p>\n\n    <h3>\u9996\u6B21\u9886\u53D6</h3>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Bonus</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n\\n\u60A8\u521A\u9886\u53D6\u4E86\u300C\u4EF7\u503C &#123;1&#125; \u7684 &#123;0&#125; \u6D3B\u52A8\u94B1\u5305\uFF01\u300D\\n\\n\u8BF7\u70B9\u51FB\u3010\u786E\u5B9A\u3011\u67E5\u8BE2\u6D3B\u52A8\u7ED3\u675F\u65F6\u95F4\u3001\u63D0\u9886\u6761\u4EF6\u548C\u63D0\u9886\u4E0A\u9650\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Spin</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n \\n \u60A8\u521A\u9886\u53D6\u4E86\u300C\u603B\u4EF7\u503C&#123;1&#125;\u7684\u514D\u8D39\u6B21\u6570&#123;0&#125;\u6B21\uFF01\u300D\\n \\n \u8BF7\u70B9\u51FB\u3010\u786E\u5B9A\u3011\u67E5\u8BE2\u6D3B\u52A8\u7ED3\u675F\u65F6\u95F4\u3001\u63D0\u9886\u6761\u4EF6\u548C\u63D0\u9886\u4E0A\u9650\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u591A\u4E2A\u6D3B\u52A8\u5408\u5E76</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n \u60A8\u521A\u521A\u9886\u53D6\u4E86\u5982\u4E0B\u6240\u793A\u7684\u591A\u4E2A\u6D3B\u52A8\uFF1A&#123;0&#125;\\n\u8BF7\u70B9\u51FB"\u786E\u5B9A"\u9009\u62E9\u60A8\u60F3\u5148\u6E38\u73A9\u7684\u6D3B\u52A8\u3002</code>\n      </div>\n    </div>\n    <p>\u70B9\u51FB\u4E4B\u540E\u53EF\u8DF3\u8F6C\u81F3\u6D3B\u52A8\u5217\u8868\u67E5\u770B\u8FDB\u5EA6\u3002</p>\n    <div class="flex justify-center">\n      <ap-campaign-list [campaignData]="inProgressCampaign" [currency]="currency" />\n    </div>\n    <p>\u73A9\u5BB6\u70B9\u51FB\u786E\u8BA4\u540E\uFF0C\u82E5\u8FD8\u6CA1\u5B8C\u6210\u6D3B\u52A8\uFF0C\u4E0B\u6B21\u767B\u5F55\u4F1A\u6709\u63D0\u793A\u3002</p>\n\n    <h3>\u518D\u6B21\u767B\u5165\u63D0\u793A</h3>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Bonus</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u6B22\u8FCE\u56DE\u6765\uFF01\\n\\n\u60A8\u9886\u53D6\u7684 &#123;0&#125; \u6D3B\u52A8\u8FD8\u5728\u8FDB\u884C\u4E2D\uFF0C\u9884\u8BA1\u7ED3\u675F\u65F6\u95F4\u4E3A\\n&#123;1&#125;\\n\u60A8\u9700\u5728\u6D3B\u52A8\u7ED3\u675F\u524D\u8FBE\u5230 &#123;2&#125;\uFF0C\u624D\u80FD\u5C06\u6D3B\u52A8\u94B1\u5305\u7684\u91D1\u989D\u63D0\u9886\u81F3\u73B0\u91D1\u94B1\u5305\uFF01</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">Free Spin</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u6B22\u8FCE\u56DE\u6765\uFF01\\n \\n \u60A8\u9886\u53D6\u7684 &#123;0&#125; \u514D\u8D39\u6B21\u6570\u8FD8\u5728\u8FDB\u884C\u4E2D\uFF0C\u9884\u8BA1\u7ED3\u675F\u65F6\u95F4\u4E3A\\n&#123;1&#125;\\n\u8BF7\u628A\u63E1\u65F6\u95F4\u5B8C\u6210\u6D3B\u52A8\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u591A\u4E2A\u5408\u5E76</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u6B22\u8FCE\u56DE\u6765\uFF01\\n \u60A8\u4ECD\u6709\u4EE5\u4E0B\u7684\u6D3B\u52A8\u6B63\u5728\u8FDB\u884C\uFF1A&#123;0&#125;\\n\u8BF7\u628A\u63E1\u65F6\u95F4\u5B8C\u6210\u6D3B\u52A8\u3002</code>\n      </div>\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u5F48\u7A97\u986F\u793A\u662F\u8981\u6BCF\u65E5\u986F\u793A\u9084\u662F\u6BCF\u6B21\u767B\u5F55\u90FD\u663E\u793A\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>4. Free Spin to Free Bonus\uFF08\u514D\u8D39\u6B21\u6570\u8F6C\u6362\u4E3A\u514D\u8D39\u5956\u52B1\uFF09</h2>\n    <p>\u5F53\u73A9\u5BB6\u7684\u514D\u8D39\u6B21\u6570\u8F6C\u6362\u4E3A\u514D\u8D39\u5956\u52B1\u65F6\uFF0C\u4F1A\u6709\u76F8\u5E94\u7684\u63D0\u793A\u5F39\u7A97\u3002</p>\n    <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n \u60A8\u5DF2\u5B8C\u6210 &#123;0&#125; \u7684\u6240\u6709\u6B21\u6570\uFF01\\n \\n \u8BF7\u7EE7\u7EED\u5728\u6D3B\u52A8\u94B1\u5305\u8FDB\u884C\u6E38\u620F\uFF0C\u5B8C\u6210\u63D0\u9886\u6761\u4EF6\u3002</code>\n    <p>\u70B9\u51FB\u786E\u8BA4\u4E4B\u540E\uFF0C\u73A9\u5BB6\u4F1A\u7EE7\u7EED\u4EE5 Free Bonus \u6E38\u73A9\u3002</p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>5. Completed\uFF08\u6D3B\u52A8\u7ED3\u675F\uFF09</h2>\n    <p>\u4F1A\u6709\u76F8\u5E94\u7684\u63D0\u793A\u5F39\u7A97\u3002</p>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u6210\u529F</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u606D\u559C\u60A8\uFF01\\n\u60A8\u5DF2\u8FBE\u6210 &#123;0&#125; \u7684\u63D0\u9886\u6761\u4EF6\uFF01\\n\\n\u6D3B\u52A8\u94B1\u5305\uFF1A&#123;1&#125;\\n\u63D0\u9886\u4E0A\u9650\uFF1A&#123;2&#125;</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u5931\u8D25</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u60A8\u5DF2\u5B8C\u6210\u672C\u6B21\u6D3B\u52A8\\n &#123;0&#125;\uFF01\\n \\n \u795D\u60A8\u4E0B\u6B21\u597D\u8FD0\uFF01</code>\n      </div>\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u6210\u529F\u986F\u793A\u7684\u8A0A\u606F\uFF0C\u662F\u5426\u8981\u63D0\u793A\u5165\u5E33\u9700\u8981\u6642\u9593\uFF1F\n    </p>\n  </section>\n\n  <section class="space-y-3">\n    <h2>6. \u63D0\u9886\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6</h2>\n    <p>\u7B2C 2 \u6B65\u5B8C\u6210\uFF0C\u4F46\u7B2C 3 \u6B65\u65E0\u6CD5\u5B8C\u6210\u65F6\uFF0C\u4F1A\u6709\u76F8\u5E94\u7684\u63D0\u793A\u5F39\u7A97\u3002</p>\n    <div class="space-y-2">\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u5F53\u65E5\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u4F60\u5DF2\u5B8C\u6210\u300C&#123;0&#125;\u300D\u7684\u9886\u53D6\u6761\u4EF6\uFF01\\n\u672C\u65E5\u6D3B\u52A8\u6B21\u6570\u5DF2\u5C3D\u6570\u63D0\u9886\u5B8C\u6BD5\uFF0C\u8BF7\u660E\u65E5\u5C3D\u65E9\u6765\u9886\u53D6\u3002</code>\n      </div>\n      <div>\n        <p class="text-sm font-semibold text-zinc-200">\u5168\u90E8\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6</p>\n        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">\u5F88\u62B1\u6B49\\n\\n\u672C\u6B21\u6D3B\u52A8\u300C&#123;0&#125;\u300D\\n\u5956\u52B1\u5DF2\u5C3D\u6570\u63D0\u9886\u5B8C\u6BD5\\n\\n\u795D\u60A8\u4E0B\u6B21\u597D\u8FD0\uFF01</code>\n      </div>\n    </div>\n    <p class="text-sm text-yellow-400">\n      <span class="font-semibold">Q\uFF1A</span>\u7576\u65E5\u4E0A\u9650\u5DF2\u8FBE\u65E0\u6CD5\u9886\u53D6\u65F6\uFF0C\u662F\u5426\u9700\u8981\u63D0\u793A\u73A9\u5BB6\u660E\u65E5\u518D\u6765\u9886\u53D6\uFF1F\n    </p>\n  </section>\n</div>\n' }]
   }], null, null);
 })();
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DevCampaignDemoComponent, { className: "DevCampaignDemoComponent", filePath: "src/app/pages/dev-campaign-demo/dev-campaign-demo.component.ts", lineNumber: 12 });
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(DevCampaignDemoComponent, { className: "DevCampaignDemoComponent", filePath: "src/app/pages/dev-campaign-demo/dev-campaign-demo.component.ts", lineNumber: 11 });
 })();
 
 // src/app/dev.routes.ts
@@ -5675,45 +5731,45 @@ var devPageRoutes = [
 var devRoutes = [
   {
     path: "login",
-    loadComponent: () => import("./chunk-4JMDPS3W.js").then((m) => m.LayoutLoginComponent)
+    loadComponent: () => import("./chunk-BIR2KXE3.js").then((m) => m.LayoutLoginComponent)
   },
   {
     path: "demo",
-    loadComponent: () => import("./chunk-L5XL72SB.js").then((m) => m.LayoutDemoComponent)
+    loadComponent: () => import("./chunk-2MNOCC5I.js").then((m) => m.LayoutDemoComponent)
   },
   {
     path: "lab",
-    loadComponent: () => import("./chunk-LMXJYRQW.js").then((m) => m.LayoutLabComponent),
+    loadComponent: () => import("./chunk-ND2YGIXA.js").then((m) => m.LayoutLabComponent),
     children: [
       {
         path: "",
-        loadComponent: () => import("./chunk-T7QWQI2L.js").then((m) => m.LayoutModeSelectComponent)
+        loadComponent: () => import("./chunk-WSNSMHQX.js").then((m) => m.LayoutModeSelectComponent)
       },
       {
         path: "demo",
-        loadComponent: () => import("./chunk-L5XL72SB.js").then((m) => m.LayoutDemoComponent)
+        loadComponent: () => import("./chunk-2MNOCC5I.js").then((m) => m.LayoutDemoComponent)
       },
       {
         path: "cover",
-        loadComponent: () => import("./chunk-O7GBK2O4.js").then((m) => m.LayoutCoverComponent)
+        loadComponent: () => import("./chunk-6N7MCUOB.js").then((m) => m.LayoutCoverComponent)
       },
       {
         path: "bridge",
-        loadComponent: () => import("./chunk-LNCNWNSY.js").then((m) => m.LayoutBridgeComponent)
+        loadComponent: () => import("./chunk-XO7MKVIF.js").then((m) => m.LayoutBridgeComponent)
       },
       {
         path: "ghana",
-        loadComponent: () => import("./chunk-Z7WS6LTI.js").then((m) => m.LayoutGhanaComponent)
+        loadComponent: () => import("./chunk-CZ2BOCYF.js").then((m) => m.LayoutGhanaComponent)
       },
       {
         path: "og",
-        loadComponent: () => import("./chunk-COYFGYEF.js").then((m) => m.LayoutOgComponent)
+        loadComponent: () => import("./chunk-WKLAWLNT.js").then((m) => m.LayoutOgComponent)
       }
     ]
   },
   {
     path: "dev",
-    loadComponent: () => import("./chunk-C7KCY27N.js").then((m) => m.LayoutDevComponent),
+    loadComponent: () => import("./chunk-LOYAG3J2.js").then((m) => m.LayoutDevComponent),
     children: devPageRoutes
   }
 ];
@@ -5723,31 +5779,31 @@ var routes = [
   { path: "", component: LayoutModeSelectComponent },
   {
     path: "bridge",
-    loadComponent: () => import("./chunk-LNCNWNSY.js").then((m) => m.LayoutBridgeComponent)
+    loadComponent: () => import("./chunk-XO7MKVIF.js").then((m) => m.LayoutBridgeComponent)
   },
   {
     path: "cover",
-    loadComponent: () => import("./chunk-O7GBK2O4.js").then((m) => m.LayoutCoverComponent)
+    loadComponent: () => import("./chunk-6N7MCUOB.js").then((m) => m.LayoutCoverComponent)
   },
   {
     path: "ghana",
-    loadComponent: () => import("./chunk-Z7WS6LTI.js").then((m) => m.LayoutGhanaComponent)
+    loadComponent: () => import("./chunk-CZ2BOCYF.js").then((m) => m.LayoutGhanaComponent)
   },
   {
     path: "replay",
-    loadComponent: () => import("./chunk-T6SHPP6S.js").then((m) => m.LayoutReplayComponent)
+    loadComponent: () => import("./chunk-BWKNTQEI.js").then((m) => m.LayoutReplayComponent)
   },
   {
     path: "og",
-    loadComponent: () => import("./chunk-COYFGYEF.js").then((m) => m.LayoutOgComponent)
+    loadComponent: () => import("./chunk-WKLAWLNT.js").then((m) => m.LayoutOgComponent)
   },
   {
     path: "bo",
-    loadComponent: () => import("./chunk-74BZUXO7.js").then((m) => m.LayoutBoComponent)
+    loadComponent: () => import("./chunk-MKFAGYLF.js").then((m) => m.LayoutBoComponent)
   },
   {
     path: "socket",
-    loadComponent: () => import("./chunk-NXNERWOX.js").then((m) => m.LayoutSocketComponent)
+    loadComponent: () => import("./chunk-F2AHMQFT.js").then((m) => m.LayoutSocketComponent)
   },
   ...devRoutes
 ];

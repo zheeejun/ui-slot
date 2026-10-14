@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/icons/ap-icon.root.css"],
   "sourcesContent": [":host {\n  display: inline-block;\n  aspect-ratio: 1; \n}\n\n.inner-svg {\n  width: 100%;\n  height: 100%;\n}"],
-  "mappings": ";AAAA;AACE,WAAA;AACA,gBAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,UAAA;AACF;",
+  "mappings": ";AAAA;AACE,WAAS;AACT,gBAAc;AAChB;AAEA,CAAC;AACC,SAAO;AACP,UAAQ;AACV;",
   "names": []
 }

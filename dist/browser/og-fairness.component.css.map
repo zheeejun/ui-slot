@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": ["og-fairness.component.ts"],
+  "sources": ["angular:styles/component:css;453fbd9085e02d96e1edc8389e8479288ae454302956246d0daa9a7a694df2e7;/Users/jessielin/ui-slot/src/app/pages/og-fairness/og-fairness.component.ts"],
   "sourcesContent": ["\n      :host ::ng-deep ap-ui-frame-popup.provable-actions > div > ap-button:last-of-type {\n        left: 0.75rem;\n        right: auto;\n      }\n    "],
-  "mappings": ";AACM,MAAA,UAAA,iBAAA,CAAA,iBAAA,EAAA,IAAA,EAAA,SAAA;AACE,QAAA;AACA,SAAA;AACF;",
+  "mappings": ";AACM,MAAM,UAAU,iBAAiB,CAAC,iBAAiB,EAAE,IAAI,EAAE,SAAS;AAClE,QAAM;AACN,SAAO;AACT;",
   "names": []
 }

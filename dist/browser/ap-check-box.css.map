@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/ap-components-lib/ap-check-box/ap-check-box.css"],
   "sourcesContent": [":host {\n  display: inline-block;\n}\n\n:host(.hidden) {\n  display: none;\n}\n"],
-  "mappings": ";AAAA;AACE,WAAA;AACF;AAEA,MAAA,CAAA;AACE,WAAA;AACF;",
+  "mappings": ";AAAA;AACE,WAAS;AACX;AAEA,MAAM,CAAC;AACL,WAAS;AACX;",
   "names": []
 }

@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/pages/history-detail-reward/history-detail-reward.component.css"],
   "sourcesContent": [".history-ticket-card {\n  border-color: oklch(37% 0.013 285.805);\n  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.03);\n}\n\n.history-ticket-divider {\n  position: relative;\n  border-top: 1px dashed oklch(37% 0.013 285.805);\n}\n\n.top-bar-summary {\n  -webkit-transform: translateZ(0);\n  transform: translateZ(0);\n}\n\n.top-bar-summary-cell {\n  border-color: oklch(37% 0.013 285.805);\n}\n"],
-  "mappings": ";AAAA,CAAA;AACE,gBAAA;AACA,cAAA,MAAA,EAAA,IAAA,EAAA,IAAA,IAAA,IAAA,IAAA,EAAA;AACF;AAEA,CAAA;AACE,YAAA;AACA,cAAA,IAAA,OAAA,MAAA,IAAA,MAAA;AACF;AAEA,CAAA;AACE,qBAAA,WAAA;AACA,aAAA,WAAA;AACF;AAEA,CAAA;AACE,gBAAA;AACF;",
+  "mappings": ";AAAA,CAAC;AACC,gBAAc;AACd,cAAY,MAAM,EAAE,IAAI,EAAE,IAAI,IAAI,IAAI,IAAI,EAAE;AAC9C;AAEA,CAAC;AACC,YAAU;AACV,cAAY,IAAI,OAAO,MAAM,IAAI,MAAM;AACzC;AAEA,CAAC;AACC,qBAAmB,WAAW;AAC9B,aAAW,WAAW;AACxB;AAEA,CAAC;AACC,gBAAc;AAChB;",
   "names": []
 }

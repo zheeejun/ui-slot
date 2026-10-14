@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/ap-components-lib/ap-tab-menu-icon/ap-tab-menu-icon.component.css"],
   "sourcesContent": [".scrollbar-hide::-webkit-scrollbar {\n  display: none;\n}\n\n.scrollbar-hide {\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n\n.disabled {\n  opacity: 0.5;\n  cursor: not-allowed;\n  pointer-events: none;\n}\n"],
-  "mappings": ";AAAA,CAAA,cAAA;AACE,WAAA;AACF;AAEA,CAJA;AAKE,sBAAA;AACA,mBAAA;AACF;AAEA,CAAA;AACE,WAAA;AACA,UAAA;AACA,kBAAA;AACF;",
+  "mappings": ";AAAA,CAAC,cAAc;AACb,WAAS;AACX;AAEA,CAJC;AAKC,sBAAoB;AACpB,mBAAiB;AACnB;AAEA,CAAC;AACC,WAAS;AACT,UAAQ;AACR,kBAAgB;AAClB;",
   "names": []
 }
