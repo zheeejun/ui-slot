@@ -1,0 +1,55 @@
+
+anim_line.png
+size: 1024,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+lizi_1
+  rotate: false
+  xy: 736, 2
+  size: 13, 12
+  orig: 16, 16
+  offset: 1, 2
+  index: -1
+lizi_4053
+  rotate: true
+  xy: 675, 2
+  size: 58, 59
+  orig: 64, 64
+  offset: 3, 3
+  index: -1
+rope2
+  rotate: false
+  xy: 2, 4
+  size: 671, 18
+  orig: 684, 18
+  offset: 0, 0
+  index: -1
+rope2_add
+  rotate: false
+  xy: 2, 24
+  size: 671, 36
+  orig: 684, 36
+  offset: 0, 0
+  index: -1
+rope_co
+  rotate: false
+  xy: 866, 27
+  size: 64, 33
+  orig: 74, 33
+  offset: 10, 0
+  index: -1
+rope_co_add
+  rotate: false
+  xy: 801, 24
+  size: 63, 36
+  orig: 78, 40
+  offset: 13, 2
+  index: -1
+smoke_01
+  rotate: false
+  xy: 736, 16
+  size: 63, 44
+  orig: 64, 64
+  offset: 0, 8
+  index: -1

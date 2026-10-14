@@ -1,0 +1,139 @@
+<div class="w-full max-w-lg space-y-2 text-left text-zinc-300 leading-relaxed">
+  @if (description()) {
+    <div>{{ description() }}</div>
+  }
+  @if (type() === "betRange") {
+    <div
+      class="w-full max-w-lg border-2 border-yellow-300/30 rounded-xl sm:rounded-2xl overflow-hidden"
+    >
+      <div class="bg-yellow-300/20 px-4 py-2 border-b border-yellow-300/20">
+        <div
+          class="text-center text-yellow-400 font-semibold text-xl sm:text-lg"
+        >
+          {{ title() }}
+        </div>
+      </div>
+      <table class="w-full">
+        <tbody class="divide-y divide-zinc-700/50">
+          @for (
+            betRange of betRanges();
+            track betRange.level;
+            let isEven = $even
+          ) {
+            <tr
+              [class.bg-zinc-900]="!isEven"
+              [class.bg-zinc-800]="isEven"
+              class="text-zinc-300 font-medium transition-all duration-200 hover:bg-yellow-300/5"
+            >
+              <td class="px-3 sm:px-4 py-2 sm:py-4 text-left">
+                <span class="text-md sm:text-base">{{ betRange.level }}</span>
+              </td>
+              <td
+                class="px-3 sm:px-4 py-3 sm:py-4 text-yellow-200 text-right text-md sm:text-base font-medium tracking-wide"
+              >
+                <span>{{ (betRange.start || 0) | moneyText }}</span>
+                @if (betRange.end) {
+                  <span>~{{ (betRange.end || 0) | moneyText: { addSymbol: false } }}</span>
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  } @else {
+    <div
+      class="w-full max-w-lg border-2 rounded-xl sm:rounded-2xl overflow-hidden"
+      [ngClass]="{
+        'border-yellow-300/30': variant() === 'quick',
+        'border-purple-300/20': variant() === 'event',
+      }"
+    >
+      <div
+        class="px-4 py-2 border-b"
+        [ngClass]="{
+          'border-yellow-300/30': variant() === 'quick',
+          'border-purple-300/20': variant() === 'event',
+          'bg-yellow-300/20': variant() === 'quick',
+          'bg-purple-500/15': variant() === 'event',
+        }"
+      >
+        <div
+          class="text-center font-semibold text-xl sm:text-lg"
+          [ngClass]="{
+            'text-yellow-400': variant() === 'quick',
+            'text-purple-200': variant() === 'event',
+          }"
+        >
+          {{ title() }}
+        </div>
+      </div>
+      <table class="w-full">
+        <tbody class="divide-y divide-zinc-700/50">
+          <tr
+            class="transition-all duration-200 bg-zinc-900"
+            [ngClass]="{
+              'hover:bg-yellow-300/5': variant() === 'quick',
+              'hover:bg-purple-500/5': variant() === 'event',
+            }"
+          >
+            <td class="px-3 sm:px-4 py-2 sm:py-4 text-zinc-300 text-left">
+              <span class="text-md sm:text-base">{{ condition1() }}</span>
+            </td>
+            <td
+              class="px-3 sm:px-4 py-3 sm:py-4 text-right text-md sm:text-base font-medium tracking-wide"
+              [ngClass]="{
+                'text-yellow-200': variant() === 'quick',
+                'text-purple-300': variant() === 'event',
+              }"
+            >
+              {{ playersPerMatch() ?? "N/A" }}
+            </td>
+          </tr>
+
+          <tr
+            class="transition-all duration-200 bg-zinc-900"
+            [ngClass]="{
+              'hover:bg-yellow-300/5': variant() === 'quick',
+              'hover:bg-purple-500/5': variant() === 'event',
+            }"
+          >
+            <td class="px-3 sm:px-4 py-2 sm:py-4 text-zinc-300 text-left">
+              <span class="text-md sm:text-base">{{ condition3() }}</span>
+            </td>
+            <td
+              class="px-3 sm:px-4 py-3 sm:py-4 text-right text-md sm:text-base font-medium tracking-wide"
+              [ngClass]="{
+                'text-yellow-200': variant() === 'quick',
+                'text-purple-300': variant() === 'event',
+              }"
+            >
+              {{ matchDuration() }}
+            </td>
+          </tr>
+
+          <tr
+            class="transition-all duration-200 bg-zinc-800"
+            [ngClass]="{
+              'hover:bg-yellow-300/5': variant() === 'quick',
+              'hover:bg-purple-500/5': variant() === 'event',
+            }"
+          >
+            <td class="px-3 sm:px-4 py-2 sm:py-4 text-zinc-300 text-left">
+              <span class="text-md sm:text-base">{{ condition4() }}</span>
+            </td>
+            <td
+              class="px-3 sm:px-4 py-3 sm:py-4 text-right text-md sm:text-base font-medium tracking-wide"
+              [ngClass]="{
+                'text-yellow-200': variant() === 'quick',
+                'text-purple-300': variant() === 'event',
+              }"
+            >
+              x{{ prizeBoost() }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  }
+</div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/environments/app-environment.prod.ts"],
+  "sourcesContent": ["export const environment = {\n  production: true,\n};"],
+  "mappings": ";AAAO,IAAM,cAAc;EACzB,YAAY;;",
+  "names": []
+}

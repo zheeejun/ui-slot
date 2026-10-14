@@ -1,0 +1,19 @@
+<div class="w-64 -mr-64 lg:mr-0 duration-100 pt-10">
+  <ul class="list-none pl-4 border-l-2 border-zinc-600 leading-5">
+    <li
+      *ngFor="let item of tocItems"
+      [ngClass]="{
+        'pl-4 mt-0 my-1': item.level === 2,
+        'my-2': item.level === 1
+      }"
+    >
+      <a
+        href="javascript:void(0)"
+        class="text-zinc-300 hover:text-zinc-400 hover:underline"
+        (click)="scrollToId(item.id)"
+      >
+        {{ item.text }}
+      </a>
+    </li>
+  </ul>
+</div>

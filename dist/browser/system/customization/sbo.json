@@ -1,0 +1,21 @@
+{
+    "version":"1.0",
+    "slot":{
+        "10044":{
+            "assets": {
+                "value": "sbo"
+            },
+            "brand_site": {
+                "UAT,default": {}
+            }
+        },
+        "10075":{
+            "assets": {
+                "value": "sbo"
+            },
+            "brand_site": {
+                "PROD,default": {}
+            }
+        }
+    }
+}

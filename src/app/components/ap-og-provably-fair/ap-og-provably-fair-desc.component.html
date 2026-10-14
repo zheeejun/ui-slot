@@ -1,0 +1,33 @@
+<div
+  class="block flex flex-col justify-center items-center space-y-2 bg-zinc-800/50 rounded-lg text-slate-400 py-2"
+>
+  <div
+    class="grid grid-cols-18 gap-2 px-2 py-2 justify-center items-start text-center"
+  >
+    <div class="col-span-5 flex flex-col items-center space-y-1">
+      <ap-icon name="document-text" class="info-icon" />
+      <h5>{{ "og_fair_serverSeed" | appI18n: "Server Seed" }}</h5>
+    </div>
+    <ap-icon name="plus" class="info-icon" />
+    <div class="col-span-6 flex flex-col items-center space-y-1">
+      <ap-icon name="user" class="info-icon" />
+      <h5>{{ "g_fair_clientSeed" | appI18n: "Client Seed" }}</h5>
+    </div>
+    <ap-icon name="plus" class="info-icon" />
+    <div class="col-span-5 flex flex-col items-center space-y-1">
+      <ap-icon name="window" class="info-icon" />
+      <h5>{{ "og_fair_nonce" | appI18n: "Nonce" }}</h5>
+    </div>
+  </div>
+  <ap-icon name="pause" class="info-icon" />
+  <div class="flex-col px-2 text-center">
+    <h5 class="font-semibold">HMAC-SHA256</h5>
+    <h6 class="break-all">
+      3cd958419808919ac4755426d47d7b8c5e456cfb4e2abe7c8eae781a9faed500
+    </h6>
+  </div>
+  <ap-icon name="arrow-down" class="info-icon" />
+  <div class="flex-col w-full">
+    <p class="text-center">53.2</p>
+  </div>
+</div>

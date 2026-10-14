@@ -1,0 +1,79 @@
+<ap-trn-tab
+  selected="quick"
+  [getQuickTabText]="getQuickTabText()"
+  [showTabEvent]="false"
+  >
+
+  <div class="flex justify-center">
+    <!-- Room 時間倒數 -->
+    <ap-trn-float-countdown [targetTime]="endTime()" variant="quick" />
+  </div>
+
+  <!-- 獎項 -->
+  <ap-trn-card-bonus
+    [currency]="trn.currencySymbol()"
+    [amount]="totalPrize()"
+    [isAnimated]="true"
+    variant="quick"
+    [multiplierTitle]="betMultiplierTitle()"
+    [multiplier]="multiplier()"
+  />
+
+  <!-- 玩家列表 -->
+  <div class="relative w-full max-w-xs">
+    <div
+      class="overflow-y-auto scrollbar-thin"
+      [ngClass]="{ 'max-h-64': showAllPlayerList() }"
+    >
+      <ap-trn-list-row
+        [currency]="trn.currencySymbol()"
+        class="min-h-16"
+        [items]="showAllPlayerList() ? playerListAll() : playerListPart()"
+        [showDividers]="false"
+        variant="quick"
+      />
+    </div>
+
+    <!-- Toggle List Button -->
+    @if (playerListAll().length > 5) {
+      <div class="flex justify-center">
+        <ap-button
+          class="-translate-y-1/3 opacity-70 hover:opacity-100 transition-opacity"
+          variant="outlined-rounded"
+          [icon]="'x-mark'"
+          [icon]="showAllPlayerList() ? 'arrow-up' : 'arrow-down'"
+          accentColor="yellow"
+          (click)="showAllPlayerList.set(!showAllPlayerList())"
+        />
+      </div>
+    }
+  </div>
+
+  @if (isPlayersListLoading()) {
+    <div class="absolute inset-0 bg-black/50">
+      <ap-loading-overlay class="size-full" />
+    </div>
+  }
+
+  <div>
+    <!-- 切換BetData開關 -->
+    <ap-toggle-switch
+      accentColor="yellow"
+      [disabled]="!isBetDataToggleEnabled()"
+      [checked]="isBetData()"
+      (checkedChange)="onToggleBetData($event)"
+    />
+
+    <!-- Popup notification -->
+    @if (showHint()) {
+      <ap-trn-game-hint
+        class="absolute"
+        [title]="getBetTitle()"
+        [message]="getQuickMessage()"
+        [multiplier]="trn.currentBetMultiplier()"
+        variant="quick"
+        (close)="showHint.set(false)"
+      />
+    }
+  </div>
+</ap-trn-tab>

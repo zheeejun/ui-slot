@@ -1,0 +1,76 @@
+
+anim_super.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/Shine_A_151
+  rotate: true
+  xy: 19, 254
+  size: 24, 26
+  orig: 30, 30
+  offset: 3, 2
+  index: -1
+FX/fx_light01
+  rotate: false
+  xy: 277, 174
+  size: 118, 104
+  orig: 150, 150
+  offset: 17, 24
+  index: -1
+FX/fx_light03
+  rotate: true
+  xy: 785, 137
+  size: 141, 144
+  orig: 150, 150
+  offset: 5, 3
+  index: -1
+FX/note_1
+  rotate: true
+  xy: 397, 164
+  size: 114, 177
+  orig: 225, 225
+  offset: 58, 24
+  index: -1
+FX/note_2
+  rotate: true
+  xy: 2, 31
+  size: 153, 190
+  orig: 225, 225
+  offset: 35, 19
+  index: -1
+FX/slash
+  rotate: false
+  xy: 47, 222
+  size: 63, 56
+  orig: 113, 109
+  offset: 21, 34
+  index: -1
+back
+  rotate: true
+  xy: 112, 186
+  size: 92, 163
+  orig: 300, 300
+  offset: 66, 58
+  index: -1
+black
+  rotate: false
+  xy: 2, 263
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+front
+  rotate: true
+  xy: 576, 151
+  size: 127, 207
+  orig: 300, 300
+  offset: 108, 45
+  index: -1
+suprewin
+  rotate: false
+  xy: 194, 2
+  size: 532, 147
+  orig: 555, 177
+  offset: 17, 9
+  index: -1

@@ -1,0 +1,118 @@
+
+anim_dninfor.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+din_frame
+  rotate: false
+  xy: 95, 329
+  size: 368, 67
+  orig: 400, 200
+  offset: 18, 70
+  index: -1
+din_fx/din_fx_000
+  rotate: false
+  xy: 291, 459
+  size: 45, 26
+  orig: 200, 100
+  offset: 11, 29
+  index: -1
+din_fx/din_fx_002
+  rotate: false
+  xy: 262, 429
+  size: 72, 27
+  orig: 200, 100
+  offset: 14, 29
+  index: -1
+din_fx/din_fx_003
+  rotate: false
+  xy: 337, 429
+  size: 114, 27
+  orig: 200, 100
+  offset: 13, 29
+  index: -1
+din_fx/din_fx_004
+  rotate: false
+  xy: 3, 401
+  size: 143, 27
+  orig: 200, 100
+  offset: 13, 29
+  index: -1
+din_fx/din_fx_005
+  rotate: false
+  xy: 149, 399
+  size: 162, 27
+  orig: 200, 100
+  offset: 20, 29
+  index: -1
+din_fx/din_fx_007
+  rotate: false
+  xy: 339, 459
+  size: 146, 26
+  orig: 200, 100
+  offset: 39, 29
+  index: -1
+din_fx/din_fx_008
+  rotate: false
+  xy: 314, 399
+  size: 148, 27
+  orig: 200, 100
+  offset: 42, 29
+  index: -1
+din_fx/din_fx_009
+  rotate: false
+  xy: 39, 431
+  size: 132, 26
+  orig: 200, 100
+  offset: 60, 29
+  index: -1
+din_fx/din_fx_010
+  rotate: false
+  xy: 174, 431
+  size: 85, 26
+  orig: 200, 100
+  offset: 109, 29
+  index: -1
+din_fx/din_fx_012
+  rotate: false
+  xy: 70, 460
+  size: 73, 25
+  orig: 200, 100
+  offset: 125, 30
+  index: -1
+din_fx/din_fx_013
+  rotate: false
+  xy: 146, 460
+  size: 70, 25
+  orig: 200, 100
+  offset: 128, 30
+  index: -1
+din_fx/din_fx_014
+  rotate: false
+  xy: 219, 460
+  size: 69, 25
+  orig: 200, 100
+  offset: 129, 30
+  index: -1
+din_fx/din_fx_015
+  rotate: false
+  xy: 3, 462
+  size: 64, 23
+  orig: 200, 100
+  offset: 134, 31
+  index: -1
+din_spark
+  rotate: true
+  xy: 3, 352
+  size: 46, 89
+  orig: 70, 115
+  offset: 11, 13
+  index: -1
+win_icon
+  rotate: false
+  xy: 3, 431
+  size: 33, 28
+  orig: 100, 100
+  offset: 34, 35
+  index: -1

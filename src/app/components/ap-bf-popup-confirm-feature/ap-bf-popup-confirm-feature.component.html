@@ -1,0 +1,47 @@
+<div class="relative size-full grid place-items-center">
+  <div class="absolute inset-0 popup-overlay" (click)="clickCancel()"></div>
+  <ap-ui-frame-popup
+    [header]="header()"
+    [size]="'mobile'"
+    class="w-11/12 md:w-3/4 lg:w-1/2"
+    (close)="clickClose()"
+  >
+    <div class="bg-white text-zinc-900 p-4 h-80 overflow-auto space-y-4">
+      @if (image()) {
+        <div class="relative mx-auto size-40 overflow-hidden">
+          <img
+            [src]="image()"
+            class="absolute inset-0 size-full object-contain"
+          />
+        </div>
+      } @else {
+        <div class="relative mx-auto size-40">
+          <ap-loading-overlay class="absolute inset-0" />
+        </div>
+      }
+      <div class="flex-col space-y-2 text-center">
+        <div id="buy-confirm-title">
+          <h1 class="font-bold">{{ price() | moneyText }}</h1>
+        </div>
+        <h3 class="p-2" [innerHTML]="description()"></h3>
+      </div>
+    </div>
+
+    <div class="flex">
+      <button
+        type="button"
+        class="basis-1/2 py-3 rounded-bl-lg bg-zinc-600 hover:bg-zinc-500 cursor-pointer"
+        (click)="clickCancel()"
+      >
+        <h1 class="text-white uppercase">{{ cancelText() }}</h1>
+      </button>
+      <button
+        type="button"
+        class="basis-1/2 py-3 rounded-br-lg bg-pink-600 hover:bg-pink-500 cursor-pointer"
+        (click)="clickConfirm()"
+      >
+        <h1 class="text-white uppercase">{{ confirmText() }}</h1>
+      </button>
+    </div>
+  </ap-ui-frame-popup>
+</div>

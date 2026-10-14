@@ -1,0 +1,66 @@
+/* 0px ~ 80px */
+@media (max-height: 80px) {
+  :root {
+    font-size: 2px;
+  }
+}
+
+/* 81px ~ 160px */
+@media (min-height: 81px) and (max-height: 160px) {
+  :root {
+    font-size: 4px;
+  }
+}
+
+/* 161px ~ 240px */
+@media (min-height: 161px) and (max-height: 240px) {
+  :root {
+    font-size: 6px;
+  }
+}
+
+/* 241px ~ 320px */
+@media (min-height: 241px) and (max-height: 320px) {
+  :root {
+    font-size: 8px;
+  }
+}
+
+/* 321px ~ 480px */
+@media (min-height: 321px) and (max-height: 480px) {
+  :root {
+    font-size: 10px;
+  }
+}
+
+/* 481px ~ 640px */
+@media (min-height: 481px) and (max-height: 640px) {
+  :root {
+    font-size: 12px;
+  }
+}
+
+/* 641px ~ 800px */
+@media (min-height: 641px) and (max-height: 800px) {
+  :root {
+    font-size: 14px;
+  }
+}
+
+html,
+body {
+  --font-sans: "Inter", "Noto Sans SC", sans-serif;
+  --font-roboto: "Inter", sans-serif;
+  --font-anton: "Anton", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+}
+
+@layer utilities {
+  .font-anton {
+    font-family: var(--font-anton);
+  }
+
+  .font-poppins {
+    font-family: var(--font-poppins);
+  }
+}

@@ -1,0 +1,39 @@
+<div class="fixed inset-0 grid place-items-center">
+  <div class="absolute inset-0 popup-overlay fade-out"></div>
+  <div class="relative w-full md:w-md">
+    <ap-ui-frame-popup
+      class="relative"
+      [class.provable-actions]="currentView() === 'provable'"
+      [header]="'og_topList_fairness' | appI18n"
+      [enableBack]="currentView() === 'provable'"
+      (back)="currentView.set('fairness')"
+      (close)="close.emit()"
+    >
+      <div class="relative px-4 pt-4">
+        <div class="rounded-lg" style="border: 1px solid #62748e">
+          <ap-ui-tab-group
+            [accentColor]="'slate'"
+            [tabs]="tabs()"
+            [selectedTab]="selectedTab()"
+            (tabChange)="selectTab($event)"
+          />
+        </div>          
+      </div>
+      <div class="h-128 overflow-y-auto space-y-6">
+          <og-fairness-seed  
+            [hidden]="selectedTab() !== 'seeds'"
+          />
+          <ap-og-fairness-verify-chicken
+            [hidden]="selectedTab() !== 'verify'"
+            [initialRtp]="rtp()"
+            [initialSeedData]="initialSeedData()"
+            (provableClicked)="clickProvable()"
+          />
+      </div>
+      <!-- Provably Fair -->
+      @if (currentView() === 'provable') {
+        <ap-og-provably-fair class="absolute inset-0 bg-zinc-800 rounded-b-xl"/>
+      }
+    </ap-ui-frame-popup>
+  </div>
+</div>

@@ -1,0 +1,244 @@
+
+anim_epic.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/fireworks_2
+  rotate: false
+  xy: 725, 381
+  size: 290, 290
+  orig: 371, 319
+  offset: 36, 18
+  index: -1
+FX/fireworks_glow
+  rotate: false
+  xy: 951, 959
+  size: 57, 57
+  orig: 75, 65
+  offset: 9, 4
+  index: -1
+FX/flare
+  rotate: false
+  xy: 62, 971
+  size: 285, 45
+  orig: 319, 71
+  offset: 10, 13
+  index: -1
+FX/particle
+  rotate: false
+  xy: 19, 1000
+  size: 16, 16
+  orig: 20, 20
+  offset: 2, 2
+  index: -1
+FX/seed/seed_00
+  rotate: true
+  xy: 349, 961
+  size: 55, 150
+  orig: 75, 165
+  offset: 11, 0
+  index: -1
+FX/seed/seed_01
+  rotate: true
+  xy: 151, 913
+  size: 56, 149
+  orig: 75, 165
+  offset: 10, 1
+  index: -1
+FX/seed/seed_02
+  rotate: true
+  xy: 302, 903
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_03
+  rotate: true
+  xy: 454, 903
+  size: 56, 144
+  orig: 75, 165
+  offset: 10, 6
+  index: -1
+FX/seed/seed_04
+  rotate: true
+  xy: 600, 903
+  size: 56, 146
+  orig: 75, 165
+  offset: 10, 4
+  index: -1
+FX/seed/seed_05
+  rotate: true
+  xy: 748, 903
+  size: 56, 148
+  orig: 75, 165
+  offset: 10, 2
+  index: -1
+FX/seed/seed_06
+  rotate: true
+  xy: 297, 845
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_07
+  rotate: true
+  xy: 2, 856
+  size: 56, 147
+  orig: 75, 165
+  offset: 10, 3
+  index: -1
+FX/seed/seed_08
+  rotate: true
+  xy: 501, 961
+  size: 55, 150
+  orig: 75, 165
+  offset: 11, 0
+  index: -1
+FX/seed/seed_09
+  rotate: true
+  xy: 653, 961
+  size: 55, 150
+  orig: 75, 165
+  offset: 11, 0
+  index: -1
+FX/seed/seed_10
+  rotate: true
+  xy: 151, 855
+  size: 56, 144
+  orig: 75, 165
+  offset: 10, 6
+  index: -1
+FX/seed/seed_11
+  rotate: true
+  xy: 449, 845
+  size: 56, 146
+  orig: 75, 165
+  offset: 10, 4
+  index: -1
+FX/seed/seed_12
+  rotate: true
+  xy: 597, 845
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_13
+  rotate: true
+  xy: 749, 845
+  size: 56, 144
+  orig: 75, 165
+  offset: 10, 6
+  index: -1
+FX/seed/seed_14
+  rotate: true
+  xy: 151, 787
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_15
+  rotate: true
+  xy: 303, 787
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_16
+  rotate: true
+  xy: 2, 798
+  size: 56, 147
+  orig: 75, 165
+  offset: 10, 3
+  index: -1
+FX/seed/seed_17
+  rotate: true
+  xy: 455, 787
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_18
+  rotate: true
+  xy: 607, 787
+  size: 56, 150
+  orig: 75, 165
+  offset: 10, 0
+  index: -1
+FX/seed/seed_19
+  rotate: true
+  xy: 805, 961
+  size: 55, 144
+  orig: 75, 165
+  offset: 11, 6
+  index: -1
+FX/seed/seed_20
+  rotate: true
+  xy: 2, 914
+  size: 55, 147
+  orig: 75, 165
+  offset: 11, 3
+  index: -1
+FX/sun
+  rotate: false
+  xy: 898, 839
+  size: 118, 118
+  orig: 150, 150
+  offset: 16, 16
+  index: -1
+black
+  rotate: false
+  xy: 2, 1001
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+board
+  rotate: false
+  xy: 2, 246
+  size: 562, 245
+  orig: 2250, 960
+  offset: 844, 460
+  index: -1
+board lights
+  rotate: false
+  xy: 2, 721
+  size: 427, 64
+  orig: 2250, 960
+  offset: 913, 564
+  index: -1
+color_paper
+  rotate: false
+  xy: 37, 993
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+explode
+  rotate: true
+  xy: 540, 493
+  size: 180, 183
+  orig: 180, 184
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 759, 673
+  size: 164, 164
+  orig: 192, 192
+  offset: 14, 14
+  index: -1
+txt_down
+  rotate: false
+  xy: 431, 675
+  size: 291, 110
+  orig: 2250, 960
+  offset: 980, 496
+  index: -1
+txt_up
+  rotate: false
+  xy: 2, 562
+  size: 536, 111
+  orig: 2250, 960
+  offset: 862, 592
+  index: -1

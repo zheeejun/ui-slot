@@ -1,0 +1,220 @@
+﻿<ap-ui-frame-page
+  *ngIf="!isSpin()"
+  id="history"
+  [header]="header()"
+  @fadeOut
+  (close)="close.emit()"
+  [enableBack]="isDetail()"
+  (back)="isDetail.set(false)"
+>
+  <div
+    *ngIf="!isDetail()"
+    class="relative z-sticky"
+    style="pointer-events: auto"
+  >
+    @if (!hideTabMenu()) {
+      <ap-tab-menu-text
+        [tabs]="walletTabs()"
+        [selectedTab]="wallet()"
+        [accentColor]="'yellow'"
+        (tabChange)="onWalletTabChange($event)"
+      />
+    }
+  </div>
+
+  <div class="relative flex flex-col h-full">
+    <!-- List -->
+    <div
+      class="relative flex-1 pt-12 overflow-hidden flex flex-col"
+    >
+      <div class="relative flex-1 bg-zinc-900 md:px-20">
+        <ap-history-list
+          *ngIf="wallet() === 'cash'"
+          [list]="cashList()"
+          [historyDateRange]="historyDateRange()"
+          [isLoadingMore]="isLoadingMore()"
+          [forcedReplayButton]="history.forceReplayDisplayed()"
+          [forcedShareButton]="history.forceShareDisplayed()"
+          [serverReplayEnabled]="serverReplayEnabled() && isReplaySupported()"
+          (share)="shareToWebSns($event)"
+          (replay)="openReplayConfirm($event)"
+          (detail)="showDetail($event)"
+          (winLoseLabelClick)="onWinLabelClick($event)"
+          (scrollNearEnd)="onScrollNearEnd()"
+          (openCalendar)="showCalendar.set(true)"
+          (copyTransaction)="copyTransaction($event)"
+        />
+        <ap-history-list
+          *ngIf="wallet() === 'bonus'"
+          [list]="bonusList()"
+          [historyDateRange]="historyDateRange()"
+          [isLoadingMore]="isLoadingMore()"
+          [forcedReplayButton]="history.forceReplayDisplayed()"
+          [forcedShareButton]="history.forceShareDisplayed()"
+          [serverReplayEnabled]="serverReplayEnabled() && isReplaySupported()"
+          (winLoseLabelClick)="onWinLabelClick($event)"
+          (share)="shareToWebSns($event)"
+          (replay)="openReplayConfirm($event)"
+          (detail)="showDetail($event)"
+          (scrollNearEnd)="onScrollNearEnd()"
+          (openCalendar)="showCalendar.set(true)"
+          (copyTransaction)="copyTransaction($event)"
+        />
+
+        @if (isLoading()) {
+          <ap-loading-overlay
+            class="absolute inset-0 popup-overlay z-overlay"
+          />
+        }
+      </div>
+
+      @if (showCalendar()) {
+        <div class="absolute inset-0 sm:hidden popup-overlay z-overlay"></div>
+        <ap-history-calender
+          class="history-list-calendar absolute top-20 z-modal p-1 sm:z-dropdown"
+          [maxDayRange]="7"
+           [accentColor]="'yellow'"
+          [startDayBeforeRestriction]="90"
+          [startDayAfterRestriction]="0"
+          clickOutside
+          (clickOutside)="showCalendar.set(false)"
+          (onConfirm)="onDateRangeConfirm($event)"
+        />
+      }
+      <!-- Bottom Info Table -->
+      <div
+        class="shrink-0 bg-zinc-950"
+        style="border-top: 1px solid rgb(113, 113, 123, 0.8)"
+      >
+        <div
+          class="grid grid-cols-3 gap-2 px-2 md:px-20 py-2 text-zinc-400 uppercase"
+        >
+          <div>
+            <th class="mb-1 text-center flex justify-center">
+              {{ "history_transaction" | appI18n: "Transaction" }}
+            </th>
+            <td class="flex justify-center text-zinc-100">
+              {{ historyNumber() }}
+            </td>
+          </div>
+          <div>
+            <th class="mb-1 text-center flex justify-center">
+              @if (isGhana()) {
+                {{ "history_total_stake_amount" | appI18n }}
+              } @else {
+                {{ "history_total_bet_amount" | appI18n: "Total Bet" }}
+              }
+            </th>
+            <td class="flex justify-center text-zinc-100">
+              {{ historyTotalBet() }}
+            </td>
+          </div>
+          <div>
+            <th class="mb-1 text-center flex justify-center">
+              {{
+                "history_total_win_amount" | appI18n: "history_total_win_amount"
+              }}
+            </th>
+            <td class="flex justify-center text-zinc-100">
+              {{ historyTotalWin() }}
+            </td>
+          </div>
+        </div>
+      </div>
+
+      @if (isLoading()) {
+        <!-- 用來遮住tab的loading操作 -->
+        <div class="absolute inset-0 z-overlay"></div>
+      }
+
+      @if (isShareLoading()) {
+        <ap-loading-overlay class="absolute inset-0 popup-overlay z-overlay" />
+      }
+    </div>
+
+    @if (isDetail()) {
+      <div class="absolute inset-0 z-overlay">
+      @if (isReelResultItem()) {
+        <!-- Detail -->
+        <history-detail
+          class="flex-1"
+          [item]="detailItem()"
+          (replay)="openReplayConfirm($event)"
+          (share)="shareToWebSns($event)"
+          (copyTransaction)="copyTransaction($event)"
+        />
+        @if (isLoading()) {
+          <ap-loading-overlay class="absolute inset-0 popup-overlay" />
+        }
+      } @else {
+        <history-detail-reward
+          class="flex-1"
+          [item]="detailItem()"
+          (copyTransaction)="copyTransaction($event)"
+        />
+      }
+      </div>
+    }
+
+    <!-- Share Window -->
+    <div *ngIf="isShare()">
+      <ap-history-popup-share
+        class="absolute inset-0 z-overlay"
+        [header]="'share_title' | appI18n: 'Share'"
+        [linkLabel]="'replay_copy_link' | appI18n: 'Copy Link'"
+        [getShareUrl]="getShareUrlForCurrentItem"
+        (close)="isShare.set(false)"
+        (copyLink)="onCopyLinkRequest($event)"
+        [item]="this.sharedItem()"
+      />
+    </div>
+  </div>
+@if (showCopyNotification()) {
+  <div
+    class="absolute inset-0 z-overlay popup-overlay flex items-center justify-center fade-out"
+  >
+    <ap-ui-frame-popup (close)="dismissCopyNotification()">
+      <div class="p-4 text-center space-y-4">
+        <ap-icon name="copy" class="popup-icon text-yellow-400" />
+        <span class="block w-full text-center">{{ copiedTransaction() }}</span>
+        <div class="h-px w-full divider-gradient-yellow opacity-80"></div>
+        <h4 class="text-zinc-300">
+          {{
+            "copy_transaction_item"
+              | appI18n: "Transaction ID copied successfully."
+          }}
+        </h4>
+      </div>
+      <div class="flex justify-center gap-6 p-6">
+        <ap-button
+          [label]="'Confirm_Btn' | appI18n: 'Confirm'"
+          [accentColor]="'yellow'"
+          [size]="'large'"
+          class="w-[50%]"
+          (clicked)="dismissCopyNotification()"
+        />
+      </div>
+    </ap-ui-frame-popup>
+  </div>}
+</ap-ui-frame-page>
+
+<!-- Replay Viewer Component -->
+@if (showReplayViewer()) {
+  <history-replay-viewer
+    [showWatchAgain]="true"
+    [showCopyLink]="true"
+    [isReplayPanel]="true"
+    (confirmReplayRequest)="onReplayConfirm()"
+    (cancelReplay)="onReplayCancel()"
+    (copyLinkRequest)="onCopyLinkRequest(replayItem())"
+    (close)="onReplayClose()"
+  />
+}
+
+@if (showReplayConfirm()) {
+  <ap-history-popup-replay
+    class="absolute inset-0 z-overlay"
+    (confirm)="onReplayConfirm()"
+    (close)="onReplayCancel()"
+  />
+}

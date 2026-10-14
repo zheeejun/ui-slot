@@ -1,0 +1,164 @@
+@if (showMainPanel()) {
+  <div
+    class="absolute top-10 left-4 duration-300 scale-85 sm:scale-100 origin-top-left"
+    [ngClass]="{ '-ml-56': !showWindow() }"
+  >
+    @if (currentPage() === "idle") {
+      <trn-idle
+        [windowOpened]="showWindow()"
+        [selectedTab]="themeType()"
+        (clickTab)="onClickTab($event)"
+        (clickOpenList)="onOpenEventPopup()"
+        (openConfirm)="confirmVariant.set($event.variant); selectedEventTrn.set($event.event); showConfirmPopup.set(true)"
+        [getCountdownStartTitle]="getCountdownStartTitle()"
+        [getCountdownEndTitle]="getCountdownEndTitle()"
+        [getDaysLabel]="getDaysLabel()"
+        [getHoursLabel]="getHoursLabel()"
+        [getMinutesLabel]="getMinutesLabel()"
+        [getSecondsLabel]="getSecondsLabel()"
+        [header]="getPopupHeader()"
+        (onClose)="showEventPopup.set(false)"
+        (selectedEvent)="onEventPopupSelected($event)"
+      />
+    }
+
+    @if (currentPage() === "matching") {
+      <trn-matching />
+    }
+
+    @if (currentPage() === "playing-quick") {
+      <trn-playing-quick />
+    }
+
+    @if (currentPage() === "playing-event") {
+      <trn-playing-event
+        (exitLeave)="showExitPopup.set(true)"
+        (matchTimeout)="onEventMatchTimeout()"
+      />
+    }
+
+    <!-- 配對中狀態列 -->
+    @if (showWaitingResult()) {
+      <div
+        class="w-full inline-flex items-center gap-1.5 rounded-md bg-emerald-800/80 px-2 py-1 font-bold text-emerald-100 transition-all duration-200 mt-1"
+      >
+        <ap-icon name="loading" class="size-4" />
+        <div class="text-xs shadow-sm tracking-wide">{{ progressLabel() }}</div>
+      </div>
+    }
+
+    <!-- 右側圓形切換/收合鈕 -->
+      <ap-button
+      class="absolute -right-5 top-26 -translate-y-1/2 flex items-center justify-center size-10"
+      [accentColor]="themeType() === 'quick' ? 'yellow' : 'purple'"
+      [icon]="'chevron-left default'"
+      [variant]="'content-rounded'"
+      (click)="showWindow.set(false)"
+    />  
+  </div>
+
+  <!-- 縮小時候的按鈕 -->
+  <ap-trn-float-button
+    class="absolute top-16 left-4 duration-300"
+    [rank]="userRank()"
+    [ngClass]="{ '-ml-28': showWindow() }"
+    [isPlaying]="isPlaying()"
+    [accentColor]="themeType()=== 'quick' ? 'yellow' : 'purple'"
+    (click)="showWindow.set(true)"
+  />
+}
+<!-- Event 選擇視窗 -->
+@if (showEventPopup()) {
+  <ap-trn-event-selection
+    [getCountdownStartTitle]="getCountdownStartTitle()"
+    [getCountdownEndTitle]="getCountdownEndTitle()"
+    [getDaysLabel]="getDaysLabel()"
+    [getHoursLabel]="getHoursLabel()"
+    [getMinutesLabel]="getMinutesLabel()"
+    [getSecondsLabel]="getSecondsLabel()"
+    class="fixed inset-0"
+    [header]="getPopupHeader()"
+    [trnList]="trn.trnEventRunningList() || []"
+    (onClose)="showEventPopup.set(false)"
+    (selectedEvent)="onEventPopupSelected($event)"
+  />
+}
+
+<!-- Game Starting Overlay -->
+@if (showGameStarting()) {
+  <ap-trn-game-starting
+    [message]="getGameStarting()"
+    class="fixed w-full bottom-1/2"
+    [accentColor]="themeType()=== 'quick' ? 'yellow' : 'purple'"
+    setAnimation="in"
+    (close)="showGameStarting.set(false)"
+  />
+}
+
+<!-- Status Tournament Bar -->
+<ap-trn-status-bar
+  class="fixed top-0 left-0 right-0 duration-200"
+  [text]="getStatusModeBar()"
+  [multiplier]="trn.betDataMultiplier()"
+  [accentColor]="themeType()=== 'quick' ? 'yellow' : 'purple'"
+  [ngClass]="showStatusBar() ? 'mt-0' : '-mt-10'"
+/>
+
+<!-- Confirmation Popup -->
+@if (showConfirmPopup()) {
+  <trn-game-confirm
+    [accentColor]="themeType()=== 'quick' ? 'yellow' : 'purple'"
+    [header]="getConfirmHeader()"
+    [selectedEvent]="confirmVariant() === 'event' ? selectedEventTrn() : trn.trnQuick()"
+    class="fixed inset-0 animate-fade animate-duration-300"
+    (close)="showConfirmPopup.set(false)"
+  />
+}
+
+<!-- Match Finished -->
+@if (showMatchFinished()) {
+  <ap-trn-game-match-finished
+    class="fixed inset-0 animate-fade animate-duration-300"
+    [accentColor]="themeType()=== 'quick' ? 'yellow' : 'purple'"
+    [header]="getHeaderFinished()"
+    [getQuickTitle]="getQuickTitle()"
+    [getEventTitle]="getEventTitle()"
+    [getConfirmButtonText]="getConfirmButtonText()"
+    (onClose)="onCloseMatchFinished()"
+    (onConfirm)="onCloseMatchFinished()"
+  />
+}
+
+<!-- Game Result Popup -->
+@if (showGameResult()) {
+  <ap-trn-game-result
+    class="fixed inset-0 animate-fade animate-duration-300"
+    [getEventTitle]="getEventTitle()"
+    [getQuickTitle]="getQuickTitle()"
+    [header]="getPopupResultHeader()"
+    [getPrizeLabel]="getPrizeLabel()"
+    [getButtonLabel]="getButtonLabel()"
+    [getEventDetailsButtonText]="getEventDetailsButtonText()"
+    [currency]="trn.currencySymbol()"
+    [accentColor]="resultTheme()"
+    [playList]="resultListPart()"
+    [rank]="resultRank()"
+    [prize]="resultPrize() || 0"
+    (clickClose)="showGameResult.set(false)"
+    (clickConfirm)="onClickResultConfirm(resultNotificationId())"
+  />
+}
+
+<!-- Game Leave Popup -->
+@if (showExitPopup()) {
+  <trn-game-event-leave-confirm
+    class="fixed inset-0 animate-fade animate-duration-300"
+    [selectedEvent]="trn.betDataTrn()"
+    (close)="showExitPopup.set(false)"
+  />
+}
+
+<trn-created-notification
+  class="fixed bottom-10 left-10"
+  (openWindow)="showWindow.set(true)"
+/>

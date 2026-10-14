@@ -1,0 +1,54 @@
+<div
+  [class]="
+    'relative bg-zinc-900 rounded-xl text-zinc-300 duration-300 select-none ' +
+    'w-[95%] md:w-md max-w-md transition-all duration-300'
+  "
+  [style.border]="getBorderStyle()"
+>
+  <div class="relative w-full">
+    <div
+      [class]="
+        'relative w-full flex justify-center items-center text-center h-16 ' +
+        getTextSizeClass() +
+        ' ' +
+        getPaddingClass()
+      "
+    >
+      <h1>{{ header() }}</h1>
+    </div>
+    <div class="relative w-full bg-zinc-800 rounded-b-xl">
+      <ng-content></ng-content>
+    </div>
+  </div>
+  <ap-button
+    class="absolute right-4 top-4"
+    [icon]="'x-mark'"
+    [size]="'small'"
+    [variant]="'outlined-rounded'"
+    [accentColor]="
+      accentColor() === 'default'
+        ? 'zinc'
+        : accentColor() === 'yellow'
+          ? 'purple'
+          : 'yellow'
+    "
+    *ngIf="enableClose()"
+    (click)="close.emit()"
+  />
+
+  <ap-button
+    class="absolute right-4 top-4"
+    [size]="'small'"
+    [icon]="'back-2-line'"
+    [variant]="'outlined-rounded'"
+    [accentColor]="
+      accentColor() === 'default'
+        ? 'zinc'
+        : accentColor() === 'yellow'
+          ? 'yellow'
+          : 'purple'
+    "
+    *ngIf="enableBack()"
+    (click)="back.emit()"
+  />
+</div>

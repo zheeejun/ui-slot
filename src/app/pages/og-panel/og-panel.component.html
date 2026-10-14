@@ -1,0 +1,366 @@
+<ng-template #manualContent>
+  <ap-og-input-bet
+    [value]="displayBet()"
+    [betLevel]="betLevel()"
+    [disabled]="isInputBetDisabled()"
+    [currencyImage]="currencyImage()"
+    (betChanged)="onInputBetChanged($event)"
+  />
+
+  <ap-og-input
+    type="difficulty"
+    [value]="difficultyString()"
+    [disabled]="isInputDifficultyDisabled()"
+    (valueChange)="onDifficultyChange($event)"
+  />
+</ng-template>
+
+<ng-template #autoFields>
+  <ap-og-input-bet
+    [value]="displayBet()"
+    [disabled]="isInputBetDisabled()"
+    [betLevel]="betLevel()"
+    [currencyImage]="currencyImage()"
+    (betChanged)="onInputBetChanged($event)"
+  />
+
+  <ap-og-input
+    type="difficulty"
+    [value]="difficultyString()"
+    [disabled]="isInputDifficultyDisabled()"
+    (valueChange)="onDifficultyChange($event)"
+  />
+
+  <ap-og-input
+    type="autoCashOut"
+    [label]="'og_guide_8' | appI18n: 'Auto Cash Out'"
+    [value]="autoCashOutStepString()"
+    [min]="1"
+    [max]="maxAutoCashOutStep()"
+    [disabled]="isAutoRunning() || isPanelBusy()"
+    (valueChange)="onAutoCashOutStepChange($event)"
+  />
+
+  <ap-og-input
+    type="numberOfBets"
+    [infinity]="true"
+    [value]="numberOfBetsString()"
+    [min]="0"
+    [step]="1"
+    [disabled]="isAutoRunning() || isPanelBusy()"
+    (valueChange)="onNumberOfBetsChange($event)"
+  />
+
+  <ap-og-input
+    type="onWin"
+    [selectedTab]="onWinSettingTab()"
+    [value]="onWinAmountString()"
+    [disabled]="isAutoRunning() || isPanelBusy()"
+    [valueDisabled]="onWinSettingTab() === 'reset'"
+    (selectedTabChange)="onWinSettingTabChange($event)"
+    (valueChange)="onWinAmountChange($event)"
+  />
+  <ap-og-input
+    type="onLoss"
+    [selectedTab]="onLossSettingTab()"
+    [value]="onLossAmountString()"
+    [disabled]="isAutoRunning() || isPanelBusy()"
+    [valueDisabled]="onLossSettingTab() === 'reset'"
+    (selectedTabChange)="onLossSettingTabChange($event)"
+    (valueChange)="onLossAmountChange($event)"
+  />
+  <ap-og-input
+    type="stopProfit"
+    [value]="stopProfitAmountString()"
+    [step]="stopAmountStep()"
+    [disabled]="isAutoRunning() || isPanelBusy()"
+    (valueChange)="onStopProfitAmountChange($event)"
+  />
+  <ap-og-input
+    type="stopLoss"
+    [value]="stopLossAmountString()"
+    [step]="stopAmountStep()"
+    [disabled]="isAutoRunning() || isPanelBusy()"
+    (valueChange)="onStopLossAmountChange($event)"
+  />
+</ng-template>
+
+<!-- Desktop -->
+@if (variant() === "desktop") {
+  <div class="flex h-full min-h-0 flex-col overflow-hidden bg-zinc-900 p-4">
+    <ap-og-input
+      type="modeTab"
+      class="block w-full shrink-0 [&>div]:max-w-none [&>div]:mx-0"
+      [selectedTab]="activeTab()"
+      [disabled]="isModeTabDisabled()"
+      (tabChange)="onTabChange($event)"
+    />
+
+    @if (activeTab() === "manual") {
+      <div class="flex-1 min-h-0 overflow-y-auto pt-4">
+        <div class="flex flex-col gap-4">
+          <ng-container [ngTemplateOutlet]="manualContent" />
+          <div class="flex flex-col gap-4">
+            @if (gameState() === "ready") {
+              <ap-button-custom
+                appPointerDownSound
+                data-no-click-sound
+                [label]="'og_bet_info_betting' | appI18n: 'Bet'"
+                [colorCode]="colorTheme()"
+                class="w-full"
+                [class.chicken-feedback-active]="isPanelBusy()"
+                [disabled]="isBetButtonDisabled()"
+                (clicked)="onBet()"
+              >
+                @if (isPanelBusy()) {
+                  <span
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <ap-icon-chicken class="size-5 chicken-busy-loop" />
+                  </span>
+                }
+              </ap-button-custom>
+            } @else {
+              <ap-button-custom
+                appPointerDownSound
+                data-no-click-sound
+                [label]="
+                  appI18n.gameStr('bet_btn_go') ??
+                  appI18n.instant('bet_btn_go', 'Go')
+                "
+                [colorCode]="colorTheme()"
+                class="w-full"
+                [class.chicken-feedback-active]="isPanelBusy()"
+                [disabled]="isPanelBusy()"
+                (clicked)="onGo()"
+              >
+                @if (isPanelBusy()) {
+                  <span
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <ap-icon-chicken class="size-5 chicken-busy-loop" />
+                  </span>
+                }
+              </ap-button-custom>
+            }
+            <ap-button-custom
+              appPointerDownSound
+              data-no-click-sound
+              [label]="'og_bet_info_cash' | appI18n: 'Cashout'"
+              [colorCode]="colorTheme()"
+              class="w-full"
+              [disabled]="isCashoutDisabled()"
+              (clicked)="onCashout()"
+            />
+          </div>
+        </div>
+        <!--  Total Profit -->
+        <div class="mb-1 block text-zinc-300 pt-4">
+          {{ "og_guide_6" | appI18n: "Total Profit" }} ({{
+            totalRateString()
+          }}x)
+        </div>
+        <div class="flex items-center gap-1">
+          <ap-input-box
+            class="min-w-0 flex-1"
+            type="number"
+            [value]="totalProfitString()"
+            [disabled]="true"
+            accentColor="slate"
+          />
+        </div>
+      </div>
+    } @else {
+      <div class="flex-1 min-h-0 overflow-y-auto pt-4">
+        <div class="flex flex-col gap-4 pb-4">
+          <ng-container [ngTemplateOutlet]="autoFields" />
+        </div>
+      </div>
+
+      <div class="shrink-0 bg-zinc-900 pt-4">
+        <ap-button-custom
+          appPointerDownSound
+          data-no-click-sound
+          [class.auto-bet-loading]="isAutoRunning()"
+          [class.chicken-feedback-active]="
+            isAutoRunning() ||
+            isPanelBusyFeedbackVisible() ||
+            isAutoStopRequested() ||
+            isAutoStopFeedbackVisible()
+          "
+          [label]="
+            isAutoStopRequested()
+              ? ('og_autobet_finishBet' | appI18n: 'Finishing Bet')
+              : isAutoRunning()
+                ? ('og_autobet_autoEnd' | appI18n: 'Stop Autobet')
+                : ('og_autobet_autoStart' | appI18n: 'Start Autobet')
+          "
+          [colorCode]="colorTheme()"
+          class="w-full"
+          [disabled]="isAutoStopRequested() || isAutoStopFeedbackVisible()"
+          (clicked)="onStartAuto()"
+        >
+          @if (isAutoStopRequested() || isAutoStopFeedbackVisible()) {
+            <span
+              class="text-base font-semibold gap-2 absolute inset-0 flex items-center justify-center"
+            >
+              {{ "og_autobet_finishBet" | appI18n: "Finishing Bet" }}
+              <ap-icon-chicken class="size-4 chicken-busy-loop" />
+            </span>
+          } @else if (isAutoRunning()) {
+            <span
+              class="text-base font-semibold gap-2 absolute inset-0 flex items-center justify-center"
+            >
+              {{ "og_autobet_autoEnd" | appI18n: "Stop Autobet" }}
+              <ap-icon-chicken class="size-4 chicken-busy-loop" />
+            </span>
+          } @else if (isPanelBusyFeedbackVisible()) {
+            <span class="absolute inset-0 flex items-center justify-center">
+              <ap-icon-chicken class="size-4 chicken-busy-loop" />
+            </span>
+          }
+        </ap-button-custom>
+      </div>
+    }
+  </div>
+  <!-- Mobile -->
+} @else {
+  <div class="flex h-full min-h-0 flex-col overflow-y-auto bg-zinc-900">
+    <div class="flex-1 min-h-0 overflow-y-auto p-4">
+      <div class="flex flex-col gap-4">
+        @if (activeTab() === "manual") {
+          <div class="flex flex-col gap-4">
+            @if (gameState() === "ready") {
+              <ap-button-custom
+                appPointerDownSound
+                data-no-click-sound
+                [label]="'og_bet_info_betting' | appI18n: 'Bet'"
+                [colorCode]="colorTheme()"
+                [size]="'large'"
+                class="w-full"
+                [class.chicken-feedback-active]="isPanelBusy()"
+                [disabled]="isBetButtonDisabled()"
+                (clicked)="onBet()"
+              >
+                @if (isPanelBusy()) {
+                  <span
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <ap-icon-chicken class="size-6 chicken-busy-loop" />
+                  </span>
+                }
+              </ap-button-custom>
+            } @else {
+              <ap-button-custom
+                appPointerDownSound
+                data-no-click-sound
+                [label]="
+                  appI18n.gameStr('bet_btn_go') ??
+                  appI18n.instant('bet_btn_go', 'Go')
+                "
+                [colorCode]="colorTheme()"
+                [size]="'large'"
+                class="w-full"
+                [class.chicken-feedback-active]="isPanelBusy()"
+                [disabled]="isPanelBusy()"
+                (clicked)="onGo()"
+              >
+                @if (isPanelBusy()) {
+                  <span
+                    class="absolute inset-0 flex items-center justify-center"
+                  >
+                    <ap-icon-chicken class="size-6 chicken-busy-loop" />
+                  </span>
+                }
+              </ap-button-custom>
+            }
+            <ap-button-custom
+              appPointerDownSound
+              data-no-click-sound
+              [label]="'og_bet_info_cash' | appI18n: 'Cashout'"
+              [colorCode]="colorTheme()"
+              [size]="'large'"
+              class="w-full"
+              [disabled]="isCashoutDisabled()"
+              (clicked)="onCashout()"
+            />
+          </div>
+          <ng-container [ngTemplateOutlet]="manualContent" />
+        } @else {
+          <ap-button-custom
+            appPointerDownSound
+            data-no-click-sound
+            [class.auto-bet-loading]="isAutoRunning()"
+            [class.chicken-feedback-active]="
+              isAutoRunning() ||
+              isPanelBusyFeedbackVisible() ||
+              isAutoStopRequested() ||
+              isAutoStopFeedbackVisible()
+            "
+            [iconPos]="'right'"
+            [label]="
+              isAutoStopRequested()
+                ? ('og_autobet_finishBet' | appI18n: 'Finishing Bet')
+                : isAutoRunning()
+                  ? ('og_autobet_autoEnd' | appI18n: 'Stop Autobet')
+                  : ('og_autobet_autoStart' | appI18n: 'Start Autobet')
+            "
+            [size]="'large'"
+            [colorCode]="colorTheme()"
+            class="w-full"
+            [disabled]="
+              (isPanelBusy() && !isAutoRunning()) ||
+              isAutoStopRequested() ||
+              isAutoStopFeedbackVisible()
+            "
+            (clicked)="onStartAuto()"
+          >
+            @if (isAutoStopRequested() || isAutoStopFeedbackVisible()) {
+              <span
+                class="text-lg font-semibold gap-2 absolute inset-0 flex items-center justify-center"
+              >
+                {{ "og_autobet_finishBet" | appI18n: "Finishing Bet" }}
+                <ap-icon-chicken class="size-5 chicken-busy-loop" />
+              </span>
+            } @else if (isAutoRunning()) {
+              <span
+                class="text-lg font-semibold gap-2 absolute inset-0 flex items-center justify-center"
+              >
+                {{ "og_autobet_autoEnd" | appI18n: "Stop Autobet" }}
+                <ap-icon-chicken class="size-5 chicken-busy-loop" />
+              </span>
+            }
+          </ap-button-custom>
+          <ng-container [ngTemplateOutlet]="autoFields" />
+        }
+        <!--  Total Profit -->
+        <div class="block text-zinc-300 pt-2">
+          {{ "og_guide_6" | appI18n: "Total Profit" }} ({{
+            totalRateString()
+          }}x)
+        </div>
+        <div class="flex items-center -mt-3">
+          <ap-input-box
+            class="min-w-0 flex-1"
+            type="number"
+            [value]="totalProfitString()"
+            [disabled]="true"
+            accentColor="slate"
+          />
+        </div>
+        <ap-og-input
+          type="modeTab"
+          class="block w-full shrink-0 [&>div]:mx-0 [&>div]:max-w-none"
+          [selectedTab]="activeTab()"
+          [disabled]="isModeTabDisabled()"
+          (tabChange)="onTabChange($event)"
+        />
+      </div>
+    </div>
+  </div>
+}
+<og-panel-popup
+  [isVisible]="showInsufficientBalancePopup()"
+  [mode]="'insufficient'"
+  (confirm)="onInsufficientBalancePopupConfirm()"
+/>

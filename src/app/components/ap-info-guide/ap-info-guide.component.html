@@ -1,0 +1,34 @@
+@if (variant() === "description") {
+  <div class="flex items-center gap-2 p-2">
+    <!-- Left: Icon -->
+    <div class="flex-shrink-0">
+      @if (icon()) {<ap-icon [name]="icon()!" class="sm:size-10 size-8" />}
+      @else {<div class="sm:size-16 size-14"><ng-content></ng-content></div>}
+    </div>
+    <!-- Right: single item -->
+    <ul class="list-inside list-none">
+      <li>{{ getItem1() }}</li>
+    </ul>
+  </div>
+} @else {
+  <div class="flex items-start gap-4 p-4">
+    <!-- Left: Icon -->
+    <div class="flex-shrink-0">
+      @if (icon()) { <ap-icon [name]="icon()!" class="sm:size-16 size-14" />}
+      @else {<div class="sm:size-16 size-14"><ng-content></ng-content></div>}
+    </div>
+
+    <!-- Right: Title and List -->
+    <div class="flex-1">
+      <h4 class="text-yellow-200 mb-2 uppercase">
+        {{ title() }}
+      </h4>
+      <ul class="list-inside space-y-2 list-none">
+        <li>{{ getItem1() }}</li>
+        @if (getItem2()) {
+          <li>{{ getItem2() }}</li>
+        }
+      </ul>
+    </div>
+  </div>
+}

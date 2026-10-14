@@ -1,0 +1,33 @@
+<div class="relative size-full grid place-items-center">
+  <div
+    class="absolute inset-0 popup-overlay fade-out"
+    (click)="onCancel()"
+  ></div>
+  <ap-ui-frame-popup
+    [header]="header()"
+    [size]="'mobile'"
+    class="w-11/12 md:w-3/4 lg:w-1/2"
+    (close)="close.emit()"
+  >
+    <div class="p-4 text-center space-y-4">
+      <ap-icon [name]="'play-circle'" class="text-yellow-400 popup-icon" />
+      <div class="h-px divider-gradient-yellow opacity-80"></div>
+      <h4 class="text-zinc-300" [innerHTML]="description()"></h4>
+    </div>
+
+    <div class="flex justify-center gap-6 p-6">
+      <ap-button
+        class="w-full [&>button]:w-full"
+        [accentColor]="'zinc'"
+        [label]="cancelText()"
+        (click)="onCancel()"
+      />
+      <ap-button
+        class="w-full [&>button]:w-full"
+        [accentColor]="'yellow'"
+        [label]="confirmText()"
+        (click)="onConfirm()"
+      />
+    </div>
+  </ap-ui-frame-popup>
+</div>

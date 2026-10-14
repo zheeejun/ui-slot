@@ -1,0 +1,391 @@
+
+anim_lv_up_bg.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 728, 822
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+bg_light
+  rotate: true
+  xy: 533, 774
+  size: 248, 193
+  orig: 250, 225
+  offset: 2, 19
+  index: -1
+only_star
+  rotate: true
+  xy: 322, 771
+  size: 251, 209
+  orig: 350, 350
+  offset: 50, 45
+  index: -1
+spotlight
+  rotate: true
+  xy: 322, 722
+  size: 47, 470
+  orig: 128, 512
+  offset: 40, 0
+  index: -1
+star_04
+  rotate: false
+  xy: 794, 756
+  size: 64, 64
+  orig: 90, 90
+  offset: 13, 13
+  index: -1
+up_light
+  rotate: false
+  xy: 2, 675
+  size: 318, 347
+  orig: 360, 385
+  offset: 17, 15
+  index: -1
+up_light_02
+  rotate: true
+  xy: 2, 340
+  size: 333, 324
+  orig: 360, 360
+  offset: 27, 27
+  index: -1
+vip_slow_p/slow_p_00002
+  rotate: false
+  xy: 1578, 127
+  size: 140, 140
+  orig: 250, 225
+  offset: 46, 38
+  index: -1
+vip_slow_p/slow_p_00004
+  rotate: true
+  xy: 1292, 244
+  size: 148, 144
+  orig: 250, 225
+  offset: 48, 35
+  index: -1
+vip_slow_p/slow_p_00006
+  rotate: true
+  xy: 1548, 425
+  size: 150, 139
+  orig: 250, 225
+  offset: 49, 39
+  index: -1
+vip_slow_p/slow_p_00008
+  rotate: true
+  xy: 1438, 269
+  size: 147, 142
+  orig: 250, 225
+  offset: 48, 35
+  index: -1
+vip_slow_p/slow_p_00010
+  rotate: true
+  xy: 1547, 577
+  size: 149, 142
+  orig: 250, 225
+  offset: 44, 33
+  index: -1
+vip_slow_p/slow_p_00012
+  rotate: true
+  xy: 1438, 121
+  size: 146, 138
+  orig: 250, 225
+  offset: 47, 36
+  index: -1
+vip_slow_p/slow_p_00014
+  rotate: true
+  xy: 1585, 734
+  size: 148, 142
+  orig: 250, 225
+  offset: 47, 33
+  index: -1
+vip_slow_p/slow_p_00016
+  rotate: true
+  xy: 1402, 418
+  size: 148, 144
+  orig: 250, 225
+  offset: 47, 32
+  index: -1
+vip_slow_p/slow_p_00018
+  rotate: true
+  xy: 1291, 55
+  size: 149, 145
+  orig: 250, 225
+  offset: 43, 32
+  index: -1
+vip_slow_p/slow_p_00020
+  rotate: true
+  xy: 1398, 568
+  size: 152, 147
+  orig: 250, 225
+  offset: 45, 30
+  index: -1
+vip_slow_p/slow_p_00022
+  rotate: true
+  xy: 1144, 53
+  size: 151, 145
+  orig: 250, 225
+  offset: 43, 31
+  index: -1
+vip_slow_p/slow_p_00024
+  rotate: false
+  xy: 1576, 884
+  size: 152, 138
+  orig: 250, 225
+  offset: 46, 36
+  index: -1
+vip_slow_p/slow_p_00026
+  rotate: true
+  xy: 1144, 206
+  size: 155, 146
+  orig: 250, 225
+  offset: 44, 30
+  index: -1
+vip_slow_p/slow_p_00028
+  rotate: true
+  xy: 1436, 728
+  size: 151, 147
+  orig: 250, 225
+  offset: 45, 29
+  index: -1
+vip_slow_p/slow_p_00030
+  rotate: true
+  xy: 1136, 714
+  size: 161, 148
+  orig: 250, 225
+  offset: 39, 28
+  index: -1
+vip_slow_p/slow_p_00032
+  rotate: true
+  xy: 1099, 528
+  size: 159, 150
+  orig: 250, 225
+  offset: 42, 28
+  index: -1
+vip_slow_p/slow_p_00034
+  rotate: true
+  xy: 960, 241
+  size: 166, 148
+  orig: 250, 225
+  offset: 36, 28
+  index: -1
+vip_slow_p/slow_p_00036
+  rotate: true
+  xy: 1251, 552
+  size: 160, 145
+  orig: 250, 225
+  offset: 42, 28
+  index: -1
+vip_slow_p/slow_p_00038
+  rotate: true
+  xy: 930, 859
+  size: 163, 148
+  orig: 250, 225
+  offset: 36, 27
+  index: -1
+vip_slow_p/slow_p_00040
+  rotate: true
+  xy: 1256, 394
+  size: 156, 144
+  orig: 250, 225
+  offset: 41, 27
+  index: -1
+vip_slow_p/slow_p_00042
+  rotate: false
+  xy: 1080, 877
+  size: 165, 145
+  orig: 250, 225
+  offset: 35, 28
+  index: -1
+vip_slow_p/slow_p_00044
+  rotate: false
+  xy: 1415, 881
+  size: 159, 141
+  orig: 250, 225
+  offset: 41, 28
+  index: -1
+vip_slow_p/slow_p_00046
+  rotate: true
+  xy: 950, 409
+  size: 170, 147
+  orig: 250, 225
+  offset: 35, 26
+  index: -1
+vip_slow_p/slow_p_00048
+  rotate: true
+  xy: 1110, 363
+  size: 163, 144
+  orig: 250, 225
+  offset: 40, 29
+  index: -1
+vip_slow_p/slow_p_00050
+  rotate: true
+  xy: 645, 391
+  size: 172, 153
+  orig: 250, 225
+  offset: 34, 24
+  index: -1
+vip_slow_p/slow_p_00052
+  rotate: true
+  xy: 994, 73
+  size: 166, 148
+  orig: 250, 225
+  offset: 38, 25
+  index: -1
+vip_slow_p/slow_p_00054
+  rotate: false
+  xy: 1247, 880
+  size: 166, 142
+  orig: 250, 225
+  offset: 36, 28
+  index: -1
+vip_slow_p/slow_p_00056
+  rotate: true
+  xy: 991, 689
+  size: 168, 143
+  orig: 250, 225
+  offset: 36, 26
+  index: -1
+vip_slow_p/slow_p_00058
+  rotate: true
+  xy: 846, 49
+  size: 169, 146
+  orig: 250, 225
+  offset: 35, 24
+  index: -1
+vip_slow_p/slow_p_00060
+  rotate: true
+  xy: 662, 217
+  size: 172, 149
+  orig: 250, 225
+  offset: 34, 24
+  index: -1
+vip_slow_p/slow_p_00062
+  rotate: false
+  xy: 668, 570
+  size: 171, 150
+  orig: 250, 225
+  offset: 34, 24
+  index: -1
+vip_slow_p/slow_p_00064
+  rotate: true
+  xy: 813, 220
+  size: 173, 145
+  orig: 250, 225
+  offset: 34, 27
+  index: -1
+vip_slow_p/slow_p_00066
+  rotate: true
+  xy: 800, 395
+  size: 173, 148
+  orig: 250, 225
+  offset: 34, 25
+  index: -1
+vip_slow_p/slow_p_00068
+  rotate: true
+  xy: 697, 44
+  size: 171, 147
+  orig: 250, 225
+  offset: 35, 27
+  index: -1
+vip_slow_p/slow_p_00070
+  rotate: true
+  xy: 841, 581
+  size: 173, 148
+  orig: 250, 225
+  offset: 35, 29
+  index: -1
+vip_slow_p/slow_p_00072
+  rotate: false
+  xy: 488, 565
+  size: 178, 155
+  orig: 250, 225
+  offset: 33, 23
+  index: -1
+vip_slow_p/slow_p_00074
+  rotate: true
+  xy: 163, 161
+  size: 177, 160
+  orig: 250, 225
+  offset: 32, 25
+  index: -1
+vip_slow_p/slow_p_00076
+  rotate: false
+  xy: 2, 2
+  size: 178, 152
+  orig: 250, 225
+  offset: 31, 27
+  index: -1
+vip_slow_p/slow_p_00078
+  rotate: true
+  xy: 541, 4
+  size: 179, 154
+  orig: 250, 225
+  offset: 33, 28
+  index: -1
+vip_slow_p/slow_p_00080
+  rotate: true
+  xy: 505, 185
+  size: 178, 155
+  orig: 250, 225
+  offset: 33, 29
+  index: -1
+vip_slow_p/slow_p_00082
+  rotate: true
+  xy: 328, 363
+  size: 178, 156
+  orig: 250, 225
+  offset: 33, 27
+  index: -1
+vip_slow_p/slow_p_00084
+  rotate: true
+  xy: 2, 156
+  size: 182, 159
+  orig: 250, 225
+  offset: 30, 27
+  index: -1
+vip_slow_p/slow_p_00086
+  rotate: false
+  xy: 325, 179
+  size: 178, 159
+  orig: 250, 225
+  offset: 32, 28
+  index: -1
+vip_slow_p/slow_p_00088
+  rotate: false
+  xy: 182, 2
+  size: 177, 157
+  orig: 250, 225
+  offset: 31, 28
+  index: -1
+vip_slow_p/slow_p_00090
+  rotate: true
+  xy: 486, 365
+  size: 176, 157
+  orig: 250, 225
+  offset: 32, 30
+  index: -1
+vip_slow_p/slow_p_00092
+  rotate: false
+  xy: 361, 19
+  size: 178, 158
+  orig: 250, 225
+  offset: 31, 32
+  index: -1
+vip_slow_p/slow_p_00094
+  rotate: true
+  xy: 328, 543
+  size: 177, 158
+  orig: 250, 225
+  offset: 31, 32
+  index: -1
+vip_slow_p/slow_p_00096
+  rotate: false
+  xy: 1286, 722
+  size: 148, 156
+  orig: 250, 225
+  offset: 59, 32
+  index: -1

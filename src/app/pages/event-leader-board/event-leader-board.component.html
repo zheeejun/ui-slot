@@ -1,0 +1,343 @@
+<div class="page-container" (click)="closeshowInfoModal()">
+  <div class="sticky z-sticky top-0 bg-zinc-900 px-4 pt-6 pb-4 shrink-0">
+    <ap-ui-tab-group
+      [tabs]="tabs()"
+      [selectedTab]="selectedTab()"
+      (tabChange)="selectTab($event)"
+    />
+  </div>
+  <div
+    class="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-12 w-full md:mt-4"
+  >
+    <!-- Personal/all players toggle -->
+    <div class="flex justify-center w-full md:w-auto mt-2 mb-2">
+      <button
+        (click)="onToggleClick()"
+        class="flex items-center gap-3 font-bold transition-colors duration-200 cursor-pointer"
+      >
+        <h4
+          class="transition-colors cursor-pointer"
+          [class.text-yellow-300]="!isAllPlayers()"
+          [class.text-zinc-500]="isAllPlayers()"
+        >
+          {{ "Personal_Toggle" | appI18n: "PERSONAL" }}
+        </h4>
+        <div
+          class="relative h-7 w-14 rounded-full transition-colors duration-200 flex-shrink-0 bg-yellow-500"
+        >
+          <div
+            class="absolute left-1 h-5 w-5 rounded-full border border-amber-500 bg-white shadow transition-all duration-200"
+            [style.transform]="getPlayerToggleTransform()"
+          ></div>
+        </div>
+        <h4
+          class="transition-colors cursor-pointer"
+          [class.text-yellow-300]="isAllPlayers()"
+          [class.text-zinc-500]="!isAllPlayers()"
+        >
+          {{ "AllPlayers_Toggle" | appI18n: "ALL PLAYERS" }}
+        </h4>
+      </button>
+    </div>
+  </div>
+
+  @if (leaderBoardItems().length === 0) {
+    <div
+      class="flex flex-col items-center justify-center h-full text-zinc-500 pointer-events-none fade-down"
+    >
+      <div class="flex flex-col items-center">
+        <ap-icon name="ranking default" class="image-icon" />
+      </div>
+
+      <h2 class="italic">
+        {{ "NoData_Text" | appI18n: "No rankings available yet." }}
+      </h2>
+    </div>
+  }
+  <div
+    [class.hidden]="leaderBoardItems().length === 0"
+    class="relative bg-zinc-900 gap-1 pl-1 pr-3 md:px-20 sm:mt-6 mt-6 flex-1 min-h-0"
+  >
+    <div class="leaderboard-table-shell">
+      <table class="leaderboard-table text-zinc-100">
+        <colgroup>
+          <col class="leaderboard-col-rank" />
+          <col class="leaderboard-col-game" />
+          <col class="leaderboard-col-multiplier" />
+          <col class="leaderboard-col-prize" />
+          <col class="leaderboard-col-spin" />
+          <col class="leaderboard-col-replay" />
+        </colgroup>
+        <thead class="z-dropdown bg-zinc-900 h-10">
+          <tr
+            class="text-md md:text-sm text-yellow-300 h-10 uppercase bg-yellow-300/10"
+          >
+            <th class="text-center min-w-[1rem] whitespace-nowrap px-2">
+              {{ "Ranking_ColumnText" | appI18n: "#" }}
+            </th>
+            <th class="text-left px-2">
+              {{ "GameName_ColumnText" | appI18n: "GAME" }}
+            </th>
+            <th>
+              <button
+                (click)="onMultiplierSortClick()"
+                class="w-full min-h-8 flex items-center gap-1 hover:text-yellow-100 cursor-pointer transition-colors justify-center uppercase"
+              >
+                <div class="flex items-center gap-1 break-keep">
+                  {{ "Multiplier_ColumnText" | appI18n: "MULT." }}
+                </div>
+
+                <ap-icon [name]="getMultiplierSortIcon()" class="size-5" />
+              </button>
+            </th>
+            <th>
+              <button
+                (click)="onPrizeSortClick()"
+                class="w-full min-h-8 flex items-center gap-1 hover:text-yellow-100 cursor-pointer transition-colors justify-center uppercase"
+              >
+                <div class="flex items-center gap-1 break-keep">
+                  {{ "Prize_ColumnText" | appI18n: "PRIZE" }}
+                </div>
+                <ap-icon [name]="getPrizeSortIcon()" class="size-5" />
+              </button>
+            </th>
+            <th>
+              <button
+                (click)="onSpinSortClick()"
+                class="w-full min-h-8 flex items-center justify-center"
+              >
+                <div class="flex items-center">
+                  <div
+                    class="flex hover:text-yellow-100 cursor-pointer transition-colors items-center uppercase"
+                  >
+                    {{ "Spin_ColumnText" | appI18n: "SPIN" }}
+                    <ap-icon
+                      [name]="getSpinSortIcon()"
+                      class="sm:size-5 size-5 ml-1"
+                    />
+                  </div>
+                  <div class="relative inline-flex items-center">
+                    <ap-icon
+                      [name]="'exclamation-circle'"
+                      class="sm:size-5 size-5 text-zinc-400 hover:text-white cursor-pointer transition-colors mr-1"
+                      (click)="openInfoModal($event)"
+                    />
+                    @if (showInfoModal()) {
+                      <div
+                        class="absolute right-0 top-full z-popover w-40 mr-2 sm:mr-0 mt-2 rounded-lg bg-zinc-900 p-2 shadow-md animate-duration-300 transition-all"
+                        style="border: 1px solid #71717a"
+                        (click)="$event.stopPropagation()"
+                      >
+                        <h6 class="text-left text-zinc-300">
+                          {{
+                            "Spin_Info"
+                              | appI18n
+                                : "Spin means the total number of spins played during the event. The more you spin, the higher your chances of winning!"
+                          }}
+                        </h6>
+                      </div>
+                    }
+                  </div>
+                </div>
+              </button>
+            </th>
+            <th class="hidden sm:table-cell min-w-[3.5rem]">
+              <!--{{ "Replay_ColumnText" | appI18n: "REPLAY" }}-->
+            </th>
+          </tr>
+        </thead>
+      </table>
+
+      <div #listContainer class="leaderboard-scroll-body">
+        <table class="leaderboard-table text-zinc-100">
+          <colgroup>
+            <col class="leaderboard-col-rank" />
+            <col class="leaderboard-col-game" />
+            <col class="leaderboard-col-multiplier" />
+            <col class="leaderboard-col-prize" />
+            <col class="leaderboard-col-spin" />
+            <col class="leaderboard-col-replay" />
+          </colgroup>
+          <tbody>
+            @for (item of paginatedItems(); track $index) {
+              <tr
+                [class]="
+                  ' relative animate-fade-down animate-duration-300 hover:bg-zinc-600/50 ' +
+                  ($index % 2 === 0 ? ' bg-zinc-800' : ' bg-zinc-900')
+                "
+              >
+                <td class="text-center font-medium text-white">
+                  <div
+                    class="flex flex-col items-center justify-center gap-2 py-1"
+                  >
+                    <div class="flex items-center justify-center">
+                      @if (item.sortedIndex === 1) {
+                        <ap-icon-badge-first class="sm:size-9 size-10" />
+                      } @else if (item.sortedIndex === 2) {
+                        <ap-icon-badge-second class="sm:size-9 size-10" />
+                      } @else if (item.sortedIndex === 3) {
+                        <ap-icon-badge-third class="sm:size-9 size-10" />
+                      } @else {
+                        {{ item.sortedIndex }}
+                      }
+                    </div>
+
+                    @if (
+                      (isOffline() ||
+                        (api.loginResult()?.note?.leader_board ?? 0) >= 2) &&
+                      checkGameReplaySupported(item.gameId)
+                    ) {
+                      <div class="sm:hidden">
+                        <ap-button
+                          [size]="'small'"
+                          [icon]="'play'"
+                          [accentColor]="'pink'"
+                          [iconPos]="'right'"
+                          [variant]="'content-rounded'"
+                          (click)="onReplayClick(item)"
+                        />
+                        <!--<ap-icon name="autoplay default" class="size-8"></ap-icon>-->
+                      </div>
+                    }
+                  </div>
+                </td>
+                <td class="py-2 text-left font-medium">
+                  <div
+                    class="px-2 flex flex-col sm:flex-row relative items-start sm:items-center gap-1 sm:gap-2"
+                  >
+                    <div
+                      class="w-16 h-10 sm:w-14 sm:h-8 rounded shrink-0 overflow-hidden border-banner"
+                    >
+                      <img
+                        [src]="item.image"
+                        [alt]="item.game + ' banner'"
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="flex flex-col items-start">
+                      <div class="text-yellow-200 line-clamp-2">
+                        {{ item.game }}
+                      </div>
+                      <time class="text-left text-zinc-400">
+                        {{ getDateString(item.time) }}
+                      </time>
+                    </div>
+                  </div>
+                </td>
+
+                <td class="px-1 sm:px-2 text-center break-all align-center">
+                  {{ item.multiplier }}x
+                </td>
+                <td
+                  class="px-1 sm:px-2 text-center font-medium ext-base sm:text-md align-middle"
+                >
+                  <!-- Width anchor: invisible span sized to rank-1 prize text keeps all rows the same width -->
+                  <div class="relative justify-center items-center">
+                    @if (referencePrizeItem(); as ref) {
+                      <span
+                        class="invisible whitespace-nowrap select-none pointer-events-none hidden"
+                        aria-hidden="true"
+                        >{{
+                          ref.prize
+                            | moneyText
+                              : {
+                                  customCurrencySymbol: ref.currencySymbol,
+                                  nonBreakingSpace: true,
+                                }
+                        }}</span
+                      >
+                    }
+                    @if (isMobile()) {
+                      <div
+                        class="relative w-full text-center flex flex-col items-center justify-center"
+                        [ngClass]="
+                          isPrizeLong(item.prize) ? 'text-sm' : 'text-base'
+                        "
+                      >
+                        {{
+                          item.prize
+                            | moneyText
+                              : {
+                                  customCurrencySymbol: item.currencySymbol,
+                                  nonBreakingSpace: true,
+                                }
+                        }}
+                      </div>
+                    } @else {
+                      <div
+                        class="relative w-full text-center items-center justify-center"
+                        [ngClass]="
+                          isPrizeLong(item.prize) ? 'text-xs' : 'text-sm'
+                        "
+                      >
+                        {{
+                          item.prize
+                            | moneyText
+                              : {
+                                  customCurrencySymbol: item.currencySymbol,
+                                  addSpace: false,
+                                }
+                        }}
+                      </div>
+                    }
+                  </div>
+                </td>
+                <td
+                  class="text-center font-medium text-base sm:text-md break-all align-middle"
+                >
+                  {{ item.spin }}
+                </td>
+                <td
+                  class="hidden sm:table-cell text-center min-w-[3.5rem] pr-2"
+                >
+                  @if (
+                    (isOffline() ||
+                      (api.loginResult()?.note?.leader_board ?? 0) >= 2) &&
+                    checkGameReplaySupported(item.gameId)
+                  ) {
+                    <ap-button
+                      [size]="'small'"
+                      [icon]="'play'"
+                      [variant]="'content-rounded'"
+                      [accentColor]="'zinc'"
+                      (click)="onReplayClick(item)"
+                    />
+                  }
+                </td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div
+    [class.hidden]="leaderBoardItems().length === 0"
+    class="relative shrink-0 py-2"
+  >
+    <ap-ui-pagination
+      [variant]="'quick'"
+      [config]="paginationConfig()"
+      (pageChanged)="onPageChanged($event)"
+    />
+  </div>
+
+  @if (showReplayConfirm()) {
+    <ap-history-popup-replay
+      class="fixed inset-0"
+      (confirm)="onReplayConfirm()"
+      (close)="onReplayCancel()"
+    />
+  }
+
+  <!-- Replay Viewer Component -->
+  @if (showReplayViewer()) {
+    <history-replay-viewer
+      [isReplayPanel]="true"
+      (copyLinkRequest)="onCopyLinkRequest()"
+      (close)="onReplayClose()"
+    />
+  }
+</div>

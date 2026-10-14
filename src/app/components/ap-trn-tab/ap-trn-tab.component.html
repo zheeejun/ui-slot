@@ -1,0 +1,66 @@
+<!-- Tab Buttons -->
+<div class="top-0 left-0 flex relative">
+  <!--Quick-->
+  @if (showTabQuick()) {
+    <button
+      (click)="onTabClick('quick')"
+      class="h-10 font-anton font-bold text-2xl bg-black/80 tracking-wide border-2 border-b-0 rounded-t-xl duration-200"
+      [ngClass]="{
+        'text-yellow-300 border-yellow-300': currentTab() === 'quick',
+        'text-zinc-500 border-zinc-600': currentTab() !== 'quick',
+        'hover:bg-zinc-800 cursor-pointer': !isTabQuickDisabled() && showTabEvent(),
+        'cursor-not-allowed': isTabQuickDisabled()
+      }"
+      [class.w-22]="showTabEvent()"
+      [class.w-44]="!showTabEvent()"
+      [class.px-4]="!showTabEvent()"
+      [disabled]="isTabQuickDisabled()"
+    >
+      @if (showTabEvent()) {
+        <span>{{ getQuickTabText() }}</span>
+      } @else {
+        <ap-trn-card-title variant="quick" [title]="getQuickTabText()" size="small" />
+      }
+    </button>
+  }
+  <!--Event-->
+  @if (showTabEvent()) {
+    <button
+      (click)="onTabClick('event')"
+      class="h-10 font-anton font-bold text-2xl bg-black/80 tracking-wide border-2 border-b-0 rounded-t-xl duration-200"
+      [ngClass]="{
+        'text-purple-300 border-purple-300': currentTab() === 'event',
+        'text-zinc-500 border-zinc-600': currentTab() !== 'event',
+        'hover:bg-zinc-800 cursor-pointer': !isTabEventDisabled() && showTabQuick(),
+        'cursor-not-allowed': isTabEventDisabled()
+      }"
+      [class.w-22]="showTabQuick()"
+      [class.w-44]="!showTabQuick()"
+      [class.px-4]="!showTabQuick()"
+      [disabled]="isTabEventDisabled()"
+    >
+      @if (showTabQuick()) {
+        <span>{{ getEventTabText() }}</span>
+      } @else {
+        <ap-trn-card-title variant="event" [title]="getEventTabText()" size="small" />
+      }
+    </button>
+  }
+</div>
+<!-- Main Window -->
+<div
+  class="relative w-44 min-h-auto bg-black/80 border-2 rounded-b-lg cursor-pointer"
+  (click)="onBackgroundClick($event, contentEl)"
+  [ngClass]="{
+    'border-yellow-300': currentTab() === 'quick',
+    'border-purple-300': currentTab() === 'event'
+  }"
+>
+  <!-- Content -->
+  <div
+    #contentEl
+    class="duration-200 pt-1 pb-2 flex flex-col items-center gap-1 "
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,70 @@
+<div class="flex items-center justify-center gap-2 w-full">
+  @if (!isExpired()) {
+    <!-- Days -->
+    @if (isShowDaysHours()) {
+      <div class="flex relative items-center gap-1">
+        <div
+          class="font-anton text-3xl tracking-[.05em]"
+          [ngClass]="{
+            'text-yellow-200': accentColor() === 'yellow',
+            'text-purple-200': accentColor() === 'purple',
+          }"
+        >
+          {{ formatNumber(timeRemaining().days) }}
+        </div>
+        <h4 class="font-anton text-zinc-400 tracking-wide ml-1">DD</h4>
+      </div>
+    }
+
+    <!-- Hours -->
+    @if (isShowDaysHours() || isShowHoursMinutes()) {
+      <div class="flex relative items-center gap-1">
+        <div
+          class="font-anton text-3xl tracking-[.05em] drop-shadow-md"
+          [ngClass]="{
+            'text-yellow-200': accentColor() === 'yellow',
+            'text-purple-200': accentColor() === 'purple',
+          }"
+        >
+          {{ formatNumber(timeRemaining().hours) }}
+        </div>
+        <h4 class="font-anton text-zinc-400 tracking-wide ml-1">HH</h4>
+      </div>
+    }
+
+    <!-- Minutes -->
+    @if (isShowHoursMinutes() || isShowMinutesSeconds()) {
+      <div class="flex relative items-center gap-1">
+        <div
+          class="font-anton text-3xl tracking-[.05em]"
+          [ngClass]="{
+            'text-yellow-200': accentColor() === 'yellow',
+            'text-purple-200': accentColor() === 'purple',
+          }"
+        >
+          {{ formatNumber(timeRemaining().minutes) }}
+        </div>
+        <h4 class="font-anton text-zinc-400 tracking-wide ml-1">MM</h4>
+      </div>
+    }
+
+    <!-- Seconds -->
+    @if (isShowMinutesSeconds()) {
+      <div class="flex relative items-center">
+        <div
+          class="font-anton text-3xl tracking-[.05em]"
+          [ngClass]="{
+            'text-yellow-200': accentColor() === 'yellow',
+            'text-purple-200': accentColor() === 'purple',
+          }"
+        >
+          {{ formatNumber(timeRemaining().seconds) }}
+        </div>
+        <h4 class="font-anton text-zinc-400 tracking-wide ml-1">SS</h4>
+      </div>
+    }
+  } @else {
+    <!-- Expired Message -->
+    <h2 class="text-red-400">EXPIRED</h2>
+  }
+</div>

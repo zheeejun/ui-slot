@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/ap-components-lib/ap-icon-badge-circle/ap-icon-badge-circle.css"],
+  "sourcesContent": [":host {\n  display: inline-block;\n  aspect-ratio: 1; \n}\n\n.inner-svg {\n  width: 100%;\n  height: 100%;\n}"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,gBAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,UAAA;AACF;",
+  "names": []
+}

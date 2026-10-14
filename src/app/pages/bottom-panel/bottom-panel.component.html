@@ -1,0 +1,583 @@
+<div
+  class="relative size-full"
+  style="background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent)"
+  [class.flex]="isLandscape()"
+  [class.flex-col]="isLandscape()"
+>
+  <top-status-bar
+    [fontSize]="topStatusBarFontSize()"
+    class="absolute top-0 left-1/2 flex items-center justify-center"
+    style="transform: translateX(-50%)"
+  />
+
+  <!-- Buttons Area -->
+  <div
+    class="absolute inset-0 "
+    [ngClass]="{
+      'bottom-1/15': isLandscape(),
+      'bottom-1/6': isPortrait(),
+    }"
+  >
+    <!-- 左邊第一個按鈕 -->
+    <ap-icon-badge
+      class="absolute -translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+      [ngClass]="[
+        campaignButtonPositionClass(),
+        !isCampaignDisabled() ? 'cursor-pointer transition-transform hover:scale-105 active:scale-95' : '',
+      ]"
+      [class.invisible]="isCampaignHidden()"
+      [style.height]="buttonIconSize()"
+      [hasBadge]="campaignHasBadge()"
+      [disabled]="isCampaignDisabled()"
+      (click)="clickCampaign()"
+    >
+      <ap-icon-campaign-circle />
+    </ap-icon-badge>
+
+    <!-- 左邊第二個按鈕 -->
+    <ap-icon-badge
+      class="absolute -translate-x-1/2 -translate-y-1/2 cursor-pointer pointer-events-auto"
+      [ngClass]="[
+        featureButtonPositionClass(),
+        !isFeatureDisabled() ? 'transition-transform hover:scale-105 active:scale-95' : '',
+      ]"
+      [style.height]="buttonIconSize()"
+      [disabled]="isFeatureDisabled()"
+      (click)="clickFeature()"
+    >
+      <ap-icon-buy-feature-circle
+        [variant]="isFeatureCancelled() ? 'cancel' : 'default'"
+      />
+    </ap-icon-badge>
+
+    <!-- 右邊第二個按鈕 -->
+    <div
+      class="absolute translate-x-1/2 -translate-y-1/2 pointer-events-auto"
+      [ngClass]="autoplayButtonPositionClass()"
+    >
+      <div
+        class="relative shrink-0"
+        [style.width]="buttonIconSize()"
+        [style.height]="buttonIconSize()"
+      >
+        @if (autoButtonMode() === "music-toggle") {
+          <ap-icon-badge
+            class="relative size-full cursor-pointer transition-transform hover:scale-105 active:scale-95"
+            [style.height]="buttonIconSize()"
+            [hasBadge]="false"
+            (click)="toggleMusicAtAutoButton()"
+          >
+            <ap-icon-music-circle
+              [variant]="isMusicAtAutoButtonOn() ? 'default' : 'pressed'"
+            />
+          </ap-icon-badge>
+        } @else if (autoButtonMode() === "rs-free-game") {
+          <ap-icon
+            [name]="'blank'"
+            class="absolute inset-0 w-full h-full text-zinc-100"
+          />
+          <img
+            [src]="rsImgPath() + `?v=${version()}`"
+            alt="RS"
+            class="absolute left-1/2 top-1/2 z-10 w-[90%] h-[90%] -translate-x-1/2 -translate-y-1/2 -rotate-6 object-contain pointer-events-none drop-shadow-[0_0.15rem_0.2rem_rgba(0,0,0,0.55)]"
+          />
+        } @else {
+          <ap-icon-badge
+            data-testid="panel-autoplay"
+            class="relative size-full"
+            [ngClass]="
+              isAutoPlayDisabled()
+                ? ''
+                : 'cursor-pointer transition-transform hover:scale-105 active:scale-95'
+            "
+            [disabled]="isAutoPlayDisabled()"
+            [attr.disabled]="isAutoPlayDisabled() ? '' : null"
+            (click)="$event.stopPropagation(); clickAutoplay()"
+          >
+            <ap-icon-autoplay-circle />
+          </ap-icon-badge>
+        }
+      </div>
+
+      <!-- AutoPlay的選單 -->
+      @if (isAutoplayMenuOpen()) {
+        <div
+          class="absolute left-1/2 bottom-full mb-2 z-sticky"
+          style="
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+          "
+          clickOutside
+          (clickOutside)="closeAutoplayMenu()"
+        >
+          <div
+            class="min-w-26 rounded-2xl bg-zinc-800 text-white cursor-pointer animate-fade-up animate-once animate-duration-200"
+            style="
+              border: 2px solid rgb(251 251 251);
+              box-shadow: 0 0 0 3px rgb(24 24 27);
+            "
+          >
+            @for (
+              option of autoplayOptions;
+              track option.value;
+              let isLast = $last
+            ) {
+              <div
+                class="flex items-center justify-center py-2 text-xl font-bold text-white hover:text-yellow-300"
+                [style.border-bottom]="
+                  isLast ? 'none' : '1px solid rgb(63 63 70)'
+                "
+                (click)="clickAutoplayOption(option.value)"
+              >
+                @if (option.isInfinity) {
+                  <ap-icon name="infinite default" class="size-6.5" />
+                } @else {
+                  {{ option.value }}
+                }
+              </div>
+            }
+          </div>
+        </div>
+      }
+    </div>
+
+    <!-- 右邊第一個按鈕 -->
+    <ap-icon-badge
+      class="absolute translate-x-1/2 -translate-y-1/2 pointer-events-auto touch-none"
+      (touchstart)="$event.preventDefault()"
+      [class.invisible]="isTurboHidden()"
+      [ngClass]="[
+        turboButtonPositionClass(),
+        !isTurboDisabled() ? 'cursor-pointer transition-transform hover:scale-105 active:scale-95' : '',
+      ]"
+      appPointerDownSound
+      data-no-click-sound
+      [style.height]="buttonIconSize()"
+      [hasBadge]="false"
+      [disabled]="isTurboDisabled()"
+      (pointerdown)="clickTurbo()"
+    >
+      @if (isHoldingTurbo()) {
+        <ap-icon-turbo-circle [variant]="'pressed2'" />
+      } @else {
+        <ap-icon-turbo-circle [variant]="turboState()" />
+      }
+    </ap-icon-badge>
+
+    <!-- Center Group -->
+    <div
+      class="absolute flex items-center rounded-xl p-1 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto touch-none"
+      (touchstart)="$event.preventDefault()"
+      style="background-color: rgba(24, 24, 27, 0.8)"
+      [style.gap]="centerGroupGap()"
+    >
+      <ap-icon-badge
+        data-testid="panel-decrease"
+        appPointerDownSound
+        data-no-click-sound
+        [ngClass]="
+          isDecreaseDisabled()
+            ? ''
+            : 'cursor-pointer transition-transform hover:scale-105 active:scale-95'
+        "
+        [style.height]="controlIconSize()"
+        [disabledCoverVariant]="'half'"
+        [hasBadge]="false"
+        [disabled]="isDecreaseDisabled()"
+        (pointerdown)="clickDecreaseBet()"
+      >
+        <ap-icon-decrease-box />
+      </ap-icon-badge>
+
+      <div [style.width]="centerSpacerWidth()"></div>
+
+      <ap-icon-badge
+        data-testid="panel-increase"
+        appPointerDownSound
+        data-no-click-sound
+        [ngClass]="
+          isIncreaseDisabled()
+            ? ''
+            : 'cursor-pointer transition-transform hover:scale-105 active:scale-95'
+        "
+        [style.height]="controlIconSize()"
+        [disabledCoverVariant]="'half'"
+        [hasBadge]="false"
+        [disabled]="isIncreaseDisabled()"
+        (pointerdown)="clickIncreaseBet()"
+      >
+        <ap-icon-increase-box />
+      </ap-icon-badge>
+    </div>
+
+    <!-- Spin Button -->
+    <!-- 阻止 Safari 將快速連點 Spin 按鈕判定為雙擊縮放。 -->
+    <div
+      data-testid="panel-spin"
+      class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-auto touch-none"
+      (touchstart)="$event.preventDefault()"
+      [style.--ga-auto-spin-scale]="freeSpinScale()"
+    >
+      @if (spinButtonMode() === "feature-mode") {
+        <ap-button-auto-spin-times
+          [pressHintEnabled]="featureStartTipEnabled()"
+          [pressHintTimerEnabled]="featureStartTipEnabled()"
+          [scale]="freeSpinScale()"
+          [totalSpins]="featureTotal() || 0"
+          [currentSpins]="featureRemaining() || 0"
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          (buttonClick)="clickFeatureSpin()"
+        />
+      } @else if (spinButtonMode() === "free-bonus-auto-spin") {
+        <ap-button-auto-spin-times
+          mode="free-bonus-auto-spin"
+          [scale]="freeSpinScale()"
+          [totalSpins]="autoSpinTotal() || 0"
+          [currentSpins]="autoSpinRemaining() || 0"
+          [variant]="isAutoSpinInfinity() ? 'infinity' : 'default'"
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          (buttonClick)="clickStopAutoSpin()"
+        />
+      } @else if (spinButtonMode() === "free-bonus") {
+        <ap-spin-button
+          variant="bonus"
+          data-no-click-sound
+          [pressHintType]="pressHintType()"
+          [ngClass]="{
+            'cursor-pointer hover:scale-105 transition-transform active:scale-95':
+              !isSpinDisabled()
+          }"
+          [spinCount]="spinCount()"
+          [style.height]="spinIconSize()"
+          [disabled]="
+            isSpinDisabled()
+          "
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          [isSpinning]="isGameBusy()"
+          [holdTurboEnabled]="isHoldTurboEnabled()"
+          [turboHoldThresholdMs]="turboHoldThresholdMs()"
+          [idleTooltipMs]="idleTooltipMs()"
+          (buttonClick)="clickCampaignSpin()"
+          (turboHold)="toggleHoldTurbo($event)"
+        />
+      } @else if (spinButtonMode() === "free-spin") {
+        <ap-button-free-spins
+          [scale]="freeSpinScale()"
+          [totalSpins]="freeSpinTotal() || 0"
+          [currentSpins]="freeSpinRemaining() || 0"
+          (buttonClick)="clickCampaignSpin()"
+        />
+      } @else if (spinButtonMode() === "double-chance-auto-spin") {
+        <ap-button-auto-spin-times
+          mode="double-chance-auto-spin"
+          [scale]="freeSpinScale()"
+          [totalSpins]="autoSpinTotal() || 0"
+          [currentSpins]="autoSpinRemaining() || 0"
+          [variant]="isAutoSpinInfinity() ? 'infinity' : 'default'"
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          (buttonClick)="clickStopAutoSpin()"
+        />
+      } @else if (spinButtonMode() === "double-chance") {
+        <ap-spin-button
+          variant="chance"
+          data-no-click-sound
+          [ngClass]="{
+            'cursor-pointer hover:scale-105 transition-transform active:scale-95':
+              !isSpinDisabled()
+          }"
+          [spinCount]="spinCount()"
+          [style.height]="spinIconSize()"
+          [disabled]="
+            isSpinDisabled()
+          "
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          [isSpinning]="isGameBusy()"
+          [holdTurboEnabled]="isHoldTurboEnabled()"
+          [turboHoldThresholdMs]="turboHoldThresholdMs()"
+          [idleTooltipMs]="idleTooltipMs()"
+          (buttonClick)="clickSpin()"
+          (turboHold)="toggleHoldTurbo($event)"
+        />
+      } @else if (spinButtonMode() === "auto-spin") {
+        <ap-button-auto-spin-times
+          mode="auto-spin"
+          [scale]="freeSpinScale()"
+          [totalSpins]="autoSpinTotal() || 0"
+          [currentSpins]="autoSpinRemaining() || 0"
+          [variant]="isAutoSpinInfinity() ? 'infinity' : 'default'"
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          (buttonClick)="clickStopAutoSpin()"
+        />
+      } @else {
+        <ap-spin-button
+          [pressHintEnabled]="isClickToSpinTipEnabled()"
+          [spinCount]="spinCount()"
+          data-no-click-sound
+          [ngClass]="{
+            'cursor-pointer hover:scale-105 transition-transform active:scale-95':
+              !isSpinDisabled()
+          }"
+          [style.height]="spinIconSize()"
+          [disabled]="
+            isSpinDisabled()
+          "
+          [fastSpinDisabled]="isFastSpinDisabled()"
+          [enableLightingEffect]="autoSpinLightingEffectEnabled()"
+          [isSpinning]="isGameBusy()"
+          [holdTurboEnabled]="isHoldTurboEnabled()"
+          [turboHoldThresholdMs]="turboHoldThresholdMs()"
+          [idleTooltipMs]="idleTooltipMs()"
+          (buttonClick)="clickSpin()"
+          (turboHold)="toggleHoldTurbo($event)"
+        />
+      }
+      <!-- 在按鈕最上方顯示 3 秒繞圈冷卻動畫。
+      用 @for track spinCooldownTick() 讓每次觸發都強制銷毀重建 svg 節點，確保連續自動旋轉每次都重新播放特效。 -->
+      @if (isGameBusy()) {
+        @for (tick of (spinCooldownTick() > 0 ? [spinCooldownTick()] : []); track tick) {
+          <svg
+            class="ga-spin-progress-ring absolute inset-0"
+            [class.ga-spin-progress-ring--auto-spin-times]="isAutoSpinTimesButtonMode()"
+            viewBox="0 0 100 100"
+            aria-hidden="true"
+          >
+            <circle cx="50" cy="50" r="46" pathLength="100" />
+          </svg>
+        }
+      }
+    </div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div
+    class="absolute bottom-0 left-0 right-0 flex items-center justify-between pr-4 text-zinc-100 font-semibold"
+    style="
+      border-top: 0.15rem solid rgba(161, 161, 170, 0.6);
+      background-color: rgba(0, 0, 0, 0.5);
+    "
+    [style.fontSize]="bottomBarFontSize()"
+    [style.height]="isLandscape() ? listBottomHeight() : null"
+  >
+    <div class="relative shrink-0 flex justify-center items-center pointer-events-auto">
+      <ap-icon
+        data-testid="panel-menu"
+        name="bar-3"
+        appPointerDownSound
+        data-no-click-sound
+        class="relative size-full cursor-pointer hover:text-yellow-400"
+        [style.height]="bottomMenuIconSize()"
+        [style.width]="bottomMenuIconSize()"
+        (click)="toggleMenu($event)"
+      >
+      </ap-icon>
+      @if (isMenuDisabled()) {
+        <div
+          data-testid="panel-busy"
+          class="absolute inset-0 bg-black/50"
+        ></div>
+      }
+      @if (isMenuOpen()) {
+        <div (click)="closeMenu()" class="absolute inset-0"></div>
+      }
+      <div
+        class="absolute left-0 bottom-full animate-fade-up animate-once animate-duration-200 z-dropdown"
+        [style.marginBottom]="menuOffset()"
+        [hidden]="!isMenuOpen()"
+        clickOutside
+        (clickOutside)="closeMenu()"
+      >
+        <div
+          class="min-w-56 justify-center items-center rounded-t-md border border-zinc-400/50 bg-zinc-900 text-zinc-300 p-2"
+        >
+          @for (item of menuItems(); track item.id) {
+            <div
+              [attr.data-testid]="'panel-menu-' + item.id"
+              class="flex items-center justify-start relative gap-2 px-2 py-2 m-2 cursor-pointer hover:bg-zinc-800 hover:text-yellow-400 active:bg-zinc-700 hover:rounded-lg text-xl font-semibold"
+              (click)="item.action()"
+            >
+              <ap-icon [name]="iconMap()[item.id]" class="size-6" />
+              <h3 class="flex-1 uppercase">{{ item.label }}</h3>
+              @if (item.hasToggle) {
+                <ap-toggle-switch
+                  variant="quick"
+                  [accentColor]="'yellow'"
+                  [checked]="toggleMap()[item.id]"
+                />
+              }
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+
+    @if (isLandscape()) {
+      <div class="grid flex-1 grid-cols-3 items-center">
+        <div class="flex items-center justify-start space-x-2 ml-2">
+          <h6 class="text-yellow-400" [style.fontSize]="bottomBarFontSize()">
+            {{ getBalanceLabel() }}
+          </h6>
+          <div
+            data-testid="panel-balance"
+            class="space-x-1 text-zinc-200 whitespace-nowrap"
+            [style.fontSize]="bottomBarFontSize()"
+          >
+            @if (isBalanceHided()) {
+              ***
+            } @else {
+              {{ displayCurrency() }}
+              {{ displayBalance() | moneyText: { addSymbol: false } }}
+            }
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-2">
+          <h6 class="text-yellow-400" [style.fontSize]="bottomBarFontSize()">
+            {{ getBetLabel() }}
+          </h6>
+          <div
+            class="inline-block min-w-[4ch] text-left tabular-nums text-zinc-200"
+            [style.fontSize]="bottomBarFontSize()"
+          >
+            <div data-testid="panel-bet" class="flex space-x-1">
+              @if (isBetHided()) {
+                ***
+              } @else {
+                {{ displayCurrency() }}
+                {{ displayBet() | moneyText: { addSymbol: false } }}
+              }
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex items-center justify-start space-x-2 ml-8 sm:ml-10 md:ml-12 lg:ml-14"
+        >
+          <h6 class="text-yellow-400" [style.fontSize]="bottomBarFontSize()">
+            {{ getWinLabel() }}
+          </h6>
+          <div
+            class="inline-block min-w-[4ch] text-left text-zinc-200 tabular-nums whitespace-nowrap"
+            [style.fontSize]="bottomBarFontSize()"
+          >
+            @if (isWinHided()) {
+              ***
+            } @else {
+              <div data-testid="panel-win" class="flex space-x-1">
+                @if (displayWin() !== null) {
+                  {{ displayCurrency() }}
+                  {{ displayWin()! | moneyText: { addSymbol: false } }}
+                }
+              </div>
+            }
+          </div>
+        </div>
+      </div>
+      <!-- Mobile -->
+    } @else {
+      <!-- Balance -->
+      <div class="grid flex-1 grid-cols-3">
+        <div class="flex justify-start items-center space-x-1 ml-1">
+          <ap-icon
+            class="text-yellow-400"
+            [style.height]="bottomIconSize()"
+            [name]="isBonusWalletUsed() ? 'star' : 'wallet'"
+          />
+          <div
+            data-testid="panel-balance"
+            class="text-zinc-200 whitespace-nowrap"
+            [style.fontSize]="bottomBarFontSize()"
+          >
+            @if (isBalanceHided()) {
+              ***
+            } @else {
+              {{ displayCurrency() }}
+              {{ displayBalance() | moneyText: { addSymbol: false } }}
+            }
+          </div>
+        </div>
+
+        <!-- Bet -->
+        <div class="flex justify-center">
+          <div class="flex items-center space-x-1">
+            <ap-icon
+              name="prizes"
+              class="text-yellow-400"
+              [style.height]="bottomIconSize()"
+            />
+            <div
+              data-testid="panel-bet"
+              class="text-zinc-200"
+              [style.fontSize]="bottomBarFontSize()"
+            >
+              @if (isBetHided()) {
+                ***
+              } @else {
+                {{ displayCurrency() }}
+                {{ displayBet() | moneyText: { addSymbol: false } }}
+              }
+            </div>
+          </div>
+        </div>
+
+        <!-- Win -->
+        <div class="flex justify-start ml-6">
+          <div class="flex items-center space-x-1">
+            <ap-icon
+              name="trophy"
+              class="text-yellow-400"
+              [style.height]="bottomIconSize()"
+            />
+            <div
+              data-testid="panel-win"
+              class="inline-block min-w-[4ch] text-left tabular-nums text-zinc-200"
+              [style.fontSize]="bottomBarFontSize()"
+            >
+              @if (isWinHided()) {
+                ***
+              } @else if (displayWin() !== null) {
+                {{ displayCurrency() }}
+                {{ displayWin()! | moneyText: { addSymbol: false } }}
+              }
+            </div>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+@if (showRemainingTurnover()) {
+  <div
+    class="absolute mx-auto w-full px-2 text-zinc-300 from-black/50 via-zinc-800/0 to-black/50 inline-flex"
+    [class.left-0]="isLandscape()"
+    [class.right-0]="isLandscape()"
+    [class.bg-linear-to-r]="isLandscape()"
+    [style.bottom]="isPortrait() ? '16.6667%' : middleListBottomHeight()"
+    [style.fontSize]="middleHintFontSize()"
+  >
+    <div
+      class="flex w-full"
+      [class.flex-col]="isPortrait()"
+      [class.items-center]="isPortrait()"
+      [class.flex-row]="isLandscape()"
+      [class.justify-between]="isLandscape()"
+    >
+      <div
+        class="flex items-center justify-center space-x-1"
+        [class.order-2]="isLandscape()"
+      >
+        <ap-icon name="clock" [style.height]="middleHintIconSize()" />
+        <div class="whitespace-nowrap leading-tight sm:py-0.5">
+          {{ displayEndTime() }}
+        </div>
+      </div>
+      <div
+        class="whitespace-nowrap leading-tight sm:py-0.5"
+        [class.order-1]="isLandscape()"
+      >
+        <span>{{ getRemainingTurnoverLabel() }}</span>
+        <span> {{ displayRemainingTurnover()! | moneyText }}</span>
+      </div>
+    </div>
+  </div>
+}

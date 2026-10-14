@@ -1,0 +1,19 @@
+<div>
+  @for (c of cards; track c.title) {
+    @if (c.variants && c.variants.length > 0) {
+      @for (v of c.variants; track v.subtitle) {
+        <h2>{{ v.subtitle }}</h2>
+        <ap-ui-card-dev align="center">
+          <ng-container
+            [ngComponentOutlet]="c.component"
+            [ngComponentOutletInputs]="v.inputs || {}"
+          />
+        </ap-ui-card-dev>
+      }
+    } @else {
+      <ap-ui-card-dev [id]="c.title" align="center">
+        <ng-container [ngComponentOutlet]="c.component"/>
+      </ap-ui-card-dev>
+    }
+  }
+</div>

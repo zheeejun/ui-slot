@@ -1,0 +1,90 @@
+
+anim_sym_h3.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Shoelace_L
+  rotate: false
+  xy: 64, 6
+  size: 26, 42
+  orig: 230, 224
+  offset: 91, 155
+  index: -1
+Shoelace_L2
+  rotate: false
+  xy: 163, 13
+  size: 22, 35
+  orig: 230, 224
+  offset: 77, 161
+  index: -1
+Shoelace_R
+  rotate: true
+  xy: 444, 430
+  size: 77, 61
+  orig: 230, 224
+  offset: 104, 108
+  index: -1
+Shoes_L
+  rotate: false
+  xy: 390, 19
+  size: 158, 118
+  orig: 230, 224
+  offset: 14, 94
+  index: -1
+Shoes_L2
+  rotate: true
+  xy: 95, 18
+  size: 30, 29
+  orig: 230, 224
+  offset: 122, 180
+  index: -1
+Shoes_R
+  rotate: false
+  xy: 261, 319
+  size: 178, 188
+  orig: 230, 224
+  offset: 38, 9
+  index: -1
+Shoes_R2
+  rotate: false
+  xy: 5, 5
+  size: 54, 43
+  orig: 230, 224
+  offset: 146, 142
+  index: -1
+h2_L_shadow
+  rotate: true
+  xy: 390, 142
+  size: 172, 123
+  orig: 230, 224
+  offset: 7, 88
+  index: -1
+h2_R_shadow
+  rotate: false
+  xy: 5, 53
+  size: 194, 196
+  orig: 230, 224
+  offset: 33, 0
+  index: -1
+skeft_004074
+  rotate: true
+  xy: 129, 18
+  size: 30, 29
+  orig: 32, 32
+  offset: 1, 2
+  index: -1
+skeft_018589
+  rotate: true
+  xy: 5, 254
+  size: 253, 251
+  orig: 256, 256
+  offset: 3, 5
+  index: -1
+sun
+  rotate: false
+  xy: 204, 49
+  size: 181, 200
+  orig: 200, 213
+  offset: 8, 4
+  index: -1

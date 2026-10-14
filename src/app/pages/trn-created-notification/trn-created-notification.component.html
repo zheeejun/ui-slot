@@ -1,0 +1,62 @@
+@if (isVisible()) {
+  <div
+    class="relative w-auto bg-zinc-900 rounded-xl border-2 animate-fade-right animate-duration-500 border-yellow-300">
+    <div class="relative p-2 flex flex-col gap-1">
+      <!-- Title Card -->
+      <div class="flex items-center gap-2">
+        <ap-trn-card-title [size]="'small'" [title]="getQuickTitle()" />
+        <span class="w-10 text-sm font-bold text-zinc-100">{{
+          countdownTime()
+        }}</span>
+        <div class="w-8"></div>
+      </div>
+
+      <!-- Progress bar with countdown inside -->
+      <div
+        class="relative mt-1 h-3 rounded-full bg-zinc-800 outline-1 outline-offset-2 outline-zinc-600 overflow-hidden"
+      >
+        <!-- Progress fill -->
+        <div
+          class="absolute left-0 top-0 h-full rounded-full animate-countdown"
+          [ngClass]="{
+            'progress-bar-yellow': accentColor() === 'yellow',
+            'progress-bar-purple': accentColor() === 'purple',
+          }"
+          [style.animation-duration]="'10s'"
+        ></div>
+      </div>
+
+      <!-- Progress Bar using ap-trn-card-match -->
+      <div class="relative flex gap-2 items-center justify-between mt-1">
+        <div class="rounded-xl w-auto flex items-center gap-1">
+          <ap-icon name="user default" class="size-6 text-white" />
+          <!-- Count Display -->
+          <div class="flex items-center relative mt-4">
+            <h2
+              class="text-white text-2xl font-semibold -translate-y-1/6 tracking-wider"
+            >
+              {{ currentCount() }}
+          </h2>
+            <h5 class="text-zinc-400 font-semibold tracking-wide">
+              /{{ totalCount() }}
+            </h5>
+          </div>
+        </div>
+
+        <!-- Join Button -->
+        <ap-button
+          class="shrink-0"
+          [label]="buttonJoinLabel()"
+          [accentColor]="'yellow'"
+          [size]="'medium'"
+          (clicked)="clickJoin()"
+        />
+      </div>
+    </div>
+    <ap-icon
+      name="x-mark"
+      class="absolute top-1 right-1 size-8 text-zinc-300 hover:text-zinc-100 cursor-pointer active:scale-95"
+      (click)="clickClose()"
+    />
+  </div>
+}

@@ -1,0 +1,41 @@
+
+anim_light.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/light
+  rotate: true
+  xy: 1053, 58
+  size: 151, 79
+  orig: 162, 96
+  offset: 6, 8
+  index: -1
+img/word_light_A
+  rotate: true
+  xy: 916, 13
+  size: 196, 135
+  orig: 250, 160
+  offset: 24, 10
+  index: -1
+img/word_light_C
+  rotate: false
+  xy: 338, 12
+  size: 297, 197
+  orig: 350, 220
+  offset: 29, 23
+  index: -1
+img/word_light_C01
+  rotate: false
+  xy: 637, 2
+  size: 277, 207
+  orig: 350, 220
+  offset: 35, 0
+  index: -1
+img/word_light_C02
+  rotate: false
+  xy: 2, 9
+  size: 334, 200
+  orig: 350, 220
+  offset: 5, 20
+  index: -1

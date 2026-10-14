@@ -1,0 +1,27 @@
+{
+  "version": "1.0.579",
+  "time": "2026-10-13T11:53:08.645Z",
+  "branch": "dev",
+  "sha": "17dbb820bb02c3fc3e1e420749ece9c16272c842",
+  "BuildMode": "Debug",
+  "submodules": [
+    {
+      "name": "korokke_skills",
+      "path": "korokke_skills",
+      "branch": "main",
+      "sha": "d953ffe87449fd94b3d44b677c9e4264c8029c8d"
+    },
+    {
+      "name": "ap-components-lib",
+      "path": "src/ap-components-lib",
+      "branch": "dev",
+      "sha": "b4fb48710c8bb093e7dc640d59f9377a4538f7ea"
+    },
+    {
+      "name": "chiikawa",
+      "path": "src/chiikawa",
+      "branch": "dev",
+      "sha": "faac2dab7a24f388ae7c1b9475e8d0df2b0e7a2a"
+    }
+  ]
+}

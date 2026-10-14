@@ -1,0 +1,78 @@
+<ap-ui-card-dev id="ap-ui-tab-group" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Tab Button</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="tabGroupCategories"
+        [getCodeSnippet]="getTabGroupCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-ui-tab-group
+              class="block w-full"
+              [tabs]="variant.tabs ?? defaultTabGroupTabs"
+              [selectedTab]="variant.selectedTab ?? 'overview'"
+              [accentColor]="variant.accentColor ?? 'yellow'"
+              [size]="variant.size ?? 'default'"
+              [disabled]="variant.disabled ?? false"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-tab-menu-text" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Tab Text Button</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="tabTextMenuCategories"
+        [getCodeSnippet]="getTabTextMenuCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="relative flex min-h-24 items-center justify-center p-4">
+            <ap-tab-menu-text
+              class="block h-12 w-full"
+              [tabs]="variant.tabs ?? defaultTabTextMenuTabs"
+              [selectedTab]="variant.selectedTab ?? 'pay-table'"
+              [accentColor]="variant.accentColor ?? 'yellow'"
+              [justify]="variant.justify ?? 'center'"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-tab-menu-icon" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Tab Icon Button</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="tabIconMenuCategories"
+        [getCodeSnippet]="getTabIconMenuCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="relative flex min-h-24 items-center justify-center p-4">
+            <ap-tab-menu-icon
+              class="block h-18 w-full"
+              [tabs]="variant.tabs ?? defaultTabIconMenuTabs"
+              [selectedTab]="variant.selectedTab ?? 'campaign'"
+              [accentColor]="variant.accentColor ?? 'yellow'"
+              [justify]="variant.justify ?? 'center'"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

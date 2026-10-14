@@ -1,0 +1,13 @@
+<div
+  class="relative size-full my-4 p-2 rounded-xl bg-zinc-900 border border-zinc-700 text-md text-zinc-300 overflow-visible"
+>
+  <div class="relative flex"
+    [ngClass]="{
+      'justify-start': align() === 'start',
+      'justify-center': align() === 'center',
+      'justify-end': align() === 'end'
+    }"
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

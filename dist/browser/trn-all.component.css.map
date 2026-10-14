@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/trn-all/trn-all.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n  -webkit-user-select: none;\n  user-select: none;\n}"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,uBAAA;AACA,eAAA;AACF;",
+  "names": []
+}

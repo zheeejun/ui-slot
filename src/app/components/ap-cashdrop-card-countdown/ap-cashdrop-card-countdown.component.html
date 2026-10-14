@@ -1,0 +1,42 @@
+<div class="inline-flex w-fit">
+  <div [class]="'relative rounded-[1rem] w-fit ' + getFrameClass()">
+    <!-- Card: 2 columns -->
+    <div [class]="'rounded-[0.9rem] ' + getCardClass()">
+      <!-- Left column: coin, vertically centered -->
+      <div class="flex items-center justify-center">
+        <div class="">
+          <img
+            src="assets/images/icons/img-ap-coin.png"
+            alt="AP Coin"
+            class="coin-icon"
+          />
+        </div>
+      </div>
+
+      <!-- Right column: 3 rows (title / countdown / caption) -->
+      <div class="grid min-w-0 grid-rows-[auto,1fr,auto]">
+        <!-- Row 1: title -->
+        <h2 class="m-0 text-left text-gradient-gold font-bold line-clamp-1">
+          {{ title() || "Daily Reward Demo" }}
+        </h2>
+
+        <!-- Row 2: countdown (fully wrapped by a border box) -->
+        <ap-cashdrop-card-component-countdown
+          [endTime]="endTime()"
+          [beginTime]="beginTime()"
+          [variant]="'default'"
+        />
+
+        <!-- Row 3: caption -->
+        <div class="block text-left text-zinc-400">
+          @if (showRemainingLabel()) {
+            {{ remainingLabel() }}  
+          }
+          @else {
+            {{ startingInLabel() }}
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

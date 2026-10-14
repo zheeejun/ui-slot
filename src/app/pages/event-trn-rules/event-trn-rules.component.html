@@ -1,0 +1,42 @@
+<div class="px-4 sm:px-6 pt-4 sm:pt-6">
+  <!-- Tournament List -->
+  <ap-trn-game-list
+    [trnData]="currentTrn()"
+    [getQuickTimeLabel]="getQuickTimeLabel()"
+    [getDaysLabel]="getDaysLabel()"
+    [getHoursLabel]="getHoursLabel()"
+    [getMinutesLabel]="getMinutesLabel()"
+    [getSecondsLabel]="getSecondsLabel()"
+    [getCountdownStartTitle]="getCountdownStartTitle()"
+    [getCountdownEndTitle]="getCountdownEndTitle()"
+    [hasParticipated]="true"
+  />
+  <!-- Rules Sections -->
+  <div class="space-y-8 mt-2 sm:mt-4 pb-10">
+    @for (section of currentSections(); track section.title) {
+      <div class="flex flex-col gap-3 items-left px-4 sm:px-6">
+        <h2 [class]="'text-left font-medium ' + titleColor()">
+          {{ section.title }}
+        </h2>
+        <ul
+          class="w-full max-w-2xl font-normal list-disc list-inside text-zinc-300 leading-relaxed space-y-2 -mt-4 text-left"
+        >
+          @for (item of section.items; track item) {
+            @if (isRuleGroup(item)) {
+              <li class="text-sm sm:text-base">
+                {{ item.text }}
+                <ul class="mt-2 list-disc list-inside space-y-1 pl-4 text-zinc-400">
+                  @for (child of item.items; track child) {
+                    <li>{{ child }}</li>
+                  }
+                </ul>
+              </li>
+            } @else {
+              <li class="text-sm sm:text-base">{{ item.text }}</li>
+            }
+          }
+        </ul>
+      </div>
+    }
+  </div>
+</div>

@@ -1,0 +1,48 @@
+
+anim_expect.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+image/bg
+  rotate: true
+  xy: 2, 133
+  size: 129, 521
+  orig: 129, 521
+  offset: 0, 0
+  index: -1
+image/frame
+  rotate: true
+  xy: 2, 264
+  size: 147, 536
+  orig: 147, 536
+  offset: 0, 0
+  index: -1
+image/frame_in
+  rotate: true
+  xy: 2, 2
+  size: 129, 505
+  orig: 129, 505
+  offset: 0, 0
+  index: -1
+image/frame_in_square
+  rotate: true
+  xy: 525, 133
+  size: 129, 144
+  orig: 129, 505
+  offset: 0, 180
+  index: -1
+image/frame_square
+  rotate: true
+  xy: 540, 264
+  size: 147, 151
+  orig: 147, 536
+  offset: 0, 192
+  index: -1
+image/glow_ball2_Y_alpha
+  rotate: false
+  xy: 509, 13
+  size: 116, 118
+  orig: 128, 128
+  offset: 6, 5
+  index: -1

@@ -1,0 +1,46 @@
+<div class="relative bg-zinc-900 min-h-full pb-10">
+  <!-- Content Section -->
+  <div class="flex flex-wrap justify-center">
+    <div class="max-w-3xl w-full">
+      <!--Event Info-->
+      <div
+        class="max-w-3xl flex flex-col flex-wrap items-left animate-fade-down animate-duration-500"
+      >
+        <div class="w-full px-4 animate-fade-down animate-duration-500">
+          <div class="grid grid-cols-1 gap-8 max-w-7xl mx-auto px-4 sm:px-6 pt-2">
+            <!-- Quick Races: Using data from event-data.data.ts -->
+            @for (data of quickData; track data.id) {
+              <ap-trn-game-list
+                class="hover:scale-102 duration-300"
+                [getQuickTimeLabel]="getQuickTimeLabel()"
+                [trnData]="data"
+                (click)="clicked.emit(data)"
+              />
+            }
+            <!-- Events: Using data from event-data.data.ts -->
+            @for (data of evenData; track data.id) {
+              <ap-trn-game-list
+                class="hover:scale-102 duration-300"
+                [getDaysLabel]="getDaysLabel()"
+                [getHoursLabel]="getHoursLabel()"
+                [getMinutesLabel]="getMinutesLabel()"
+                [getSecondsLabel]="getSecondsLabel()"
+                [getCountdownStartTitle]="getCountdownStartTitle()"
+                [getCountdownEndTitle]="getCountdownEndTitle()"
+                [getPrizePoolLabel]="getPrizePoolLabel()"
+                [getScoreLabel]="getScoreLabel()"
+                [getPointLabel]="getPointLabel()"
+                [getJoinButtonLabel]="getJoinButtonLabel()"
+                [getRejoinButtonLabel]="getRejoinButtonLabel()"
+                [getFinishedButtonLabel]="getFinishedButtonLabel()"
+                [hasParticipated]="hasJoinedEvent(data)"
+                [trnData]="data"
+                (click)="clicked.emit(data)"
+              />
+            }
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

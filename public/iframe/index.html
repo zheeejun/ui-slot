@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Launch</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; overflow: hidden; background-color: rgb(56, 56, 56);}
+
+    #iframe-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    #resize-handle {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: 16px;
+      height: 16px;
+      cursor: nwse-resize;
+      background: linear-gradient(135deg, transparent 50%, rgba(0, 0, 0, 0.4) 50%);
+    }
+  </style>
+</head>
+<body>
+  <div id="iframe-container">
+    <iframe src="http://localhost:4200/launch/"></iframe>
+    <div id="resize-handle"></div>
+  </div>
+
+  <script>
+    const container = document.getElementById('iframe-container');
+    const handle = document.getElementById('resize-handle');
+
+    let isResizing = false;
+    let startX = 0;
+    let startY = 0;
+    let startWidth = 0;
+    let startHeight = 0;
+
+    handle.addEventListener('mousedown', (event) => {
+      isResizing = true;
+      startX = event.clientX;
+      startY = event.clientY;
+      startWidth = container.offsetWidth;
+      startHeight = container.offsetHeight;
+      event.preventDefault();
+    });
+
+    window.addEventListener('mousemove', (event) => {
+      if (!isResizing) return;
+      const newWidth = startWidth + (event.clientX - startX);
+      const newHeight = startHeight + (event.clientY - startY);
+      container.style.width = Math.max(50, newWidth) + 'px';
+      container.style.height = Math.max(50, newHeight) + 'px';
+    });
+
+    window.addEventListener('mouseup', () => {
+      isResizing = false;
+    });
+  </script>
+</body>
+</html>

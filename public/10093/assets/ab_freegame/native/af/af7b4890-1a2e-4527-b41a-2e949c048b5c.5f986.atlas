@@ -1,0 +1,251 @@
+
+anim_mega.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/flare
+  rotate: false
+  xy: 2, 753
+  size: 285, 45
+  orig: 319, 71
+  offset: 10, 13
+  index: -1
+FX/sun
+  rotate: false
+  xy: 488, 636
+  size: 118, 118
+  orig: 150, 150
+  offset: 16, 16
+  index: -1
+black
+  rotate: false
+  xy: 264, 711
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+black_gradient
+  rotate: true
+  xy: 560, 598
+  size: 36, 38
+  orig: 38, 38
+  offset: 2, 0
+  index: -1
+board
+  rotate: false
+  xy: 2, 800
+  size: 486, 222
+  orig: 2250, 960
+  offset: 882, 485
+  index: -1
+board lights
+  rotate: false
+  xy: 490, 866
+  size: 382, 55
+  orig: 2250, 960
+  offset: 935, 585
+  index: -1
+color_paper
+  rotate: false
+  xy: 264, 728
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+explode
+  rotate: true
+  xy: 2, 571
+  size: 180, 183
+  orig: 180, 184
+  offset: 0, 0
+  index: -1
+fire/fire_00
+  rotate: true
+  xy: 757, 585
+  size: 52, 69
+  orig: 96, 96
+  offset: 14, 17
+  index: -1
+fire/fire_01
+  rotate: true
+  xy: 608, 585
+  size: 54, 71
+  orig: 96, 96
+  offset: 10, 17
+  index: -1
+fire/fire_02
+  rotate: true
+  xy: 950, 630
+  size: 54, 72
+  orig: 96, 96
+  offset: 10, 17
+  index: -1
+fire/fire_03
+  rotate: true
+  xy: 187, 573
+  size: 54, 75
+  orig: 96, 96
+  offset: 11, 17
+  index: -1
+fire/fire_04
+  rotate: true
+  xy: 874, 867
+  size: 54, 79
+  orig: 96, 96
+  offset: 11, 17
+  index: -1
+fire/fire_05
+  rotate: true
+  xy: 560, 530
+  size: 53, 66
+  orig: 96, 96
+  offset: 12, 17
+  index: -1
+fire/fire_06
+  rotate: true
+  xy: 681, 536
+  size: 50, 69
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_07
+  rotate: true
+  xy: 608, 641
+  size: 52, 73
+  orig: 96, 96
+  offset: 16, 17
+  index: -1
+fire/fire_08
+  rotate: true
+  xy: 488, 580
+  size: 54, 70
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_09
+  rotate: true
+  xy: 683, 588
+  size: 52, 72
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_10
+  rotate: true
+  xy: 684, 700
+  size: 54, 74
+  orig: 96, 96
+  offset: 16, 17
+  index: -1
+fire/fire_11
+  rotate: true
+  xy: 684, 642
+  size: 56, 73
+  orig: 96, 96
+  offset: 16, 17
+  index: -1
+fire/fire_12
+  rotate: true
+  xy: 784, 805
+  size: 59, 74
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_13
+  rotate: true
+  xy: 874, 805
+  size: 60, 76
+  orig: 96, 96
+  offset: 14, 17
+  index: -1
+fire/fire_14
+  rotate: true
+  xy: 952, 749
+  size: 61, 70
+  orig: 96, 96
+  offset: 14, 17
+  index: -1
+fire/fire_15
+  rotate: true
+  xy: 950, 686
+  size: 61, 72
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_16
+  rotate: false
+  xy: 959, 949
+  size: 62, 73
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_17
+  rotate: true
+  xy: 187, 691
+  size: 60, 75
+  orig: 96, 96
+  offset: 17, 17
+  index: -1
+fire/fire_18
+  rotate: true
+  xy: 187, 629
+  size: 60, 75
+  orig: 96, 96
+  offset: 17, 17
+  index: -1
+fire/fire_19
+  rotate: false
+  xy: 959, 874
+  size: 61, 73
+  orig: 96, 96
+  offset: 16, 17
+  index: -1
+fire/fire_20
+  rotate: true
+  xy: 608, 695
+  size: 59, 74
+  orig: 96, 96
+  offset: 16, 17
+  index: -1
+fire/fire_21
+  rotate: true
+  xy: 828, 578
+  size: 59, 65
+  orig: 96, 96
+  offset: 15, 17
+  index: -1
+fire/fire_22
+  rotate: true
+  xy: 955, 812
+  size: 60, 66
+  orig: 96, 96
+  offset: 14, 17
+  index: -1
+gold
+  rotate: false
+  xy: 289, 607
+  size: 197, 191
+  orig: 300, 300
+  offset: 51, 54
+  index: -1
+ring
+  rotate: false
+  xy: 784, 639
+  size: 164, 164
+  orig: 192, 192
+  offset: 14, 14
+  index: -1
+txt_down
+  rotate: false
+  xy: 490, 756
+  size: 292, 108
+  orig: 2250, 960
+  offset: 979, 509
+  index: -1
+txt_up
+  rotate: false
+  xy: 490, 923
+  size: 467, 99
+  orig: 2250, 960
+  offset: 891, 612
+  index: -1

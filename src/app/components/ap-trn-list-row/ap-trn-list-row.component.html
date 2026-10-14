@@ -1,0 +1,48 @@
+<table #list class="relative w-full">
+  <tbody>
+    @for (item of items(); track item.id; let i = $index) {
+    <tr class="relative text-sm text-white"
+      [ngClass]="{ 
+        'bg-zinc-900/80 border-t border-zinc-800': !item.highlighted,
+        'bg-zinc-700/80 border-t-2 border-b-2': item.highlighted,
+        'border-yellow-300': item.highlighted && accentColor() === 'yellow',
+        'border-purple-300': item.highlighted && accentColor() === 'purple',
+        'rank-up': getRankChange(item.id) === 'up',
+        'rank-down': getRankChange(item.id) === 'down'
+      }"
+      [attr.data-id]="item.id"
+    >
+      <!-- Left section with ranking -->
+      <td class="p-0.5 align-middle w-6">
+        <div class="w-4 text-xs text-left">{{ (item.rank !== null) ? item.rank : '-' }}</div>
+      </td>
+      <td class="py-0.5 align-middle w-8">
+        <div class="w-6 opacity-90 truncate text-xs text-white">{{item.name}}</div>
+      </td>
+
+      <!-- Right section with score and bonus -->
+      <td class="p-0.5 align-middle text-right ">
+        @if (item.score !== undefined) {
+          <span class="font-semibold text-white" [ngClass]="{
+            'text-xs': (item.score || 0) < 1000000,
+            'text-[10px] tracking-tight': (item.score || 0) >= 1000000
+          }">{{ item.score }}</span>
+        }
+      </td>
+      <td class="p-0.5 align-middle text-right ">
+        @if (item.win !== undefined) {
+          @if (item.win === 0) {
+            <div class="inline-block text-right font-semibold text-xs pr-1.5">-</div>
+          } @else {
+            <div class="inline-block text-right font-semibold text-xs" [ngClass]="{
+                'text-yellow-300': accentColor() === 'yellow',
+                'text-purple-300': accentColor() === 'purple'
+              }">{{ currency() }}{{ item.win | compactNumber:'1.0-1' }}
+            </div>
+          }
+        }
+      </td>
+    </tr>
+  }
+  </tbody>
+</table>

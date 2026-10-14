@@ -1,0 +1,27 @@
+
+anim_bull_run.png
+size: 512,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FireSmoke_178
+  rotate: true
+  xy: 17, 62
+  size: 46, 47
+  orig: 58, 58
+  offset: 7, 1
+  index: -1
+FireSmoke_38
+  rotate: false
+  xy: 2, 101
+  size: 13, 7
+  orig: 29, 29
+  offset: 8, 11
+  index: -1
+glow
+  rotate: true
+  xy: 66, 2
+  size: 106, 288
+  orig: 111, 294
+  offset: 3, 3
+  index: -1

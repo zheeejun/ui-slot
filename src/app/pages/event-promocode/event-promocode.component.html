@@ -1,0 +1,126 @@
+<div class="page-container fade-down">
+  <div class="flex justify-center">
+    <div
+      class="campaign-card-frame w-full max-w-2xl rounded-xl flex flex-col overflow-hidden"
+    >
+      <div class="flex justify-center">
+        <div class="shrink-0 p-4">
+          <ap-icon-gift-coupon class="card-icon" />
+        </div>
+      </div>
+
+      <!-- Input Field -->
+      <div class="max-w-md align-center mx-auto w-full px-4 sm:p-0">
+        <ap-input-box
+          [type]="'text'"
+          [placeholder]="placeholder()"
+          [accentColor]="'yellow'"
+          [maxLength]="20"
+          [allowedCharacterPattern]="allowedCharacterPattern"
+          [success]="isValid()"
+          [error]="hasError()"
+          (onInput)="onPromoCodeChange($event)"
+          class="w-full"
+        />
+      </div>
+
+      <!-- Input Hint -->
+      <div class="min-h-10 max-w-md align-center mx-auto w-full px-4 sm:p-0">
+        <h6>
+          <!--@if (inputHint().length > 0) {
+            <div class="text-zinc-500">* {{ inputHint() }}</div>
+        }-->
+          @if (passHint().length > 0) {
+            <div class="text-green-400">* {{ passHint() }}</div>
+          }
+          @if (errorHint().length > 0) {
+            <div class="text-red-400">* {{ errorHint() }}</div>
+          }
+        </h6>
+      </div>
+
+      <!-- Claim Button -->
+      <div class="flex justify-center mx-auto sm:mt-4 mb-8 w-full sm:p-0 p-4">
+        <ap-button
+          class="w-1/4 [&>button]:w-full"
+          (clicked)="onClaimClick()"
+          [accentColor]="isPromoCodeValid() ? 'yellow' : 'zinc'"
+          [label]="claimLabel()"
+          [disabled]="!isPromoCodeValid()"
+        />
+      </div>
+
+      <!-- Terms and Conditions -->
+      <!-- <div class="text-sm max-w-md font-base text-zinc-400 mx-auto mt-2">
+        <div class="relative">{{ "- " + couponInfo1() }}</div>
+        <div class="relative">{{ "- " + couponInfo2() }}</div>
+        <div class="relative">{{ "- " + couponInfo3() }}</div>
+        <div class="relative">{{ "- " + couponInfo4() }}</div>
+      </div> -->
+      @if (showQR()) {
+        <!-- Divider -->
+        <div class="sm:w-[70%] w-[90%] divider-gradient-yellow mx-auto"></div>
+
+        <!-- Subscribe Section -->
+        <div
+          class="flex items-center justify-center gap-4 text-center px-4 pt-5 pb-5 sm:px-6 sm:pt-6 sm:pb-6"
+        >
+          <div>
+            <h2
+              class="text-gradient-gold font-bold"
+              style="white-space: pre-line"
+            >
+              {{ ctaTitle() }}
+            </h2>
+            <span class="text-lg font-medium text-yellow-200 tracking-wide">
+              {{ ctaSubTitle() }}
+            </span>
+          </div>
+          <div class="flex items-center justify-center relative">
+            <ap-promo-code-code
+              [size]="'20'"
+              [backgroundColor]="
+                'bg-[radial-gradient(circle,_#71471E_0%,_#000002_70%,_#000000_100%)]'
+              "
+            />
+            <ap-icon
+              name="finger-point"
+              class="size-7 relative -left-1 top-8"
+            />
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Message Popup -->
+  @if (showPopup()) {
+    <div class="absolute inset-0 grid place-items-center">
+      <div class="absolute inset-0 popup-overlay"></div>
+      <ap-ui-frame-popup
+        [header]="popUpHeader()"
+        [size]="'mobile'"
+        (close)="onClosePopUp()"
+      >
+        <div class="p-4 text-center space-y-4">
+          <ap-icon-gift-coupon class="text-yellow-400 popup-icon mx-auto" />
+          <div class="h-px divider-gradient-yellow opacity-80"></div>
+          <h4 class="text-zinc-300">{{ popUpDescription() }}</h4>
+        </div>
+        <div class="flex justify-center p-6">
+          <ap-button
+            class="w-full [&>button]:w-full"
+            [accentColor]="'yellow'"
+            [label]="popUpConfirmText()"
+            (click)="onClosePopUp()"
+          />
+        </div>
+      </ap-ui-frame-popup>
+    </div>
+  }
+  @if (loading()) {
+    <div class="absolute inset-0 bg-black/30">
+      <ap-loading-overlay />
+    </div>
+  }
+</div>

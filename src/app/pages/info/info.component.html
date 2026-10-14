@@ -1,0 +1,29 @@
+<ap-ui-frame-page
+  [header]="header()"
+  [enableBack]="isBack()"
+  (close)="close.emit()"
+>
+  <div class="relative z-sticky flex h-full flex-col">
+    <ap-tab-menu-text
+      [tabs]="tabs()"
+      [selectedTab]="activedTab()"
+      [accentColor]="'yellow'"
+      (tabChange)="changeTab($event)"
+    />
+    <div class="min-h-0 flex-1 overflow-hidden pt-12">
+      @if (activedTab() === "Pay Table") {
+        @if (!hidePayTable()) {
+          <info-pay-table-default />
+        }
+      } @else if (activedTab() === "Feature") {
+        <info-feature />
+      } @else if (activedTab() === "Guide") {
+        <info-guide
+          [hideTurbo]="hideTurboGuide()"
+          [hideAutoplay]="hideAutoplay()"
+          [hideNoteItem2]="hideNoteItem2()"
+        />
+      }
+    </div>
+  </div>
+</ap-ui-frame-page>

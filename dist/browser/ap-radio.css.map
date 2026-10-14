@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/ap-components-lib/ap-radio/ap-radio.css"],
+  "sourcesContent": ["input[type=\"radio\"] {\n  accent-color:#f54900;}"],
+  "mappings": ";AAAA,KAAA,CAAA;AACE,gBAAA;AAAqB;",
+  "names": []
+}

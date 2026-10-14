@@ -1,0 +1,19 @@
+<div class="relative w-xs flex flex-col gap-1 p-2 text-white bg-black/50 rounded-xl">
+  <div class="flex justify-between items-center gap-1">
+    <span>Aspect Ratio</span>
+    <ap-input-box class="w-30" type="number" step="0.01" [value]="landscapeAspectRatio().toString()" (onInput)="onLandscapeAspectRatioChange($event)" />
+  </div>
+
+  <div class="flex justify-between items-center gap-1">
+    <span>Close In-Game Buy Feature</span>
+    <ap-toggle-switch [size]="'small'" [checked]="gameIframeSetting().closeInGameBuyFeature" (checkedChange)="onGameIframeSettingChange('closeInGameBuyFeature', $event)" />
+  </div>
+
+  <div class="flex justify-between items-center gap-1">
+    <span>Close In-Game Open Promo</span>
+    <ap-toggle-switch [size]="'small'" [checked]="gameIframeSetting().closeInGameOpenPromo" (checkedChange)="onGameIframeSettingChange('closeInGameOpenPromo', $event)" />
+  </div>
+
+  <ap-button class="w-full [&>button]:w-full" [size]="'small'" [accentColor]="'yellow'" [label]="'Save & Reload'" (clicked)="saveGameIframeSetting()" />
+
+</div>

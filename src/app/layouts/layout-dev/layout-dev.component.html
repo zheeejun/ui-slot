@@ -1,0 +1,127 @@
+<div class="flex flex-col h-full bg-zinc-950 text-zinc-200">
+  <!-- Mobile Menu Toggle Button (when menu is closed) -->
+  @if (!isMobileMenuOpen) {
+    <button
+      (click)="toggleMobileMenu()"
+      class="fixed size-10 top-6 left-4 z-sticky lg:hidden bg-zinc-800 hover:bg-zinc-700 hover:text-orange-400 text-white p-3 rounded-lg shadow-lg color-transition flex items-center justify-center cursor-pointer"
+      [attr.aria-label]="'Open menu'"
+    >
+      <ap-icon name="bar-3" class="info-icon" />
+    </button>
+  }
+
+  <!-- 右側 Content -->
+  <main
+    #contentRef
+    [class]="
+      'relative h-full w-full duration-300 overflow-auto ' +
+      (isCollapsed() ? 'lg:pl-16' : 'lg:pl-52')
+    "
+    id="content"
+  >
+    <div class="p-4 md:p-8 max-w-5xl mx-auto pt-20 md:pt-20 lg:pt-16">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+
+  <!-- 左側 Menu -->
+  <aside
+    [class]="
+      'fixed top-0 h-full bg-zinc-900 border-r-2 border-zinc-700/80 text-zinc-100 p-6 duration-300 z-sticky overflow-auto ' +
+      (isMobileMenuOpen ? 'ml-0 w-auto' : '-ml-64 w-auto') +
+      ' lg:ml-0 lg:' +
+      (isCollapsed() ? 'w-16 px-2' : 'w-64 px-6')
+    "
+  >
+    <div class="flex items-center justify-between mb-4">
+      @if (!isCollapsed()) {
+        <h2 class="font-bold text-orange-400">UI kit</h2>
+      }
+      <!-- Desktop collapse toggle button -->
+      <button
+        (click)="toggleCollapse()"
+        class="hidden lg:flex size-10 items-center justify-center hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer hover:text-orange-400"
+        [class.mx-auto]="isCollapsed()"
+        [attr.aria-label]="isCollapsed() ? 'Expand menu' : 'Collapse menu'"
+      >
+        <ap-icon
+          [name]="isCollapsed() ? 'chevron-right' : 'chevron-left'"
+          class="info-icon"
+        />
+      </button>
+      <!-- Close button inside menu (mobile only) -->
+      @if (isMobileMenuOpen) {
+        <button
+          (click)="closeMobileMenu()"
+          class="lg:hidden size-10 flex items-center justify-center hover:bg-zinc-800 rounded-lg transition-colors cursor-pointer hover:text-orange-400"
+          [attr.aria-label]="'Close menu'"
+        >
+          <ap-icon name="x-mark" class="info-icon" />
+        </button>
+      }
+    </div>
+    <ul>
+      @for (item of menuItems; track item.name) {
+        <li class="mt-2">
+          @if (item.children && item.children.length > 0) {
+            <button
+              type="button"
+              (click)="toggleSubmenu(item.name)"
+              [class]="
+                'flex w-full items-center gap-3 p-2 hover:bg-zinc-800 active:bg-zinc-700 rounded-lg duration-200 transition-colors cursor-pointer ' +
+                (isCollapsed() ? 'lg:justify-center' : '')
+              "
+              [attr.title]="isCollapsed() ? item.name : null"
+            >
+              <ap-icon [name]="item.icon" class="size-4 shrink-0" />
+              @if (!isCollapsed()) {
+                <p class="flex-1 text-left">{{ item.name }}</p>
+                <ap-icon
+                  [name]="
+                    isSubmenuExpanded(item.name) ? 'chevron-up' : 'chevron-down'
+                  "
+                  class="size-3 shrink-0"
+                />
+              }
+            </button>
+            @if (isSubmenuExpanded(item.name) && !isCollapsed()) {
+              <ul
+                class="mt-1 pl-2 border-l-2 border-zinc-400/50 text-zinc-400 ml-2"
+              >
+                @for (child of item.children; track child.name) {
+                  <li class="mt-1 pl-1">
+                    <a
+                      [routerLink]="child.path"
+                      [fragment]="child.fragment"
+                      routerLinkActive="font-bold"
+                      (click)="onChildSelected(child.fragment)"
+                      class="flex items-center px-1.5 py-1 text-sm hover:bg-zinc-800/60 hover:text-orange-300 active:bg-zinc-800 active:text-orange-400 focus:text-orange-400 rounded-md color-transition"
+                    >
+                      <p>{{ child.name }}</p>
+                    </a>
+                  </li>
+                }
+              </ul>
+            }
+          } @else {
+            <a
+              [routerLink]="item.path"
+              routerLinkActive="bg-zinc-800 font-bold text-orange-400"
+              (click)="closeMobileMenu()"
+              [class]="
+                'flex items-center gap-3 p-2 hover:bg-zinc-800 active:bg-zinc-700 rounded-lg duration-200 transition-colors ' +
+                (isCollapsed() ? 'lg:justify-center' : '')
+              "
+              [attr.title]="isCollapsed() ? item.name : null"
+            >
+              <ap-icon [name]="item.icon" class="nav-icon shrink-0" />
+              @if (!isCollapsed()) {
+                <p>{{ item.name }}</p>
+              }
+            </a>
+          }
+        </li>
+      }
+    </ul>
+  </aside>
+</div>

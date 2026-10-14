@@ -1,0 +1,122 @@
+<div class="relative space-y-8 max-w-3xl mx-auto">
+  <div class="space-y-2">
+    <h1>Campaign Demo</h1>
+    <p>此页面尚在建置中，用于整理活动（Campaign）各阶段的弹窗文案与显示逻辑，方便开发与测试参考。</p>
+  </div>
+
+  <section class="space-y-3">
+    <h2>1. Wait to Join（等待加入）</h2>
+    <p>
+      新活动（campaign）可分为需要手动加入与自动加入两种：手动加入会显示「JOIN」按钮，自动加入则不需要手动操作。
+    </p>
+    <div class="flex justify-center">
+      <ap-campaign-list [campaignData]="waitToJoinCampaign" [currency]="currency" />
+    </div>
+    <p class="text-sm text-yellow-400">
+      <span class="font-semibold">Q：</span>手动加入时是否需要弹窗提醒？如需要，显示的文字内容为？
+    </p>
+  </section>
+
+  <section class="space-y-3">
+    <h2>2. Under Condition（条件未达成）</h2>
+    <p>当活动正在进行中但尚未达成条件时，会有弹窗提醒。</p>
+    <div class="space-y-2">
+      <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！ \n\n 目前有「&#123;0&#125;」\n期间限定活动正在进行中！\n\n请在期限内完成条件，赢得活动！</code>
+      <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！ \n\n目前有多个期间限定活动正在进行中！\n\n请在期间内完成条件，赢得活动！</code>
+    </div>
+    <div class="flex justify-center">
+      <ap-campaign-list [campaignData]="underConditionCampaign" [currency]="currency" />
+    </div>
+    <p class="text-sm text-yellow-400">
+      <span class="font-semibold">Q：</span>点击确认后，是否需要自动显示列表让玩家查看进度，每日顯示還是每次登录都显示？
+    </p>
+  </section>
+
+  <section class="space-y-3">
+    <h2>3. In Progress（进行中）</h2>
+    <p>当活动正在进行中，会有弹窗提醒。</p>
+
+    <h3>首次领取</h3>
+    <div class="space-y-2">
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">Free Bonus</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！\n\n您刚领取了「价值 &#123;1&#125; 的 &#123;0&#125; 活动钱包！」\n\n请点击【确定】查询活动结束时间、提领条件和提领上限。</code>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">Free Spin</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！\n \n 您刚领取了「总价值&#123;1&#125;的免费次数&#123;0&#125;次！」\n \n 请点击【确定】查询活动结束时间、提领条件和提领上限。</code>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">多个活动合并</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！\n 您刚刚领取了如下所示的多个活动：&#123;0&#125;\n请点击"确定"选择您想先游玩的活动。</code>
+      </div>
+    </div>
+    <p>点击之后可跳转至活动列表查看进度。</p>
+    <div class="flex justify-center">
+      <ap-campaign-list [campaignData]="inProgressCampaign" [currency]="currency" />
+    </div>
+    <p>玩家点击确认后，若还没完成活动，下次登录会有提示。</p>
+
+    <h3>再次登入提示</h3>
+    <div class="space-y-2">
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">Free Bonus</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">欢迎回来！\n\n您领取的 &#123;0&#125; 活动还在进行中，预计结束时间为\n&#123;1&#125;\n您需在活动结束前达到 &#123;2&#125;，才能将活动钱包的金额提领至现金钱包！</code>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">Free Spin</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">欢迎回来！\n \n 您领取的 &#123;0&#125; 免费次数还在进行中，预计结束时间为\n&#123;1&#125;\n请把握时间完成活动。</code>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">多个合并</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">欢迎回来！\n 您仍有以下的活动正在进行：&#123;0&#125;\n请把握时间完成活动。</code>
+      </div>
+    </div>
+    <p class="text-sm text-yellow-400">
+      <span class="font-semibold">Q：</span>彈窗顯示是要每日顯示還是每次登录都显示？
+    </p>
+  </section>
+
+  <section class="space-y-3">
+    <h2>4. Free Spin to Free Bonus（免费次数转换为免费奖励）</h2>
+    <p>当玩家的免费次数转换为免费奖励时，会有相应的提示弹窗。</p>
+    <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！\n 您已完成 &#123;0&#125; 的所有次数！\n \n 请继续在活动钱包进行游戏，完成提领条件。</code>
+    <p>点击确认之后，玩家会继续以 Free Bonus 游玩。</p>
+  </section>
+
+  <section class="space-y-3">
+    <h2>5. Completed（活动结束）</h2>
+    <p>会有相应的提示弹窗。</p>
+    <div class="space-y-2">
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">成功</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">恭喜您！\n您已达成 &#123;0&#125; 的提领条件！\n\n活动钱包：&#123;1&#125;\n提领上限：&#123;2&#125;</code>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">失败</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">您已完成本次活动\n &#123;0&#125;！\n \n 祝您下次好运！</code>
+      </div>
+    </div>
+    <p class="text-sm text-yellow-400">
+      <span class="font-semibold">Q：</span>成功顯示的訊息，是否要提示入帳需要時間？
+    </p>
+  </section>
+
+  <section class="space-y-3">
+    <h2>6. 提领上限已达无法领取</h2>
+    <p>第 2 步完成，但第 3 步无法完成时，会有相应的提示弹窗。</p>
+    <div class="space-y-2">
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">当日上限已达无法领取</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">你已完成「&#123;0&#125;」的领取条件！\n本日活动次数已尽数提领完毕，请明日尽早来领取。</code>
+      </div>
+      <div>
+        <p class="text-sm font-semibold text-zinc-200">全部上限已达无法领取</p>
+        <code class="block whitespace-pre-wrap wrap-break-word rounded-lg border border-zinc-700 bg-zinc-800 p-3 text-xs text-zinc-300 sm:text-sm">很抱歉\n\n本次活动「&#123;0&#125;」\n奖励已尽数提领完毕\n\n祝您下次好运！</code>
+      </div>
+    </div>
+    <p class="text-sm text-yellow-400">
+      <span class="font-semibold">Q：</span>當日上限已达无法领取时，是否需要提示玩家明日再来领取？
+    </p>
+  </section>
+</div>

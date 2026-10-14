@@ -1,0 +1,297 @@
+<div class="flex size-full flex-col mx-auto bg-zinc-900">
+  <!-- Header card -->
+  <div class="shrink-0 px-3 sm:px-6 w-full max-w-4xl mx-auto sm:mt-2">
+    <div
+      [class]="
+        'history-ticket-card relative rounded-xl border ' +
+        (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+      "
+    >
+      <!-- Name + Date/Transaction -->
+      <div class="px-2 py-2 sm:px-4 sm:py-2 justify-center">
+        <div
+          class="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,auto)_minmax(0,1fr)] sm:items-center sm:gap-6"
+        >
+          <div class="min-w-0 text-center sm:text-left">
+            <h5 class="mt-1 truncate font-medium text-zinc-100">
+              {{ displayName() }}
+            </h5>
+          </div>
+          <div class="min-w-0 text-center sm:justify-self-center">
+            <div
+              class="inline-flex max-w-full items-center gap-3 px-3 py-1 text-zinc-400"
+            >
+              <button
+                class="flex shrink-0 cursor-pointer items-center gap-1 border-bottom-zinc"
+                (click)="item() && clickCopyTransaction(item()!, $event)"
+              >
+                <ap-icon name="document-text" class="size-4 shrink-0" />
+                <p class="truncate">{{ ticket() }}</p>
+              </button>
+            </div>
+          </div>
+          <div class="min-w-0"></div>
+        </div>
+      </div>
+
+      @if (isCashDrop()) {
+        <!-- Top Bar: Bet (N/A), Win, Balance -->
+        <div class="history-ticket-divider"></div>
+        <div class="top-bar-summary grid grid-cols-2 sm:grid-cols-3">
+          <!-- Main Prize -->
+          <div
+            [class]="
+              'top-bar-summary-cell flex min-w-0 flex-col items-center justify-start px-2 py-4 text-center sm:px-4 sm:border-b-0 border-r sm:border-r rounded-bl-2xl sm:rounded-bl-2xl ' +
+              (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+            "
+          >
+            <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+              {{ mainPrizeLabel() }}
+            </h6>
+            <div
+              class="relative mt-2 flex min-w-0 flex-row items-center justify-center gap-2.5 sm:flex-col sm:gap-1"
+            >
+              <h4 class="font-semibold text-emerald-400">
+                @if (mainPrize() !== null) {
+                  {{ mainPrize()! | moneyText }}
+                }
+              </h4>
+            </div>
+          </div>
+          <!-- Mystery Prize -->
+          <div
+            [class]="
+              'top-bar-summary-cell flex min-w-0 flex-col items-center justify-start px-2 py-4 text-center sm:px-4 sm:border-b-0 sm:border-r ' +
+              (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+            "
+          >
+            <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+              {{ mysteryPrizeLabel() }}
+            </h6>
+            <h4 class="mt-2 font-semibold text-emerald-400">
+              @if (mysteryPrize() !== null) {
+                {{ mysteryPrize()! | moneyText }}
+              }
+            </h4>
+          </div>
+          <!-- Balance -->
+          <div
+            [class]="
+              'top-bar-summary-cell flex min-w-0 flex-col items-center justify-center px-2 py-4 text-center sm:px-4 sm:border-b-0 col-span-2 border-t sm:col-span-1 sm:border-l sm:border-t-0 sm:border-r-0 sm:border-l-0 rounded-br-2xl rounded-bl-2xl sm:rounded-br-2xl sm:rounded-bl-none ' +
+              (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+            "
+          >
+            <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+              {{ balanceTitle() }}
+            </h6>
+            <div
+              class="relative mt-2 flex min-w-0 flex-row items-center justify-center gap-2.5 sm:flex-col sm:gap-1"
+            >
+              @if (balanceNew() !== null) {
+                <h4 class="font-semibold text-white">
+                  {{ balanceNew()! | moneyText }}
+                </h4>
+              }
+              @if (balanceOld() !== null) {
+                <h5 class="text-zinc-400">
+                  {{ balanceOld()! | moneyText }}
+                </h5>
+              }
+            </div>
+          </div>
+        </div>
+      } @else if (isCampaign()) {
+        <div class="history-ticket-divider"></div>
+        <div class="top-bar-summary grid grid-cols-2 sm:grid-cols-3">
+          <div
+            [class]="
+              'top-bar-summary-cell flex min-w-0 flex-col items-center justify-center px-2 py-4 text-center sm:px-4 sm:border-b-0 border-r sm:border-r rounded-bl-2xl sm:rounded-bl-2xl ' +
+              (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+            "
+          >
+            <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+              {{ bonusBalanceLabel() }}
+            </h6>
+            <div class="mt-2 font-semibold text-white">
+              @if (campaignBonusBalance() !== null) {
+                {{ campaignBonusBalance()! | moneyText }}
+              }
+            </div>
+          </div>
+          <div
+            [class]="
+              'top-bar-summary-cell flex min-w-0 flex-col items-center justify-center px-2 py-4 text-center sm:px-4 sm:border-b-0 border-r sm:border-r rounded-bl-2xl sm:rounded-bl-2xl ' +
+              (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+            "
+          >
+            <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+              {{ maxWithdrawLabel() }}
+            </h6>
+            <h4 class="mt-2 font-semibold text-white">
+              @if (campaignMaxWithdraw() !== null) {
+                {{ campaignMaxWithdraw()! | moneyText }}
+              }
+            </h4>
+          </div>
+
+          <div
+            [class]="
+              'top-bar-summary-cell flex min-w-0 flex-col items-center justify-center px-2 py-4 text-center sm:px-4 sm:border-b-0 col-span-2 border-t sm:col-span-1 sm:border-l sm:border-t-0 sm:border-r-0 sm:border-l-0 rounded-br-2xl rounded-bl-2xl sm:rounded-br-2xl sm:rounded-bl-none ' +
+              (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+            "
+          >
+            <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+              {{ amountLabel() }}
+            </h6>
+            <h4 class="mt-2 font-semibold text-emerald-400">
+              @if (campaignAmount() !== null) {
+                {{ campaignAmount()! | moneyText }}
+              }
+            </h4>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+
+  <!-- Content Area -->
+  @if (isCashDrop()) {
+    <div class="relative flex-1 bg-zinc-900 overflow-auto mt-4">
+      <div class="px-3 sm:px-6 w-full max-w-4xl mx-auto">
+        <div class="history-ticket-card rounded-2xl border bg-zinc-900">
+          <div class="px-4 py-6 sm:px-6 flex flex-col gap-4">
+            <div class="space-y-1">
+              <div
+                class="text-xs font-semibold uppercase tracking-wider text-zinc-400"
+              >
+                Reward Details
+              </div>
+            </div>
+
+            <!-- Date status table -->
+            <div
+              class="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50"
+            >
+              <table class="w-full border-collapse">
+                <thead>
+                  <tr class="text-left">
+                    <th
+                      class="border-b border-zinc-800 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                    >
+                      {{ dateLabel() }}
+                    </th>
+                    <th
+                      class="border-b border-zinc-800 px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                    >
+                      {{ statusLabel() }}
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-zinc-800">
+                    <td class="px-4 py-3 text-sm text-zinc-400">
+                      {{ runningDateTime() }}
+                    </td>
+                    <td class="px-4 py-3 text-sm font-medium text-zinc-400">
+                      Running
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-4 py-3 text-sm text-zinc-400">
+                      {{ settledDateTime() }}
+                    </td>
+                    <td class="px-4 py-3 text-sm font-medium text-zinc-400">
+                      Settled
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      @if (isLoading()) {
+        <ap-loading-overlay class="absolute inset-0 bg-zinc-900" @fadeOut />
+      }
+    </div>
+  } @else if (isCampaign()) {
+    <div class="relative flex-1 bg-zinc-900 overflow-auto mt-4">
+      <div class="px-3 sm:px-6 w-full max-w-4xl mx-auto">
+        <div class="history-ticket-card rounded-2xl border bg-zinc-900">
+          <div class="px-4 py-6 sm:px-6 flex flex-col gap-4">
+            <div class="space-y-1">
+              <h6 class="font-semibold uppercase tracking-wider text-zinc-400">
+                Reward Details
+              </h6>
+            </div>
+
+            <div
+              class="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50"
+            >
+              <table class="w-full border-collapse text-sm">
+                <tbody>
+                  <tr class="border-bottom-zinc">
+                    <td
+                      class="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                    >
+                      {{ nameLabel() }}
+                    </td>
+                    <td class="px-4 py-3 text-right text-sm text-zinc-400">
+                      @if (campaignName() !== null) {
+                        {{ campaignName()! }}
+                      }
+                    </td>
+                  </tr>
+                  @if (showExpiryDate()) {
+                    <tr class="border-bottom-zinc">
+                      <td
+                        class="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                      >
+                        {{ expiryDateLabel() }}
+                      </td>
+                      <td class="px-4 py-3 text-right text-sm text-zinc-400">
+                        {{ campaignExpiryDate() }}
+                      </td>
+                    </tr>
+                  }
+                  <tr class="border-bottom-zinc">
+                    <td
+                      class="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                    >
+                      {{ turnoverRequirementLabel() }}
+                    </td>
+                    <td
+                      class="px-4 py-3 text-right text-sm font-medium text-zinc-400"
+                    >
+                      @if (campaignTurnoverRequirement() !== null) {
+                        {{ campaignTurnoverRequirement()! | moneyText }}
+                      }
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td
+                      class="px-4 py-3 text-xs font-semibold uppercase tracking-wider text-zinc-500"
+                    >
+                      {{ minWithdrawLabel() }}
+                    </td>
+                    <td
+                      class="px-4 py-3 text-right text-sm font-medium text-zinc-400"
+                    >
+                      @if (campaignMinWithdraw() !== null) {
+                        {{ campaignMinWithdraw()! | moneyText }}
+                      }
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+      @if (isLoading()) {
+        <ap-loading-overlay class="absolute inset-0 bg-zinc-900" @fadeOut />
+      }
+    </div>
+  }
+</div>

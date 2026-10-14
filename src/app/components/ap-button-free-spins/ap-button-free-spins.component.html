@@ -1,0 +1,35 @@
+<div
+  class="relative items-center justify-center w-24"
+  [style.transform]="getScaleStyle()"
+  [style.transform-origin]="'center'"
+  [ngClass]="
+    disabled()
+      ? 'opacity-50 cursor-not-allowed'
+      : 'cursor-pointer hover-scale'
+  "
+>
+  <ap-icon-badge
+    class="size-full color-transition"
+    [disabled]="disabled()"
+    (pointerdown)="pointerDown()"
+  >
+    <ap-icon-yellow-circle />
+  </ap-icon-badge>
+
+  <div
+    class="pointer-events-none absolute inset-0 flex flex-col items-center justify-center pb-1"
+  >
+    <!-- Current Spins -->
+    <div class="font-anton text-yellow-200 leading-none text-3xl">
+      {{ currentSpins() > 0 ? currentSpins() : 0 }}
+    </div>
+
+    <!-- Divider line -->
+    <div class="w-3/5 h-0.5 bg-zinc-400 my-1"></div>
+
+    <!-- Total Spins (bottom number) -->
+    <div class="font-anton text-yellow-300 leading-none text-xl">
+      {{ totalSpins() }}
+    </div>
+  </div>
+</div>

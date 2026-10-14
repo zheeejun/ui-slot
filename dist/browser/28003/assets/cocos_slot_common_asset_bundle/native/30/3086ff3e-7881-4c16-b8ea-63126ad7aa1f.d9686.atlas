@@ -1,0 +1,27 @@
+
+anim_tip.png
+size: 128,64
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/red_light
+  rotate: true
+  xy: 2, 2
+  size: 46, 47
+  orig: 50, 50
+  offset: 1, 1
+  index: -1
+img/tip
+  rotate: false
+  xy: 91, 22
+  size: 10, 26
+  orig: 10, 26
+  offset: 0, 0
+  index: -1
+img/tip_red
+  rotate: false
+  xy: 51, 10
+  size: 38, 38
+  orig: 38, 38
+  offset: 0, 0
+  index: -1

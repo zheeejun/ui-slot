@@ -1,0 +1,41 @@
+
+anim_mgbg_cloud.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+image/cloud_mg_1
+  rotate: false
+  xy: 441, 131
+  size: 404, 154
+  orig: 485, 157
+  offset: 2, 3
+  index: -1
+image/cloud_mg_2
+  rotate: true
+  xy: 847, 2
+  size: 283, 139
+  orig: 293, 142
+  offset: 6, 3
+  index: -1
+image/cloud_mg_3
+  rotate: false
+  xy: 2, 103
+  size: 378, 130
+  orig: 380, 132
+  offset: 1, 2
+  index: -1
+image/cloud_mg_4
+  rotate: false
+  xy: 2, 235
+  size: 437, 198
+  orig: 522, 202
+  offset: 63, 4
+  index: -1
+image/cloud_mg_5
+  rotate: false
+  xy: 441, 287
+  size: 525, 146
+  orig: 527, 149
+  offset: 1, 1
+  index: -1

@@ -1,0 +1,126 @@
+<div class="page-container">
+  <div class="page-content">
+    <!-- Spin -->
+    @if (isGhana()) {
+      <ap-info-guide
+        [title]="getSpinTitle()"
+        [getItem1]="getSpinItem1()"
+        [getItem2]="''"
+      >
+        <ap-icon-spin variant="red"/>
+      </ap-info-guide>
+    } @else {
+      <ap-info-guide
+        [title]="getSpinTitle()"
+        [getItem1]="getSpinItem1()"
+        [getItem2]="''"
+      >
+        <ap-icon-spin />
+      </ap-info-guide>
+    }
+    <!-- Hold Turbo Spin -->
+      @if (!hideHoldTurbo()) {
+     <ap-info-guide
+        [title]="getHoldTurboTitleDefault()"
+        [getItem1]="getHoldTurboDefaultItem1()"
+        [getItem2]="''"
+      >
+        <ap-icon-hold-turbo-spin />
+      </ap-info-guide>}
+    <!-- Auto Spin -->
+    @if (!hideAutoplay()) {
+      <ap-info-guide
+        [title]="getAutoSpinTitle()"
+        [getItem1]="getAutoSpinItem1()"
+        [getItem2]="''"
+      >
+        <ap-icon-autoplay-circle />
+      </ap-info-guide>
+    }
+    <!-- Turbo Spin -->
+    @if (!hideTurbo()) {
+      <ap-info-guide
+        [title]="getTurboTitleDefault()"
+        [getItem1]="getTurboDefaultItem1()"
+        [getItem2]="''"
+      >
+        <ap-icon-turbo-circle />
+      </ap-info-guide>
+      <ap-info-guide
+        [title]="getTurboTitleFast()"
+        [getItem1]="getTurboFastItem1()"
+        [getItem2]="''"
+      >
+        <ap-icon-turbo-circle variant="black" />
+    </ap-info-guide>
+    }
+    <!-- Add Bet -->
+    <ap-info-guide
+      [title]="getAddBetTitle()"
+      [getItem1]="getAddBetItem1()"
+      [getItem2]="''"
+    >
+      <ap-icon-inc-dec />
+    </ap-info-guide>
+
+    <!-- Demo Play -->
+    <ap-info-guide
+      [icon]="'play-circle'"
+      [title]="getDemoPlayTitle()"
+      [getItem1]="getDemoPlayItem1()"
+      [getItem2]="''"
+      [hidden]="isGhana()"
+    />
+
+    <!-- Menu -->
+    <ap-info-guide
+      [icon]="'bar-3'"
+      [title]="getMenuTitle()"
+      [getItem1]="getMenuItem1()"
+      [getItem2]="''"
+    />
+    <!-- Info -->
+    <ap-info-guide
+      [icon]="'exclamation-circle default'"
+      [title]="getInfoTitle()"
+      [getItem1]="getInfoItem1()"
+      [getItem2]="''"
+    />
+    <!-- History -->
+    <ap-info-guide
+      [icon]="'document-text default'"
+      [title]="getHistoryTitle()"
+      [getItem1]="getHistoryItem1()"
+      [getItem2]="''"
+    />
+    <!-- Sound ON -->
+    <ap-info-guide
+      [icon]="'speaker-wave default'"
+      [title]="getSoundOnTitle()"
+      [getItem1]="getSoundOnItem1()"
+      [getItem2]="''"
+    />
+    <!-- Music ON -->
+    <ap-info-guide
+      [icon]="'musical-note default'"
+      [title]="getMusicOnTitle()"
+      [getItem1]="getMusicOnItem1()"
+      [getItem2]="''"
+    />
+
+    <div class="flex-1 mt-8">
+      <h5 class="text-yellow-200">{{ getNoteTitle() }}</h5>
+    </div>
+    <ul class="list-disc list-none">
+      <li>{{ getNoteItem1() }}</li>
+      @if (!hideNoteItem2()) {
+        <li>{{ getNoteItem2() }}</li>
+      }
+    </ul>
+    @if (gameVersion()) {
+      <time class="mt-4 block text-center text-zinc-400">
+        {{ gameVersion() }}
+      </time>
+    }
+  </div>
+</div>

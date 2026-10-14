@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/ap-components-lib/ap-toast/ap-toast.component.css"],
+  "sourcesContent": [":host {\n  display: inline-block;\n}\n\n.toast-wrapper {\n  display: inline-flex;\n  flex-direction: column;\n  align-items: center;\n  animation: toast-fade-in 0.15s ease-out;\n}\n\n@keyframes toast-fade-in {\n  from {\n    opacity: 0;\n    transform: translateY(4px);\n  }\n  to {\n    opacity: 1;\n    transform: translateY(0);\n  }\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACF;AAEA,CAAA;AACE,WAAA;AACA,kBAAA;AACA,eAAA;AACA,aAAA,cAAA,MAAA;AACF;AAEA,WAHE;AAIA;AACE,aAAA;AACA,eAAA,WAAA;AACF;AACA;AACE,aAAA;AACA,eAAA,WAAA;AACF;AACF;",
+  "names": []
+}

@@ -1,0 +1,20 @@
+
+anim_connect.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+image/FireSmoke_38
+  rotate: false
+  xy: 3, 3
+  size: 20, 12
+  orig: 32, 32
+  offset: 6, 10
+  index: -1
+image/frame
+  rotate: false
+  xy: 3, 18
+  size: 148, 148
+  orig: 148, 148
+  offset: 0, 0
+  index: -1

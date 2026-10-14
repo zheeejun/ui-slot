@@ -1,0 +1,13 @@
+
+anim_mutiply_base_fx.png
+size: 128,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_reel_fg_add
+  rotate: false
+  xy: 20, 63
+  size: 82, 39
+  orig: 82, 39
+  offset: 0, 0
+  index: -1

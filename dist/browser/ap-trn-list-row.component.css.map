@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/ap-trn-list-row/ap-trn-list-row.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n  width: 100%;\n}\n\n/* 排名上升動畫 */\n@keyframes rankUp {\n  0% {\n    transform: translateY(10px);\n  }\n  100% {\n    transform: translateY(0);\n  }\n}\n\n/* 排名下降動畫 */\n@keyframes rankDown {\n  0% {\n    transform: translateY(-10px);\n  }\n  100% {\n    transform: translateY(0);\n  }\n}\n\n/* 應用動畫 */\n.rank-up {\n  animation: rankUp 0.25s ease-out;\n}\n\n.rank-down {\n  animation: rankDown 0.25s ease-out;\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,SAAA;AACF;AAGA,WAAA;AACE;AACE,eAAA,WAAA;AACF;AACA;AACE,eAAA,WAAA;AACF;AACF;AAGA,WAAA;AACE;AACE,eAAA,WAAA;AACF;AACA;AACE,eAAA,WAAA;AACF;AACF;AAGA,CAAA;AACE,aAAA,OAAA,MAAA;AACF;AAEA,CAAA;AACE,aAAA,SAAA,MAAA;AACF;",
+  "names": []
+}

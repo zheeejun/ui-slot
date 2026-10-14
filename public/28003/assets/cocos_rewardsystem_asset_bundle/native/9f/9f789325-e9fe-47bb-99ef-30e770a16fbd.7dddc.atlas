@@ -1,0 +1,321 @@
+
+anim_arrow.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/arrow
+  rotate: false
+  xy: 2, 296
+  size: 192, 192
+  orig: 192, 192
+  offset: 0, 0
+  index: -1
+img/arrow_bg
+  rotate: true
+  xy: 2, 153
+  size: 141, 135
+  orig: 150, 150
+  offset: 4, 5
+  index: -1
+img/saber/arrow_light00000
+  rotate: true
+  xy: 196, 297
+  size: 93, 91
+  orig: 150, 150
+  offset: 30, 50
+  index: -1
+img/saber/arrow_light00002
+  rotate: true
+  xy: 590, 108
+  size: 93, 88
+  orig: 150, 150
+  offset: 20, 44
+  index: -1
+img/saber/arrow_light00004
+  rotate: true
+  xy: 686, 396
+  size: 92, 86
+  orig: 150, 150
+  offset: 12, 37
+  index: -1
+img/saber/arrow_light00006
+  rotate: true
+  xy: 675, 17
+  size: 89, 88
+  orig: 150, 150
+  offset: 6, 27
+  index: -1
+img/saber/arrow_light00008
+  rotate: false
+  xy: 718, 210
+  size: 85, 92
+  orig: 150, 150
+  offset: 1, 16
+  index: -1
+img/saber/arrow_light00010
+  rotate: false
+  xy: 805, 214
+  size: 78, 96
+  orig: 150, 150
+  offset: 0, 6
+  index: -1
+img/saber/arrow_light00012
+  rotate: true
+  xy: 865, 136
+  size: 76, 96
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+img/saber/arrow_light00014
+  rotate: false
+  xy: 885, 225
+  size: 84, 86
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+img/saber/arrow_light00016
+  rotate: true
+  xy: 851, 31
+  size: 94, 78
+  orig: 150, 150
+  offset: 0, 0
+  index: -1
+img/saber/arrow_light00018
+  rotate: false
+  xy: 861, 412
+  size: 97, 76
+  orig: 150, 150
+  offset: 4, 0
+  index: -1
+img/saber/arrow_light00020
+  rotate: true
+  xy: 590, 11
+  size: 95, 83
+  orig: 150, 150
+  offset: 12, 0
+  index: -1
+img/saber/arrow_light00022
+  rotate: true
+  xy: 680, 117
+  size: 89, 88
+  orig: 150, 150
+  offset: 24, 3
+  index: -1
+img/saber/arrow_light00024
+  rotate: false
+  xy: 774, 398
+  size: 85, 90
+  orig: 150, 150
+  offset: 35, 9
+  index: -1
+img/saber/arrow_light00026
+  rotate: true
+  xy: 666, 304
+  size: 86, 93
+  orig: 150, 150
+  offset: 42, 15
+  index: -1
+img/saber/arrow_light00028
+  rotate: true
+  xy: 474, 301
+  size: 89, 93
+  orig: 150, 150
+  offset: 48, 24
+  index: -1
+img/saber/arrow_light00030
+  rotate: false
+  xy: 382, 298
+  size: 90, 92
+  orig: 150, 150
+  offset: 55, 35
+  index: -1
+img/saber/arrow_light00032
+  rotate: false
+  xy: 629, 208
+  size: 87, 93
+  orig: 150, 150
+  offset: 63, 44
+  index: -1
+img/saber/arrow_light00034
+  rotate: true
+  xy: 770, 127
+  size: 81, 93
+  orig: 150, 150
+  offset: 69, 53
+  index: -1
+img/saber/arrow_light00036
+  rotate: true
+  xy: 857, 313
+  size: 83, 90
+  orig: 150, 150
+  offset: 67, 60
+  index: -1
+img/saber/arrow_light00038
+  rotate: true
+  xy: 765, 25
+  size: 90, 84
+  orig: 150, 150
+  offset: 60, 66
+  index: -1
+img/saber/arrow_light00040
+  rotate: false
+  xy: 761, 312
+  size: 94, 82
+  orig: 150, 150
+  offset: 53, 68
+  index: -1
+img/saber/arrow_light00042
+  rotate: false
+  xy: 569, 303
+  size: 95, 87
+  orig: 150, 150
+  offset: 44, 62
+  index: -1
+img/saber/arrow_light00044
+  rotate: true
+  xy: 289, 297
+  size: 93, 91
+  orig: 150, 150
+  offset: 35, 53
+  index: -1
+img/shine/arrow_shine_00011
+  rotate: false
+  xy: 2, 55
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00012
+  rotate: false
+  xy: 100, 55
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00013
+  rotate: false
+  xy: 139, 198
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00014
+  rotate: false
+  xy: 196, 392
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00015
+  rotate: false
+  xy: 198, 100
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00016
+  rotate: false
+  xy: 237, 199
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00017
+  rotate: false
+  xy: 294, 392
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00018
+  rotate: false
+  xy: 198, 2
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00019
+  rotate: false
+  xy: 296, 101
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00020
+  rotate: false
+  xy: 335, 199
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00021
+  rotate: false
+  xy: 392, 392
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00022
+  rotate: false
+  xy: 296, 3
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00023
+  rotate: false
+  xy: 394, 101
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00024
+  rotate: false
+  xy: 433, 200
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00025
+  rotate: false
+  xy: 490, 392
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00026
+  rotate: false
+  xy: 394, 3
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00027
+  rotate: false
+  xy: 492, 102
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00028
+  rotate: false
+  xy: 531, 203
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00029
+  rotate: false
+  xy: 588, 392
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1
+img/shine/arrow_shine_00030
+  rotate: false
+  xy: 492, 4
+  size: 96, 96
+  orig: 150, 150
+  offset: 27, 27
+  index: -1

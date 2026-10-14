@@ -1,0 +1,8 @@
+<div class="relative w-xs flex flex-col gap-1 p-2 text-white bg-black/50 rounded-xl">
+  <ap-toggle-switch size="small" fitMode="container" label="Replay/Demo Mode" [checked]="showPlayModeDebug()" (checkedChange)="showPlayModeDebug.set($event)" />
+  <ap-toggle-switch size="small" fitMode="container" label="CashDrop Toast Debug" [checked]="showCashdropDebug()" (checkedChange)="showCashdropDebug.set($event)" />
+  <ap-toggle-switch size="small" fitMode="container" label="Replace By Key" [checked]="replaceByKeyEnabled()" (checkedChange)="onReplaceByKeyChange($event)" />
+</div>
+
+@if (showCashdropDebug()) {<event-cashdrop-toast class="fixed top-7 left-1/4"/>}
+@if (showPlayModeDebug()) {<ap-ui-replay-mode class="fixed top-1 left-1/2 -translate-x-1/2"/>}

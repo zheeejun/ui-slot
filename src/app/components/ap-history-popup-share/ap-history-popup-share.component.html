@@ -1,0 +1,43 @@
+<div class="absolute relative size-full grid place-items-center select-none">
+  <div class="absolute inset-0 bg-black/60" (click)="onCancel()"></div>
+  <ap-ui-frame-popup
+    [header]="header()"
+    [size]="'mobile'"
+    class="w-11/12 lg:w-1/2"
+    (close)="close.emit()"
+  >
+    <!-- Buttons -->
+    <div class="flex flex-col items-center text-white py-8 px-6">
+      <div class="grid grid-cols-3 gap-x-12 gap-y-10 text-center">
+        @for (channel of shareChannels(); track channel.label) {
+          <button
+            (click)="channel.action()"
+            class="flex flex-col items-center gap-2 cursor-pointer group"
+          >
+            <div class="size-12">
+              @if (channel.comp) {
+                <ng-container *ngComponentOutlet="channel.comp"></ng-container>
+              } @else {
+                <img
+                  [src]="channel.imageSrc! + `?v=${version()}`"
+                  [alt]="channel.imageAlt!"
+                />
+              }
+            </div>
+            <span class="text-sm group-hover:underline">{{ channel.label }}</span>
+          </button>
+        }
+
+        <!-- Copy Link Button -->
+        <button class="flex flex-col items-center gap-2 cursor-pointer group" (click)="onCopyLink()">
+          <ap-button
+            [variant]="'content-rounded'"
+            [icon]="'copy'"
+            [accentColor]="'yellow'"
+          />
+          <span class="text-sm group-hover:underline">{{ linkLabel() }}</span>
+        </button>
+      </div>
+    </div>
+  </ap-ui-frame-popup>
+</div>

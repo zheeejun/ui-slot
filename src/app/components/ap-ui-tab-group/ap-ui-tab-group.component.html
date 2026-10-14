@@ -1,0 +1,17 @@
+<div
+  class="flex max-w-md mx-auto bg-zinc-800"
+  [ngClass]="containerClasses()"
+>
+  @for (tab of tabs(); track tab.id) {
+    <button
+      class="flex-1 color-transition text-center"
+      [disabled]="disabled()"
+      [class.cursor-not-allowed]="disabled()"
+      [class.cursor-pointer]="!disabled()"
+      [ngClass]="getTabClasses(tab.id)"
+      (click)="onClick(tab.id)"
+    >
+      <div [ngClass]="labelClasses()">{{ tab.label }}</div>
+    </button>
+  }
+</div>

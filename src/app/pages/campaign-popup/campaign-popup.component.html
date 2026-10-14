@@ -1,0 +1,33 @@
+@if (showMessage()) {
+  <div class="fixed inset-0 grid place-items-center">
+    <div
+      class="absolute inset-0 popup-overlay fade-out"
+    ></div>
+    <ap-ui-frame-popup
+      [header]="messageHeader()"
+      [size]="'mobile'"
+      [enableClose]="false"
+    >
+      <div class="p-4 text-center space-y-2">
+        <ap-icon [name]="'gift default'" class="popup-icon text-yellow-400" />
+        <div
+          class="h-px divider-gradient-yellow opacity-80 w-[90%] mx-auto"
+        ></div>
+        <h4
+          class="max-h-[40vh] min-h-24 overflow-y-auto whitespace-pre-wrap break-all text-zinc-300"
+        >
+          {{ messageContent() }}
+        </h4>
+      </div>
+
+      <div class="flex justify-center pb-4">
+        <ap-button
+          class="w-1/2 [&>button]:w-full"
+          [accentColor]="'yellow'"
+          [label]="buttonText()"
+          (clicked)="onClick()"
+        />
+      </div>
+    </ap-ui-frame-popup>
+  </div>
+}

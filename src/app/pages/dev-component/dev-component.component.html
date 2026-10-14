@@ -1,0 +1,43 @@
+<ap-ui-card-dev id="ap-ui-replay-mode" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Status Mode</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="replayModeCategories"
+        [getCodeSnippet]="getReplayModeCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-ui-replay-mode
+              [label]="variant.label ?? 'Replay Mode'"
+              [showIcon]="variant.showIcon ?? true"
+              [showCloseButton]="variant.showCloseButton ?? true"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-history-calender" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">History Calendar</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="historyCalendarCategories"
+        [getCodeSnippet]="getHistoryCalendarCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex items-center justify-center p-4">
+            <ap-history-calender class="scale-80" [accentColor]="variant.accentColor ?? 'yellow'" />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

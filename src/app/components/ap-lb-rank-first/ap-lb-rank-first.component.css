@@ -1,0 +1,10 @@
+:host {
+  display: block;
+}
+
+.leader-board-background {
+  /* background-image 已移至 HTML 綁定以避開編譯檢查 */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}

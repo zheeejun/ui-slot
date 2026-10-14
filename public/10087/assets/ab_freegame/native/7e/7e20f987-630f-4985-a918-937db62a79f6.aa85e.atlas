@@ -1,0 +1,41 @@
+
+anim_addfx.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+glow_01
+  rotate: false
+  xy: 150, 22
+  size: 135, 127
+  orig: 160, 160
+  offset: 10, 19
+  index: -1
+glow_02
+  rotate: true
+  xy: 287, 24
+  size: 125, 124
+  orig: 156, 156
+  offset: 15, 14
+  index: -1
+grass_g
+  rotate: true
+  xy: 287, 2
+  size: 20, 51
+  orig: 49, 113
+  offset: 13, 29
+  index: -1
+lizi_1
+  rotate: false
+  xy: 150, 8
+  size: 13, 12
+  orig: 16, 16
+  offset: 1, 2
+  index: -1
+word_glow
+  rotate: false
+  xy: 2, 3
+  size: 146, 146
+  orig: 200, 150
+  offset: 23, 4
+  index: -1

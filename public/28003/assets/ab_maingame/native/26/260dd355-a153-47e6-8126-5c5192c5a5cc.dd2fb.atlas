@@ -1,0 +1,167 @@
+
+anim_sym_l.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+a_1
+  rotate: false
+  xy: 307, 382
+  size: 110, 120
+  orig: 180, 180
+  offset: 32, 33
+  index: -1
+a_2
+  rotate: false
+  xy: 5, 180
+  size: 151, 157
+  orig: 180, 180
+  offset: 17, 4
+  index: -1
+dust/dust_001
+  rotate: false
+  xy: 5, 5
+  size: 30, 7
+  orig: 150, 150
+  offset: 61, 54
+  index: -1
+dust/dust_002
+  rotate: true
+  xy: 400, 223
+  size: 76, 25
+  orig: 150, 150
+  offset: 35, 49
+  index: -1
+dust/dust_003
+  rotate: false
+  xy: 133, 21
+  size: 94, 29
+  orig: 150, 150
+  offset: 28, 48
+  index: -1
+dust/dust_004
+  rotate: true
+  xy: 409, 109
+  size: 109, 33
+  orig: 150, 150
+  offset: 21, 47
+  index: -1
+dust/dust_005
+  rotate: false
+  xy: 307, 342
+  size: 111, 35
+  orig: 150, 150
+  offset: 20, 46
+  index: -1
+dust/dust_006
+  rotate: false
+  xy: 282, 184
+  size: 112, 35
+  orig: 150, 150
+  offset: 20, 46
+  index: -1
+dust/dust_007
+  rotate: false
+  xy: 282, 264
+  size: 113, 35
+  orig: 150, 150
+  offset: 19, 46
+  index: -1
+dust/dust_008
+  rotate: false
+  xy: 282, 224
+  size: 113, 35
+  orig: 150, 150
+  offset: 19, 46
+  index: -1
+dust/dust_009
+  rotate: true
+  xy: 463, 387
+  size: 115, 35
+  orig: 150, 150
+  offset: 18, 46
+  index: -1
+dust/dust_010
+  rotate: false
+  xy: 161, 180
+  size: 116, 36
+  orig: 150, 150
+  offset: 17, 45
+  index: -1
+dust/dust_011
+  rotate: true
+  xy: 422, 385
+  size: 117, 36
+  orig: 150, 150
+  offset: 16, 45
+  index: -1
+dust/dust_012
+  rotate: false
+  xy: 282, 304
+  size: 117, 33
+  orig: 150, 150
+  offset: 16, 45
+  index: -1
+dust/dust_013
+  rotate: true
+  xy: 337, 63
+  size: 116, 31
+  orig: 150, 150
+  offset: 15, 45
+  index: -1
+dust/dust_014
+  rotate: true
+  xy: 373, 63
+  size: 116, 31
+  orig: 150, 150
+  offset: 15, 45
+  index: -1
+dust/dust_015
+  rotate: false
+  xy: 232, 15
+  size: 114, 30
+  orig: 150, 150
+  offset: 15, 45
+  index: -1
+j_1
+  rotate: false
+  xy: 242, 50
+  size: 90, 125
+  orig: 180, 180
+  offset: 31, 30
+  index: -1
+j_2
+  rotate: false
+  xy: 5, 17
+  size: 123, 158
+  orig: 180, 180
+  offset: 22, 4
+  index: -1
+k_1
+  rotate: false
+  xy: 133, 55
+  size: 104, 120
+  orig: 180, 180
+  offset: 38, 30
+  index: -1
+k_2
+  rotate: false
+  xy: 161, 346
+  size: 141, 156
+  orig: 180, 180
+  offset: 25, 4
+  index: -1
+q_1
+  rotate: false
+  xy: 161, 221
+  size: 116, 120
+  orig: 180, 180
+  offset: 31, 33
+  index: -1
+q_2
+  rotate: false
+  xy: 5, 342
+  size: 151, 160
+  orig: 180, 180
+  offset: 19, 3
+  index: -1

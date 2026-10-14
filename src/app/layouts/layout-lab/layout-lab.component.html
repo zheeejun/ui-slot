@@ -1,0 +1,41 @@
+
+<!-- Main Content -->
+<div class="absolute inset-0 duration-300"
+  [ngClass]="{ 'lg:pr-84': showMenu() }"
+>
+  <router-outlet></router-outlet>
+  @if(showSlotSettings()){
+    <slot-reel-setting class="relative p-3"></slot-reel-setting>
+  }
+</div>
+
+<!-- Side Menu -->
+<div class="absolute top-0 right-0 flex flex-col bg-zinc-800 gap-2 p-2 pt-10 w-84 h-full -mr-84 duration-300 overflow-auto z-devtools"
+  [ngClass]="{ 'mr-0': showMenu() }"
+>
+  @for (item of toggleList; track item.label) {
+    <button
+      class="flex items-center bg-white/20 justify-between w-full p-3 rounded-2xl text-xs font-semibold uppercase tracking-wider text-zinc-400 hover:text-zinc-200 transition-colors"
+      (click)="item.signal.set(!item.signal())"
+    >
+      <span>{{ item.label }}</span>
+      <ap-icon
+        name="chevron-down"
+        class="size-4 transition-transform duration-200"
+        [ngClass]="{ 'rotate-180': item.signal() }"
+      />
+    </button>
+    @if (item.signal()) {
+      <ng-container [ngComponentOutlet]="item.component" />
+    }
+  }
+  <ap-toggle-switch size="small" fitMode="container" label="Show Slot Setting Panels" [checked]="showSlotSettings()" (checkedChange)="showSlotSettings.set($event)"/>
+</div>
+
+<div class="absolute top-0 right-0 flex">
+  <!-- Toggle Button -->
+  <ap-icon name="bar-3" class="size-8 text-zinc-300/50 hover:text-zinc-200 active:scale-95 transition-all duration-200 cursor-pointer z-devtools" 
+    (click)="toggleSideMenu()"
+  />
+</div>
+

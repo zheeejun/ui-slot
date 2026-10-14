@@ -1,0 +1,58 @@
+@if (isVisible()) {
+  <div
+    class="relative select-none"
+    [class.animate-fade-right]="!isFadingOut()"
+    [class.animate-duration-500]="!isFadingOut()"
+    [class.animate-fade-out]="isFadingOut()"
+  >
+    <div
+      class="relative flex p-4 items-center w-full bg-zinc-900 rounded-xl border-banner"
+    >
+      <div class="flex flex-col justify-center gap-2">
+        <div class="flex gap-4 w-[24rem]">
+          <img
+            src="assets/images/icons/img-ap-coin.png"
+            alt="AP Coin"
+            class="coin-icon"
+          />
+          <!-- Coin Text -->
+          <div class="flex flex-col gap-1">
+            @if (variant() === "fail") {
+              <h4 class="whitespace-pre-line">
+                {{ failMessage() }}
+              </h4>
+            }
+            @if (variant() === "pass") {
+              <h4 class="whitespace-pre-line">
+                {{ passMessage() }}
+              </h4>
+            }
+            <label
+              class="text-zinc-500 underline cursor-pointer"
+              (click)="clickMoreDetail()"
+            >
+              {{ moreDetailLabel() }}
+            </label>
+          </div>
+          <ap-button
+            [accentColor]="'zinc'"
+            [icon]="'x-mark'"
+            [size]="'small'"
+            [variant]="'content-rounded'"
+            (click)="closeToast()"
+          />
+        </div>
+        <!-- Progress bar -->
+        <div
+          class="relative mt-1.5 h-1.5 rounded-full bg-zinc-800 outline-1 outline-offset-1 outline-zinc-600 overflow-hidden"
+        >
+          <!-- Progress fill -->
+          <div
+            class="absolute progress-bar left-0 top-0 h-full rounded-full animate-countdown"
+            [style.animation-duration]="'5s'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+}

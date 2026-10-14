@@ -1,0 +1,61 @@
+<ap-loading-overlay class="absolute" />
+<game-iframe class="absolute inset-0" uiMode="ap-cover" />
+
+@if (showAll()) {
+  <bottom-panel
+    [hidden]="hidePanel()"
+    [customData]="customData()"
+    class="relative animate-fade-up animate-duration-300 animate-ease-in select-none"
+    (info)="showInfo.set(true)"
+    (history)="showHistory.set(true)"
+  />
+  <div class="relative contents" [hidden]="hideAll()">
+    @if (showCashDropPassToast()) {
+      <event-cashdrop-toast
+        variant="pass"
+        class="absolute top-7 left-1/2"
+        style="transform: translateX(-50%)"
+      />
+    }
+    @if (showCashDropFailToast()) {
+      <event-cashdrop-toast
+        variant="fail"
+        class="absolute top-7 left-1/2"
+        style="transform: translateX(-50%)"
+      />
+    }
+    @if (showTrn()) {
+      <trn-all class="absolute top-0 left-0" />
+    }
+    @if (showHistory()) {
+      <history-list class="absolute inset-0" (close)="showHistory.set(false)" />
+    }
+    @if (showEventCenter()) {
+      <event-center class="absolute inset-0" />
+    }
+    @if (showInfo()) {
+      <page-info (close)="showInfo.set(false)" [hideNoteItem2]="true" />
+    }
+    @if (showCampaignPopup()) {
+      @if (showLatestCampaign()) {
+        <campaign-popup class="absolute top-0 left-0" />
+      }
+      @else {
+        <campaign-popup-legacy class="absolute top-0 left-0" />
+      }
+    }
+    <bottom-panel-popup class="absolute top-0 left-0" />
+  </div>
+}
+@if (showAPLogo()) {
+  <ap-ui-logo-name class="absolute top-0.5 right-1 pointer-events-none" />
+}
+@if (showGameLogo()) {
+  <ap-ui-game-name class="absolute top-0.5 left-1 pointer-events-none" />
+}
+@if (showVersion()) {
+  <ap-ui-version class="absolute top-0 left-0" />
+}
+@if (showRotateTips()) {
+  <ap-ui-device-rotation class="absolute z-error inset-0" />
+}

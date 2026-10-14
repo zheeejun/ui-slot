@@ -1,0 +1,297 @@
+
+<!--ap-icon name="pencil" class="size-6 text-zinc-200/30 hover:text-white cursor-pointer active:scale-95 transition-all" 
+  (click)="showPanel.set(!showPanel())">
+</ap-icon-->
+@if(showPanel()){
+  <div class="fixed top-0 left-0 ">
+    <ap-ui-tab-group [tabs]="tabs()" [selectedTab]="selectedTab()" (tabChange)="onTabChange($event)"></ap-ui-tab-group>
+    <div class="bg-black/50 text-zinc-300 w-fit p-2 rounded-2xl">
+      @if(showRolling()){
+        <div class="flex">
+          <div class="flex flex-col gap-1">
+          RollingSetting
+          <div class="flex justify-between items-center gap-1">
+            <span title="每個圖標旋轉所需的時間" class="cursor-help">symbolSpinTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="symbolSpinTimes1().toString()" type="number" step="0.01" (onInput)="symbolSpinTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="symbolSpinTimes2().toString()" type="number" step="0.01" (onInput)="symbolSpinTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="symbolSpinTimes3().toString()" type="number" step="0.01" (onInput)="symbolSpinTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸啟動往上所需的時間" class="cursor-help">startUpTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="startUpTimes1().toString()" type="number" step="0.01" (onInput)="startUpTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startUpTimes2().toString()" type="number" step="0.01" (onInput)="startUpTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startUpTimes3().toString()" type="number" step="0.01" (onInput)="startUpTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸啟動往上所需的距離" class="cursor-help">startUpDistances</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="startUpDistances1().toString()" type="number" step="0.01" (onInput)="startUpDistances1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startUpDistances2().toString()" type="number" step="0.01" (onInput)="startUpDistances2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startUpDistances3().toString()" type="number" step="0.01" (onInput)="startUpDistances3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸啟動往下所需的時間" class="cursor-help">startDownTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="startDownTimes1().toString()" type="number" step="0.01" (onInput)="startDownTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startDownTimes2().toString()" type="number" step="0.01" (onInput)="startDownTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startDownTimes3().toString()" type="number" step="0.01" (onInput)="startDownTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="第一軸輪軸啟動延遲所需的時間" class="cursor-help">startDelays</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="startDelays1().toString()" type="number" step="0.01" (onInput)="startDelays1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startDelays2().toString()" type="number" step="0.01" (onInput)="startDelays2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startDelays3().toString()" type="number" step="0.01" (onInput)="startDelays3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸啟動延遲每一軸的間隔時間" class="cursor-help">startDelayInterval</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="startDelayInterval1().toString()" type="number" step="0.01" (onInput)="startDelayInterval1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startDelayInterval2().toString()" type="number" step="0.01" (onInput)="startDelayInterval2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="startDelayInterval3().toString()" type="number" step="0.01" (onInput)="startDelayInterval3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸結束所需的時間" class="cursor-help">endTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="endTimes1().toString()" type="number" step="0.01" (onInput)="endTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endTimes2().toString()" type="number" step="0.01" (onInput)="endTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endTimes3().toString()" type="number" step="0.01" (onInput)="endTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸結束時往上反彈所需的時間" class="cursor-help">endUpTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="endUpTimes1().toString()" type="number" step="0.01" (onInput)="endUpTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endUpTimes2().toString()" type="number" step="0.01" (onInput)="endUpTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endUpTimes3().toString()" type="number" step="0.01" (onInput)="endUpTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸結束時往下反彈所需的時間" class="cursor-help">endDownTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="endDownTimes1().toString()" type="number" step="0.01" (onInput)="endDownTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endDownTimes2().toString()" type="number" step="0.01" (onInput)="endDownTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endDownTimes3().toString()" type="number" step="0.01" (onInput)="endDownTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸結束時往下反彈額外所需的距離" class="cursor-help">endBottomDistances</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="endBottomDistances1().toString()" type="number" step="0.01" (onInput)="endBottomDistances1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endBottomDistances2().toString()" type="number" step="0.01" (onInput)="endBottomDistances2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endBottomDistances3().toString()" type="number" step="0.01" (onInput)="endBottomDistances3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+
+          <div class="flex justify-between items-center gap-1">
+            <span title="輪軸結束時往上反彈所需的距離" class="cursor-help">endTopDistances</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="endTopDistances1().toString()" type="number" step="0.01" (onInput)="endTopDistances1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endTopDistances2().toString()" type="number" step="0.01" (onInput)="endTopDistances2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="endTopDistances3().toString()" type="number" step="0.01" (onInput)="endTopDistances3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+
+          </div>
+          <div class="flex flex-col gap-1 ml-4 mt-6">
+            <div class="flex justify-between items-center gap-1">
+              <span title="期待框啟動時, 當期待時把endTimes用這數值替換掉" class="cursor-help">expectEndTime</span>
+              <ap-input-box [value]="expectEndTime().toString()" type="number" step="0.01" (onInput)="expectEndTime.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="期待框啟動時, 當期待時把endUpTimes用這數值替換掉" class="cursor-help">expectEndUpTime</span>
+              <ap-input-box [value]="expectEndUpTime().toString()" type="number" step="0.01" (onInput)="expectEndUpTime.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="期待框啟動時, 當期待時把endDownTimes用這數值替換掉" class="cursor-help">expectEndDownTime</span>
+              <ap-input-box [value]="expectEndDownTime().toString()" type="number" step="0.01" (onInput)="expectEndDownTime.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="期待框啟動時, 當期待時把endBottomDistances用這數值替換掉" class="cursor-help">expectEndBottomDistance</span>
+              <ap-input-box [value]="expectEndBottomDistance().toString()" type="number" step="0.01" (onInput)="expectEndBottomDistance.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="期待框啟動時, 當期待時把endTopDistances用這數值替換掉" class="cursor-help">expectEndTopDistance</span>
+              <ap-input-box [value]="expectEndTopDistance().toString()" type="number" step="0.01" (onInput)="expectEndTopDistance.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="NearMiss 距離" class="cursor-help">nearMissDistance</span>
+              <ap-input-box [value]="nearMissDistance().toString()" type="number" step="0.01" (onInput)="nearMissDistance.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="NearMiss 時間" class="cursor-help">nearMissTime</span>
+              <ap-input-box [value]="nearMissTime().toString()" type="number" step="0.01" (onInput)="nearMissTime.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="LuckyBreak 距離" class="cursor-help">luckyBreakDistance</span>
+              <ap-input-box [value]="luckyBreakDistance().toString()" type="number" step="0.01" (onInput)="luckyBreakDistance.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="LuckyBreak 時間" class="cursor-help">luckyBreakTime</span>
+              <ap-input-box [value]="luckyBreakTime().toString()" type="number" step="0.01" (onInput)="luckyBreakTime.set(formatNumberStr($event))"/>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="控制單軸 Rolling 的時候使用" class="cursor-help">spinCounts</span>
+              <div class="flex gap-1">
+                <ap-input-box [value]="spinCounts1().toString()" type="number" step="0.01" (onInput)="spinCounts1.set(formatNumberStr($event))"/>
+                <ap-input-box [value]="spinCounts2().toString()" type="number" step="0.01" (onInput)="spinCounts2.set(formatNumberStr($event))"/>
+                <ap-input-box [value]="spinCounts3().toString()" type="number" step="0.01" (onInput)="spinCounts3.set(formatNumberStr($event))"/>
+              </div>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="當 spinCounts 不夠使用時，補充使用的額外次數" class="cursor-help">extraSpinCounts</span>
+              <div class="flex gap-1">
+                <ap-input-box [value]="extraSpinCounts1().toString()" type="number" step="0.01" (onInput)="extraSpinCounts1.set(formatNumberStr($event))"/>
+                <ap-input-box [value]="extraSpinCounts2().toString()" type="number" step="0.01" (onInput)="extraSpinCounts2.set(formatNumberStr($event))"/>
+                <ap-input-box [value]="extraSpinCounts3().toString()" type="number" step="0.01" (onInput)="extraSpinCounts3.set(formatNumberStr($event))"/>
+              </div>
+            </div>
+            
+            <div class="flex justify-between items-center gap-1">
+              <span title="輪軸停輪間隔圖標數量" class="cursor-help">spinCountInterval</span>
+              <div class="flex gap-1">
+                <ap-input-box [value]="spinCountInterval1().toString()" type="number" step="0.01" (onInput)="spinCountInterval1.set(formatNumberStr($event))"/>
+                <ap-input-box [value]="spinCountInterval2().toString()" type="number" step="0.01" (onInput)="spinCountInterval2.set(formatNumberStr($event))"/>
+                <ap-input-box [value]="spinCountInterval3().toString()" type="number" step="0.01" (onInput)="spinCountInterval3.set(formatNumberStr($event))"/>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        <textarea 
+          class="w-full mt-2 p-2 pl-4 bg-zinc-800 text-zinc-200 rounded border border-zinc-600 font-mono text-sm min-h-20 resize-y"
+          [value]="localRollingString()"
+          (input)="updateRollingFromJson($event)">
+        </textarea>
+        <ap-button class="w-full mt-2" (click)="applyRollingSettings()">Apply</ap-button>
+      }
+      @if(showDropping()){
+        <div class="flex flex-col gap-1">
+          DroppingSetting
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標掉落進入所需的時間" class="cursor-help">dropInTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="dropInTimes1().toString()" type="number" step="0.01" (onInput)="dropInTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropInTimes2().toString()" type="number" step="0.01" (onInput)="dropInTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropInTimes3().toString()" type="number" step="0.01" (onInput)="dropInTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標掉落進入時每個圖標的間隔時間" class="cursor-help">dropInSybmolIntervals</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="dropInSybmolIntervals1().toString()" type="number" step="0.01" (onInput)="dropInSybmolIntervals1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropInSybmolIntervals2().toString()" type="number" step="0.01" (onInput)="dropInSybmolIntervals2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropInSybmolIntervals3().toString()" type="number" step="0.01" (onInput)="dropInSybmolIntervals3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標掉落進入時每一軸的間隔時間" class="cursor-help">dropInReelIntervals</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="dropInReelIntervals1().toString()" type="number" step="0.01" (onInput)="dropInReelIntervals1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropInReelIntervals2().toString()" type="number" step="0.01" (onInput)="dropInReelIntervals2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropInReelIntervals3().toString()" type="number" step="0.01" (onInput)="dropInReelIntervals3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標掉落離開所需的時間" class="cursor-help">dropOutTimes</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="dropOutTimes1().toString()" type="number" step="0.01" (onInput)="dropOutTimes1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropOutTimes2().toString()" type="number" step="0.01" (onInput)="dropOutTimes2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropOutTimes3().toString()" type="number" step="0.01" (onInput)="dropOutTimes3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標掉落離開時每個圖標的間隔時間" class="cursor-help">dropOutSymbolIntervals</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="dropOutSymbolIntervals1().toString()" type="number" step="0.01" (onInput)="dropOutSymbolIntervals1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropOutSymbolIntervals2().toString()" type="number" step="0.01" (onInput)="dropOutSymbolIntervals2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropOutSymbolIntervals3().toString()" type="number" step="0.01" (onInput)="dropOutSymbolIntervals3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標掉落離開時每一軸的間隔時間" class="cursor-help">dropOutReelIntervals</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="dropOutReelIntervals1().toString()" type="number" step="0.01" (onInput)="dropOutReelIntervals1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropOutReelIntervals2().toString()" type="number" step="0.01" (onInput)="dropOutReelIntervals2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="dropOutReelIntervals3().toString()" type="number" step="0.01" (onInput)="dropOutReelIntervals3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標移動時每個圖標所需的時間" class="cursor-help">moveTimePerSymbol</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="moveTimePerSymbol1().toString()" type="number" step="0.01" (onInput)="moveTimePerSymbol1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="moveTimePerSymbol2().toString()" type="number" step="0.01" (onInput)="moveTimePerSymbol2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="moveTimePerSymbol3().toString()" type="number" step="0.01" (onInput)="moveTimePerSymbol3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+          
+          <div class="flex justify-between items-center gap-1">
+            <span title="圖標移動時每一軸的間隔時間" class="cursor-help">moveReelIntervals</span>
+            <div class="flex gap-1">
+              <ap-input-box [value]="moveReelIntervals1().toString()" type="number" step="0.01" (onInput)="moveReelIntervals1.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="moveReelIntervals2().toString()" type="number" step="0.01" (onInput)="moveReelIntervals2.set(formatNumberStr($event))"/>
+              <ap-input-box [value]="moveReelIntervals3().toString()" type="number" step="0.01" (onInput)="moveReelIntervals3.set(formatNumberStr($event))"/>
+            </div>
+          </div>
+        </div>
+        <textarea 
+          class="w-full mt-2 p-2 pl-4 bg-zinc-800 text-zinc-200 rounded border border-zinc-600 font-mono text-sm min-h-20 resize-y"
+          [value]="localDroppingString()"
+          (input)="updateDroppingFromJson($event)">
+        </textarea>
+        <ap-button class="w-full mt-2" (click)="applyDroppingSettings()">Apply</ap-button>
+      }
+      @if(showGameParameter()){
+        <div class="flex flex-col gap-1">
+          GameParameterSetting
+          <div class="flex justify-between items-center gap-1">
+            <span title="調試用贏分數" class="cursor-help">debugWinScore</span>
+            <ap-input-box [value]="debugWinScore().toString()" type="number" step="1" (onInput)="debugWinScore.set(formatNumberStr($event))"/>
+          </div>
+          <ap-select [options]="selects()" [selected]="debugWinType().toString()" (onSelect)="debugWinType.set(+$event)"></ap-select>
+        </div>
+        <ap-button class="w-full mt-2" (click)="applyGameParameterSettings()">Apply</ap-button>
+      }
+      @if(showDemoTestCase()){
+        <div class="flex flex-col gap-1">
+          DemoTestCaseSetting
+          <ap-select [options]="demoSelects()" [selected]="demoCaseName()" (onSelect)="demoCaseName.set($event)"></ap-select>
+        </div>
+        <ap-button class="w-full mt-2" (click)="applyDemoTestCaseSettings()">Apply</ap-button>
+      }
+    </div>
+ </div>
+}

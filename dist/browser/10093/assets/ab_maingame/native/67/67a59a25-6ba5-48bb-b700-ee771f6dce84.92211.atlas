@@ -1,0 +1,69 @@
+
+anim_sym_h4.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Ball
+  rotate: false
+  xy: 473, 463
+  size: 31, 31
+  orig: 230, 224
+  offset: 111, 102
+  index: -1
+Body
+  rotate: false
+  xy: 5, 66
+  size: 195, 172
+  orig: 230, 224
+  offset: 19, 12
+  index: -1
+Body2
+  rotate: true
+  xy: 449, 129
+  size: 79, 50
+  orig: 230, 224
+  offset: 74, 110
+  index: -1
+Body_b
+  rotate: true
+  xy: 449, 213
+  size: 70, 58
+  orig: 230, 224
+  offset: 79, 95
+  index: -1
+Rope
+  rotate: false
+  xy: 205, 5
+  size: 181, 73
+  orig: 230, 224
+  offset: 22, 135
+  index: -1
+h4_shadow
+  rotate: true
+  xy: 263, 288
+  size: 206, 205
+  orig: 230, 224
+  offset: 19, 6
+  index: -1
+skeft_004074
+  rotate: true
+  xy: 473, 428
+  size: 30, 29
+  orig: 32, 32
+  offset: 1, 2
+  index: -1
+skeft_018589
+  rotate: false
+  xy: 5, 243
+  size: 253, 251
+  orig: 256, 256
+  offset: 3, 5
+  index: -1
+sun
+  rotate: false
+  xy: 263, 83
+  size: 181, 200
+  orig: 200, 213
+  offset: 8, 4
+  index: -1

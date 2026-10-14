@@ -1,0 +1,1 @@
+export type GameStatusType = 'Close' | 'Loading' | 'Idle' | 'Busy';

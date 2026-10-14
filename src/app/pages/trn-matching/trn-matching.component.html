@@ -1,0 +1,46 @@
+<ap-trn-tab selected="quick" [getQuickTabText]="getQuickTabText()" [showTabEvent]="false">
+ <ap-icon name="trophy" class="size-14 mt-2 text-yellow-300" />
+
+  <!-- Details-->
+  <div
+    class="flex items-center text-zinc-300 font-semibold tracking-wide -mb-2"
+  >
+    <div
+      class="border-b border-zinc-300 flex items-center gap-1 cursor-pointer"
+      (click)="onClickDetail()"
+    >
+      <ap-icon name="exclamation-circle default" class="size-5" />
+      <span>{{ getEventDetailsButtonText() }}</span>
+    </div>
+  </div>
+
+  <!-- Matching -->
+  <ap-trn-card-match
+    class="mt-4"
+    variant="quick"
+    [currentCount]="trn.roomCurrentPlayers()"
+    [totalCount]="trn.trnQuick()?.maxPlayers || 30"
+  />
+
+  <div class="flex w-full pl-10 text-xs text-zinc-300">
+    @if (roomStatus() === "matching") {
+      <span class="">{{ getMatchingButtonText() }}</span >
+      <span>({{ matchingTime() }})</span >
+    }
+    @if (roomStatus() === "canceling") {
+      <span class="animate-pulse">CANCELING</span>
+    }
+    <span class="in-match"></span>
+  </div>
+
+  <!-- Match按鈕 -->
+  <ap-button
+    class="w-[85%] mt-2 mb-2"
+    [size]="'small'"
+    [disabled]="isButtonDisabled()"
+    label="Cancel"
+    accentColor="zinc"
+    (clicked)="onClickCancel()"
+  >
+  </ap-button>
+</ap-trn-tab>

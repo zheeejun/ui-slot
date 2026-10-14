@@ -1,0 +1,481 @@
+{
+    "version":"1.0",
+    "original":{
+        "default":{
+            "assets": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        }
+    },
+    "slot":{
+        "10022":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10023":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10024":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10025":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10026":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10027":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10028":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10029":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10030":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10031":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10032":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10033":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10034":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10035":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10036":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10037":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10038":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10039":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10040":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10041":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10042":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10043":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10044":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10045":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10046":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10047":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10048":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10049":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10050":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10051":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10052":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10053":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10054":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10055":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10056":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10057":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10058":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10059":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10060":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10061":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10062":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10063":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10064":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10065":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10066":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10067":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10068":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10069":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10070":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10071":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10072":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10073":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10074":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10075":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10076":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10077":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10078":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10079":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10080":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10081":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10082":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10083":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10084":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10085":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10086":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10087":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10088":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10089":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10090":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10091":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10092":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10093":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10094":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10095":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10096":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10097":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10098":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        },
+        "10099":{
+            "logo": {
+                "value": "demoghana",
+                "type": "image"
+            }
+        }
+    }    
+}

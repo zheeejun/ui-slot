@@ -1,0 +1,72 @@
+<ap-ui-toast-queue
+  class="fixed z-overlay"
+  [messages]="autoMessages()"
+  (dismissed)="dismissAutoMessage($event)"
+  [ngClass]="{
+    'right-4 top-12': layoutType() === 'landscape' ,
+    'right-8 top-20': layoutType() === 'square',
+    'top-22 left-1/2 -translate-x-1/2': layoutType() === 'portrait',
+  }"
+/>
+
+<div
+  id="content"
+  class="absolute right-0"
+  [ngClass]="{
+    'top-15': layoutType() !== 'landscape',
+    'h-[calc(100%-3.75rem-22rem)]': layoutType() === 'square',
+    'h-full': layoutType() === 'landscape',
+    'w-[calc(100%-25rem)]': layoutType() === 'landscape',
+    'w-full': layoutType() !== 'landscape',
+    'aspect-square': layoutType() === 'portrait',
+  }"
+>
+  <game-iframe
+    class="inset-0"
+    uiMode="ap-cover"
+    [ngClass]="{
+      fixed: !isShowPanel(),
+      absolute: isShowPanel(),
+    }"
+  />
+  <ap-ui-version class="absolute top-0 left-0" />
+</div>
+
+@if (isShowPanel()) {
+  <div
+    id="panel"
+    class="absolute flex justify-center bottom-0 left-0 bg-zinc-900"
+    [ngClass]="{
+      'w-100 h-[calc(100%-3.75rem)]': layoutType() === 'landscape',
+      'w-full': layoutType() !== 'landscape',
+      'h-88': layoutType() === 'square',
+      'top-[calc(3.75rem+100vw)]': layoutType() === 'portrait',
+    }"
+  >
+    <og-panel
+      class="max-w-3xl"
+      [variant]="panelVariant()"
+      (autoRunningChange)="onAutoRunningChange($event)"
+      (gameStateChange)="onGameStateChange($event)"
+    >
+    </og-panel>
+  </div>
+
+  <div
+    id="header"
+    class="absolute left-0 top-0"
+    [ngClass]="{
+      'w-100': layoutType() === 'landscape',
+      'w-full': layoutType() !== 'landscape',
+    }"
+  >
+    <og-header
+      [isFairnessDisabled]="isFairnessDisabled()"
+      [isHistoryDisabled]="isHistoryDisabled()"
+    />
+  </div>
+}
+
+@if (showRotateTips()) {  
+  <ap-ui-device-rotation class="absolute z-error inset-0" />
+}

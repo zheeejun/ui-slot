@@ -1,0 +1,67 @@
+<div class="relative size-full flex items-center justify-center">
+  <div class="inset-0 popup-overlay" (click)="clickCancel()"></div>
+  <ap-ui-frame-popup
+    [accentColor]="oppositeColor()"
+    [header]="header()"
+    [size]="'mobile'"
+    class="w-11/12 md:w-3/4 lg:w-1/2 relative"
+    (close)="clickCancel()"
+  >
+    <!-- Content -->
+    <div
+      class="bg-zinc-800 px-4 py-4 text-center mx-8 flex flex-col justify-center items-center gap-4"
+    >
+      <!-- Tournament Title -->
+      <div>
+        <ap-trn-card-title
+          [accentColor]="oppositeColor()"
+          [title]="displayTitle()"
+        />
+      </div>
+      <!-- Icon -->
+      <div class="flex translate-x-4">
+        <ap-icon
+          class="popup-icon"
+          [name]="displayIcon()"
+          [ngClass]="{
+            'text-yellow-400': accentColor() === 'yellow',
+            'text-purple-300': accentColor() === 'purple',
+          }"
+        />
+        <ap-icon
+          name="clock"
+          class="info-icon translate-y-18 -translate-x-3"
+          [ngClass]="{
+            'text-yellow-400': accentColor() === 'yellow',
+            'text-purple-300': accentColor() === 'purple',
+          }"
+        />
+      </div>
+
+      <!-- Separator -->
+      <div
+        class="h-[0.15rem] mx-2 my-2 w-80 bg-linear-to-r from-transparent to-transparent"
+        [class.via-yellow-300]="accentColor() === 'yellow'"
+        [class.via-purple-300]="accentColor() === 'purple'"
+      ></div>
+      <!-- Bullet Points -->
+      <ul
+        class="list-disc list-inside text-left md:text-sm space-y-2 w-72 md:w-80 font-medium text-zinc-300"
+      >
+        <li>{{ getList01() }}</li>
+        <li>{{ getList02() }}</li>
+      </ul>
+    </div>
+
+    <!-- Footer -->
+    <div class="pb-8 mt-6 flex justify-center">
+      <ap-button
+        class="w-48"
+        [label]="getConfirmButtonText()"
+        [size]="'large'"
+        (click)="clickConfirm()"
+        [accentColor]="accentColor()"
+      />
+    </div>
+  </ap-ui-frame-popup>
+</div>

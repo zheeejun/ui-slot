@@ -1,0 +1,169 @@
+<ng-template #headerTpl>
+  <div class="flex w-full items-stretch gap-2">
+    <div class="flex flex-1 items-center rounded-md bg-zinc-900 px-4">
+      <ap-icon
+        name="wallet"
+        class="info-icon text-slate-300 pointer-events-none"
+      />
+      <div class="ml-auto flex space-x-4">
+        <div class="text-lg og-title text-white">
+          {{ displayBalance() | moneyText: { addSymbol: false } }}
+        </div>
+        <img
+          [src]="currencyImage()!"
+          alt=""
+          class="shrink-0 size-6 object-contain"
+        />
+      </div>
+    </div>
+    <div class="relative">
+      <button
+        class="flex min-h-10 items-center justify-center rounded-md bg-zinc-900 px-1 py-1 border-2 border-slate-700"
+        (click)="toggleMenu($event)"
+      >
+        <ap-icon name="bar-3" class="button-icon" />
+      </button>
+      @if (showMenu() && !showInfo() && !showHistory() && !showFairness()) {
+        <div
+          class="absolute right-0 top-full mt-1 fade-out"
+          clickOutside
+          (clickOutside)="closeMenu()"
+        >
+          <div
+            class="min-w-4 rounded-md border-2 border-slate-700 bg-zinc-900 p-2 text-zinc-300 shadow-xl"
+          >
+            @for (item of menuItems(); track item.id) {
+              @if (item.id === "sound") {
+                <div
+                  class="flex w-full items-center gap-2 rounded-md px-2 py-2"
+                >
+                  <ap-icon
+                    [name]="iconMap()[item.id]"
+                    class="info-icon shrink-0"
+                  />
+                  <div class="flex-1 text-left text-lg">
+                    {{ item.labelFallback }}
+                  </div>
+                  <ap-toggle-switch
+                    accentColor="slate"
+                    [checked]="isSoundOn()"
+                    (checkedChange)="onMenuSoundChange($event)"
+                  />
+                </div>
+              } @else {
+                <button
+                  class="flex w-full items-center gap-2 rounded-md px-2 py-2 hover:bg-zinc-800 hover:text-slate-400 active:bg-zinc-700 cursor-pointer"
+                  (click)="item.action()"
+                >
+                  <ap-icon
+                    [name]="iconMap()[item.id]"
+                    class="info-icon shrink-0"
+                  />
+                  <div class="flex-1 text-left text-lg">
+                    {{ item.labelFallback }}
+                  </div>
+                </button>
+              }
+            }
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</ng-template>
+
+<!-- Desktop -->
+@if (!showMobileLayout()) {
+  <div class="w-full h-dvh bg-black flex items-center justify-center">
+    <div class="desktop-inner h-full overflow-hidden">
+      @if (autoMessages().length) {
+        <div
+          class="pointer-events-none absolute right-4 top-4 z-overlay flex w-80 max-w-[calc(100vw-2rem)] flex-col gap-4"
+        >
+          @for (message of autoMessages(); track message.id) {
+            <ap-message
+              class="pointer-events-auto"
+              [message]="message.text"
+              variant="origin"
+              (closed)="dismissAutoMessage(message.id)"
+            />
+          }
+        </div>
+      }
+      <div
+        class="grid h-full [grid-template-columns:calc(100dvh*4/9)_minmax(0,1fr)] grid-rows-[minmax(0,1fr)] bg-zinc-900"
+      >
+        <section class="grid min-w-0 [grid-template-rows:auto_1fr]">
+          <header
+            class="sticky top-0 z-sticky flex items-center justify-center bg-zinc-800 p-2 shadow-lg"
+          >
+            <ng-container [ngTemplateOutlet]="headerTpl" />
+          </header>
+          <div
+            class="relative min-w-0 min-h-0 overflow-hidden border-t border-zinc-600 bg-zinc-800 [&>original-bottom-panel]:block [&>original-bottom-panel]:h-full"
+          >
+            <og-panel
+              variant="desktop"
+              (autoRunningChange)="onAutoRunningChange($event)"
+            />
+          </div>
+        </section>
+        <section
+          class="desktop-game-section relative min-h-0 min-w-0 overflow-hidden bg-black"
+        >
+          <img [src]="gameImage()!" alt="" />
+        </section>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Mobile / narrow desktop -->
+@else {
+  <div class="w-full h-dvh bg-black flex flex-col items-center justify-center">
+    <div class="mobile-inner w-full flex flex-col overflow-hidden bg-zinc-900">
+      @if (autoMessages().length) {
+        <div
+          class="pointer-events-none absolute right-4 top-4 z-overlay flex w-72 max-w-[calc(100vw-2rem)] flex-col gap-4"
+        >
+          @for (message of autoMessages(); track message.id) {
+            <ap-message
+              class="fade-down pointer-events-auto"
+              [message]="message.text"
+              variant="origin"
+              (closed)="dismissAutoMessage(message.id)"
+            />
+          }
+        </div>
+      }
+      <header
+        class="shrink-0 z-sticky flex items-center justify-center bg-zinc-800 p-2 shadow-lg"
+      >
+        <ng-container [ngTemplateOutlet]="headerTpl" />
+      </header>
+      <section class="w-full aspect-square shrink-0 overflow-hidden">
+        <img [src]="gameImage()!" alt="" class="w-full h-full object-cover" />
+      </section>
+      <div
+        class="flex-1 min-h-0 min-w-0 overflow-hidden border-t border-zinc-600 bg-zinc-800 [&>original-bottom-panel]:block [&>original-bottom-panel]:h-full [&>original-bottom-panel]:min-h-0"
+      >
+        <og-panel
+          variant="mobile"
+          (autoRunningChange)="onAutoRunningChange($event)"
+        />
+      </div>
+    </div>
+  </div>
+}
+
+@if (showHistory()) {
+  <history-list-og
+    class="absolute inset-0 z-overlay"
+    (close)="closeHistory()"
+  />
+}
+@if (showInfo()) {
+  <info-og class="absolute inset-0 z-overlay" (close)="closeInfo()" />
+}
+
+

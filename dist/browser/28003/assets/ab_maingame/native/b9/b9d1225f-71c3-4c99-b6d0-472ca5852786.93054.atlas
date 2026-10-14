@@ -1,0 +1,132 @@
+
+anim_sym_s.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ex_pattern
+  rotate: false
+  xy: 4, 507
+  size: 108, 104
+  orig: 400, 400
+  offset: 145, 145
+  index: -1
+ex_pattern_g
+  rotate: false
+  xy: 543, 595
+  size: 173, 167
+  orig: 400, 400
+  offset: 112, 111
+  index: -1
+glow_line
+  rotate: false
+  xy: 4, 947
+  size: 282, 69
+  orig: 400, 98
+  offset: 18, 14
+  index: -1
+s1_g_cloth01
+  rotate: false
+  xy: 290, 803
+  size: 249, 213
+  orig: 400, 400
+  offset: 60, 69
+  index: -1
+s1_g_cloth01g
+  rotate: true
+  xy: 134, 605
+  size: 121, 112
+  orig: 200, 200
+  offset: 32, 32
+  index: -1
+s1_g_cloth01s
+  rotate: false
+  xy: 4, 615
+  size: 126, 111
+  orig: 200, 200
+  offset: 30, 30
+  index: -1
+s1_g_cloth02
+  rotate: false
+  xy: 768, 837
+  size: 207, 179
+  orig: 400, 400
+  offset: 122, 104
+  index: -1
+s1_g_cloth02g
+  rotate: true
+  xy: 448, 696
+  size: 103, 91
+  orig: 200, 200
+  offset: 60, 52
+  index: -1
+s1_g_cloth02s
+  rotate: false
+  xy: 250, 529
+  size: 106, 94
+  orig: 200, 200
+  offset: 60, 48
+  index: -1
+s1_g_rod01
+  rotate: false
+  xy: 543, 949
+  size: 221, 67
+  orig: 400, 400
+  offset: 94, 245
+  index: -1
+s1_g_rod02a
+  rotate: false
+  xy: 257, 865
+  size: 27, 78
+  orig: 250, 250
+  offset: 201, 117
+  index: -1
+s1_g_rod02b
+  rotate: false
+  xy: 955, 755
+  size: 32, 67
+  orig: 250, 250
+  offset: 20, 126
+  index: -1
+s1_n_cloth01
+  rotate: false
+  xy: 4, 730
+  size: 249, 213
+  orig: 400, 400
+  offset: 60, 69
+  index: -1
+s1_n_cloth02
+  rotate: false
+  xy: 543, 766
+  size: 207, 179
+  orig: 400, 400
+  offset: 122, 104
+  index: -1
+s1_n_rod
+  rotate: true
+  xy: 979, 826
+  size: 190, 37
+  orig: 400, 400
+  offset: 108, 245
+  index: -1
+s_pattern
+  rotate: false
+  xy: 116, 500
+  size: 104, 101
+  orig: 400, 400
+  offset: 147, 146
+  index: -1
+shine_1
+  rotate: false
+  xy: 257, 627
+  size: 187, 172
+  orig: 400, 400
+  offset: 106, 112
+  index: -1
+star_08
+  rotate: false
+  xy: 754, 637
+  size: 197, 196
+  orig: 240, 240
+  offset: 21, 22
+  index: -1

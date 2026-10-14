@@ -1,0 +1,307 @@
+
+anim_sym_h1.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg_gold
+  rotate: false
+  xy: 408, 134
+  size: 98, 122
+  orig: 98, 122
+  offset: 0, 0
+  index: -1
+circle_glod
+  rotate: false
+  xy: 4, 260
+  size: 198, 248
+  orig: 198, 248
+  offset: 0, 0
+  index: -1
+circle_glod_t
+  rotate: false
+  xy: 4, 8
+  size: 198, 248
+  orig: 198, 248
+  offset: 0, 0
+  index: -1
+frame
+  rotate: false
+  xy: 408, 260
+  size: 197, 248
+  orig: 198, 248
+  offset: 1, 0
+  index: -1
+frame_bg
+  rotate: false
+  xy: 206, 260
+  size: 198, 248
+  orig: 198, 248
+  offset: 0, 0
+  index: -1
+frame_t
+  rotate: false
+  xy: 206, 8
+  size: 198, 248
+  orig: 198, 248
+  offset: 0, 0
+  index: -1
+fx/bark_ring
+  rotate: false
+  xy: 408, 42
+  size: 90, 88
+  orig: 90, 88
+  offset: 0, 0
+  index: -1
+lion/beard_123
+  rotate: false
+  xy: 651, 232
+  size: 46, 42
+  orig: 648, 1152
+  offset: 38, 887
+  index: -1
+lion/beard_456
+  rotate: false
+  xy: 560, 205
+  size: 87, 51
+  orig: 648, 1152
+  offset: 123, 889
+  index: -1
+lion/ear_l
+  rotate: false
+  xy: 477, 22
+  size: 15, 16
+  orig: 162, 288
+  offset: 16, 247
+  index: -1
+lion/ear_r
+  rotate: false
+  xy: 521, 6
+  size: 19, 20
+  orig: 162, 288
+  offset: 51, 248
+  index: -1
+lion/eye_L
+  rotate: false
+  xy: 515, 43
+  size: 7, 7
+  orig: 324, 576
+  offset: 43, 485
+  index: -1
+lion/eye_r
+  rotate: false
+  xy: 514, 30
+  size: 9, 9
+  orig: 324, 576
+  offset: 72, 488
+  index: -1
+lion/eye_white_l
+  rotate: false
+  xy: 502, 43
+  size: 9, 7
+  orig: 324, 576
+  offset: 42, 484
+  index: -1
+lion/eye_white_r
+  rotate: false
+  xy: 479, 4
+  size: 17, 14
+  orig: 324, 576
+  offset: 68, 485
+  index: -1
+lion/face_l
+  rotate: false
+  xy: 609, 273
+  size: 31, 37
+  orig: 324, 576
+  offset: 39, 482
+  index: -1
+lion/face_r
+  rotate: false
+  xy: 502, 54
+  size: 79, 76
+  orig: 324, 576
+  offset: 32, 443
+  index: -1
+lion/face_side_l
+  rotate: false
+  xy: 609, 314
+  size: 25, 59
+  orig: 324, 576
+  offset: 59, 438
+  index: -1
+lion/foot_1
+  rotate: false
+  xy: 651, 380
+  size: 51, 128
+  orig: 324, 576
+  offset: 76, 266
+  index: -1
+lion/foot_2
+  rotate: false
+  xy: 707, 239
+  size: 90, 269
+  orig: 454, 806
+  offset: 186, 360
+  index: -1
+lion/hair_1
+  rotate: false
+  xy: 446, 22
+  size: 27, 16
+  orig: 162, 288
+  offset: 45, 247
+  index: -1
+lion/hair_10
+  rotate: false
+  xy: 609, 432
+  size: 30, 76
+  orig: 162, 288
+  offset: 49, 173
+  index: -1
+lion/hair_11
+  rotate: false
+  xy: 651, 278
+  size: 43, 98
+  orig: 162, 288
+  offset: 54, 159
+  index: -1
+lion/hair_12
+  rotate: false
+  xy: 701, 8
+  size: 45, 73
+  orig: 162, 288
+  offset: 19, 158
+  index: -1
+lion/hair_13
+  rotate: false
+  xy: 585, 85
+  size: 67, 59
+  orig: 162, 288
+  offset: 39, 209
+  index: -1
+lion/hair_14
+  rotate: false
+  xy: 584, 11
+  size: 64, 39
+  orig: 162, 288
+  offset: 37, 238
+  index: -1
+lion/hair_2
+  rotate: false
+  xy: 707, 199
+  size: 26, 36
+  orig: 162, 288
+  offset: 50, 220
+  index: -1
+lion/hair_3
+  rotate: false
+  xy: 699, 85
+  size: 30, 69
+  orig: 227, 403
+  offset: 72, 277
+  index: -1
+lion/hair_4
+  rotate: false
+  xy: 652, 6
+  size: 45, 75
+  orig: 227, 403
+  offset: 38, 251
+  index: -1
+lion/hair_5
+  rotate: false
+  xy: 510, 152
+  size: 46, 104
+  orig: 227, 403
+  offset: 8, 261
+  index: -1
+lion/hair_6
+  rotate: false
+  xy: 560, 148
+  size: 81, 53
+  orig: 324, 576
+  offset: 56, 512
+  index: -1
+lion/hair_7
+  rotate: false
+  xy: 565, 6
+  size: 15, 22
+  orig: 162, 288
+  offset: 23, 255
+  index: -1
+lion/hair_8
+  rotate: false
+  xy: 569, 32
+  size: 11, 18
+  orig: 162, 288
+  offset: 20, 256
+  index: -1
+lion/hair_9
+  rotate: false
+  xy: 609, 377
+  size: 37, 51
+  orig: 162, 288
+  offset: 52, 208
+  index: -1
+lion/jaw
+  rotate: false
+  xy: 645, 158
+  size: 58, 43
+  orig: 324, 576
+  offset: 39, 419
+  index: -1
+lion/mouth
+  rotate: false
+  xy: 408, 7
+  size: 34, 31
+  orig: 162, 288
+  offset: 6, 218
+  index: -1
+lion/saliva
+  rotate: false
+  xy: 656, 96
+  size: 39, 58
+  orig: 324, 576
+  offset: 28, 437
+  index: -1
+lion/teeth_1
+  rotate: false
+  xy: 527, 31
+  size: 18, 19
+  orig: 324, 576
+  offset: 10, 475
+  index: -1
+lion/teeth_2
+  rotate: false
+  xy: 544, 6
+  size: 17, 21
+  orig: 324, 576
+  offset: 28, 473
+  index: -1
+lion/teeth_3
+  rotate: false
+  xy: 496, 24
+  size: 14, 14
+  orig: 324, 576
+  offset: 34, 439
+  index: -1
+lion/teeth_4
+  rotate: false
+  xy: 549, 32
+  size: 16, 18
+  orig: 324, 576
+  offset: 45, 438
+  index: -1
+lion/teeth_5
+  rotate: false
+  xy: 500, 10
+  size: 17, 10
+  orig: 324, 576
+  offset: 15, 486
+  index: -1
+lion/teeth_6
+  rotate: false
+  xy: 446, 4
+  size: 29, 14
+  orig: 324, 576
+  offset: 39, 480
+  index: -1

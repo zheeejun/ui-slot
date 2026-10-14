@@ -1,0 +1,160 @@
+@if (accentColor() === "yellow") {
+  <div
+    class="relative flex flex-col overflow-hidden rounded-xl border-2 border-yellow-300/30 bg-yellow-950/10 p-2 gap-3 select-none md:flex-row"
+    [class.hover:border-yellow-400]="!isDisabled()"
+    [class.cursor-pointer]="!isDisabled()"
+  >
+    <div class="flex shrink-0 flex-col gap-1">
+      <div
+        class="relative w-full overflow-hidden border-2 rounded-lg border-yellow-400/20 md:w-[11rem]"
+      >
+        <div class="relative md:h-[6rem] h-[12rem] w-full">
+          <img
+            [src]="quickBannerImage()"
+            class="absolute inset-0 h-full w-full object-contain-scale"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-1 text-zinc-400">
+        <ap-icon name="calendar default" class="md:size-3 size-4" />
+        <div class="md:text-xs text-sm uppercase tracking-wide">
+          {{ getQuickTimeLabel() }}
+        </div>
+      </div>
+    </div>
+
+    <div class="flex min-w-0 flex-1 flex-col justify-between">
+      <div class="min-w-0">
+        <ap-trn-card-title
+          [accentColor]="'yellow'"
+          [title]="trnData()?.name ?? 'Quick Race'"
+        />
+        <div
+          class="min-w-0 max-w-2xl md:text-sm text-md font-normal leading-tight text-zinc-400 mt-1 md:mt-0"
+        >
+          {{ description() }}
+        </div>
+      </div>
+    </div>
+  </div>
+}
+@if (accentColor() === "purple") {
+  <div
+    class="relative flex flex-col overflow-hidden rounded-xl border-2 border-purple-300/20 bg-purple-950/10 p-2 gap-3 select-none md:flex-row"
+    [class.hover:border-purple-400]="!isDisabled()"
+    [class.cursor-pointer]="!isDisabled()"
+  >
+    <div class="flex shrink-0 flex-col gap-1">
+      <div
+        class="relative w-full overflow-hidden border-2 rounded-lg border-purple-400/20 md:w-[11rem]"
+      >
+        <div class="relative md:h-[5.8rem] h-[12rem] w-full">
+          <img
+            [src]="eventBannerImage()"
+            class="absolute inset-0 h-full w-full object-contain-scale"
+          />
+        </div>
+      </div>
+      <div class="flex items-center gap-1 text-zinc-400">
+        <ap-icon name="clock default" class="md:size-3 size-4" />
+        <div
+          class="flex flex-wrap md:text-xs text-sm uppercase tracking-wide space-x-1"
+        >
+          {{ getCountdownTitle() }} {{ formatTime(days())
+          }}<span class="italic">{{ getDaysLabel() }}</span>
+          {{ formatTime(hours())
+          }}<span class="italic">{{ getHoursLabel() }}</span>
+          {{ formatTime(minutes())
+          }}<span class="italic">{{ getMinutesLabel() }}</span>
+          {{ formatTime(seconds())
+          }}<span class="italic">{{ getSecondsLabel() }}</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex min-w-0 flex-1 flex-col text-left">
+      <div class="flex items-start justify-between gap-3">
+        <div class="min-w-0 flex-1">
+          <ap-trn-card-title
+            [accentColor]="'purple'"
+            [title]="trnData()?.name ?? 'Event Game'"
+          />
+        </div>
+      </div>
+
+      <div
+        class="grid grid-cols-1 items-start gap-3 md:grid-cols-[minmax(0,1fr)_11rem] md:gap-0 mt-2 md:mt-0"
+      >
+        <div class="min-w-0 text-left">
+          <div class="flex items-start justify-between md:block">
+            <div
+              class="inline-flex bg-gradient-to-r from-violet-500/20 to-zinc-900/15 flex-col pl-2"
+            >
+              <div class="md:text-[10px] text-xs italic text-zinc-400">
+                {{ getPrizePoolLabel() }}
+              </div>
+              <div
+                class="flex text-purple-300 gap-1 justify-start items-center"
+              >
+                <div class="md:text-sm text-md font-bold">
+                  {{ currencySymbol() }}
+                </div>
+                <div class="md:text-xl text-2xl font-bold">
+                  {{ prizePool() }}
+                </div>
+              </div>
+            </div>
+            <div class="shrink-0 text-right md:hidden">
+              <div class="md:text-xl text-2xl font-bold text-zinc-200">
+                {{ formatNumber(playerScore()) }}
+                <span class="text-sm italic">( {{ getPointLabel() }})</span>
+              </div>
+              <div class="md:text-[10px] text-xs italic text-zinc-400">
+                {{ getScoreLabel() }}
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-1 min-w-0 text-left md:text-sm text-md font-normal leading-tight text-zinc-400"
+          >
+            {{ description() }}
+          </div>
+        </div>
+        <div class="flex flex-col md:w-[11rem] md:items-end">
+          <div class="hidden md:block shrink-0 mb-2 text-right">
+            <div class="text-xl font-bold text-zinc-200">
+              {{ formatNumber(playerScore()) }}
+              <span class="text-sm italic">( {{ getPointLabel() }})</span>
+            </div>
+            <div class="md:text-[10px] text-xs italic text-zinc-400">
+              {{ getScoreLabel() }}
+            </div>
+          </div>
+          @if (isShowingDisabledButton()) {
+            <ap-button
+              [label]="getFinishedButtonLabel()"
+              [accentColor]="'purple'"
+              [disabled]="true"
+              [size]="'small'"
+              class="w-full whitespace-nowrap md:ml-auto md:w-[80%]"
+            />
+          } @else if (isShowingRejoinButton()) {
+            <ap-button
+              [label]="getRejoinButtonLabel()"
+              [accentColor]="'purple-dark'"
+              [size]="'small'"
+              class="w-full whitespace-nowrap md:ml-auto md:w-[80%]"
+            />
+          } @else {
+            <ap-button
+              [label]="getJoinButtonLabel()"
+              [accentColor]="'purple'"
+              [size]="'small'"
+              class="w-full whitespace-nowrap md:ml-auto md:w-[80%]"
+            />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+}

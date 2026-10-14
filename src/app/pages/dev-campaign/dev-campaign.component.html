@@ -1,0 +1,43 @@
+<ap-ui-card-dev id="ap-campaign-card" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Campaign Card</h2>
+    </div>
+    <div class="mx-auto space-y-4 px-6">
+      <ap-category-selection
+        [categories]="campaignCardCategories"
+        [getCodeSnippet]="getCampaignCardSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-campaign-card class="block w-full" />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-campaign-list" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Campaign List</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="campaignListCategories"
+        [getCodeSnippet]="getCampaignListSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-campaign-list
+              class="block w-full scale-70"
+              [campaignData]="variant.data"
+              [currency]="variant.currency ?? ''"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

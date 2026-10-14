@@ -1,0 +1,15 @@
+.history-list-calendar {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
+  overflow-y: auto;
+}
+
+@media (min-width: 640px) {
+  .history-list-calendar {
+    left: 5rem;
+    transform: none;
+    bottom: auto;
+    overflow-y: visible;
+  }
+}

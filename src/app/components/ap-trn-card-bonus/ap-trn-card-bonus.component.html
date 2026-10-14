@@ -1,0 +1,32 @@
+<div class="relative inline-block align-bottom">
+  <div
+    class="relative rounded-2xl p-[0.3rem]"
+    [ngClass]="{
+      'bg-gradient-yellow': accentColor() === 'yellow',
+      'bg-gradient-purple': accentColor() === 'purple',
+    }"
+  >
+    <div
+      class="h-18 w-32 overflow-hidden rounded-xl bg-zinc-900 ring-1 ring-zinc-600"
+    >
+      <div class="relative flex h-12 items-center justify-center bg-zinc-950">
+        <div
+          class="font-anton text-3xl font-semibold"
+          [ngClass]="{
+            'text-yellow-gradient': accentColor() === 'yellow',
+            'text-purple-gradient': accentColor() === 'purple',
+          }"
+        >
+          {{ currency() }}{{ displayAmount() }}
+        </div>
+      </div>
+
+      <div class="flex h-6 items-center justify-center bg-zinc-800">
+        <h5 class="ml-1 font-bold text-zinc-300">{{ multiplierDisplay() }}</h5>
+      </div>
+    </div>
+  </div>
+  @if (isLoading()) {
+    <ap-loading-overlay class="absolute inset-0 popup-overlay" />
+  }
+</div>

@@ -1,0 +1,321 @@
+<!-- Card Title -->
+<ap-ui-card-dev id="ap-trn-card-title" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Title</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameTitleCategories"
+        [getCodeSnippet]="getTrnGameTitleSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-card-title
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+              [title]="variant.title"
+              [size]="variant.size"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Card Bonus -->
+<ap-ui-card-dev id="ap-trn-card-bonus" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Card Bonus</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnCardBonusCategories"
+        [getCodeSnippet]="getTrnCardBonusSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-card-bonus
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+              [currency]="variant.currency"
+              [amount]="variant.amount"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Card Match -->
+<ap-ui-card-dev id="ap-trn-card-match" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Card Match</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnCardMatchCategories"
+        [getCodeSnippet]="getTrnCardMatchSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-card-match
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+              [currentCount]="variant.currentCount"
+              [totalCount]="variant.totalCount"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Float Button -->
+<ap-ui-card-dev id="ap-trn-float-button" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Float Button</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnFloatButtonCategories"
+        [getCodeSnippet]="getTrnFloatButtonSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-float-button
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+              [rank]="variant.rank"
+              [isPlaying]="variant.isPlaying"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Float Countdown -->
+<ap-ui-card-dev id="ap-trn-float-countdown" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Float Countdown</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnFloatCountdownCategories"
+        [getCodeSnippet]="getTrnFloatCountdownSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-float-countdown
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Status Bar -->
+<ap-ui-card-dev id="ap-trn-status-bar" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Status Bar</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnStatusBarCategories"
+        [getCodeSnippet]="getTrnStatusBarSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-status-bar
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Game Hint -->
+<ap-ui-card-dev id="ap-trn-game-hint" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Hint</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameHintCategories"
+        [getCodeSnippet]="getTrnGameHintSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-game-hint
+              class="block w-full"
+              [accentColor]="variant.accentColor"
+              [duration]="0"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Game List -->
+<ap-ui-card-dev id="ap-trn-list-game" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game List</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameListCategories"
+        [getCodeSnippet]="getTrnGameListSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-game-list
+              class="block w-full"
+              [trnData]="variant.trnData"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Game Start Confirm -->
+<ap-ui-card-dev id="trn-game-confirm" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Start Confirm</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameStartConfirmCategories"
+        [getCodeSnippet]="getTrnGameStartConfirmSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <trn-game-confirm
+              class="block w-full scale-70"
+              [accentColor]="variant.accentColor"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Game Leave Confirm -->
+<ap-ui-card-dev id="trn-game-event-leave-confirm" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Leave Confirm</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameLeaveConfirmCategories"
+        [getCodeSnippet]="getTrnGameLeaveConfirmSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <trn-game-event-leave-confirm
+              class="block w-full scale-70"
+              [accentColor]="variant.accentColor"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Match Finished -->
+<ap-ui-card-dev id="ap-trn-game-match-finished" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Match Finished</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameMatchFinishedCategories"
+        [getCodeSnippet]="getTrnGameMatchFinishedSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-game-match-finished
+              class="block w-full scale-70"
+              [accentColor]="variant.accentColor"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Created Notification -->
+<ap-ui-card-dev id="trn-created-notification" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Created Notification</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameCreatedNotificationCategories"
+        [getCodeSnippet]="getTrnGameCreatedNotificationSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <trn-created-notification
+              class="block w-full"
+              [accentColor]="variant.variant"
+              [autoHide]="false"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<!-- Game Result -->
+<ap-ui-card-dev id="ap-trn-game-result" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Game Result</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="trnGameResultCategories"
+        [getCodeSnippet]="getTrnGameResultSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-trn-game-result
+              class="block w-full scale-70"
+              [accentColor]="variant.accentColor"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

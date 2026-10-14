@@ -1,0 +1,237 @@
+
+anim_winball.png
+size: 2048,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+ball_ani/ball_ani_00
+  rotate: false
+  xy: 99, 103
+  size: 96, 98
+  orig: 140, 140
+  offset: 23, 21
+  index: -1
+ball_ani/ball_ani_01
+  rotate: true
+  xy: 296, 5
+  size: 97, 96
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+ball_ani/ball_ani_02
+  rotate: false
+  xy: 977, 105
+  size: 96, 96
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+ball_ani/ball_ani_03
+  rotate: false
+  xy: 295, 104
+  size: 97, 97
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+ball_ani/ball_ani_04
+  rotate: false
+  xy: 101, 3
+  size: 96, 98
+  orig: 140, 140
+  offset: 23, 21
+  index: -1
+ball_ani/ball_ani_05
+  rotate: true
+  xy: 394, 104
+  size: 97, 96
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+ball_ani/ball_ani_06
+  rotate: false
+  xy: 197, 103
+  size: 96, 98
+  orig: 140, 140
+  offset: 23, 20
+  index: -1
+ball_ani/ball_ani_07
+  rotate: false
+  xy: 2, 102
+  size: 95, 99
+  orig: 140, 140
+  offset: 24, 20
+  index: -1
+ball_ani/ball_ani_08
+  rotate: false
+  xy: 394, 5
+  size: 96, 97
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+ball_ani/ball_ani_09
+  rotate: false
+  xy: 492, 104
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+ball_ani/ball_ani_10
+  rotate: false
+  xy: 2, 2
+  size: 97, 98
+  orig: 140, 140
+  offset: 23, 21
+  index: -1
+gold_ani/gold_ani_00
+  rotate: false
+  xy: 199, 3
+  size: 95, 98
+  orig: 140, 140
+  offset: 24, 21
+  index: -1
+gold_ani/gold_ani_01
+  rotate: false
+  xy: 1075, 7
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_02
+  rotate: false
+  xy: 1172, 7
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_03
+  rotate: false
+  xy: 492, 5
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_04
+  rotate: false
+  xy: 977, 7
+  size: 96, 96
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+gold_ani/gold_ani_05
+  rotate: false
+  xy: 1173, 105
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_06
+  rotate: false
+  xy: 1269, 7
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_07
+  rotate: false
+  xy: 1270, 105
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_08
+  rotate: false
+  xy: 589, 104
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_09
+  rotate: false
+  xy: 589, 5
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+gold_ani/gold_ani_10
+  rotate: false
+  xy: 686, 104
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_00
+  rotate: false
+  xy: 686, 5
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_01
+  rotate: false
+  xy: 1366, 7
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_02
+  rotate: false
+  xy: 1367, 105
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_03
+  rotate: false
+  xy: 783, 104
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_04
+  rotate: false
+  xy: 1075, 105
+  size: 96, 96
+  orig: 140, 140
+  offset: 23, 22
+  index: -1
+silver_ani/silver_ani_05
+  rotate: false
+  xy: 1463, 7
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_06
+  rotate: false
+  xy: 1464, 105
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_07
+  rotate: false
+  xy: 1560, 7
+  size: 95, 96
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_08
+  rotate: false
+  xy: 783, 5
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_09
+  rotate: false
+  xy: 880, 104
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1
+silver_ani/silver_ani_10
+  rotate: false
+  xy: 880, 5
+  size: 95, 97
+  orig: 140, 140
+  offset: 24, 22
+  index: -1

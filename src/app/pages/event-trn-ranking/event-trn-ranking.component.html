@@ -1,0 +1,128 @@
+<div class="relative px-4 sm:px-6 pt-4 sm:pt-6">
+  <!-- Tournament List -->
+  <ap-trn-game-list
+    [trnData]="currentTrn()"
+    [getDaysLabel]="getDaysLabel()"
+    [getHoursLabel]="getHoursLabel()"
+    [getMinutesLabel]="getMinutesLabel()"
+    [getSecondsLabel]="getSecondsLabel()"
+    [getCountdownStartTitle]="getCountdownStartTitle()"
+    [getCountdownEndTitle]="getCountdownEndTitle()"
+    [hasParticipated]="true"
+  />
+  <div class="relative">
+    <!-- Refresh Button -->
+    <div class="relative flex justify-end mt-6 gap-4 items-center">
+      <ap-button
+        [label]="getRefreshButtonText()"
+        [size]="'small'"
+        icon="arrow-path"
+        [accentColor]="'purple'"
+        (click)="clickRefresh()"
+      />
+    </div>
+
+    <!-- Ranking Table -->
+    <div
+      class="relative w-full mx-auto border-2 border-purple-300/20 rounded-xl overflow-x-auto mt-2 shadow-xl mb-4"
+    >
+      <table class="w-full min-w-150">
+        <!-- Table Header -->
+        <thead
+          class="bg-purple-500/15 rounded-t-xl backdrop-blur-sm text-purple-200 text-md tracking-wide"
+        >
+          <tr>
+            @for (header of tableHeaders(); track header.label) {
+              <th [class]="header.width + ' px-4 py-2 ' + header.align">
+                {{ header.label }}
+              </th>
+            }
+          </tr>
+        </thead>
+
+        <!-- Table Body -->
+        <tbody class="divide-y divide-zinc-700/50">
+          @for (data of currentPageData(); track $index; let isEven = $even) {
+            <tr
+              class="transition-all duration-200 hover:bg-purple-500/5 text-md sm:text-base"
+              [ngClass]="
+                data.highlighted
+                  ? 'bg-purple-900/60 border-2 border-purple-400'
+                  : isEven
+                    ? 'bg-zinc-800'
+                    : 'bg-zinc-900'
+              "
+            >
+              <!-- Rank Column -->
+              <td
+                class="px-4 py-3"
+                [ngClass]="
+                  data.highlighted ? 'text-zinc-300' : 'text-purple-50'
+                "
+              >
+                {{
+                  data.rank === null || data.rank === undefined
+                    ? "-"
+                    : data.rank
+                }}
+              </td>
+
+              <!-- Username Column -->
+              <td
+                class="px-4 py-3 text-left"
+                [ngClass]="
+                  data.highlighted ? 'text-purple-200' : 'text-zinc-300'
+                "
+              >
+                @if (data.highlighted) {
+                  You
+                } @else {
+                  {{ data.name }}
+                }
+              </td>
+
+              <!-- Score Column -->
+              <td
+                class="px-4 py-3 text-right font-medium"
+                [ngClass]="
+                  data.highlighted ? 'text-purple-200' : 'text-zinc-300'
+                "
+              >
+                <!-- 顯示整數 -->
+                {{ data.score | number:'1.0-0' }}
+              </td>
+
+              <!-- Prize Column -->
+              <td
+                class="px-4 py-3 text-right font-medium"
+                [ngClass]="
+                  data.highlighted ? 'text-purple-200' : 'text-zinc-300'
+                "
+              >
+                @if (data.win) {
+                  {{ trn.currencySymbol() }}{{ data.win | number }}
+                }
+                @else {
+                  -
+                }
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+      @if (isLoading()) {
+        <div class="absolute inset-0 popup-overlay"></div>
+      }
+    </div>
+
+    <!-- Pagination -->
+    <ap-ui-pagination
+      [variant]="'event'"
+      [config]="paginationConfig()"
+      (pageChanged)="onPageChanged($event)"
+    />
+    @if (isLoading()) {
+      <ap-loading-overlay class="absolute inset-0" />
+    }
+  </div>
+</div>

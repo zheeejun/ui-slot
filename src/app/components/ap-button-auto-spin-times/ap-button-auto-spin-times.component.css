@@ -1,0 +1,296 @@
+:host {
+  display: block;
+}
+
+
+.auto-spin-run-soft-halo {
+  isolation: isolate;
+  border-radius: 9999px;
+  will-change: scale, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  filter: drop-shadow(0 0 0.3rem rgba(251, 191, 36, 0.4));
+  animation: auto-spin-run-soft-halo-invite 1.4s ease-in-out infinite;
+}
+
+.auto-spin-run-soft-halo::before {
+  aspect-ratio: 1 / 1;
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 9999px;
+  border: 0.14rem solid rgba(253, 224, 71, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  animation: auto-spin-run-soft-halo-ring 1.4s ease-out infinite;
+}
+
+.auto-spin-run-soft-halo::after {
+  content: '';
+  position: absolute;
+  inset: -0.25rem;
+  z-index: 0;
+  border-radius: 9999px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(254, 249, 195, 0.55) 0%,
+      rgba(253, 224, 71, 0.48) 32%,
+      rgba(250, 204, 21, 0.4) 52%,
+      rgba(251, 191, 36, 0.22) 70%,
+      rgba(251, 191, 36, 0) 100%
+    );
+  filter: blur(0.3rem);
+  opacity: 0.9;
+  pointer-events: none;
+  animation: auto-spin-run-soft-halo 1.4s ease-in-out infinite;
+}
+
+/* charge 0% -> peak 50% -> release, shared 1.4s clock with invite/ring */
+@keyframes auto-spin-run-soft-halo {
+  0%,
+  100% {
+    opacity: 0.5;
+    scale: 0.94;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.04;
+  }
+}
+
+@keyframes auto-spin-run-soft-halo-invite {
+  0%,
+  100% {
+    scale: 1;
+    filter: drop-shadow(0 0 0.2rem rgba(251, 191, 36, 0.4));
+  }
+
+  50% {
+    scale: 1;
+    filter: drop-shadow(0 0 0.4rem rgba(253, 224, 71, 0.85));
+  }
+}
+
+/* ring bursts outward at the glow peak (50%) */
+@keyframes auto-spin-run-soft-halo-ring {
+  0%,
+  45% {
+    scale: 1;
+    opacity: 0;
+  }
+
+  50% {
+    scale: 1;
+    opacity: 0.85;
+  }
+
+  100% {
+    scale: 1.3;
+    opacity: 0;
+  }
+}
+
+/* Backup another animation */
+.auto-spin-run-light {
+  isolation: isolate;
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  overflow: visible;
+  filter: drop-shadow(0 0 0.35rem rgba(250, 204, 21, 0.45));
+  transition: transform 120ms ease-out, filter 200ms ease-out;
+  animation: auto-spin-run-light-invite 1.4s ease-in-out infinite;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .auto-spin-run-light:not(.auto-spin-run-light-disabled):hover {
+    filter: drop-shadow(0 0 0.7rem rgba(250, 204, 21, 0.5));
+  }
+}
+
+.auto-spin-run-light::before {
+  content: '';
+  position: absolute;
+  inset: -0.14rem;
+  z-index: 0;
+  border-radius: 9999px;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(245, 158, 11, 0) 0deg,
+      rgba(245, 158, 11, 0) 90deg,
+      rgba(245, 158, 11, 0.1) 130deg,
+      rgba(250, 204, 21, 0.62) 200deg,
+      rgba(255, 251, 235, 1) 290deg,
+      rgba(253, 224, 71, 0.9) 330deg,
+      rgba(245, 158, 11, 0.4) 354deg,
+      rgba(245, 158, 11, 0) 360deg
+    );
+  pointer-events: none;
+  animation: auto-spin-run-light 1.5s linear infinite;
+  -webkit-mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 0.28rem),
+      #000 calc(100% - 0.17rem)
+    );
+  mask:
+    radial-gradient(
+      farthest-side,
+      transparent calc(100% - 0.28rem),
+      #000 calc(100% - 0.17rem)
+    );
+}
+
+.auto-spin-run-light::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+
+.auto-spin-run-light-disabled {
+  animation: none;
+  filter: drop-shadow(0 0 0.2rem rgba(250, 204, 21, 0.12));
+}
+
+.auto-spin-run-light-disabled::before {
+  animation-play-state: paused;
+  opacity: 0.35;
+}
+
+.auto-spin-run-light-disabled::after {
+  box-shadow: none;
+}
+
+
+.auto-spin-press-hint-finger {
+
+  animation: auto-spin-press-hint 1.4s ease-in-out infinite;
+}
+
+.auto-spin-press-hint {
+  background: linear-gradient(
+    180deg,
+    rgba(63, 63, 70, 0.96),
+    rgba(24, 24, 27, 0.96)
+  );
+  border: 1px solid rgba(250, 204, 21, 0.28);
+
+  animation: auto-spin-press-hint 1.4s ease-in-out infinite;
+}
+
+.auto-spin-press-icon {
+  display: block;
+}
+
+@keyframes auto-spin-run-light {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes auto-spin-run-light-invite {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0.35rem rgba(250, 204, 21, 0.45));
+  }
+
+  50% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 0.65rem rgba(250, 204, 21, 0.85));
+  }
+}
+
+@keyframes auto-spin-press-hint {
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: translateY(0);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateY(-0.05rem);
+  }
+}
+
+.outline-lighting-effect {
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 205, 64, 0.65);
+  animation: outline-lighting 1.5s ease-in-out infinite;
+}
+
+.run-outline-lighting-effect {
+  border-radius: 9999px;
+  padding: 2px;
+  background:
+    conic-gradient(
+      from 0deg,
+      rgba(120, 76, 0, 0.08) 0deg,
+      rgba(184, 123, 0, 0.16) 80deg,
+      rgba(255, 214, 82, 0.98) 160deg,
+      rgba(255, 241, 176, 1) 185deg,
+      rgba(255, 191, 0, 0.94) 215deg,
+      rgba(160, 102, 0, 0.12) 240deg,
+      rgba(120, 76, 0, 0.08) 360deg
+    );
+  box-shadow:
+    0 0 8px rgba(255, 191, 0, 0.28),
+    0 0 16px rgba(255, 166, 0, 0.2);
+  animation: run-outline-lighting 1.25s linear infinite;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+
+}
+
+
+@keyframes outline-lighting {
+  0%,
+  100% {
+    opacity: 0.9;
+    border-color: rgba(232, 168, 24, 0.55);
+    box-shadow:
+      0 0 4px rgba(255, 191, 0, 0.24),
+      0 0 10px rgba(214, 145, 10, 0.18),
+      inset 0 0 6px rgba(255, 215, 64, 0.14);
+  }
+
+  50% {
+    opacity: 1;
+    border-color: rgba(255, 223, 92, 0.98);
+    box-shadow:
+      0 0 8px rgba(255, 200, 32, 0.72),
+      0 0 18px rgba(255, 179, 0, 0.58),
+      inset 0 0 10px rgba(255, 226, 98, 0.4);
+
+  }
+}
+
+@keyframes run-outline-lighting {
+  0% {
+    transform: rotate(0deg) scale(0.99);
+    filter: saturate(1) brightness(0.96);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.01);
+    filter: saturate(1.1) brightness(1.05);
+  }
+
+  100% {
+    transform: rotate(360deg) scale(0.99);
+    filter: saturate(1) brightness(0.96);
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/event-center/event-center.component.css"],
+  "sourcesContent": [":host{\n  display: block;\n}\n\n.scrollbar-hide {\n  -ms-overflow-style: none;\n  scrollbar-width: none;\n}\n\n.scrollbar-hide::-webkit-scrollbar {\n  display: none;\n}\n\n.tab-container {\n  scroll-snap-type: x proximity;\n  -webkit-overflow-scrolling: touch;\n}\n\n.tab-container > div {\n  scroll-snap-align: start;\n}\n\n.grabbing { cursor: grabbing !important; }"],
+  "mappings": ";AAAA;AACE,WAAA;AACF;AAEA,CAAA;AACE,sBAAA;AACA,mBAAA;AACF;AAEA,CALA,cAKA;AACE,WAAA;AACF;AAEA,CAAA;AACE,oBAAA,EAAA;AACA,8BAAA;AACF;AAEA,CALA,cAKA,EAAA;AACE,qBAAA;AACF;AAEA,CAAA;AAAY,UAAA;AAA6B;",
+  "names": []
+}

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/event-trn/event-trn.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n  width: 100%;\n  height: 100%;\n}"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,SAAA;AACA,UAAA;AACF;",
+  "names": []
+}

@@ -1,0 +1,86 @@
+<!-- Quick Variant -->
+@if (variant() === "default") {
+  <div class="flex items-center justify-center">
+    <div class="w-full rounded-lg p-1 border-banner bg-zinc-800">
+      <div class="grid grid-cols-4 gap-2 sm:divide-x-2 sm:divide-zinc-700/50">
+        <!-- DAYS -->
+        <div class="flex flex-col items-center min-w-[3rem]">
+          <h3 class="text-yellow-200 leading-none">
+            {{ formatTime(days()) }}
+          </h3>
+          <span class="text-yellow-200/90">{{ daysLabel() }}</span>
+        </div>
+        <!-- HRS -->
+        <div class="flex flex-col items-center min-w-[3rem]">
+          <h3 class="text-yellow-200 leading-none">
+            {{ formatTime(hours()) }}
+          </h3>
+          <span class="text-yellow-200/90">{{ hoursLabel() }}</span>
+        </div>
+        <!-- MINS -->
+        <div class="flex flex-col items-center min-w-[3rem]">
+          <h3 class="text-yellow-200 leading-none">
+            {{ formatTime(minutes()) }}
+          </h3>
+          <span class="text-yellow-200/90">{{ minutesLabel() }}</span>
+        </div>
+        <!-- SECS -->
+        <div class="flex flex-col items-center min-w-[3rem]">
+          <h3 class="text-yellow-200 leading-none">
+            {{ formatTime(seconds()) }}
+          </h3>
+          <span class="text-yellow-200/90">{{ secondsLabel() }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Event Variant -->
+@if (variant() === "event") {
+  <div class="flex items-center justify-center">
+    <div
+      class="w-full max-w-[13.75rem] rounded-lg p-1 bg-zinc-800"
+      style="border: 1px solid rgb(233, 212, 255, 0.9)"
+    >
+      <div class="grid grid-cols-4 gap-1 sm:divide-x-2 sm:divide-zinc-700/50">
+        <!-- DAYS -->
+        <div class="flex flex-col items-center min-w-[1rem]">
+          <h2 class="text-purple-200 leading-none">
+            {{ formatTime(days()) }}
+          </h2>
+          <span class="text-purple-200/90 tracking-wider mt-0.5">{{
+            daysLabel()
+          }}</span>
+        </div>
+        <!-- HRS -->
+        <div class="flex flex-col items-center min-w-[1rem]">
+          <h2 class="text-purple-200 leading-none">
+            {{ formatTime(hours()) }}
+          </h2>
+          <span class="text-purple-200/90 tracking-wider mt-0.5">{{
+            hoursLabel()
+          }}</span>
+        </div>
+        <!-- MINS -->
+        <div class="flex flex-col items-center min-w-[1rem]">
+          <h2 class="text-purple-200 leading-none">
+            {{ formatTime(minutes()) }}
+          </h2>
+          <span class="text-purple-200/90 tracking-wider mt-0.5">{{
+            minutesLabel()
+          }}</span>
+        </div>
+        <!-- SECS -->
+        <div class="flex flex-col items-center min-w-[1rem]">
+          <h2 class="text-purple-200 leading-none">
+            {{ formatTime(seconds()) }}
+          </h2>
+          <span class="text-purple-200/90 tracking-wider mt-0.5">{{
+            secondsLabel()
+          }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+}

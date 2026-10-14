@@ -1,0 +1,9 @@
+<div
+  class="flex w-full select-none uppercase gap-0.5 text-[9px] text-stroke items-center"
+>
+  <div>{{ gameName() }}</div>
+  @if (showTime()) {
+    <div class="text-[0.6rem]">|</div>
+    <div>{{ gameTime() }}</div>
+  }
+</div>

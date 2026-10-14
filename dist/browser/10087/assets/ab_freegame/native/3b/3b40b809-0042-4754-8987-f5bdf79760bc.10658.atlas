@@ -1,0 +1,48 @@
+
+anim_multply_fx.png
+size: 512,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+big_circle
+  rotate: true
+  xy: 223, 38
+  size: 86, 85
+  orig: 100, 100
+  offset: 4, 10
+  index: -1
+glow
+  rotate: false
+  xy: 2, 2
+  size: 112, 114
+  orig: 153, 153
+  offset: 23, 16
+  index: -1
+loop_glow
+  rotate: false
+  xy: 122, 126
+  size: 111, 111
+  orig: 128, 128
+  offset: 9, 8
+  index: -1
+multply_glow
+  rotate: true
+  xy: 2, 118
+  size: 119, 118
+  orig: 128, 128
+  offset: 4, 5
+  index: -1
+particle
+  rotate: false
+  xy: 223, 14
+  size: 22, 22
+  orig: 27, 27
+  offset: 3, 2
+  index: -1
+ray_04
+  rotate: false
+  xy: 116, 4
+  size: 105, 112
+  orig: 137, 137
+  offset: 18, 21
+  index: -1

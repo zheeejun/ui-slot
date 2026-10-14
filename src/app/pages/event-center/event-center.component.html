@@ -1,0 +1,31 @@
+<ap-ui-frame-page
+  class="fixed inset-0"
+  [header]="activeTabLabel()"
+  (close)="onClickClose()"
+  [enableBack]="isBack()"
+  (back)="onClickBack()"
+>
+  <ap-tab-menu-icon
+    [tabs]="tabs()"
+    [justify]="'center'"
+    [selectedTab]="activedTab()"
+    [accentColor]="'yellow'"
+    (tabChange)="changeTab($event)"
+  />
+
+  <div class="relative h-[calc(100%-3.5rem)] overflow-y-auto">
+    @if (activedTab() === "buy-feature") {
+      <event-buy-feature (closeAll)="onClickClose()" />
+    } @else if (activedTab() === "campaign") {
+      <event-campaign-cards/>
+    } @else if (activedTab() === "cash-drop") {
+      <event-cashdrop />
+    } @else if (activedTab() === "tournament") {
+      <event-trn [path]="subPath()" (onClose)="onClickClose()" />
+    } @else if (activedTab() === "promo-code") {
+      <event-promocode />
+    } @else if (activedTab() === "leader-board") {
+      <event-leader-board-banner />
+    } @else if (activedTab() === "reward-system") {}
+  </div>
+</ap-ui-frame-page>

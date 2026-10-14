@@ -1,0 +1,83 @@
+
+anim_super.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/flare
+  rotate: false
+  xy: 461, 760
+  size: 285, 45
+  orig: 319, 71
+  offset: 10, 13
+  index: -1
+FX/sun
+  rotate: false
+  xy: 895, 899
+  size: 118, 118
+  orig: 150, 150
+  offset: 16, 16
+  index: -1
+black
+  rotate: false
+  xy: 755, 900
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+black_gradient
+  rotate: true
+  xy: 954, 861
+  size: 36, 38
+  orig: 38, 38
+  offset: 2, 0
+  index: -1
+board
+  rotate: false
+  xy: 2, 796
+  size: 457, 221
+  orig: 2250, 960
+  offset: 896, 469
+  index: -1
+color_paper
+  rotate: false
+  xy: 994, 874
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+explode
+  rotate: true
+  xy: 2, 614
+  size: 180, 183
+  orig: 180, 184
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 187, 630
+  size: 164, 164
+  orig: 192, 192
+  offset: 14, 14
+  index: -1
+silver
+  rotate: false
+  xy: 755, 706
+  size: 197, 191
+  orig: 300, 300
+  offset: 51, 54
+  index: -1
+txt_down
+  rotate: false
+  xy: 461, 807
+  size: 292, 108
+  orig: 2250, 960
+  offset: 980, 493
+  index: -1
+txt_up
+  rotate: false
+  xy: 461, 917
+  size: 432, 100
+  orig: 2250, 960
+  offset: 909, 588
+  index: -1

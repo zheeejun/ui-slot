@@ -1,0 +1,39 @@
+<div class="relative size-full flex items-center justify-center p-2">
+  <div class="absolute inset-0 bg-black/60"></div>
+  <div
+    class="w-full sm:w-200 border-[0.2rem] border-purple-300 bg-zinc-900 rounded-xl text-zinc-300 duration-300 select-none h-[78vh] flex flex-col"
+  >
+    <div
+      class="relative w-full font-semibold h-16 text-3xl md:text-4xl pt-3 pb-2 flex-shrink-0"
+    >
+      {{ header() }}
+    </div>
+    <div class="bg-zinc-800 relative rounded-b-xl flex-1 overflow-y-auto">
+      <div class="px-4 py-4 select-none flex flex-col text-left">
+        <div class="relative w-full flex flex-col gap-4">
+          @for (trn of trnList(); track trn.id) {
+            <ap-trn-game-list
+              [getCountdownStartTitle]="getCountdownStartTitle()"
+              [getCountdownEndTitle]="getCountdownEndTitle()"
+              [getDaysLabel]="getDaysLabel()"
+              [getHoursLabel]="getHoursLabel()"
+              [getMinutesLabel]="getMinutesLabel()"
+              [getSecondsLabel]="getSecondsLabel()"
+              [hasParticipated]="true"
+              [trnData]="trn"
+              (click)="onEventClick(trn)"
+            />
+          }
+        </div>
+      </div>
+    </div>
+    <ap-button
+      class="absolute right-3 top-4 hidden"
+      [icon]="'x-mark'"
+      [size]="'medium'"
+      [variant]="'content-rounded'"
+      [accentColor]="'purple'"
+      (click)="clickClose()"
+    />
+  </div>
+</div>

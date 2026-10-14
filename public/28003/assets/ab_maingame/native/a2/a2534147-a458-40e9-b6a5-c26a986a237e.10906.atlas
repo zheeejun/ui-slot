@@ -1,0 +1,13 @@
+
+anim_line.png
+size: 1024,32
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+line_g3
+  rotate: false
+  xy: 3, 3
+  size: 661, 23
+  orig: 661, 37
+  offset: 0, 7
+  index: -1

@@ -1,0 +1,15 @@
+.btn-quick-idle {
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #71471E 0%, #000002 100%);
+}
+
+.btn-quick-playing {
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #FACC15 0%, #713F12 65%, #000002 100%);
+}
+
+.btn-event-idle {
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #8A38F5 0%, #000002 100%);
+}
+
+.btn-event-playing {
+  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #C084FC 0%, #3B0764 65%, #000002 100%);
+}

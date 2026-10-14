@@ -1,0 +1,11 @@
+.history-list-calendar {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@media (min-width: 640px) {
+  .history-list-calendar {
+    left: 5rem;
+    transform: none;
+  }
+}

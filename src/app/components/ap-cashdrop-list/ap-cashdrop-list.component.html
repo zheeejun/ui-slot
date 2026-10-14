@@ -1,0 +1,36 @@
+<div
+  *ngIf="variant() === 'header'"
+  class="grid grid-cols-2 bg-zinc-800 border-bottom-zinc"
+>
+  <!-- Left-->
+  <div class="px-2 py-2 flex items-center justify-center">
+    <h3 class="text-yellow-200 text-center">{{ leftLabel() }}</h3>
+  </div>
+
+  <!-- Right -->
+  <div class="px-2 py-2">
+    <h3 class="text-zinc-300 text-center">{{ rightLabel() }}</h3>
+  </div>
+</div>
+
+<!-- Content -->
+<!-- List -->
+<div
+  *ngIf="variant() === 'list'"
+  class="grid grid-cols-2 text-center border-bottom-zinc"
+  [ngClass]="
+    bgShade() === '900'
+      ? 'bg-zinc-900 hover:bg-zinc-700'
+      : 'bg-zinc-800 hover:bg-zinc-700'
+  "
+>
+  <!-- Left -->
+  <div class="p-4">
+    <p class="text-yellow-200">{{ leftValue() }}</p>
+  </div>
+
+  <!-- Right -->
+  <div class="border-left-zinc p-4">
+    <p class="text-white">{{ rightValue() }}</p>
+  </div>
+</div>

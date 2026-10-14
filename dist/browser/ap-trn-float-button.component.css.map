@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/ap-trn-float-button/ap-trn-float-button.component.css"],
+  "sourcesContent": [".btn-quick-idle {\n  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #71471E 0%, #000002 100%);\n}\n\n.btn-quick-playing {\n  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #FACC15 0%, #713F12 65%, #000002 100%);\n}\n\n.btn-event-idle {\n  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #8A38F5 0%, #000002 100%);\n}\n\n.btn-event-playing {\n  background-image: radial-gradient(ellipse 50% 50% at 50% 50%, #C084FC 0%, #3B0764 65%, #000002 100%);\n}"],
+  "mappings": ";AAAA,CAAA;AACE;IAAA;MAAA,QAAA,IAAA,IAAA,GAAA,IAAA,GAAA;MAAA,QAAA,EAAA;MAAA,QAAA;AACF;AAEA,CAAA;AACE;IAAA;MAAA,QAAA,IAAA,IAAA,GAAA,IAAA,GAAA;MAAA,QAAA,EAAA;MAAA,QAAA,GAAA;MAAA,QAAA;AACF;AAEA,CAAA;AACE;IAAA;MAAA,QAAA,IAAA,IAAA,GAAA,IAAA,GAAA;MAAA,QAAA,EAAA;MAAA,QAAA;AACF;AAEA,CAAA;AACE;IAAA;MAAA,QAAA,IAAA,IAAA,GAAA,IAAA,GAAA;MAAA,QAAA,EAAA;MAAA,QAAA,GAAA;MAAA,QAAA;AACF;",
+  "names": []
+}

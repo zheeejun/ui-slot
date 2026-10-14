@@ -1,0 +1,115 @@
+<div class="page-container">
+  <!-- Section 1: Tab Buttons -->
+  <div class="sticky z-sticky top-0 shrink-0 pb-2">
+    <ap-ui-tab-group
+      [tabs]="tabs()"
+      [selectedTab]="selectedTab()"
+      (tabChange)="selectTab($event)"
+    />
+  </div>
+
+  <!-- Section 2: Content Area (Scrollable) -->
+  <div class="flex-1 flex justify-center overflow-auto">
+    @if (selectedTab() === "PRIZES") {
+      <div class="w-full max-w-2xl fade-down">
+        <!-- Prizes Tab Content -->
+        <div class="sticky top-0 bg-zinc-900 py-2 px-4">
+          <ap-cashdrop-list
+            [variant]="'header'"
+            [leftLabel]="prizeHeaderLeftLabel()"
+            [rightLabel]="prizeHeaderRightLabel()"
+            class="cursor-pointer select-none"
+          />
+        </div>
+
+        <div class="px-4 pb-4">
+          <!-- Prize List -->
+          @for (p of prizes(); track p.index) {
+            <ap-cashdrop-list
+              [variant]="'list'"
+              [leftValue]="p.prize | moneyText"
+              [rightValue]="`${p.left}`"
+              [bgShade]="$index % 2 === 0 ? '800' : '900'"
+            />
+          }
+        </div>
+      </div>
+    } @else if (selectedTab() === "WINNERS") {
+      <div class="w-full max-w-2xl fade-down">
+        <!-- Winners Tab Content -->
+        <div class="sticky z-sticky top-0 py-2 px-4 bg-zinc-900">
+          <div class="flex justify-center items-center space-x-2 p-2">
+            <ap-button
+              variant="text"
+              [icon]="'chevron-left'"
+              [size]="'small'"
+              [accentColor]="'yellow'"
+              (click)="setPrevTable()"
+            />
+            <h4 class="flex-1 text-center text-yellow-400 uppercase">
+              {{ selectedTableTitle() }}
+            </h4>
+            <ap-button
+              variant="text"
+              [icon]="'chevron-right'"
+              [size]="'small'"
+              [accentColor]="'yellow'"
+              (click)="setNextTable()"
+            />
+          </div>
+          <ap-cashdrop-list
+            [variant]="'header'"
+            [leftLabel]="winnerHeaderLeftLabel()"
+            [rightLabel]="winnerHeaderRightLabel()"
+          />
+        </div>
+
+        <div class="px-4 pb-4">
+          <!-- Prize List -->
+          @for (p of selectedTableContent(); track p.index) {
+            <ap-cashdrop-list
+              variant="list"
+              [leftValue]="p.isYou ? isYouLabel() : p.player"
+              [rightValue]="p.prize | moneyText"
+              [bgShade]="$index % 2 === 0 ? '800' : '900'"
+              class="animate-fade-down"
+            />
+          }
+        </div>
+      </div>
+    } @else if (selectedTab() === "RULES") {
+      <div class="page-content">
+        <!-- Rules Tab Content -->
+        <div class="space-y-2">
+          @for (rule of rulesContent(); track $index) {
+            @if (rule === "") {
+            } @else {
+              <p class="text-zinc-300">{{ rule }}</p>
+            }
+          }
+        </div>
+      </div>
+    }
+  </div>
+
+  <!-- Section 3: Event Cards (Sticky Bottom) -->
+  <div
+    class="relative h-36 w-full p-4 overflow-x-auto overflow-y-hidden"
+    style="border-top: 0.02rem solid oklch(37% 0.013 285.805)"
+  >
+    <div
+      class="overflow-scrollbar relative flex w-max min-w-full items-center justify-start gap-4"
+    >
+      @for (item of cashDrop.cashDropsByEndTime(); track item.id) {
+        <ap-cashdrop-card-countdown
+          class="shrink-0 cursor-pointer hover-scale"
+          [title]="item.name"
+          [endTime]="item.endTime"
+          [beginTime]="item.beginTime"
+          [selected]="item.id === selectedCashDropId()"
+          (click)="selectCashDrop(item)"
+        />
+      }
+    </div>
+  </div>
+</div>

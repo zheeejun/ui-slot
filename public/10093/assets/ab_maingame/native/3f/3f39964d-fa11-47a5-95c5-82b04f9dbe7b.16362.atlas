@@ -1,0 +1,118 @@
+
+anim_bg.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+banner
+  rotate: false
+  xy: 64, 46
+  size: 161, 41
+  orig: 1500, 640
+  offset: 715, 580
+  index: -1
+banner2
+  rotate: false
+  xy: 85, 89
+  size: 162, 42
+  orig: 1500, 640
+  offset: 793, 531
+  index: -1
+banner2_f
+  rotate: false
+  xy: 2, 422
+  size: 323, 83
+  orig: 3000, 1280
+  offset: 1586, 1062
+  index: -1
+banner_f
+  rotate: true
+  xy: 2, 99
+  size: 321, 81
+  orig: 3000, 1280
+  offset: 1430, 1160
+  index: -1
+flag
+  rotate: false
+  xy: 327, 65
+  size: 74, 50
+  orig: 1500, 640
+  offset: 627, 571
+  index: -1
+flag2
+  rotate: false
+  xy: 249, 63
+  size: 76, 52
+  orig: 1500, 640
+  offset: 546, 570
+  index: -1
+flag2_f
+  rotate: true
+  xy: 274, 234
+  size: 151, 103
+  orig: 3000, 1280
+  offset: 1092, 1140
+  index: -1
+flag_f
+  rotate: true
+  xy: 379, 237
+  size: 148, 98
+  orig: 3000, 1280
+  offset: 1254, 1143
+  index: -1
+fp
+  rotate: false
+  xy: 438, 410
+  size: 11, 95
+  orig: 1500, 640
+  offset: 697, 534
+  index: -1
+fp2
+  rotate: false
+  xy: 451, 411
+  size: 11, 94
+  orig: 1500, 640
+  offset: 617, 534
+  index: -1
+fp2_f
+  rotate: true
+  xy: 274, 117
+  size: 21, 187
+  orig: 3000, 1280
+  offset: 1234, 1069
+  index: -1
+fp_f
+  rotate: false
+  xy: 479, 317
+  size: 21, 188
+  orig: 3000, 1280
+  offset: 1394, 1069
+  index: -1
+light_f
+  rotate: true
+  xy: 327, 387
+  size: 118, 109
+  orig: 126, 124
+  offset: 4, 8
+  index: -1
+skeft_004015
+  rotate: true
+  xy: 2, 33
+  size: 64, 60
+  orig: 64, 64
+  offset: 0, 1
+  index: -1
+spotlight_f
+  rotate: false
+  xy: 85, 133
+  size: 187, 287
+  orig: 3000, 1280
+  offset: 1771, 993
+  index: -1
+spotlight_g_f
+  rotate: false
+  xy: 274, 140
+  size: 231, 92
+  orig: 3000, 1280
+  offset: 1742, 970
+  index: -1

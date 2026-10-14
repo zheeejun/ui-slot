@@ -1,0 +1,56 @@
+<div>
+  <ap-ui-card-dev id="ap-button-list" align="center">
+    <ap-button-list />
+  </ap-ui-card-dev>
+  <ap-ui-card-dev id="ap-button-auto-spin-times" align="center">
+    <div class="w-full">
+      <div class="flex items-center justify-between text-orange-400 px-6 py-4">
+        <h2 class="text-left">Auto Spin Times Button</h2>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 space-y-4">
+        <ap-category-selection
+          [categories]="autoSpinCategories"
+          [getCodeSnippet]="getAutoSpinCodeSnippet.bind(this)"
+        >
+          <ng-template #variantTemplate let-variant>
+            <div class="p-4 flex items-center justify-center min-h-[8rem]">
+              <ap-button-auto-spin-times
+                [mode]="variant.mode || 'auto-spin'"
+                [variant]="variant.variant || 'default'"
+                [currentSpins]="variant.currentSpins ?? 103"
+                [totalSpins]="variant.totalSpins ?? 486"
+                [disabled]="variant.disabled || false"
+                [scale]="variant.scale ?? 1"
+                [pressHintEnabled]="variant.pressHintEnabled || false"
+              />
+            </div>
+          </ng-template>
+        </ap-category-selection>
+      </div>
+    </div>
+  </ap-ui-card-dev>
+  <ap-ui-card-dev id="ap-button-free-spins" align="center">
+    <div class="w-full">
+      <div class="flex items-center justify-between text-orange-400 px-6 py-4">
+        <h2 class="text-left">Free Spins Button</h2>
+      </div>
+      <div class="max-w-7xl mx-auto px-6 space-y-4">
+        <ap-category-selection
+          [categories]="freeSpinsCategories"
+          [getCodeSnippet]="getFreeSpinsCodeSnippet.bind(this)"
+        >
+          <ng-template #variantTemplate let-variant>
+            <div class="p-4 flex items-center justify-center min-h-[8rem]">
+              <ap-button-free-spins
+                [currentSpins]="variant.currentSpins ?? 103"
+                [totalSpins]="variant.totalSpins ?? 486"
+                [disabled]="variant.disabled || false"
+                [scale]="variant.scale ?? 1"
+              />
+            </div>
+          </ng-template>
+        </ap-category-selection>
+      </div>
+    </div>
+  </ap-ui-card-dev>
+</div>

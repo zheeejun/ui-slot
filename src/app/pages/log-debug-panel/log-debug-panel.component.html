@@ -1,0 +1,13 @@
+<div class="relative w-xs flex flex-col gap-1 p-2 text-white bg-black/50 rounded-xl">
+  @for (item of toggleList; track item.label) {
+    <ap-toggle-switch
+      fitMode="container"
+      [label]="item.label"
+      [checked]="item.signal()"
+      (checkedChange)="item.signal.set($event)"
+    />
+  }
+  <!-- save button-->
+  <ap-button (click)="clickSave()">Save</ap-button>
+  <ap-button (click)="clickDelete()">Delete</ap-button>
+</div>

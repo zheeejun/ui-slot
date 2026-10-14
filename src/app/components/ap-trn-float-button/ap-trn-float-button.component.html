@@ -1,0 +1,46 @@
+<div class="relative flex items-center justify-center cursor-pointer">
+  <div
+    class="relative size-14 rounded-full border-2 flex items-center justify-center"
+    [ngClass]="{
+      'border-yellow-300 hover:border-yellow-200': isYellow(),
+      'border-purple-400 hover:border-purple-200': !isYellow(),
+      'btn-quick-idle':    isYellow() && !isPlaying(),
+      'btn-quick-playing': isYellow() && isPlaying(),
+      'btn-event-idle':    !isYellow() && !isPlaying(),
+      'btn-event-playing': !isYellow() && isPlaying()
+    }"
+  >
+    @if (isPlaying()) {
+      <div
+        class="absolute -inset-[2px] rounded-full border-2 border-transparent animate-spin pointer-events-none"
+        [ngClass]="spinnerColorClass()"
+        style="animation-duration: 1.6s;"
+      ></div>
+    }
+
+    <ap-icon
+      [name]="iconName()"
+      class="button-icon"
+      [ngClass]="iconColorClass()"
+    />
+  </div>
+
+  <ap-button
+    class="absolute -right-4 top-2 -translate-y-1/2"
+    [size]="'small'"
+    [icon]="'chevron-right'"
+    [variant]="'content-rounded'"
+    [accentColor]="accentColor()"
+  />
+
+  @if (isYellow()) {
+    <div class="absolute top-1/2 -left-2 translate-y-1/6 block size-8">
+      <!--Hexagon-->
+      <ap-icon name="hexagon" class="w-full h-full text-yellow-400 drop-shadow-md" />
+      <!--Rank Number-->
+      <div class="absolute inset-0 flex items-center justify-center text-yellow-200">
+        <h5>{{ rankLabel() }}</h5>
+      </div>
+    </div>
+  }
+</div>

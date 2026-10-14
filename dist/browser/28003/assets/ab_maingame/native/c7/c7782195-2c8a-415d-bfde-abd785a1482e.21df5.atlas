@@ -1,0 +1,195 @@
+
+anim_sym_w1.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/lens flare white sparkling light
+  rotate: false
+  xy: 670, 44
+  size: 75, 75
+  orig: 100, 100
+  offset: 12, 12
+  index: -1
+FX/shadow
+  rotate: false
+  xy: 828, 5
+  size: 30, 30
+  orig: 50, 50
+  offset: 10, 10
+  index: -1
+FX/smoke
+  rotate: false
+  xy: 394, 8
+  size: 61, 53
+  orig: 104, 104
+  offset: 20, 26
+  index: -1
+FX/sun
+  rotate: false
+  xy: 239, 95
+  size: 158, 158
+  orig: 200, 200
+  offset: 21, 21
+  index: -1
+FX/wwpiece02
+  rotate: true
+  xy: 345, 3
+  size: 18, 24
+  orig: 27, 34
+  offset: 4, 5
+  index: -1
+Lizi_173
+  rotate: false
+  xy: 900, 7
+  size: 30, 28
+  orig: 32, 32
+  offset: 1, 3
+  index: -1
+bg
+  rotate: false
+  xy: 949, 31
+  size: 66, 66
+  orig: 66, 66
+  offset: 0, 0
+  index: -1
+frame
+  rotate: false
+  xy: 400, 121
+  size: 132, 132
+  orig: 132, 132
+  offset: 0, 0
+  index: -1
+frame_1
+  rotate: false
+  xy: 535, 39
+  size: 132, 80
+  orig: 132, 132
+  offset: 0, 52
+  index: -1
+frame_2
+  rotate: false
+  xy: 400, 64
+  size: 132, 54
+  orig: 132, 132
+  offset: 0, 0
+  index: -1
+gradient
+  rotate: true
+  xy: 3, 33
+  size: 50, 252
+  orig: 50, 255
+  offset: 0, 2
+  index: -1
+gradient_pink
+  rotate: true
+  xy: 3, 10
+  size: 20, 176
+  orig: 20, 178
+  offset: 0, 2
+  index: -1
+man_body
+  rotate: false
+  xy: 535, 122
+  size: 291, 131
+  orig: 400, 400
+  offset: 36, 42
+  index: -1
+man_body_2
+  rotate: true
+  xy: 258, 13
+  size: 79, 84
+  orig: 400, 400
+  offset: 14, 44
+  index: -1
+man_eye1
+  rotate: false
+  xy: 861, 7
+  size: 36, 28
+  orig: 400, 400
+  offset: 145, 261
+  index: -1
+man_eye2
+  rotate: true
+  xy: 495, 9
+  size: 30, 36
+  orig: 400, 400
+  offset: 209, 244
+  index: -1
+man_eye_bg
+  rotate: false
+  xy: 670, 11
+  size: 46, 30
+  orig: 400, 400
+  offset: 140, 262
+  index: -1
+man_eye_bg2
+  rotate: false
+  xy: 779, 9
+  size: 46, 30
+  orig: 400, 400
+  offset: 140, 262
+  index: -1
+man_head_1
+  rotate: true
+  xy: 3, 86
+  size: 167, 233
+  orig: 400, 400
+  offset: 83, 145
+  index: -1
+man_head_2
+  rotate: false
+  xy: 779, 42
+  size: 31, 77
+  orig: 400, 400
+  offset: 210, 205
+  index: -1
+man_jaw
+  rotate: true
+  xy: 748, 23
+  size: 96, 28
+  orig: 400, 400
+  offset: 124, 146
+  index: -1
+man_mouth
+  rotate: true
+  xy: 345, 24
+  size: 68, 46
+  orig: 400, 400
+  offset: 155, 188
+  index: -1
+man_teeth1
+  rotate: false
+  xy: 182, 9
+  size: 62, 21
+  orig: 400, 400
+  offset: 158, 205
+  index: -1
+man_teeth2
+  rotate: false
+  xy: 458, 42
+  size: 56, 19
+  orig: 400, 400
+  offset: 167, 200
+  index: -1
+rose/petal
+  rotate: true
+  xy: 458, 7
+  size: 32, 34
+  orig: 36, 39
+  offset: 2, 2
+  index: -1
+rose/rose_all
+  rotate: false
+  xy: 829, 38
+  size: 117, 215
+  orig: 135, 229
+  offset: 9, 6
+  index: -1
+wild
+  rotate: true
+  xy: 949, 100
+  size: 153, 66
+  orig: 174, 94
+  offset: 9, 8
+  index: -1

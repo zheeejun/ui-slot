@@ -1,0 +1,111 @@
+<div class="relative size-full flex items-center justify-center">
+  <div class="absolute inset-0 bg-black/60" (click)="clickClose.emit()"></div>
+  <ap-ui-frame-popup
+    [accentColor]="displayAccentColor() === 'yellow' ? 'purple' : 'yellow'"
+    [header]="header()"
+    [size]="'mobile'"
+    class="w-11/12 md:w-3/4 lg:w-1/2 relative"
+    (click)="clickClose.emit()"
+  >
+    <!-- Content -->
+    <div
+      class="bg-zinc-800 px-4 py-4 text-center mx-8 select-none flex flex-col justify-center items-center"
+    >
+      <!-- Tournament Title -->
+      <div class="mb-2">
+        <ap-trn-card-title
+          [accentColor]="displayAccentColor() === 'purple' ? 'purple' : 'yellow'"
+          [title]="
+            displayAccentColor() === 'yellow' ? getEventTitle() : getQuickTitle()
+          "
+        />
+      </div>
+      <!-- Hexagon with Rank Number -->
+      <div class="relative w-24 h-24 mx-auto flex items-center justify-center">
+        <svg viewBox="0 0 110 100" class="w-full h-full">
+          <polygon
+            points="55,5 95,30 95,70 55,95 15,70 15,30"
+            [attr.stroke]="displayAccentColor() === 'yellow' ? '#FFD700' : '#E9D4FF'"
+            stroke-width="4"
+            fill="bg-black"
+          />
+        </svg>
+        <!--Rank Number-->
+        <div
+          class="absolute font-anton inset-0 flex items-center justify-center text-[2.5rem]"
+          [ngClass]="{
+            'text-yellow-gradient': displayAccentColor() === 'yellow',
+            'text-purple-gradient': displayAccentColor() === 'purple',
+          }"
+        >
+          <span>{{ rank() }}</span>
+        </div>
+      </div>
+      <!-- Prize -->
+      <div
+        class="w-auto h-10 px-4 bg-zinc-900 text-yellow-200 rounded-full mt-4"
+        [ngClass]="{
+          'text-yellow-200': displayAccentColor() === 'yellow',
+          'text-purple-300': displayAccentColor() === 'purple',
+        }"
+      >
+        <div class="text-xs text-left -translate-y-2 font-medium">
+          {{ getPrizeLabel() }}
+        </div>
+        <div class="flex -translate-y-2 justify-center items-center space-x-1">
+          <div class="text-md">{{ currency() }}</div>
+          <div class="text-2xl text-center font-bold">
+            {{ prize() }}
+          </div>
+        </div>
+      </div>
+
+      <!-- List -->
+      <div class="flex flex-col w-[85%] mt-2">
+        <ap-trn-list-row
+          [currency]="currency()"
+          class="mt-4"
+          [items]="playList()"
+          [showDividers]="false"
+          [accentColor]="displayAccentColor() === 'yellow' ? 'yellow' : 'purple'"
+        />
+        <button
+          type="button"
+          class="flex items-center justify-center text-zinc-300 font-normal tracking-wide select-none mt-2 cursor-pointer"
+          (click)="onRaceDetails(); $event.stopPropagation()"
+        >
+          <div class="border-b border-zinc-300 flex items-center gap-1">
+            <ap-icon name="exclamation-circle default" class="size-4" />
+            <span> {{ getEventDetailsButtonText() }}</span>
+          </div>
+        </button>
+      </div>
+      
+      <!-- room ID -->
+      <div class="inline-flex gap-3 absolute bottom-1 right-2.5 text-zinc-500 text-xs">
+        <div class="inline-flex gap-0.5 items-start flex-col min-[365px]:flex-row">
+          <div>Room ID : </div>
+          <div>{{ getRoomID() }}</div>
+        </div>
+        @if (displayAccentColor() === 'yellow') {
+          <div class="inline-flex gap-0.5 items-start flex-col min-[365px]:flex-row">
+            <div>Campaign ID : </div>
+            <div>{{ getCampaignID() }}</div>
+          </div>
+        }
+        
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="pb-12 min-[365px]:pb-8 mt-6 flex justify-center">
+      <ap-button
+        class="w-48"
+        [label]="getButtonLabel()"
+        (clicked)="clickConfirm.emit()"
+        [accentColor]="getButtonAccentColor()"
+        [size]="'large'"
+      />
+    </div>
+  </ap-ui-frame-popup>
+</div>

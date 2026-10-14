@@ -1,0 +1,24 @@
+{
+    "version":"1.0",
+    "game_brand":[
+        {
+            "value":"jollyplay",
+            "currency":{
+                "PHP":{}
+            }
+        }
+    ],
+
+    "platforms":{
+        "jk8master_t306": {},
+        "wombet_b450": {},
+        "wombet_s450": {},
+        "f1m2m3_ws183": {},
+        "j1m2m3_ws184": {},
+        "okbet": {},
+        "sbo_ws153": {},
+        "okbet_t1515": {},
+        "demoghana": {},
+        "ghana_nla": {}
+    }
+}

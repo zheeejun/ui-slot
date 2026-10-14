@@ -1,0 +1,11 @@
+@if (showReplayViewer()) {
+  <history-replay-viewer class="absolute inset-0"
+    [showCloseButton]="false"
+    [showWatchAgain]="true"
+    [showReplayEndCloseButton]="false"
+    [isReplayPanel]="isReplayPanel()"
+    (copyLinkRequest)="onCopyLinkRequest()"
+  />  
+}
+
+

@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.desktop-inner {
+  width: 100%;
+  height: 100%;
+}
+
+body.layout-demo-active layout-lab > ap-icon[name='bar-3'] {
+  display: none;
+}
+
+/* Default: image fills the game section */
+.desktop-game-section img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Strictly wider than 16:9 → center image, black bars on sides */
+@media (aspect-ratio > 16/9) {
+  .desktop-game-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .desktop-game-section img {
+    width: auto;
+    height: 100%;
+    object-fit: unset;
+  }
+}
+
+/* Mobile taller than 9:16 → constrain whole layout to 9:16, black fills top/bottom */
+@media (max-aspect-ratio: 9/16) {
+  .mobile-inner {
+    flex: none;
+    height: auto;
+    aspect-ratio: 9 / 16;
+  }
+}
+
+/* Mobile at or wider than 9:16 → fill full screen */
+@media (min-aspect-ratio: 9/16) {
+  .mobile-inner {
+    flex: none;
+    height: 100%;
+  }
+}

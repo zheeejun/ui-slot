@@ -1,0 +1,50 @@
+<ap-ui-card-dev id="ap-tag" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Tag</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="tabGroupCategories"
+        [getCodeSnippet]="getTabGroupCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-tag
+            class="block w-full"
+            [label]="variant.label"
+            [accentColor] ="variant.accentColor"
+            [variant]="variant.variant"
+            [icon]="variant.icon"
+            [rounded]="variant.rounded"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+
+</ap-ui-card-dev>
+<ap-ui-card-dev id="ap-badge" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Badge</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="badgeGroupCategories"
+        [getCodeSnippet]="getBadgeGroupCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-badge
+              [value]="variant.value"
+              [size]="variant.size ?? 'md'"
+              [accentColor]="variant.accentColor ?? 'orange'"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

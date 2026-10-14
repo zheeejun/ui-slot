@@ -1,0 +1,33 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+/* 排名上升動畫 */
+@keyframes rankUp {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 排名下降動畫 */
+@keyframes rankDown {
+  0% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* 應用動畫 */
+.rank-up {
+  animation: rankUp 0.25s ease-out;
+}
+
+.rank-down {
+  animation: rankDown 0.25s ease-out;
+}

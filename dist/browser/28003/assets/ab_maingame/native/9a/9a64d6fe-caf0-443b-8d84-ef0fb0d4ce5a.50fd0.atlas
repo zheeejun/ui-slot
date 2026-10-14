@@ -1,0 +1,41 @@
+
+anim_sym_h4.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+image/FireSmoke_38
+  rotate: false
+  xy: 5, 469
+  size: 14, 8
+  orig: 32, 32
+  offset: 9, 12
+  index: -1
+image/Light_368
+  rotate: true
+  xy: 24, 415
+  size: 62, 67
+  orig: 72, 80
+  offset: 10, 8
+  index: -1
+image/circle_light
+  rotate: true
+  xy: 96, 361
+  size: 116, 117
+  orig: 128, 128
+  offset: 6, 7
+  index: -1
+image/h4_circl
+  rotate: true
+  xy: 349, 351
+  size: 126, 128
+  orig: 150, 158
+  offset: 12, 11
+  index: -1
+image/h4_sword
+  rotate: false
+  xy: 218, 352
+  size: 126, 125
+  orig: 150, 158
+  offset: 16, 21
+  index: -1

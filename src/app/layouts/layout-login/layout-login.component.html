@@ -1,0 +1,186 @@
+<div
+  class="relative flex w-full max-w-xl flex-col gap-4 rounded-xl bg-zinc-800 p-4 text-zinc-300 sm:p-6 sm:my-auto"
+>
+  <div class="grid min-w-0 grid-cols-1 gap-4 sm:grid-cols-2">
+    <!-- Platform -->
+    <ap-select
+      class="min-w-0"
+      label="Platform"
+      [options]="platformOptions()"
+      [selected]="inputUrl()"
+      (onSelect)="onUrlChange($event)"
+    />
+
+    <!-- Game ID -->
+    <ap-input-box
+      class="min-w-0"
+      label="Game ID"
+      [value]="inputGameId()"
+      (onInput)="onGameIdChange($event)"
+    />
+
+    <ap-select
+      class="min-w-0"
+      label="Asset URL"
+      [options]="assetUrlOptions()"
+      [selected]="inputAssetUrl()"
+      (onSelect)="onAssetUrlChange($event)"
+    />
+
+    <!-- UI Mode -->
+    <ap-select
+      class="min-w-0"
+      label="UI Mode"
+      [options]="modeOptions()"
+      [selected]="inputUIMode()"
+      (onSelect)="onUIModeChange($event)"
+    />
+
+    <!-- Language -->
+    <ap-select
+      class="min-w-0"
+      label="Language"
+      [options]="languageOptions()"
+      [selected]="inputLanguage()"
+      (onSelect)="onLangChange($event)"
+    />
+
+    <!-- Token -->
+    <ap-input-box
+      class="min-w-0"
+      label="Token"
+      [error]="tokenIsInvalid()"
+      [value]="inputToken()"
+      (onInput)="onTokenChange($event)"
+    />
+
+    <!-- Use Cocos Editor Host -->
+    <div class="flex min-w-0 flex-col gap-2">
+      <ap-toggle-switch
+        size="small"
+        label="Cocos Editor Host"
+        fitMode="container"
+        [checked]="isCocosEditorHost()"
+        (checkedChange)="onToggleIsCocosEditorHost($event)"
+      />
+      <!-- Cocos Editor Host -->
+      <ap-input-box
+        [disabled]="!isCocosEditorHost()"
+        [value]="inputCocosEditorHost() ?? 'http://localhost:7456'"
+        (onInput)="onCocosEditorHostChange($event)"
+      />
+    </div>
+
+    <!-- Use Cloud Host -->
+    <div class="flex min-w-0 flex-col gap-2">
+      <ap-toggle-switch
+        size="small"
+        label="Cloud Host"
+        fitMode="container"
+        [checked]="isCloudHost()"
+        (checkedChange)="onToggleIsCloudHost($event)"
+      />
+      <ap-input-box
+        [disabled]="!isCloudHost()"
+        [value]="inputCloudHost() ?? defaultCloudHost()"
+        (onInput)="onCloudHostChange($event)"
+      />
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="flex flex-col gap-4 sm:gap-12 sm:flex-row sm:justify-between">
+    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+      <ap-button
+        class="w-full sm:w-auto [&>button]:w-full sm:[&>button]:w-auto"
+        size="small"
+        [disabled]="accepted() === false"
+        [label]="'Login'"
+        (clicked)="onLoginClick()"
+      />
+      <ap-button
+        class="w-full sm:w-auto [&>button]:w-full sm:[&>button]:w-auto"
+        size="small"
+        [label]="'Lab'"
+        variant="outlined"
+        [disabled]="accepted() === false"
+        (clicked)="onLabClick()"
+      />
+      <ap-button
+        class="w-full sm:w-auto [&>button]:w-full sm:[&>button]:w-auto"
+        size="small"
+        [label]="'Iframe'"
+        variant="outlined"
+        [disabled]="accepted() === false"
+        (clicked)="onIframeClick()"
+      />
+    </div>
+    <div class="flex flex-col sm:flex-row gap-2 sm:gap-4 w-full sm:w-auto">
+      <ap-button
+        class="w-full sm:w-auto [&>button]:w-full sm:[&>button]:w-auto"
+        size="small"
+        [label]="'Offline'"
+        variant="outlined"
+        (clicked)="onOfflineClick()"
+      />
+      <ap-button
+        class="w-full sm:w-auto [&>button]:w-full sm:[&>button]:w-auto"
+        size="small"
+        [label]="'Demo'"
+        variant="outlined"
+        (clicked)="onDemoClick()"
+      />
+      <ap-button
+        size="small"
+        class="w-full sm:w-auto [&>button]:w-full sm:[&>button]:w-auto"
+        [label]="'Dev'"
+        variant="outlined"
+        (clicked)="onDevClick()"
+      />
+    </div>
+    <!-- 另開新視窗給 commonStringUrl-->
+  </div>
+  <span class="flex flex-wrap gap-x-2">
+    Open Dev
+    <a
+      class="bottom-4 right-4 text-sm text-blue-400 hover:underline"
+      [href]="commonStringDevUrl()"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      CommonString
+    </a>
+    <a
+      class="bottom-4 right-4 text-sm text-blue-400 hover:underline"
+      [href]="gameStringDevUrl()"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GameString
+    </a>
+  </span>
+  <span class="flex flex-wrap gap-x-2">
+    Open QA
+    <a
+      class="bottom-4 right-40 text-sm text-blue-400 hover:underline"
+      [href]="commonStringQaUrl()"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      CommonString
+    </a>
+    <a
+      class="bottom-4 right-20 text-sm text-blue-400 hover:underline"
+      [href]="gameStringQaUrl()"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      GameString
+    </a>
+  </span>
+  <ap-toggle-switch
+    label="Remember Me"
+    [checked]="rememberMe()"
+    (checkedChange)="onRememberMeChange($event)"
+  />
+</div>

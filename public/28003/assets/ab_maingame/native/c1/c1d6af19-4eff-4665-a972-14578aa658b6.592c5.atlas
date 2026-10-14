@@ -1,0 +1,118 @@
+
+anim_sym_h2.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+h2_bottom
+  rotate: true
+  xy: 198, 361
+  size: 136, 132
+  orig: 300, 300
+  offset: 92, 72
+  index: -1
+h2_bottoms
+  rotate: false
+  xy: 304, 283
+  size: 75, 73
+  orig: 150, 150
+  offset: 43, 30
+  index: -1
+h2_g
+  rotate: false
+  xy: 5, 309
+  size: 188, 188
+  orig: 300, 300
+  offset: 59, 68
+  index: -1
+h2_leaf
+  rotate: false
+  xy: 5, 112
+  size: 161, 192
+  orig: 300, 300
+  offset: 60, 50
+  index: -1
+h2_leafs
+  rotate: false
+  xy: 5, 5
+  size: 86, 102
+  orig: 150, 150
+  offset: 28, 21
+  index: -1
+h2_rose_1
+  rotate: false
+  xy: 182, 5
+  size: 136, 141
+  orig: 300, 300
+  offset: 91, 79
+  index: -1
+h2_rose_2
+  rotate: true
+  xy: 171, 151
+  size: 153, 128
+  orig: 300, 300
+  offset: 63, 95
+  index: -1
+h2_rose_3
+  rotate: true
+  xy: 335, 364
+  size: 52, 71
+  orig: 300, 300
+  offset: 146, 134
+  index: -1
+h2_rose_4
+  rotate: false
+  xy: 304, 202
+  size: 68, 76
+  orig: 300, 300
+  offset: 106, 148
+  index: -1
+h2_rose_5
+  rotate: false
+  xy: 198, 318
+  size: 74, 38
+  orig: 300, 300
+  offset: 90, 111
+  index: -1
+h2_rose_6
+  rotate: true
+  xy: 384, 291
+  size: 68, 56
+  orig: 300, 300
+  offset: 77, 130
+  index: -1
+h2_rose_7
+  rotate: false
+  xy: 96, 19
+  size: 81, 88
+  orig: 300, 300
+  offset: 99, 127
+  index: -1
+h2_rose_8
+  rotate: true
+  xy: 335, 421
+  size: 76, 71
+  orig: 300, 300
+  offset: 90, 144
+  index: -1
+pot_1
+  rotate: false
+  xy: 411, 441
+  size: 56, 56
+  orig: 200, 200
+  offset: 72, 72
+  index: -1
+pot_2
+  rotate: false
+  xy: 411, 380
+  size: 56, 56
+  orig: 200, 200
+  offset: 72, 72
+  index: -1
+pot_3
+  rotate: false
+  xy: 377, 207
+  size: 72, 71
+  orig: 200, 200
+  offset: 64, 65
+  index: -1

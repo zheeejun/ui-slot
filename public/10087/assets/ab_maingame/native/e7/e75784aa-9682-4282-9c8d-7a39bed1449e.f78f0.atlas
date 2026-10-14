@@ -1,0 +1,209 @@
+
+anim_mg.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+clod00
+  rotate: true
+  xy: 694, 217
+  size: 179, 26
+  orig: 183, 29
+  offset: 0, 3
+  index: -1
+clod001
+  rotate: false
+  xy: 2, 308
+  size: 304, 88
+  orig: 304, 89
+  offset: 0, 1
+  index: -1
+clod001_y
+  rotate: false
+  xy: 308, 308
+  size: 304, 88
+  orig: 304, 89
+  offset: 0, 1
+  index: -1
+clod00_y
+  rotate: true
+  xy: 722, 217
+  size: 179, 26
+  orig: 183, 29
+  offset: 0, 3
+  index: -1
+cloud002
+  rotate: false
+  xy: 750, 223
+  size: 255, 77
+  orig: 263, 82
+  offset: 8, 4
+  index: -1
+cloud002_y
+  rotate: true
+  xy: 614, 140
+  size: 256, 78
+  orig: 264, 82
+  offset: 8, 4
+  index: -1
+cloud01
+  rotate: false
+  xy: 750, 144
+  size: 218, 77
+  orig: 219, 79
+  offset: 1, 2
+  index: -1
+cloud01_y
+  rotate: false
+  xy: 694, 65
+  size: 218, 77
+  orig: 219, 79
+  offset: 0, 2
+  index: -1
+elephant_01
+  rotate: true
+  xy: 914, 2
+  size: 125, 104
+  orig: 125, 104
+  offset: 0, 0
+  index: -1
+elephant_01_y
+  rotate: true
+  xy: 117, 13
+  size: 125, 104
+  orig: 125, 104
+  offset: 0, 0
+  index: -1
+elephant_02
+  rotate: false
+  xy: 309, 213
+  size: 125, 93
+  orig: 125, 94
+  offset: 0, 0
+  index: -1
+elephant_02_y
+  rotate: false
+  xy: 436, 213
+  size: 125, 93
+  orig: 125, 94
+  offset: 0, 0
+  index: -1
+elephant_03
+  rotate: true
+  xy: 117, 178
+  size: 128, 94
+  orig: 128, 94
+  offset: 0, 0
+  index: -1
+elephant_03_y
+  rotate: true
+  xy: 213, 178
+  size: 128, 94
+  orig: 128, 94
+  offset: 0, 0
+  index: -1
+elephant_04
+  rotate: true
+  xy: 2, 4
+  size: 134, 113
+  orig: 134, 113
+  offset: 0, 0
+  index: -1
+elephant_04_y
+  rotate: true
+  xy: 2, 172
+  size: 134, 113
+  orig: 134, 113
+  offset: 0, 0
+  index: -1
+grass_01
+  rotate: true
+  xy: 970, 187
+  size: 34, 36
+  orig: 45, 45
+  offset: 4, 2
+  index: -1
+grass_02
+  rotate: false
+  xy: 750, 359
+  size: 9, 37
+  orig: 10, 39
+  offset: 0, 2
+  index: -1
+grass_y_01
+  rotate: true
+  xy: 970, 152
+  size: 33, 35
+  orig: 45, 45
+  offset: 5, 2
+  index: -1
+grass_y_02
+  rotate: false
+  xy: 750, 320
+  size: 9, 37
+  orig: 10, 39
+  offset: 0, 2
+  index: -1
+hourse_01
+  rotate: true
+  xy: 309, 123
+  size: 88, 111
+  orig: 88, 111
+  offset: 0, 0
+  index: -1
+hourse_01_y
+  rotate: true
+  xy: 422, 123
+  size: 88, 111
+  orig: 88, 111
+  offset: 0, 0
+  index: -1
+leaf_01
+  rotate: false
+  xy: 750, 311
+  size: 9, 7
+  orig: 11, 11
+  offset: 1, 2
+  index: -1
+leaf_y_01
+  rotate: false
+  xy: 750, 302
+  size: 9, 7
+  orig: 11, 11
+  offset: 1, 2
+  index: -1
+lizi_03
+  rotate: false
+  xy: 970, 129
+  size: 22, 21
+  orig: 22, 22
+  offset: 0, 0
+  index: -1
+tree01
+  rotate: false
+  xy: 764, 455
+  size: 257, 151
+  orig: 257, 151
+  offset: 0, 0
+  index: -1
+tree01_y
+  rotate: false
+  xy: 764, 302
+  size: 257, 151
+  orig: 257, 151
+  offset: 0, 0
+  index: -1
+tree02
+  rotate: false
+  xy: 2, 398
+  size: 379, 208
+  orig: 379, 208
+  offset: 0, 0
+  index: -1
+tree02_y
+  rotate: false
+  xy: 383, 398
+  size: 379, 208
+  orig: 379, 208
+  offset: 0, 0
+  index: -1

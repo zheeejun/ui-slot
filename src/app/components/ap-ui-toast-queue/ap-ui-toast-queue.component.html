@@ -1,0 +1,14 @@
+@if (messages().length) {
+  <div
+    class="relative pointer-events-none flex w-72 max-w-[calc(100vw-2rem)] flex-col gap-4"
+  >
+    @for (message of messages(); track message.id) {
+      <ap-message
+        class="fade-down pointer-events-auto"
+        [message]="message.text"
+        variant="origin"
+        (closed)="dismissed.emit(message.id)"
+      />
+    }
+  </div>
+}

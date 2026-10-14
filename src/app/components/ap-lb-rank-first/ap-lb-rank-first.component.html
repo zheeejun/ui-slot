@@ -1,0 +1,67 @@
+<div class="relative w-full flex justify-center">
+  <!-- Main Card -->
+  <div
+    class="relative sm:w-160 rounded-[1.25rem] p-[0.25rem] bg-gradient-to-b from-yellow-100 via-yellow-300 to-yellow-500"
+  >
+    <!-- Crown Icon -->
+    <div class="absolute -top-11 -left-8 z-sticky">
+      <ap-icon-badge-first class="size-16" />
+    </div>
+    <div
+      class="leader-board-background relative flex justify-center items-center p-4 rounded-[1.1rem]"
+      [style.background-image]="bgStyle"
+    >
+      <!-- Game Image -->
+      <div
+        class="flex-shrink-0 inline-block rounded-xl p-[0.25rem] bg-gradient-to-b from-[#FFFBEA] via[#FED153] to-[#F4B000]"
+      >
+        <div class="w-32 h-32 rounded-lg overflow-hidden">
+          <img
+            [src]="gameImage()"
+            [alt]="gameTitle()"
+            class="w-full h-full object-cover"
+          />
+        </div>
+      </div>
+
+      <!-- Game Info -->
+      <div class="min-w-[20rem] flex-1 flex flex-col pl-4">
+        <!-- Title -->
+        <div class="text-2xl font-bold text-yellow-gradient">
+          {{ gameTitle() }}
+        </div>
+        <!-- Date -->
+        <div class="text-sm text-yellow-400/70 font-medium">{{ date() }}</div>
+        <div class="grid grid-cols-3 justify-center items-center sm:gap-24 gap-18">
+          <div class="col-span-2 space-y-2 flex flex-col pt-2">
+            <!-- Multiplier -->
+            <div
+              class="w-56 p-1 flex items-center gap-2 text-yellow-400 bg-black/40 rounded-xl"
+            >
+              <ap-icon name="prizes" class="size-5" />
+              <span class="text-xl font-bold">{{ multiplier() }}</span>
+            </div>
+
+            <!-- Prize -->
+            <div
+              class="w-56 p-1 flex items-center gap-2 text-yellow-400 bg-black/40 rounded-xl"
+            >
+              <ap-icon name="gift" class="size-5" />
+              <span class="text-xl font-bold">{{ prize() }}</span>
+            </div>
+          </div>
+
+          <!-- Replay Button -->
+          <div class="flex-shrink-0">
+            <ap-button
+            [size]="'large'"
+              [icon]="'replay'"
+              [variant]="'content-rounded'"
+              [accentColor]="'zinc'"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

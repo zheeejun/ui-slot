@@ -1,0 +1,170 @@
+<div
+  class="rounded-lg p-2 w-[20rem]"
+  style="background-color: rgba(0, 0, 0, 0.85); border: 1px solid"
+  [style.border-color]="borderColorSoft()"
+>
+  <!-- Options: Today, Last 7 days, Custom -->
+  <div class="flex flex-col space-y-4 overflow-y-auto">
+    <ap-button
+      class="w-full [&>button]:w-full"
+      [size]="'small'"
+      [label]="todayLabel()"
+      [variant]="'text'"
+      [accentColor]="accentColor()"
+      (click)="selectOption('today')"
+    />
+    <ap-button
+      class="w-full [&>button]:w-full"
+      [size]="'small'"
+      [label]="dayLabel()"
+      [variant]="'text'"
+      [accentColor]="accentColor()"
+      (click)="selectOption('last7days')"
+    />
+    <div class="p-1 space-y-2">
+      <!-- Calendar -->
+      <div
+        class="bg-zinc-800 rounded-lg p-3 border"
+        [style.border-color]="borderColorMedium()"
+      >
+        <!-- Month Navigation -->
+        <div class="flex items-center justify-between pb-1 text-zinc-300">
+          <button
+            class="aspect-square flex items-center justify-center p-1 hover:bg-zinc-700 rounded transition-colors cursor-pointer"
+            (click)="previousMonth()"
+          >
+            <ap-icon name="chevron-left" class="size-4" />
+          </button>
+          <h5 class="text-white font-medium">{{ monthName() }}</h5>
+          <button
+            class="aspect-square flex items-center justify-center p-1 hover:bg-zinc-700 rounded transition-colors text-zinc-300 cursor-pointer"
+            (click)="nextMonth()"
+          >
+            <ap-icon name="chevron-right" class="size-4" />
+          </button>
+        </div>
+
+        <!-- 星期 -->
+        <div class="grid grid-cols-7 text-center text-zinc-400 gap-1">
+          <span class="py-1">Su</span>
+          <span class="py-1">Mo</span>
+          <span class="py-1">Tu</span>
+          <span class="py-1">We</span>
+          <span class="py-1">Th</span>
+          <span class="py-1">Fr</span>
+          <span class="py-1">Sa</span>
+        </div>
+
+        <!-- 日期 -->
+        <div class="grid grid-cols-7 gap-1">
+          <button
+            *ngFor="let day of calendarDays()"
+            class="aspect-square flex items-center justify-center rounded-md transition-all duration-200 text-white cursor-pointer"
+            [ngClass]="{
+              'text-zinc-600 opacity-40 cursor-not-allowed': day.isDisabled,
+              'text-zinc-600': !day.isCurrentMonth && !day.isDisabled,
+              'bg-yellow-400': day.isSelected && accentColor() === 'yellow',
+              'bg-purple-400': day.isSelected && accentColor() === 'purple',
+              'bg-zinc-400': day.isSelected && accentColor() === 'zinc',
+              'bg-slate-400': day.isSelected && accentColor() === 'slate',
+              'text-zinc-950': day.isSelected,
+              'bg-yellow-400/10':
+                day.isInRange && !day.isSelected && accentColor() === 'yellow',
+              'bg-purple-400/10':
+                day.isInRange && !day.isSelected && accentColor() === 'purple',
+              'bg-zinc-400/10':
+                day.isInRange && !day.isSelected && accentColor() === 'zinc',
+              'bg-slate-400/10':
+                day.isInRange && !day.isSelected && accentColor() === 'slate',
+              'text-yellow-400':
+                day.isInRange && !day.isSelected && accentColor() === 'yellow',
+              'text-purple-400':
+                day.isInRange && !day.isSelected && accentColor() === 'purple',
+              'text-zinc-400':
+                day.isInRange && !day.isSelected && accentColor() === 'zinc',
+              'text-slate-300':
+                day.isInRange && !day.isSelected && accentColor() === 'slate',
+              'rounded-l-md': day.isRangeStart,
+              'rounded-r-md': day.isRangeEnd,
+            }"
+            [style.border]="
+              day.isToday ? '1px solid ' + borderColorSolid() : 'none'
+            "
+            [disabled]="day.isDisabled"
+            (click)="onDateClick(day)"
+          >
+            <h5 [class.font-bold]="day.isSelected">{{ day.day }}</h5>
+          </button>
+        </div>
+      </div>
+      <!-- From Date -->
+      <div class="space-y-2">
+        <div
+          class="flex items-center gap-2 px-3 py-2 bg-zinc-800 rounded-lg border"
+          [style.border-color]="borderColorMedium()"
+        >
+          <label
+            [ngClass]="{
+              'text-yellow-400': accentColor() === 'yellow',
+              'text-purple-400': accentColor() === 'purple',
+              'text-zinc-400': accentColor() === 'zinc',
+              'text-slate-400': accentColor() === 'slate',
+            }"
+            >From</label
+          >
+          <ap-icon name="calendar" class="size-4 text-zinc-400" />
+          <input
+            type="text"
+            class="flex-1 bg-transparent text-white text-sm font-normal outline-none"
+            [value]="formattedFromDate()"
+            (input)="onFromInput($any($event.target).value)"
+            placeholder="YYYY-MM-DD"
+          />
+          <button
+            *ngIf="fromDate()"
+            class="aspect-square flex items-center justify-center p-1 hover:bg-zinc-700 rounded transition-colors text-zinc-400 hover:text-white cursor-pointer"
+            (click)="clearFromDate()"
+          ></button>
+        </div>
+      </div>
+
+      <!-- To Date -->
+      <div class="space-y-2">
+        <div
+          class="flex items-center gap-2 px-3 py-2 bg-zinc-800 border rounded-lg"
+          [style.border-color]="borderColorMedium()"
+        >
+          <label
+            [ngClass]="{
+              'text-yellow-400': accentColor() === 'yellow',
+              'text-purple-400': accentColor() === 'purple',
+              'text-zinc-400': accentColor() === 'zinc',
+              'text-slate-400': accentColor() === 'slate',
+            }"
+            >To</label
+          >
+          <ap-icon name="calendar" class="size-4 text-zinc-400 ml-4" />
+          <input
+            type="text"
+            class="flex-1 text-white outline-none font-normal"
+            [value]="formattedToDate()"
+            (input)="onToInput($any($event.target).value)"
+            placeholder="YYYY-MM-DD"
+          />
+          <button
+            *ngIf="toDate()"
+            class="p-1 hover:bg-zinc-700 rounded transition-colors text-zinc-400 hover:text-white"
+            (click)="clearToDate()"
+          ></button>
+        </div>
+      </div>
+
+      <ap-button
+        class="w-full [&>button]:w-full mt-2"
+        [label]="getConfirmButtonText()"
+        [accentColor]="accentColor()"
+        (clicked)="confirm()"
+      />
+    </div>
+  </div>
+</div>

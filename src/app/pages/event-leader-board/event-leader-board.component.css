@@ -1,0 +1,65 @@
+thead th {
+  background: linear-gradient(rgba(253, 224, 71, 0.1), rgba(253, 224, 71, 0.1)) #18181b;
+  border-bottom: 1px solid #52525b;
+}
+
+.leaderboard-table tbody td {
+  border-bottom: 1px solid #52525b;
+}
+
+.leaderboard-table-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.leaderboard-scroll-body {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
+}
+
+.leaderboard-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.leaderboard-col-rank {
+  width: 10%;
+}
+
+.leaderboard-col-game {
+  width: 24%;
+}
+
+.leaderboard-col-multiplier {
+  width: 21%;
+}
+
+.leaderboard-col-prize {
+  width: 20%;
+}
+
+.leaderboard-col-spin {
+  width: calc(25% - 3.5rem);
+}
+
+.leaderboard-col-replay {
+  width: 3.5rem;
+}
+
+@media (max-width: 639px) {
+  .leaderboard-col-replay {
+    width: 0;
+  }
+
+  .leaderboard-col-spin {
+    width: 25%;
+  }
+}

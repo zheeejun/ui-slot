@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/shared/pipe/app-i18n.pipe.ts"],
+  "sourcesContent": ["import { Pipe, PipeTransform } from '@angular/core';\nimport { AppI18nService } from '../../services/app-i18n/app-i18n.service';\n\n/**\n * 多語言翻譯 Pipe\n * 使用方式：{{ 'key' | appI18n }} 或 {{ 'key' | appI18n:'預設值' }}\n */\n@Pipe({\n  name: 'appI18n',\n  standalone: true,\n  pure: true  // ✅ Pure pipe 提升性能\n})\nexport class AppI18nPipe implements PipeTransform {\n  constructor(private appI18n: AppI18nService) {}\n\n  /**\n   * 翻譯轉換\n   * @param key - 翻譯鍵值\n   * @param defaultValue - 預設值（可選）\n   * @returns 翻譯後的文字\n   */\n  transform(key: string, defaultValue?: string): string {\n    return this.appI18n.instant(key, defaultValue);\n  }\n}\n"],
+  "mappings": ";;;;;;;;;;;AAYM,IAAO,cAAP,MAAO,aAAW;EACF;EAApB,YAAoB,SAAuB;AAAvB,SAAA,UAAA;EAA0B;;;;;;;EAQ9C,UAAU,KAAa,cAAqB;AAC1C,WAAO,KAAK,QAAQ,QAAQ,KAAK,YAAY;EAC/C;;qCAXW,cAAW,4BAAA,gBAAA,EAAA,CAAA;EAAA;sFAAX,cAAW,MAAA,KAAA,CAAA;;;sEAAX,aAAW,CAAA;UALvB;WAAK;MACJ,MAAM;MACN,YAAY;MACZ,MAAM;;KACP;;;",
+  "names": []
+}

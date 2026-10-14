@@ -1,0 +1,177 @@
+@if (isVisible()) {
+  @if (variant() === "quick") {
+    <div class="relative size-full flex items-center justify-center">
+      <div class="absolute inset-0 bg-black/60" (click)="onCancel()"></div>
+      <ap-ui-frame-popup
+        [accentColor]="'yellow'"
+        [size]="'mobile'"
+        [header]="header()"
+        class="w-11/12 md:w-3/4 lg:w-1/2"
+        (close)="close.emit()"
+      >
+        <!-- Content -->
+        <div class="bg-zinc-800 px-4 py-8 text-center mx-8 select-none">
+          <div class="relative w-full">
+            <!-- Carousel wrapper -->
+            <div
+              class="relative overflow-hidden rounded-lg h-64 flex items-center justify-center"
+            >
+              <!-- Current Page Image -->
+              <img
+                [src]="currentPageData().image"
+                class="max-h-full scale-105 object-contain transition-all duration-300"
+                [alt]="'Tutorial page ' + (currentPage() + 1)"
+              />
+            </div>
+
+            <!-- Page Indicators -->
+            <div class="flex justify-center gap-2 mt-4">
+              @for (page of pages(); track $index) {
+                <button
+                  type="button"
+                  (click)="goToPage($index)"
+                  class="transition-all duration-200 hover:scale-110 cursor-pointer"
+                  [attr.aria-label]="'Go to slide ' + ($index + 1)"
+                >
+                  <span
+                    class="flex items-center justify-center rounded-full size-2"
+                    [class.bg-yellow-400]="currentPage() === $index"
+                    [class.bg-zinc-600]="currentPage() !== $index"
+                  ></span>
+                </button>
+              }
+            </div>
+
+            <!-- Description -->
+            <div class="mt-4 text-xl font-medium text-zinc-200 h-16 sm:h-20">
+              {{ currentPageData().description }}
+            </div>
+
+            <!-- Page Counter -->
+            <div class="mt-2 text-sm text-zinc-400">
+              {{ currentPage() + 1 }} / {{ totalPages() }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-8 pb-8 flex justify-between gap-8">
+          @if (!isFirstPage()) {
+            <ap-button
+              class="w-full"
+              [size]="'large'"
+              [label]="getPrevLabel()"
+              (click)="prevPage()"
+              [accentColor]="'zinc'"
+            />
+          } @else {}
+          @if (!isLastPage()) {
+            <ap-button
+              class="w-full"
+              [size]="'large'"
+              [label]="getNextLabel()"
+              (click)="nextPage()"
+              [accentColor]="'yellow'"
+            />
+          } @else {
+            <ap-button
+              class="w-full"
+              [size]="'large'"
+              [label]="getConfirmText()"
+              (click)="onConfirm()"
+              [accentColor]="'yellow'"
+            />
+          }
+        </div>
+      </ap-ui-frame-popup>
+    </div>
+  }
+  @if (variant() === "event") {
+    <div class="relative size-full flex items-center justify-center">
+      <div class="absolute inset-0 bg-black/60" (click)="onCancel()"></div>
+      <ap-ui-frame-popup
+        [accentColor]="'purple'"
+        [size]="'mobile'"
+        [header]="header()"
+        class="w-11/12 md:w-3/4 lg:w-1/2"
+        (close)="close.emit()"
+      >
+        <!-- Content -->
+        <div class="bg-zinc-800 px-4 py-8 text-center mx-8 select-none">
+          <div class="relative w-full">
+            <!-- Carousel wrapper -->
+            <div
+              class="relative overflow-hidden rounded-lg h-64 flex items-center justify-center"
+            >
+              <!-- Current Page Image -->
+              <img
+                [src]="currentPageData().image"
+                class="max-h-full scale-105 object-contain transition-all duration-300"
+                [alt]="'Tutorial page ' + (currentPage() + 1)"
+              />
+            </div>
+
+            <!-- Page Indicators -->
+            <div class="flex justify-center gap-2 mt-4">
+              @for (page of pages(); track $index) {
+                <button
+                  type="button"
+                  (click)="goToPage($index)"
+                  class="transition-all duration-200 hover:scale-110 cursor-pointer"
+                  [attr.aria-label]="'Go to slide ' + ($index + 1)"
+                >
+                  <span
+                    class="flex items-center justify-center rounded-full size-2"
+                    [class.bg-purple-400]="currentPage() === $index"
+                    [class.bg-zinc-600]="currentPage() !== $index"
+                  >
+                  </span>
+                </button>
+              }
+            </div>
+
+            <!-- Description -->
+            <div class="mt-4 text-xl font-medium text-zinc-200 h-16 sm:h-20">
+              {{ currentPageData().description }}
+            </div>
+
+            <!-- Page Counter -->
+            <div class="mt-2 text-sm text-zinc-400">
+              {{ currentPage() + 1 }} / {{ totalPages() }}
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="px-8 pb-8 flex justify-between gap-8">
+          @if (!isFirstPage()) {
+            <ap-button
+              class="w-full"
+              [size]="'large'"
+              [label]="getPrevLabel()"
+              (click)="prevPage()"
+              [accentColor]="'zinc'"
+            />
+          } @else {}
+          @if (!isLastPage()) {
+            <ap-button
+              class="w-full"
+              [size]="'large'"
+              [label]="getNextLabel()"
+              (click)="nextPage()"
+              [accentColor]="'purple'"
+            />
+          } @else {
+            <ap-button
+              class="w-full"
+              [size]="'large'"
+              [label]="getConfirmText()"
+              (click)="nextPage()"
+              [accentColor]="'purple'"
+            />
+          }
+        </div>
+      </ap-ui-frame-popup>
+    </div>
+  }
+}

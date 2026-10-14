@@ -1,0 +1,181 @@
+
+anim_sym_h3.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+beard_l
+  rotate: false
+  xy: 298, 241
+  size: 64, 46
+  orig: 64, 46
+  offset: 0, 0
+  index: -1
+beard_r
+  rotate: true
+  xy: 525, 257
+  size: 53, 38
+  orig: 53, 38
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 705, 7
+  size: 109, 136
+  orig: 109, 136
+  offset: 0, 0
+  index: -1
+bg_gold
+  rotate: false
+  xy: 615, 373
+  size: 109, 136
+  orig: 109, 136
+  offset: 0, 0
+  index: -1
+body
+  rotate: false
+  xy: 444, 312
+  size: 169, 197
+  orig: 210, 198
+  offset: 1, 1
+  index: -1
+body_shadow
+  rotate: true
+  xy: 420, 244
+  size: 43, 50
+  orig: 53, 50
+  offset: 0, 0
+  index: -1
+circle
+  rotate: true
+  xy: 2, 13
+  size: 218, 274
+  orig: 220, 276
+  offset: 1, 1
+  index: -1
+circle_down
+  rotate: true
+  xy: 278, 18
+  size: 218, 216
+  orig: 220, 276
+  offset: 1, 1
+  index: -1
+circle_glod
+  rotate: false
+  xy: 2, 233
+  size: 220, 276
+  orig: 220, 276
+  offset: 0, 0
+  index: -1
+circle_glod_down
+  rotate: true
+  xy: 224, 289
+  size: 220, 218
+  orig: 220, 276
+  offset: 0, 0
+  index: -1
+ear_l
+  rotate: false
+  xy: 472, 255
+  size: 51, 55
+  orig: 51, 55
+  offset: 0, 0
+  index: -1
+ear_r
+  rotate: false
+  xy: 565, 265
+  size: 42, 45
+  orig: 42, 46
+  offset: 0, 0
+  index: -1
+eye_l
+  rotate: false
+  xy: 629, 113
+  size: 30, 30
+  orig: 30, 30
+  offset: 0, 0
+  index: -1
+eye_r
+  rotate: false
+  xy: 661, 116
+  size: 27, 27
+  orig: 27, 27
+  offset: 0, 0
+  index: -1
+eye_w_l
+  rotate: false
+  xy: 2, 5
+  size: 6, 6
+  orig: 6, 6
+  offset: 0, 0
+  index: -1
+eye_w_r
+  rotate: false
+  xy: 10, 6
+  size: 5, 5
+  orig: 5, 5
+  offset: 0, 0
+  index: -1
+head_00
+  rotate: true
+  xy: 496, 98
+  size: 155, 131
+  orig: 155, 139
+  offset: 0, 8
+  index: -1
+moth
+  rotate: false
+  xy: 595, 13
+  size: 108, 83
+  orig: 108, 83
+  offset: 0, 0
+  index: -1
+nose
+  rotate: false
+  xy: 224, 238
+  size: 72, 49
+  orig: 155, 139
+  offset: 64, 22
+  index: -1
+sand
+  rotate: false
+  xy: 726, 279
+  size: 102, 105
+  orig: 128, 128
+  offset: 17, 7
+  index: -1
+shockwave
+  rotate: false
+  xy: 496, 2
+  size: 97, 94
+  orig: 100, 100
+  offset: 2, 1
+  index: -1
+teeth
+  rotate: true
+  xy: 609, 272
+  size: 38, 24
+  orig: 38, 24
+  offset: 0, 0
+  index: -1
+tongue_1
+  rotate: true
+  xy: 364, 238
+  size: 49, 54
+  orig: 49, 55
+  offset: 0, 1
+  index: -1
+wave
+  rotate: false
+  xy: 726, 386
+  size: 119, 123
+  orig: 128, 128
+  offset: 0, 3
+  index: -1
+wave_01
+  rotate: false
+  xy: 629, 145
+  size: 125, 125
+  orig: 125, 125
+  offset: 0, 0
+  index: -1

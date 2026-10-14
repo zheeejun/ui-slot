@@ -1,0 +1,15 @@
+<ap-loading-overlay class="absolute"/>
+<game-iframe class="absolute inset-0" uiMode="ap-cover"/>
+@if (showAll()) {
+  <bottom-panel-ghana class="animate-fade-up animate-duration-300 animate-ease-in select-none"
+      (info)="showInfo.set(true)"
+      (history)="showHistory.set(true)" />
+  <div class="contents">
+    @if (showHistory()) {<history-list class="absolute inset-0" [hideTabMenu]="true" (close)="showHistory.set(false)" />}
+    @if (showInfo()) {<page-info [hidePayTable]="true" [hideTurboGuide]="true" [hideAutoplay]="true" [hideNoteItem2]="true" (close)="showInfo.set(false)"/>}
+    <bottom-panel-popup class="absolute top-0 left-0" />
+  </div>
+}
+@if (showRotateTips()) {
+  <ap-ui-device-rotation class="absolute z-error inset-0" />
+}

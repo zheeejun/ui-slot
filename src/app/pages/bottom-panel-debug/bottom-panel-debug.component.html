@@ -1,0 +1,100 @@
+<div
+  class="relative w-xs flex flex-col gap-1 p-1 text-white bg-black/50 rounded-xl"
+>
+  <ap-toggle-switch
+    [label]="'Hold &amp; Speed Up'"
+    [checked]="panel.holdTurboEnabled()"
+    (checkedChange)="sendHoldTurboEnabled($event)"
+  />
+  <ap-select
+    size="small"
+    label="Panel Status"
+    [options]="panelStatusOptions"
+    (onSelect)="sendPanelStatus($event)"
+  />
+  <div class="flex flex-col gap-1 border-t border-zinc-600 pt-1">
+    <ap-input-box
+      size="small"
+      label="Spin Bet"
+      type="number"
+      placeholder="bet amount"
+      [(value)]="debugSpinBet"
+    />
+    <ap-input-box
+      size="small"
+      label="Spin Mode"
+      type="text"
+      placeholder="mode (optional)"
+      [(value)]="debugSpinMode"
+    />
+    <div>
+      <ap-input-box
+        size="small"
+        label="Spin Loop Times"
+        type="number"
+        placeholder="times"
+        [(value)]="spinLoopTimesLabel"
+      />
+      <ap-input-box
+        size="small"
+        label="Spin Loop Interval(sec)"
+        type="number"
+        [step]="0.1"
+        placeholder="interval (s)"
+        [(value)]="spinLoopIntervalLabel"
+      />
+    </div>
+    <ap-button
+      size="x-small"
+      [label]="isSpinLooping() ? 'Spinning...' : 'Send Spin'"
+      [loading]="isSpinLooping()"
+      (clicked)="sendDebugSpin(+debugSpinBet(), debugSpinMode())"
+    />
+
+    @if (debugBalance() !== null) {
+      <div
+        class="flex items-center justify-between px-1 py-0.5 rounded bg-zinc-800 text-xs"
+      >
+        <span class="text-zinc-400">Balance</span>
+        <span class="font-medium text-yellow-400">{{ debugBalance() }}</span>
+      </div>
+    }
+  </div>
+  <ap-select size="small" label="Spin Button Status" [options]="spinButtonModeOptions" (onSelect)="sendSpinButtonMode($event)"
+  />
+  <div class="flex flex-col gap-1 border-t border-zinc-600 pt-1 px-1">
+    <ap-input-box
+      size="small"
+      label="Turbo Hold Threshold (ms)"
+      type="number"
+      [step]="1"
+      placeholder="500"
+      [(value)]="turboHoldThresholdMsLabel"
+      (onInput)="sendTurboHoldThresholdMs($event)"
+    />
+    <ap-input-box
+      size="small"
+      label="Turbo Skip Interval (ms)"
+      type="number"
+      [step]="1"
+      placeholder="500"
+      [(value)]="turboSkipIntervalMsLabel"
+      (onInput)="sendTurboSkipIntervalMs($event)"
+    />
+    <ap-input-box
+      size="small"
+      label="Idle Tooltip Delay (ms)"
+      type="number"
+      [step]="1"
+      placeholder="500"
+      [(value)]="idleTooltipMsLabel"
+      (onInput)="sendIdleTooltipMs($event)"
+    />
+  </div>
+  <ap-button
+    size="x-small"
+    accentColor="zinc"
+    label="Send Insufficient Balance"
+    (clicked)="sendInsufficientBalance()"
+  />
+</div>

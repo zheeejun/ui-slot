@@ -1,0 +1,11 @@
+:host{
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: pan-x pan-y; /* 禁用雙指縮放 (pinch-zoom)，保留平移 */
+}
+

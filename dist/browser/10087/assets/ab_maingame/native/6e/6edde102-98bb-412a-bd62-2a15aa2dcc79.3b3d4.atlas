@@ -1,0 +1,62 @@
+
+anim_sym_s1.png
+size: 1024,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GL (5498)
+  rotate: false
+  xy: 430, 277
+  size: 112, 112
+  orig: 115, 115
+  offset: 2, 1
+  index: -1
+Lizi_1813
+  rotate: false
+  xy: 402, 2
+  size: 58, 58
+  orig: 58, 58
+  offset: 0, 0
+  index: -1
+s1_bg
+  rotate: false
+  xy: 228, 258
+  size: 200, 248
+  orig: 201, 249
+  offset: 0, 1
+  index: -1
+s1_book_back
+  rotate: true
+  xy: 2, 240
+  size: 266, 224
+  orig: 266, 225
+  offset: 0, 1
+  index: -1
+s1_book_front
+  rotate: true
+  xy: 2, 2
+  size: 236, 202
+  orig: 236, 202
+  offset: 0, 0
+  index: -1
+s1_page_inside_0
+  rotate: true
+  xy: 206, 31
+  size: 207, 194
+  orig: 217, 194
+  offset: 0, 0
+  index: -1
+s1_page_inside_1
+  rotate: true
+  xy: 402, 62
+  size: 194, 166
+  orig: 194, 168
+  offset: 0, 2
+  index: -1
+smoke_out
+  rotate: true
+  xy: 430, 391
+  size: 115, 113
+  orig: 115, 115
+  offset: 0, 2
+  index: -1

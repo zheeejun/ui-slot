@@ -1,0 +1,78 @@
+<div class="flex w-full items-stretch gap-2 p-2 bg-zinc-800">
+  <div class="flex flex-1 items-center rounded-md bg-zinc-900 px-4">
+    <ap-icon
+      name="wallet"
+      class="info-icon text-slate-300 pointer-events-none"
+    />
+    <div class="ml-auto flex space-x-4">
+      <div class="text-lg font-medium text-white">
+        {{ displayBalance() | moneyText: { addSymbol: false } }}
+      </div>
+      <img
+        [src]="currencyImage()!"
+        alt=""
+        class="shrink-0 size-6 object-contain"
+      />
+    </div>
+  </div>
+  <div class="relative">
+    <button
+      class="flex min-h-10 items-center justify-center rounded-md bg-zinc-900 px-1 py-1"
+      style="border: 2px solid #314158"
+      (click)="onClickMenu($event)"
+    >
+      <ap-icon name="bar-3" class="button-icon" />
+    </button>
+    @if (showMenu()) {
+      <button
+        type="button"
+        class="fixed inset-0 cursor-default border-0 bg-transparent p-0"
+        (click)="onClickMenuOutside()"
+      ></button>
+      <div
+        class="absolute right-0 top-full z-dropdown mt-1 fade-out"
+      >
+        <div
+          class="min-w-4 rounded-md bg-zinc-900 p-2 text-zinc-300 shadow-xl"
+          style="border: 2px solid #314158"
+        >
+          @for (item of menuItems(); track item.id) {
+            <button
+              class="flex w-full items-center gap-2 rounded-md px-2 py-2 hover:bg-zinc-800 hover:text-slate-400 active:bg-zinc-700 cursor-pointer disabled:cursor-not-allowed disabled:text-zinc-600 disabled:hover:bg-transparent disabled:hover:text-zinc-600"
+              [disabled]="disabledMap()[item.id]"
+              (click)="item.action()"
+            >
+              <ap-icon [name]="iconMap()[item.id]" class="info-icon shrink-0" />
+              <div class="flex-1 text-left text-lg break-keep">
+                {{ item.labelFallback }}
+              </div>
+              @if (item.id === "sound") {
+                <ap-toggle-switch
+                  class="pointer-events-none"
+                  accentColor="slate"
+                  [checked]="isSoundOn()"
+                  (checkedChange)="onMenuSoundChange($event)"
+                />
+              }
+            </button>
+          }
+        </div>
+      </div>
+    }
+  </div>
+</div>
+
+@if (showHistory()) {
+  <history-list-og class="fixed inset-0 z-overlay" (close)="closeHistory()" />
+}
+
+@if (showInfo()) {
+  <info-og class="fixed inset-0 z-overlay" (close)="closeInfo()" />
+}
+
+@if (showFairness()) {
+  <og-fairness
+    class="fixed inset-0 z-overlay"
+    (close)="closeFairness()"
+  />
+}

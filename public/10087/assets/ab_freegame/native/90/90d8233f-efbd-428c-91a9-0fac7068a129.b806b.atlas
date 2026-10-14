@@ -1,0 +1,153 @@
+
+anim_transition.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GL (204)
+  rotate: false
+  xy: 813, 888
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+GL (665)
+  rotate: false
+  xy: 814, 494
+  size: 128, 128
+  orig: 128, 128
+  offset: 0, 0
+  index: -1
+base_cube
+  rotate: false
+  xy: 246, 2
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+book_page
+  rotate: false
+  xy: 2, 152
+  size: 278, 390
+  orig: 278, 390
+  offset: 0, 0
+  index: -1
+book_page_word
+  rotate: false
+  xy: 362, 604
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+bookpage_inside
+  rotate: false
+  xy: 2, 544
+  size: 358, 472
+  orig: 358, 472
+  offset: 0, 0
+  index: -1
+bookskin_inside
+  rotate: false
+  xy: 362, 801
+  size: 167, 215
+  orig: 167, 215
+  offset: 0, 0
+  index: -1
+fake_bookskin
+  rotate: false
+  xy: 282, 278
+  size: 248, 264
+  orig: 248, 264
+  offset: 0, 0
+  index: -1
+grass
+  rotate: true
+  xy: 280, 2
+  size: 49, 113
+  orig: 49, 113
+  offset: 0, 0
+  index: -1
+msg_click
+  rotate: false
+  xy: 2, 10
+  size: 242, 24
+  orig: 242, 24
+  offset: 0, 0
+  index: -1
+msg_yw
+  rotate: false
+  xy: 2, 36
+  size: 255, 114
+  orig: 255, 114
+  offset: 0, 0
+  index: -1
+page_shadow
+  rotate: false
+  xy: 259, 53
+  size: 73, 97
+  orig: 73, 97
+  offset: 0, 0
+  index: -1
+trans_H1
+  rotate: true
+  xy: 334, 67
+  size: 209, 293
+  orig: 209, 293
+  offset: 0, 0
+  index: -1
+trans_H2
+  rotate: false
+  xy: 503, 604
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_H3
+  rotate: false
+  xy: 531, 821
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_H4
+  rotate: false
+  xy: 532, 407
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_L1
+  rotate: false
+  xy: 644, 624
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_L2
+  rotate: false
+  xy: 672, 821
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_L3
+  rotate: true
+  xy: 629, 266
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_L4
+  rotate: false
+  xy: 673, 427
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1
+trans_L5
+  rotate: false
+  xy: 785, 624
+  size: 139, 195
+  orig: 139, 195
+  offset: 0, 0
+  index: -1

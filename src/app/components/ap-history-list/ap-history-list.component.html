@@ -1,0 +1,275 @@
+<!-- table view -->
+<div class="relative h-full flex flex-col min-h-0">
+  <table class="w-full table-fixed text-white shrink-0">
+    <colgroup>
+      <col class="w-8 sm:w-10" />
+      <col />
+      @if (showTypeColumn()) {
+        <col class="hidden sm:table-column" />
+      }
+      <col />
+      <col />
+      @if (showOtherColumn()) {
+        <col class="w-18 sm:w-28" />
+      }
+    </colgroup>
+    <thead class="sticky z-sticky top-0 bg-zinc-900 text-zinc-400 h-10 sm:h-8">
+      <tr
+        class="uppercase text-left sm:border-0"
+        style="border-bottom: 2px solid rgb(113, 113, 123, 0.6)"
+      >
+        <th></th>
+        <th>
+          <div
+            class="flex items-center justify-start gap-1 transition-colors"
+            [ngClass]="{
+              'hover:text-yellow-200': accentColor() === 'yellow',
+              'hover:text-slate-400': accentColor() === 'slate',
+            }"
+          >
+            <button
+              #calendarButtonDesktop
+              (click)="toggleCalendar($event)"
+              class="flex cursor-pointer items-center z-modal uppercase leading-none space-x-1"
+            >
+              <div
+                class="flex-col leading-none gap-1 underline underline-offset-1"
+              >
+                {{ dateLabel() }}
+              </div>
+            </button>
+
+            <div class="relative">
+              <button
+                class="flex items-center gap-1 hover:text-white cursor-pointer transition-colors"
+              ></button>
+            </div>
+          </div>
+        </th>
+        @if (showTypeColumn()) {
+          <th class="hidden sm:table-cell">
+            {{ typeLabel() }}
+          </th>
+        }
+        <th>
+          <button class="flex items-center gap-1 uppercase">
+            {{ betLabel() }}
+          </button>
+        </th>
+        <th (click)="onWinLoseFilterClick()">
+          <button
+            class="transition-colors underline underline-offset-2 cursor-pointer"
+            [ngClass]="{
+              'hover:text-yellow-200': accentColor() === 'yellow',
+              'hover:text-slate-400': accentColor() === 'slate',
+            }"
+          >
+            {{ winLoseLabel() }}
+          </button>
+        </th>
+        @if (showOtherColumn()) {
+          <th class="uppercase">
+            {{ otherLabel() }}
+          </th>
+        }
+      </tr>
+    </thead>
+  </table>
+  @if (historyDateRange()) {
+    <time
+      class="p-1 text-center bg-zinc-950"
+      style="border-bottom: 1px solid #52525b"
+      [ngClass]="{
+        'text-yellow-300/80': accentColor() === 'yellow',
+        'text-slate-300': accentColor() === 'slate',
+      }"
+    >
+      {{ historyDateRange() }}
+    </time>
+  }
+
+  <!-- Virtual Scroll Viewport -->
+  @if (sortedList().length) {
+    <cdk-virtual-scroll-viewport
+      [itemSize]="52"
+      class="flex-1 min-h-0 overflow-auto scroll-smooth"
+      style="scroll-behavior: smooth; -webkit-overflow-scrolling: touch"
+      (scroll)="onViewportScroll()"
+    >
+      <table class="w-full table-fixed text-white">
+        <colgroup>
+          <col class="w-10 sm:w-10" />
+          <col />
+          @if (showTypeColumn()) {
+            <col class="hidden sm:table-column" />
+          }
+          <col />
+          <col />
+          @if (showOtherColumn()) {
+            <col class="w-18 sm:w-28" />
+          }
+        </colgroup>
+        <tbody class="text-sm cursor-pointer">
+          <tr
+            [attr.data-testid]="'history-list-item-' + i"
+            *cdkVirtualFor="let item of sortedList(); let i = index"
+            class="border-b border-zinc-700 animate-fade-down animate-duration-500 h-15"
+            [ngClass]="
+              i % 2 === 1
+                ? 'bg-zinc-900 hover:bg-zinc-300/15'
+                : 'bg-zinc-800 hover:bg-zinc-300/15'
+            "
+          >
+            <!-- Icon -->
+            <td (click)="emitDetail(item, i)" class="h-15">
+              <div
+                class="relative h-full flex flex-col sm:flex-row gap-1 sm:gap-2 items-center justify-center sm:justify-start sm:pl-2 pl-0"
+                [ngClass]="
+                  item.isTrnHighlight
+                    ? i % 2 === 0
+                      ? 'border-l-3 border-yellow-300'
+                      : 'border-l-3  border-yellow-500'
+                    : item.isCashDropHighlight
+                      ? i % 2 === 0
+                        ? 'border-l-3 border-lime-400'
+                        : 'border-l-3 border-lime-600'
+                      : item.isCampaignHighlight
+                        ? i % 2 === 0
+                          ? 'border-l-3 border-purple-400'
+                          : 'border-l-3 border-purple-600'
+                        : ''
+                "
+              >
+                @if (item.isStarred) {
+                  <ap-icon [name]="'star'" class="size-4 text-yellow-400" />
+                }
+                @if (item.isTrophy) {
+                  <ap-icon [name]="'trophy'" class="size-4 text-zinc-300" />
+                }
+              </div>
+            </td>
+            <!-- Date -->
+            <td (click)="emitDetail(item, i)">
+              <div class="inline-flex flex-col">
+                <div class="text-white text-center">{{ item.time }}</div>
+                <div class="text-zinc-400 text-center">{{ item.date }}</div>
+              </div>
+            </td>
+            <!-- Type -->
+            @if (showTypeColumn()) {
+              <td (click)="emitDetail(item, i)" class="hidden sm:table-cell">
+                {{ getTypeLabel(item) }}
+              </td>
+            }
+            <!-- Bet -->
+            <td
+              [attr.data-testid]="'history-list-item-' + i + '-bet'"
+              (click)="emitDetail(item, i)"
+            >
+              {{ item.bet | moneyText: { addSpace: false } }}
+            </td>
+            <!-- Win/Lose -->
+            <td
+              [attr.data-testid]="'history-list-item-' + i + '-win'"
+              (click)="emitDetail(item, i)"
+              class="font-medium"
+              [ngClass]="
+                item.isWin ? 'text-emerald-400 hover:text-emerald-300' : ''
+              "
+            >
+              <div class="flex flex-col">
+                <div>{{ item.win | moneyText: { addSpace: false } }}</div>
+                <!-- 暫時不用最大賠付
+                @if (item.maxPayout) {
+                  <div class="text-xs">{{ maxPayoutLabel() }}</div>
+                } -->
+              </div>
+            </td>
+            <!-- Others -->
+            @if (showOtherColumn()) {
+              <td (click)="emitDetail(item, i)">
+                <div class="flex items-center gap-4 sm:gap-3">
+                  @if (showReplayButton(item)) {
+                    <div class="hidden sm:block">
+                      <button
+                        class="flex items-center justify-center cursor-pointer text-yellow-400"
+                        (click)="onReplay(item, $event)"
+                      >
+                        <ap-icon name="play-circle" class="size-6" />
+                      </button>
+                    </div>
+
+                    <button
+                      class="flex items-center justify-center cursor-pointer text-yellow-400 sm:hidden"
+                      (click)="onReplay(item, $event)"
+                    >
+                      <ap-icon name="play-circle" class="size-6" />
+                    </button>
+                  }
+
+                  @if (showShareButton(item)) {
+                    <div class="hidden sm:block">
+                      <button
+                        class="flex items-center justify-center cursor-pointer text-yellow-400"
+                        (click)="onShare(item, $event)"
+                      >
+                        <ap-icon name="share" class="size-6" />
+                      </button>
+                    </div>
+
+                    <button
+                      class="flex items-center justify-center cursor-pointer text-yellow-400 sm:hidden"
+                      (click)="onShare(item, $event)"
+                    >
+                      <ap-icon name="share" class="sm:size-6 size-5" />
+                    </button>
+                  }
+
+                  <!--<div class="hidden sm:block invisible">
+                    <button
+                      class="flex items-center justify-center cursor-pointer text-yellow-400 "
+                      (click)="onClickCopyTransaction(item, $event)"
+                    >
+                      <ap-icon name="copy" class="sm:size-6 size-5" />
+                    </button>
+                  </div>-->
+
+                  <!--<button
+                    class="flex items-center justify-center cursor-pointer text-yellow-400 sm:hidden invisible"
+                    (click)="onClickCopyTransaction(item, $event)"
+                  >
+                    <ap-icon name="copy" class="sm:size-6 size-5" />
+                  </button>-->
+                </div>
+              </td>
+            }
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Loading More Indicator for Desktop -->
+      @if (isLoadingMore()) {
+        <div class="flex justify-center items-center py-4 text-zinc-400">
+          <div
+            class="animate-spin rounded-full h-6 w-6 border-b-2 border-white"
+          ></div>
+          <label class="ml-2">Loading more...</label>
+        </div>
+      }
+    </cdk-virtual-scroll-viewport>
+  }
+
+  <!-- None Data -->
+  @if (!sortedList().length && !isLoadingMore()) {
+    <div class="w-full border-b border-zinc-700 text-white">
+      <div
+        class="w-full p-1 sm:p-3.5 bg-zinc-800 animate-fade-down animate-duration-500"
+      >
+        <div class="flex items-center justify-center gap-1 sm:gap-2">
+          <ap-icon [name]="'x-mark'" class="sm:size-5 size-4" />
+          <time>{{ emptyStateLabel() }}</time>
+        </div>
+      </div>
+    </div>
+  }
+</div>

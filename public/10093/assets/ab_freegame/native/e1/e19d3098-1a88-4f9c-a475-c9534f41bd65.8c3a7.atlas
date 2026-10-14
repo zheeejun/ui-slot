@@ -1,0 +1,83 @@
+
+anim_big.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/flare
+  rotate: false
+  xy: 676, 973
+  size: 285, 45
+  orig: 319, 71
+  offset: 10, 13
+  index: -1
+FX/sun
+  rotate: false
+  xy: 581, 753
+  size: 118, 118
+  orig: 150, 150
+  offset: 16, 16
+  index: -1
+black
+  rotate: false
+  xy: 1003, 1003
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+black_gradient
+  rotate: true
+  xy: 963, 982
+  size: 36, 38
+  orig: 38, 38
+  offset: 2, 0
+  index: -1
+board
+  rotate: false
+  xy: 2, 821
+  size: 378, 197
+  orig: 2250, 960
+  offset: 936, 474
+  index: -1
+color_paper
+  rotate: false
+  xy: 963, 957
+  size: 23, 23
+  orig: 23, 23
+  offset: 0, 0
+  index: -1
+copper
+  rotate: false
+  xy: 382, 718
+  size: 197, 191
+  orig: 300, 300
+  offset: 51, 54
+  index: -1
+explode
+  rotate: true
+  xy: 2, 639
+  size: 180, 183
+  orig: 180, 184
+  offset: 0, 0
+  index: -1
+ring
+  rotate: false
+  xy: 187, 655
+  size: 164, 164
+  orig: 192, 192
+  offset: 14, 14
+  index: -1
+txt_down
+  rotate: false
+  xy: 382, 911
+  size: 292, 107
+  orig: 2250, 960
+  offset: 979, 493
+  index: -1
+txt_up
+  rotate: false
+  xy: 676, 873
+  size: 279, 98
+  orig: 2250, 960
+  offset: 984, 591
+  index: -1

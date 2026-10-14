@@ -1,0 +1,45 @@
+@layer utilities {
+  .border-gradient-gold {
+    border-image: linear-gradient(180deg, #ecd8a3 40%, #bd9a4b 100%) 1;
+  }
+
+  .border-gradient-yellow {
+    border-image: linear-gradient(180deg, #fbbf24 40%, #facc15 100%) 1;
+  }
+
+  .border-bet-control-outer {
+    border: 1rem solid #18181b;
+  }
+
+  .border-bet-control-inner {
+    border: 0.2rem solid #9f9fa9;
+  }
+
+  .border-underline-pink {
+    border-bottom: 0.15rem solid #fb64b6;
+  }
+
+  .border-underline-yellow {
+    border-bottom: 0.15rem solid #fac800;
+  }
+  
+  .border-top-zinc {
+    border-top: 0.02rem solid #52525c;
+  }
+
+  .border-bottom-zinc {
+    border-bottom: 0.02rem solid #52525c;
+  }
+
+  .border-left-zinc {
+    border-left: 0.02rem solid #52525c;
+  }
+
+  .border-info {
+    border: 1px solid #9f9fa9;
+  }
+
+  .border-banner {
+    border: 1px solid #fef08a;
+  }
+}

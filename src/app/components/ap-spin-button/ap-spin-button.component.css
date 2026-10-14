@@ -1,0 +1,211 @@
+:host {
+  display: inline-block;
+  aspect-ratio: 1 / 1;
+  /* 長按支援：避免行動裝置長按觸發捲動/選字/長按選單而中斷 hold */
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+@keyframes idle-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Idle 旋轉動畫，預設為慢速旋轉，Turbo 進行中時會被覆蓋為快速旋轉 */
+.icon-idle-spin {
+  animation: idle-spin 2.5s linear infinite;
+}
+
+/*Turbo 進行中：icon 持續高速旋轉（定義在 .icon-idle-spin 之後以覆蓋速度）*/
+.icon-turbo-spin {
+  animation: idle-spin 0.2s linear infinite;
+}
+
+/* Hold Turbo icon 淡入當下順勢帶一點小幅旋轉再回正，銜接前一個 icon 的旋轉動態，避免切換時顯得靜止死板；
+   opacity 併入同一組 keyframe，讓淡入節奏與旋轉回正完全同步，不被 .icon-crossfade 的較短 transition 搶先結束 */
+@keyframes turbo-icon-rotate-in {
+  from {
+    transform: rotate(-14deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+.icon-turbo-rotate-in {
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  animation: turbo-icon-rotate-in 5.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes spin-a {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1440deg); }
+}
+
+@keyframes spin-b {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(1440deg); }
+}
+/* Default Spin 旋轉 */
+.fast-spin-a {
+  animation: spin-a 2s ease-out forwards;
+}
+
+.fast-spin-b {
+  animation: spin-b 2s ease-out forwards;
+}
+
+/* 淡入使用動畫 */
+.icon-crossfade {
+  transition: opacity 0.2s ease-in-out;
+}
+
+.icon-crossfade.opacity-0 {
+  transition: opacity 0.3s linear;
+}
+
+.disabled-cover {
+  border-radius: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@keyframes turbo-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(254, 240, 138, 0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(253, 224, 71, 0.85));
+  }
+}
+
+.spin-turbo {
+  animation: turbo-pulse 0.85s ease-in-out infinite;
+}
+
+.spin-turbo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 9999px;
+  border: 0.14rem solid rgba(253, 224, 71, 1);
+  opacity: 0;
+  pointer-events: none;
+  animation: turbo-outline-pulse 0.85s ease-out infinite;
+}
+
+@keyframes turbo-outline-pulse {
+  0% {
+    scale: 0.9;
+    opacity: 0.8;
+  }
+
+  70% {
+    scale: 1.25;
+    opacity: 0;
+  }
+
+  100% {
+    scale: 1.25;
+    opacity: 0;
+  }
+}
+
+.idle-tooltip::after {
+  display: none;
+}
+
+/* Auto Spin Run Soft Halo */
+.auto-spin-run-soft-halo {
+  isolation: isolate;
+  border-radius: 9999px;
+  will-change: scale, filter;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  filter: drop-shadow(0 0 0.3rem rgba(251, 191, 36, 0.4));
+  animation: auto-spin-run-soft-halo-invite 1.4s ease-in-out infinite;
+}
+
+.auto-spin-run-soft-halo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: 9999px;
+  border: 0.14rem solid rgba(253, 224, 71, 0.9);
+  opacity: 0;
+  pointer-events: none;
+  animation: auto-spin-run-soft-halo-ring 1.4s ease-out infinite;
+}
+
+.auto-spin-run-soft-halo::after {
+  content: '';
+  position: absolute;
+  inset: -0.25rem;
+  z-index: 0;
+  border-radius: 9999px;
+  background:
+    radial-gradient(
+      circle,
+      rgba(254, 249, 195, 0.2) 0%,
+      rgba(253, 224, 71, 0.13) 32%,
+      rgba(250, 204, 21, 0.1) 52%,
+      rgba(251, 191, 36, 0.02) 70%,
+      rgba(251, 191, 36, 0) 100%
+    );
+  filter: blur(0.3rem);
+  opacity: 0.9;
+  pointer-events: none;
+  animation: auto-spin-run-soft-halo 1.4s ease-in-out infinite;
+}
+
+/* charge 0% -> peak 50% -> release, shared 1.4s clock with invite/ring */
+@keyframes auto-spin-run-soft-halo {
+  0%,
+  100% {
+    opacity: 0.5;
+    scale: 0.94;
+  }
+
+  50% {
+    opacity: 1;
+    scale: 1.04;
+  }
+}
+
+@keyframes auto-spin-run-soft-halo-invite {
+  0%,
+  100% {
+    scale: 1;
+    filter: drop-shadow(0 0 0.2rem rgba(251, 191, 36, 0.4));
+  }
+
+  50% {
+    scale: 1;
+    filter: drop-shadow(0 0 0.4rem rgba(253, 224, 71, 0.85));
+  }
+}
+
+@keyframes auto-spin-run-soft-halo-ring {
+  0%,
+  45% {
+    scale: 1;
+    opacity: 0;
+  }
+
+  50% {
+    scale: 1;
+    opacity: 0.85;
+  }
+
+  100% {
+    scale: 1.3;
+    opacity: 0;
+  }
+}

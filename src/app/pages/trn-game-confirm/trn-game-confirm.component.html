@@ -1,0 +1,80 @@
+<div class="relative size-full grid place-items-center">
+  <div class="absolute inset-0 popup-overlay"></div>
+  <ap-ui-frame-popup
+    [accentColor]="displayVariant() === 'yellow' ? 'purple' : 'yellow'"
+    [header]="header()"
+    [size]="'mobile'"
+    class="w-11/12 md:w-3/4 lg:w-1/2"
+    (close)="onCancel()"
+  >
+    <!-- Content -->
+    <div
+      class="relative px-4 py-4 text-center mx-8 text-zinc-300 flex flex-col justify-center items-center gap-4"
+    >
+      <!-- Tournament Title -->
+      <ap-trn-card-title
+        [accentColor]="displayVariant() === 'purple' ? 'purple' : 'yellow'"
+        [title]="displayVariant() === 'purple' ? getEventTitle() : getQuickTitle()"
+      />
+
+      <!-- Tournament Banner -->
+      <img
+        class="relative rounded-lg border-2 object-contain-scale mx-auto w-72 md:w-80"
+        [ngClass]="{
+          'border-yellow-300': displayVariant() === 'yellow' ,
+          'border-purple-300': displayVariant() === 'purple' 
+        }"
+        [src]="getBannerImage()"
+      />
+
+      <!-- Match Details -->
+      <div class="relative text-xl font-bold tracking-wide">
+        {{ displaySubTitle() }}
+      </div>
+
+      <!-- Bullet Points -->
+      <ul
+        class="list-disc list-inside text-left text-md md:text-sm space-y-2 w-72 md:w-80"
+      >
+        {{`All bets boosted x${selectedEvent()?.betMultiplier}, extra added to prize pool.
+        Win bets earn points, higher rank wins bigger prizes.`}}
+        
+      </ul>
+
+      <!-- Separator -->
+      <div 
+        class="h-[0.15rem] mx-2 my-2 w-80 bg-linear-to-r from-transparent to-transparent"
+        [class.via-yellow-300]="displayVariant() === 'yellow'"
+        [class.via-purple-300]="displayVariant() === 'purple'"
+      ></div>
+
+      <!-- checkbox -->
+      <div class="flex items-center justify-center gap-2 mb-6">
+        <input
+          type="checkbox"
+          id="dontShowAgain"
+          [checked]="dontShowAgain()"
+          (change)="onCheckboxChange($event)"
+          class="w-5 h-5 cursor-pointer"
+          [class.accent-yellow-400]="displayVariant() === 'yellow'"
+          [class.accent-purple-400]="displayVariant() === 'purple'"
+        />
+
+        <label for="dontShowAgain" class="text-left cursor-pointer">
+          {{ checkboxText() }}
+        </label>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="pb-8 flex justify-center">
+      <ap-button
+        class="w-48"
+        [label]="getStartButton()"
+        (clicked)="displayVariant() === 'yellow' ? onJoinQuick() : onJoinEvent()"
+        [accentColor]="(displayVariant() === 'yellow' || displayVariant() === 'yellow') ? 'yellow' : 'purple'"
+        [size]="'large'"
+      />
+    </div>
+  </ap-ui-frame-popup>
+</div>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["ap-tab-menu-text.component.ts"],
+  "sourcesContent": [":host { display: 'block' }"],
+  "mappings": ";AAAA;AAAQ,WAAA;AAAiB;",
+  "names": []
+}

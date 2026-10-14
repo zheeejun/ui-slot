@@ -1,0 +1,110 @@
+<!-- Replay iframe 憿舐內 -->
+<div class="fixed inset-0 z-overlay bg-black">
+  <iframe
+    #replayIframe
+    class="w-full h-full border-0"
+    allowfullscreen
+    allow="autoplay; fullscreen;clipboard-read; clipboard-write"
+    (load)="onReplayIframeLoad()"
+    [src]="replayIframeUrl()"
+  ></iframe>
+  @if (showGameLogo()) { <ap-ui-game-name class="absolute top-1 left-1" [showTime]="false" [gameId]="gameId()"/> }
+  @if (showAPLogo()){<ap-ui-logo-name class="absolute top-0.5 right-1"/>}
+
+  <!-- Bottom Panel: demo -->
+  @if (isLoadingFinished()) {
+    @if (!isReplayPanel()) {
+      <!-- Demo -->
+      @if (isOldGame()) {
+        <!-- Old game: only show mode label -->
+        <ap-ui-replay-mode
+          [showIcon]="true"
+          [showCloseButton]="showCloseButton()"
+          [label]="getDemoModeLabel()"
+          (enableMusicSound)="onDemoMusicIconClicked()"
+          (close)="closeReplayIframe()"
+          class="absolute top-4 left-1/2 z-[70]"
+          style="transform: translateX(-50%);"
+        />
+      } @else {
+        <!-- Default: show mode label + bottom panel -->
+        <ap-ui-replay-mode
+          [showIcon]="false"
+          [showCloseButton]="showCloseButton()"
+          [label]="getDemoModeLabel()"
+          (close)="closeReplayIframe()"
+          class="absolute top-4 left-1/2 z-[70]"
+          style="transform: translateX(-50%);"
+        />
+        <bottom-panel-demo
+          [hidden]="!isShowPanel()"
+          [displayBet]="replayBet() ?? 0"
+          [displayWin]="replayWin() ?? 0"
+          [isGameBusy]="isReplayRunning()"
+          [featureRemaining]="featureModeRemaining()"
+          [featureTotal]="featureModeTotal()"
+          [spinButtonMode]="spinButtnMode()"
+          [isTurboDisabled]="isTurboDisabled()"
+          [autoSpinLightingEffectEnabled]="autoSpinLightingEffectEnabled()"
+          (musicPressedChange)="onDemoMusicPressedChange($event)"
+          (turboStateChange)="onTurboStateChange($event)"
+          (spin)="spin()"
+        />
+      }
+    } @else {
+      <!-- Replay ???-->
+      @if (isOldGame()) {
+        <ap-ui-replay-mode
+          [showIcon]="true"
+          [showCloseButton]="showCloseButton()"
+          [label]="getReplayModeLabel()"
+          (enableMusicSound)="onReplayMusicIconClicked()"
+          (close)="closeReplayIframe()"
+          class="absolute top-4 left-1/2 z-[70]"
+          style="transform: translateX(-50%);"
+        />
+      } @else {
+        <ap-ui-replay-mode
+          [showIcon]="false"
+          [showCloseButton]="showCloseButton()"
+          [label]="getReplayModeLabel()"
+          (close)="closeReplayIframe()"
+          class="absolute top-4 left-1/2 z-[70]"
+          style="transform: translateX(-50%);"
+        />
+        <!-- DisplayCurrency -->
+        <bottom-panel-replay
+          [hidden]="!isShowPanel()"
+          [isGameBusy]="isReplayRunning()"
+          [displayCurrency]="replayCurrencySymbol()"
+          [displayBet]="replayBet() ?? 0"
+          [displayWin]="replayWin() ?? 0 "
+          [featureRemaining]="featureModeRemaining()"
+          [featureTotal]="featureModeTotal()"
+          [spinButtonMode]="spinButtnMode()"
+          [isTurboDisabled]="isTurboDisabled()"
+          [autoSpinLightingEffectEnabled]="autoSpinLightingEffectEnabled()"
+          [customData]="customData()"
+          (copyLink)="onCopyLink()"
+          (musicPressedChange)="onReplayMusicPressedChange($event)"
+          (turboStateChange)="onTurboStateChange($event)"
+          (spin)="spin()"
+        />
+      }
+    }
+  }
+
+  <!-- Replay end popup must cover replay controls and bottom panel -->
+  @if (isReplayEnd()) {
+    <div class="absolute inset-0 z-40 popup-overlay"></div>
+    <ap-history-popup-replay-end
+      class="absolute inset-0 z-50"
+      [showWatchAgain]="showWatchAgain()"
+      [showCopyLink]="isReplayPanel()"
+      [showCloseButton]="showReplayEndCloseButton()"
+      (watchAgain)="onWatchAgain()"
+      (copyLink)="onCopyLink()"
+      (close)="closeReplayIframe()"
+    />
+  }
+</div>

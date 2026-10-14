@@ -1,0 +1,83 @@
+
+anim_sym_h1.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+h1_base
+  rotate: true
+  xy: 447, 155
+  size: 123, 54
+  orig: 300, 300
+  offset: 81, 16
+  index: -1
+h1_body
+  rotate: true
+  xy: 263, 92
+  size: 186, 179
+  orig: 300, 300
+  offset: 51, 95
+  index: -1
+h1_ear1
+  rotate: false
+  xy: 162, 110
+  size: 82, 117
+  orig: 300, 300
+  offset: 23, 92
+  index: -1
+h1_ear2
+  rotate: true
+  xy: 5, 134
+  size: 93, 152
+  orig: 300, 300
+  offset: 188, 109
+  index: -1
+h1_neck
+  rotate: true
+  xy: 223, 25
+  size: 62, 69
+  orig: 300, 300
+  offset: 113, 45
+  index: -1
+h1_shadow
+  rotate: false
+  xy: 5, 21
+  size: 108, 108
+  orig: 115, 112
+  offset: 5, 0
+  index: -1
+particle
+  rotate: true
+  xy: 447, 103
+  size: 12, 10
+  orig: 16, 16
+  offset: 4, 3
+  index: -1
+skeft_004074
+  rotate: true
+  xy: 447, 120
+  size: 30, 29
+  orig: 32, 32
+  offset: 1, 2
+  index: -1
+skeft_018589
+  rotate: false
+  xy: 5, 232
+  size: 253, 251
+  orig: 256, 256
+  offset: 3, 5
+  index: -1
+star flare
+  rotate: false
+  xy: 118, 5
+  size: 100, 100
+  orig: 100, 100
+  offset: 0, 0
+  index: -1
+sun
+  rotate: false
+  xy: 263, 283
+  size: 181, 200
+  orig: 200, 213
+  offset: 8, 4
+  index: -1

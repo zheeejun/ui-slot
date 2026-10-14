@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/game-iframe/game-iframe.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n  background-color: black;\n}"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,oBAAA;AACF;",
+  "names": []
+}

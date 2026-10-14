@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/ap-components-lib/ap-check-box-list/ap-check-box-list.component.css"],
+  "sourcesContent": [":host {\n  display: block;\n}\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACF;",
+  "names": []
+}

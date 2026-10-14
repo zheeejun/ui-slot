@@ -1,0 +1,45 @@
+<div class="flex rounded-xl overflow-hidden w-fit border-bet-control-outer">
+  <div
+    class="flex rounded-xl items-center bg-white overflow-hidden w-fit border-bet-control-inner"
+  >
+    <!-- decrease -->
+    <button
+      (pointerdown)="clickDecrease()"
+      [disabled]="isMin()"
+      class="size-14 flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 disabled:bg-zinc-800 disabled:opacity-100 disabled:cursor-not-allowed cursor-pointer color-transition"
+    >
+      <ap-icon
+        name="minus default"
+        class="size-10 shrink-0"
+        [ngClass]="isMin() ? 'text-zinc-600' : 'text-zinc-200'"
+      />
+    </button>
+
+    <!-- Bet Value -->
+    <div
+      #betValueContainer
+      class="flex px-4 py-2 justify-center text-zinc-300 w-auto overflow-hidden"
+    >
+      <div
+        #betValueText
+        class="font-bold text-zinc-900 text-center whitespace-nowrap"
+        [ngClass]="isCompactText() ? 'text-xl' : 'text-2xl'"
+      >
+        {{ bet() | moneyText }}
+      </div>
+    </div>
+
+    <!-- Plus -->
+    <button
+      (pointerdown)="clickIncrease()"
+      [disabled]="isMax()"
+      class="size-14 flex items-center justify-center bg-zinc-900 hover:bg-zinc-800 disabled:bg-zinc-800 disabled:opacity-100 disabled:cursor-not-allowed cursor-pointer color-transition"
+    >
+      <ap-icon
+        name="plus default"
+        class="size-10 shrink-0"
+        [ngClass]="isMax() ? 'text-zinc-600' : 'text-zinc-200'"
+      />
+    </button>
+  </div>
+</div>

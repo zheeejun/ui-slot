@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="dark" translate="no">
+  <head>
+    <meta charset="utf-8" />
+    <!-- <title>Project</title> -->
+    <base href="/" />
+    <!-- 1x1 透明佔位 icon，避免瀏覽器預設打 /favicon.ico；實際 icon 由 favicon-ctrl service 動態注入 -->
+    <link
+      rel="icon"
+      type="image/png"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="
+    />
+
+    <!-- 避免縮放錯亂問題，並支援 iOS 的瀏海機型 safe-area-inset -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <!-- 基本 Web App 支援 -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+
+    <!-- 強制 IE 使用最新引擎 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- X5（QQ瀏覽器） 支援 -->
+    <meta name="x5-fullscreen" content="true" />
+    <meta name="x5-page-mode" content="app" />
+    <meta name="x5-orientation" content="portrait" />
+
+    <!-- 強制深色模式 -->
+    <meta name="color-scheme" content="only dark">
+
+    <!-- 禁止 Google 翻譯 -->
+    <meta name="google" content="notranslate" />
+  </head>
+  <body>
+    <app-root></app-root>
+  </body>
+</html>

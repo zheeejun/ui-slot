@@ -1,0 +1,62 @@
+
+anim_big.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/fx_light01
+  rotate: false
+  xy: 300, 52
+  size: 118, 104
+  orig: 150, 150
+  offset: 17, 24
+  index: -1
+FX/fx_light03
+  rotate: true
+  xy: 154, 15
+  size: 141, 144
+  orig: 150, 150
+  offset: 5, 3
+  index: -1
+FX/smoke
+  rotate: false
+  xy: 2, 2
+  size: 150, 154
+  orig: 154, 156
+  offset: 4, 1
+  index: -1
+bigwin
+  rotate: false
+  xy: 2, 158
+  size: 443, 135
+  orig: 555, 177
+  offset: 56, 21
+  index: -1
+black
+  rotate: false
+  xy: 420, 141
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+hat_back
+  rotate: false
+  xy: 420, 64
+  size: 54, 45
+  orig: 150, 150
+  offset: 81, 40
+  index: -1
+hat_m
+  rotate: false
+  xy: 447, 111
+  size: 58, 55
+  orig: 150, 150
+  offset: 50, 58
+  index: -1
+hat_m0
+  rotate: true
+  xy: 447, 168
+  size: 125, 59
+  orig: 150, 150
+  offset: 10, 30
+  index: -1

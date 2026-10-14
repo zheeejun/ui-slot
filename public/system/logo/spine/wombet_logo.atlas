@@ -1,0 +1,216 @@
+
+wombet_logo.png
+size: 2048,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Bet_font
+  rotate: true
+  xy: 347, 438
+  size: 583, 373
+  orig: 583, 373
+  offset: 0, 0
+  index: -1
+Wom_font
+  rotate: true
+  xy: 2, 92
+  size: 929, 343
+  orig: 929, 343
+  offset: 0, 0
+  index: -1
+bear
+  rotate: false
+  xy: 722, 445
+  size: 441, 576
+  orig: 441, 576
+  offset: 0, 0
+  index: -1
+slot
+  rotate: true
+  xy: 381, 4
+  size: 143, 91
+  orig: 143, 91
+  offset: 0, 0
+  index: -1
+slot_machine
+  rotate: true
+  xy: 347, 149
+  size: 287, 241
+  orig: 287, 241
+  offset: 0, 0
+  index: -1
+slot_motion/slot_00
+  rotate: false
+  xy: 190, 9
+  size: 27, 81
+  orig: 50, 91
+  offset: 11, 0
+  index: -1
+slot_motion/slot_01
+  rotate: false
+  xy: 160, 9
+  size: 28, 81
+  orig: 50, 91
+  offset: 11, 1
+  index: -1
+slot_motion/slot_02
+  rotate: false
+  xy: 37, 8
+  size: 29, 82
+  orig: 50, 91
+  offset: 10, 0
+  index: -1
+slot_motion/slot_03
+  rotate: false
+  xy: 2, 8
+  size: 33, 82
+  orig: 50, 91
+  offset: 8, 0
+  index: -1
+slot_motion/slot_04
+  rotate: false
+  xy: 584, 20
+  size: 33, 62
+  orig: 50, 91
+  offset: 8, 20
+  index: -1
+slot_motion/slot_05
+  rotate: false
+  xy: 280, 14
+  size: 33, 76
+  orig: 50, 91
+  offset: 8, 0
+  index: -1
+slot_motion/slot_06
+  rotate: false
+  xy: 346, 15
+  size: 33, 75
+  orig: 50, 91
+  offset: 8, 7
+  index: -1
+slot_motion/slot_07
+  rotate: false
+  xy: 590, 375
+  size: 32, 61
+  orig: 50, 91
+  offset: 9, 0
+  index: -1
+slot_motion/slot_08
+  rotate: false
+  xy: 127, 9
+  size: 31, 81
+  orig: 50, 91
+  offset: 9, 0
+  index: -1
+slot_motion/slot_09
+  rotate: false
+  xy: 474, 75
+  size: 28, 72
+  orig: 50, 91
+  offset: 9, 10
+  index: -1
+slot_motion/slot_10
+  rotate: false
+  xy: 502, 3
+  size: 25, 70
+  orig: 50, 91
+  offset: 12, 0
+  index: -1
+slot_motion/slot_11
+  rotate: false
+  xy: 99, 8
+  size: 26, 82
+  orig: 50, 91
+  offset: 12, 0
+  index: -1
+slot_motion/slot_12
+  rotate: false
+  xy: 535, 80
+  size: 26, 67
+  orig: 50, 91
+  offset: 12, 15
+  index: -1
+slot_motion/slot_13
+  rotate: false
+  xy: 529, 7
+  size: 26, 69
+  orig: 50, 91
+  offset: 12, 0
+  index: -1
+slot_motion/slot_14
+  rotate: false
+  xy: 68, 8
+  size: 29, 82
+  orig: 50, 91
+  offset: 10, 0
+  index: -1
+slot_motion/slot_15
+  rotate: false
+  xy: 315, 14
+  size: 29, 76
+  orig: 50, 91
+  offset: 10, 6
+  index: -1
+slot_motion/slot_16
+  rotate: false
+  xy: 563, 84
+  size: 29, 63
+  orig: 50, 91
+  offset: 10, 19
+  index: -1
+slot_motion/slot_17
+  rotate: false
+  xy: 504, 78
+  size: 29, 69
+  orig: 50, 91
+  offset: 10, 0
+  index: -1
+slot_motion/slot_18
+  rotate: false
+  xy: 249, 12
+  size: 29, 78
+  orig: 50, 91
+  offset: 10, 0
+  index: -1
+slot_motion/slot_19
+  rotate: false
+  xy: 219, 11
+  size: 28, 79
+  orig: 50, 91
+  offset: 10, 3
+  index: -1
+slot_motion/slot_20
+  rotate: false
+  xy: 474, 2
+  size: 26, 71
+  orig: 50, 91
+  offset: 10, 11
+  index: -1
+slot_motion/slot_21
+  rotate: false
+  xy: 557, 14
+  size: 25, 64
+  orig: 50, 91
+  offset: 11, 18
+  index: -1
+slot_motion/slot_22
+  rotate: false
+  xy: 590, 314
+  size: 22, 59
+  orig: 50, 91
+  offset: 14, 23
+  index: -1
+slot_motion/slot_23
+  rotate: true
+  xy: 347, 125
+  size: 22, 24
+  orig: 50, 91
+  offset: 14, 26
+  index: -1
+slot_motion/slot_24
+  rotate: false
+  xy: 347, 99
+  size: 22, 24
+  orig: 50, 91
+  offset: 14, 27
+  index: -1

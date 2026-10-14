@@ -1,0 +1,21 @@
+<div
+  class="relative w-56 md:w-md duration-100 items-center ml-4"
+  [ngClass]="{ 'opacity-0 duration-300': animation() === 'out' }"
+>
+  <div
+    class="relative rounded-lg border-2 bg-zinc-950/85 shadow-2xl px-2 py-2 flex flex-row items-center gap-2"
+    [class]="getBorderColor()"
+    [ngClass]="{
+      'animate-fade animate-once animate-duration-300': animation() === 'in',
+    }"
+  >
+    <!-- Icon -->
+    <ap-icon name="prizes" [class]="'info-icon shrink-0 ' + getIconColor()" />
+
+    <!-- Content -->
+    <div class="flex-1 text-zinc-300">
+      <h5 [class]="getIconColor()">{{ displayTitle() }}</h5>
+      <h5 class="mt-1">{{ displayMessage() }}</h5>
+    </div>
+  </div>
+</div>

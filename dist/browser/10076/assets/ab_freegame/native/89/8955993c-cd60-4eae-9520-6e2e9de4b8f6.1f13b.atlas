@@ -1,0 +1,223 @@
+
+anim_mega.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+FX/slash
+  rotate: false
+  xy: 666, 107
+  size: 63, 56
+  orig: 113, 109
+  offset: 21, 34
+  index: -1
+FX/spark04/spark04_001
+  rotate: true
+  xy: 699, 385
+  size: 100, 75
+  orig: 225, 225
+  offset: 60, 11
+  index: -1
+FX/spark04/spark04_002
+  rotate: true
+  xy: 928, 278
+  size: 124, 87
+  orig: 225, 225
+  offset: 52, 11
+  index: -1
+FX/spark04/spark04_003
+  rotate: true
+  xy: 413, 361
+  size: 154, 108
+  orig: 225, 225
+  offset: 43, 11
+  index: -1
+FX/spark04/spark04_004
+  rotate: false
+  xy: 2, 256
+  size: 180, 119
+  orig: 225, 225
+  offset: 32, 11
+  index: -1
+FX/spark04/spark04_005
+  rotate: false
+  xy: 209, 259
+  size: 189, 125
+  orig: 225, 225
+  offset: 29, 10
+  index: -1
+FX/spark04/spark04_006
+  rotate: false
+  xy: 209, 386
+  size: 202, 129
+  orig: 225, 225
+  offset: 23, 11
+  index: -1
+FX/spark04/spark04_007
+  rotate: false
+  xy: 778, 404
+  size: 206, 134
+  orig: 225, 225
+  offset: 19, 10
+  index: -1
+FX/spark04/spark04_008
+  rotate: false
+  xy: 778, 540
+  size: 207, 136
+  orig: 225, 225
+  offset: 18, 9
+  index: -1
+FX/spark04/spark04_009
+  rotate: false
+  xy: 2, 377
+  size: 205, 138
+  orig: 225, 225
+  offset: 20, 9
+  index: -1
+FX/spark04/spark04_010
+  rotate: false
+  xy: 523, 281
+  size: 169, 139
+  orig: 225, 225
+  offset: 56, 9
+  index: -1
+FX/spark04/spark04_011
+  rotate: false
+  xy: 184, 118
+  size: 159, 139
+  orig: 225, 225
+  offset: 66, 9
+  index: -1
+FX/spark04/spark04_012
+  rotate: false
+  xy: 751, 33
+  size: 142, 136
+  orig: 225, 225
+  offset: 83, 10
+  index: -1
+FX/spark04/spark04_013
+  rotate: false
+  xy: 895, 2
+  size: 125, 104
+  orig: 225, 225
+  offset: 100, 13
+  index: -1
+FX/sun
+  rotate: false
+  xy: 400, 241
+  size: 118, 118
+  orig: 150, 150
+  offset: 16, 16
+  index: -1
+Shine_A_151
+  rotate: true
+  xy: 987, 652
+  size: 24, 26
+  orig: 30, 30
+  offset: 3, 2
+  index: -1
+black
+  rotate: false
+  xy: 987, 635
+  size: 15, 15
+  orig: 15, 15
+  offset: 0, 0
+  index: -1
+candy/green_candy2x
+  rotate: false
+  xy: 909, 193
+  size: 113, 83
+  orig: 113, 87
+  offset: 0, 1
+  index: -1
+candy/purple_candy2x
+  rotate: false
+  xy: 909, 108
+  size: 113, 83
+  orig: 113, 87
+  offset: 0, 1
+  index: -1
+candy/red_candy2x
+  rotate: true
+  xy: 666, 165
+  size: 113, 83
+  orig: 113, 87
+  offset: 0, 1
+  index: -1
+cycle
+  rotate: false
+  xy: 763, 171
+  size: 144, 144
+  orig: 150, 150
+  offset: 3, 3
+  index: -1
+fx_light01
+  rotate: false
+  xy: 345, 135
+  size: 118, 104
+  orig: 150, 150
+  offset: 17, 24
+  index: -1
+fx_light03
+  rotate: true
+  xy: 520, 138
+  size: 141, 144
+  orig: 150, 150
+  offset: 5, 3
+  index: -1
+fx_shine
+  rotate: false
+  xy: 465, 40
+  size: 96, 96
+  orig: 96, 96
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 527, 487
+  size: 249, 189
+  orig: 300, 300
+  offset: 32, 32
+  index: -1
+p1_back
+  rotate: true
+  xy: 694, 280
+  size: 103, 67
+  orig: 150, 150
+  offset: 25, 45
+  index: -1
+p1_in
+  rotate: false
+  xy: 523, 422
+  size: 174, 63
+  orig: 300, 300
+  offset: 64, 161
+  index: -1
+p1_lid
+  rotate: false
+  xy: 2, 169
+  size: 157, 85
+  orig: 300, 300
+  offset: 77, 168
+  index: -1
+stick_blue_2x
+  rotate: true
+  xy: 2, 82
+  size: 85, 150
+  orig: 85, 150
+  offset: 0, 0
+  index: -1
+stick_red_2x
+  rotate: true
+  xy: 776, 317
+  size: 85, 150
+  orig: 85, 150
+  offset: 0, 0
+  index: -1
+txt/megawin
+  rotate: false
+  xy: 2, 517
+  size: 523, 159
+  orig: 555, 177
+  offset: 16, 9
+  index: -1

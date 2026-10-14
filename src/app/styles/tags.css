@@ -1,0 +1,77 @@
+/* lg: defines desktop overrides */
+@layer base {
+  /* Page Title */
+  h1 {
+    @apply font-semibold text-3xl lg:text-2xl;
+  }
+
+  /* Section Title */
+  h2 {
+    @apply font-semibold text-2xl lg:text-xl;
+  }
+
+  /* Card Title */
+  h3 {
+    @apply font-medium text-xl lg:text-lg;
+  }
+
+  /* Subsection Title */
+  h4 {
+    @apply font-medium text-lg lg:text-base;
+  }
+
+  /* Helper Title */
+  h5 {
+    @apply font-medium text-base lg:text-sm;
+  }
+
+  /* Caption Title */
+  h6 {
+    @apply font-medium text-sm lg:text-xs;
+  }
+
+  /* Body Text */
+  p {
+    @apply font-normal text-base leading-6 lg:text-sm;
+  }
+
+  /* Input Fields */
+  input {
+    @apply font-normal text-base lg:text-sm;
+  }
+
+  /* Label Text */
+  label {
+    @apply font-medium text-base lg:text-sm;
+  }
+
+  /* List Items */
+  li {
+    @apply font-normal text-sm;
+  }
+
+  /* Table Headers */
+  th {
+    @apply font-semibold text-base lg:text-sm;
+  }
+
+  /* Table Cell */
+  td {
+    @apply font-normal text-base lg:text-sm;
+  }
+
+  /* Inline Text */
+  span {
+    @apply font-normal text-sm lg:text-xs;
+  }
+
+  /* Date/Time */
+  time {
+    @apply font-normal italic text-sm lg:text-xs;
+  }
+
+  /* Table Text */
+  table {
+    @apply font-normal text-base lg:text-sm;
+  }
+}

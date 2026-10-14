@@ -1,0 +1,43 @@
+<div
+  class="relative size-full"
+  [class.cursor-not-allowed]="disabled()"
+  (pointerdown)="pointerDown($event)"
+  [class.auto-spin-run-soft-halo]="
+    !disabled() &&
+    (pressHintEnabled() || showIdleHalo()) &&
+    pressHintType() === 'blur'
+  "
+>
+  <!-- Hold Turbo 提示圖示與旋轉圖示以透明度交叉淡入淡出切換，兩者都會隨這層旋轉 -->
+  <div
+    class="relative size-full"
+    [class.fast-spin-a]="
+      spinClass() === 'fast-spin-a' 
+    "
+    [class.fast-spin-b]="
+      spinClass() === 'fast-spin-b'
+    "
+    [class.spin-turbo]="isTurboActive() && !disabled()"
+  >
+    @if (!showHoldTurboIcon()) {
+      <ap-icon-spin
+        [variant]="variant()"
+        class="icon-crossfade absolute inset-0 size-full pointer-events-none"
+        [class.icon-idle-spin]="!disabled()"
+      />
+    }
+    @if (showHoldTurboIcon()) {
+      <ap-icon-hold-turbo-spin
+        class="icon-crossfade absolute inset-0 size-full scale-105 pointer-events-none icon-turbo-rotate-in"
+      />
+    }
+  </div>
+  @if (disabled()) {
+    <div class="disabled-cover absolute inset-0"></div>
+    <div
+      class="absolute inset-0 z-sticky"
+      (click)="$event.stopPropagation()"
+      (pointerdown)="$event.stopPropagation()"
+    ></div>
+  }
+</div>

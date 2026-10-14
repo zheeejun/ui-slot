@@ -1,0 +1,140 @@
+<div
+  class="h-full overflow-y-auto p-4 space-y-4 text-slate-300"
+>
+  <div class="flex justify-center">
+    <ap-icon
+      name="shield"
+      class="relative size-16 text-emerald-400"
+    />
+  </div>
+  <section class="space-y-2">
+    <h2 class="text-slate-300 text-center">
+      {{ "fairness_info_0" | appI18n: "Provably Fair - 100% FAIR GAME" }}
+    </h2>
+    <div class="rounded-lg bg-zinc-900 px-4 py-4">
+      <p class="text-slate-400">
+        {{
+          "fairness_info_1"
+            | appI18n
+            : "Provably Fair Games is an encryption technology to ensure fairness and verifiable for game outcomes. This mechanism are often used in online gambling and random number generation games to build player's trust in the game operators."
+        }}
+      </p>
+    </div>
+  </section>
+  <section class="space-y-2">
+    <h2 class="text-slate-300 text-center">
+      {{ "fairness_info_2" | appI18n: "How does it works?" }}
+    </h2>
+    <div class="rounded-lg bg-zinc-900 px-4 py-4">
+      <div class="pl-3" style="border-left: 3px solid #62748e">
+        <p class="text-slate-400">
+          <label class="text-slate-300"
+            >{{ "fairness_info_3" | appI18n: "Quick Instructions :" }}
+          </label>
+          {{
+            "fairness_info_4"
+              | appI18n
+                : "By ensuring the randomness and fairness of the game, it allows players to verify the results after the outcome to prevent game operators from cheating. This mechanism is widely used in online gambling and other games that require random number generation to improve the transparency and credibility."
+          }}
+        </p>
+      </div>
+    </div>
+
+    <div class="rounded-lg bg-zinc-900 px-4 py-4">
+      <div class="pl-3" style="border-left: 3px solid #62748e">
+        <div class="text-slate-400 space-y-2">
+          <h5 class="text-slate-300">
+            {{ "fairness_info_5" | appI18n: "More Information :" }}
+          </h5>
+          <ul class="list-decimal pl-5 space-y-2 mt-1">
+            <li>
+              {{
+                "fairness_info_6"
+                  | appI18n
+                    : "Round result is generated from two independent participants of the round: game operator and the bettor."
+              }}
+            </li>
+            <li>
+              {{
+                "fairness_info_7"
+                  | appI18n
+                    : 'Operator is generating server seed (random 64 symbols). Hashed version of this server seed is available publicly before round starts. (In user menu, check "Provably Fairness Settings" and then "Active server seed hashed")'
+              }}
+            </li>
+            <li>
+              {{
+                "fairness_info_8"
+                  | appI18n
+                    : "Client seed is generated on the side of each player and when round starts are participating in generating round result."
+              }}
+            </li>
+            <li>
+              {{
+                "fairness_info_9"
+                  | appI18n
+                    : "When round starts, game merges server seed with a client seed. From merged symbols is generated HMAC-SHA-256 hash, and from this hash the game result is produced."
+              }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="rounded-lg bg-zinc-900 px-4 py-4 space-y-8">
+      <div class="pl-3" style="border-left: 3px solid #62748e">
+        <div class="text-slate-400 space-y-2">
+          <label class="text-slate-300"
+            >{{ "fairness_info_10" | appI18n: "What is the Seed :" }}
+          </label>
+          <ul class="list-decimal pl-5 space-y-2 mt-1">
+            <li>
+              {{
+                "fairness_info_11"
+                  | appI18n
+                    : "Server Seed: Generated randomly in 64-bit string by server."
+              }}
+            </li>
+            <li>
+              {{
+                "fairness_info_12"
+                  | appI18n
+                    : "Server Seed Hash: Use Server Seed to calculate through SHA-256."
+              }}
+            </li>
+            <li>
+              {{
+                "fairness_info_13"
+                  | appI18n
+                    : "Client Seed: 64-bit string provided by client."
+              }}
+            </li>
+            <li>
+              {{
+                "fairness_info_14"
+                  | appI18n
+                    : "Nonce : The number of times this combination of Server Seed and Client Seed has been used."
+              }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <ap-og-provably-fair-desc class="block w-full origin-top scale-95" />
+    </div>
+  </section>
+
+  <h2 class="text-slate-300 text-center">
+    {{ "fairness_info_15" | appI18n: "How to check?" }}
+  </h2>
+  <div class="rounded-lg bg-zinc-900 px-4 py-4">
+    @for (item of fairnessItems; track item.titleKey) {
+      <ap-info-guide-og
+        class="pointer-events-none"
+        [title]="item.titleKey | appI18n: item.titleFallback"
+        [getItem1]="item.item1Key | appI18n: item.item1Fallback"
+        [getItem2]="
+          item.item2Key ? (item.item2Key | appI18n: item.item2Fallback) : ''
+        "
+      />
+    }
+  </div>
+</div>

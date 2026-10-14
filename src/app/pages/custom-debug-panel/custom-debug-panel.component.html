@@ -1,0 +1,27 @@
+<div class="relative w-xs flex flex-col gap-1 p-2 space-y-1 text-white popup-overlay rounded-md">
+  <div class="flex justify-between items-center gap-1">
+    <span>Logo Key</span>
+    <ap-input-box class="w-30" size="small" [value]="customLogoKey()" (onInput)="onCustomLogoKeyChange($event)" />
+  </div>
+  <div class="flex justify-between items-center gap-1">
+    <span>Logo Type</span>
+    <ap-select class="w-30" size="small" placeholder="Select type" [options]="logoTypeOptions" [selected]="customLogoType()" (onSelect)="onCustomLogoTypeChange($event)" />
+  </div>
+  <div class="flex justify-between items-center gap-1">
+    <span>Game Key</span>
+    <ap-input-box class="w-30" size="small" [value]="customGamekey()" (onInput)="onCustomGamekeyChange($event)" />
+  </div>
+  <div class="flex justify-between items-center gap-1">
+    <span>Background</span>
+    <ap-input-box class="w-30" size="small" [value]="customBackground()" (onInput)="onCustomBackgroundChange($event)" />
+  </div>
+  <div class="flex justify-between items-center gap-1">
+    <span>Rule</span>
+    <ap-select class="w-30" size="small" placeholder="Select rule" [options]="ruleOptions" [selected]="customRule()" (onSelect)="onCustomRuleChange($event)" />
+  </div>
+  <div class="flex justify-between items-center gap-1">
+    <span>RTP</span>
+    <ap-input-box class="w-30" size="small" [value]="customRTP()" (onInput)="onCustomRTPChange($event)" />
+  </div>
+  <ap-button class="w-full [&>button]:w-full mt-2" accentColor="zinc" size="x-small" label="Clear" (click)="clearCustomData()"/>
+</div>

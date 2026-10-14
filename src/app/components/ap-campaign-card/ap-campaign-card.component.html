@@ -1,0 +1,49 @@
+<div class="relative">
+  @if (isNew()) {
+    <ap-tag
+      class="absolute -top-2 -right-2 z-sticky"
+      style="transform: translateY(-12.5%);;"
+      [label]="'new'"
+      [accentColor]="'red'"
+    />
+  }
+  <div class="campaign-card-frame rounded-xl cursor-pointer">
+    <div
+      class="relative text-center w-60 rounded-lg overflow-hidden"
+    >
+      <!-- Banner Image -->
+      <div class="relative w-full h-20">
+        <img
+          [src]="image()"
+          [alt]="imageAlt()"
+          class="w-full h-full object-cover"
+          style="aspect-ratio: 670 / 223"
+        />
+      </div>
+
+      <!-- Content -->
+      <div class="px-4 pt-2 text-center space-y-2">
+        <!-- Title -->
+        <div
+          class="text-yellow-gradient text-3xl font-medium tracking-wide line-clamp-1 uppercase"
+          [class.font-anton]="!isChineseTitle()"
+        >
+          {{ title() }}
+        </div>
+
+        <!-- Divider Line -->
+        <div class="w-full divider-gradient-yellow opacity-80 mx-auto"></div>
+
+        <!-- Description -->
+        <p class="text-zinc-300 text-left line-clamp-2 h-12">
+          {{ description() }}
+        </p>
+
+        <!-- End Date -->
+        <time class="text-zinc-400">
+          {{ endDateLabel() }} {{ endDateTime() }}
+        </time>
+      </div>
+    </div>
+  </div>
+</div>

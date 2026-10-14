@@ -1,0 +1,250 @@
+<!-- Tab Buttons -->
+<div class="flex relative">
+  <!-- Quick -->
+  @if (showTabQuick()) {
+    <button
+      (click)="onClickTab('quick')"
+      class="h-10 font-anton font-bold text-2xl bg-black/80 tracking-wide border-2 border-b-0 rounded-t-xl duration-200"
+      [ngClass]="{
+        'text-yellow-300 border-yellow-300': currentTab() === 'quick',
+        'text-zinc-500 border-zinc-600': currentTab() !== 'quick',
+        'hover:bg-zinc-800 cursor-pointer': showTabEvent()
+      }"
+      [class.w-22]="showTabEvent()"
+      [class.w-44]="!showTabEvent()"
+      [class.px-4]="!showTabEvent()"
+    >
+      @if (showTabEvent()) {
+        <span>{{ getQuickTabText() }}</span>
+      } @else {
+        <ap-trn-card-title variant="quick" [title]="getQuickTabText()" size="small" />
+      }
+    </button>
+  }
+
+  <!-- Event -->
+  @if (showTabEvent()) {
+    <button
+      (click)="onClickTab('event');  $event.stopPropagation()"
+      class="h-10 font-anton font-bold text-2xl bg-black/80 tracking-wide border-2 border-b-0 rounded-t-xl duration-200"
+      [ngClass]="{
+        'text-purple-300 border-purple-300': currentTab() === 'event',
+        'text-zinc-500 border-zinc-600': currentTab() !== 'event',
+        'hover:bg-zinc-800 cursor-pointer': showTabQuick()
+      }"
+      [class.w-22]="showTabQuick()"
+      [class.w-44]="!showTabQuick()"
+      [class.px-4]="!showTabQuick()"
+    >
+      @if (showTabQuick()) {
+        <span>{{ getEventTabText() }}</span>
+      } @else {
+        <ap-trn-card-title variant="event" [title]="getEventTabText()" size="small" />
+      }
+    </button>
+  }
+</div>
+
+<div
+  class="relative bg-black/80 border-2 rounded-b-lg cursor-pointer transition-all duration-400 ease-in-out max-w-full w-44"
+  [ngClass]="{
+    'border-yellow-300': currentTab() === 'quick',
+    'border-purple-300': currentTab() === 'event'
+  }"
+  [style.height.px]="contentHeight()"
+>
+  <div class="relative inset-0">
+
+    <!-- QUICK -->
+    <div
+      #quickContent
+      class="absolute w-full pt-1 pb-2 flex flex-col items-center gap-1 transition-opacity duration-300"
+      [class.opacity-0]="currentTab() !== 'quick'"
+      [class.invisible]="currentTab() !== 'quick'"
+      (click)="onClickQuickDetails()"
+    >
+      <!-- Quick Icon -->
+      <ap-icon
+        name="trophy"
+        class="size-14 mt-2 text-yellow-300 cursor-pointer"
+      />
+
+      <!-- Details -->
+      <div class="flex items-center text-zinc-300 font-semibold tracking-wide -mb-3">
+        <button
+          type="button"
+          class="appearance-none bg-transparent border-0 p-0 m-0 cursor-pointer"
+        >
+          <div class="border-b border-zinc-300 flex items-center gap-1">
+            <ap-icon name="exclamation-circle default" class="size-4" />
+            <span class="text-xs">
+              {{ getEventDetailsButtonText() }}
+            </span>
+          </div>
+        </button>
+      </div>
+
+      <!-- Bonus -->
+      <ap-trn-card-bonus
+        class="mt-4 cursor-pointer"
+        [currency]="trn.currencySymbol()"
+        [amount]="prizeAmountQuick()"
+        variant="quick"
+        [multiplierTitle]="betMultiplierTitle()"
+        [multiplier]="betMultiplierQuick()"
+      />
+
+      <!-- Match -->
+      <ap-button
+        class="w-[85%] mt-2 mb-2"
+        size="small"
+        icon="search"
+        accentColor="yellow"
+        [disabled]="isJoinQuickDisabled()"
+        [loading]="isButtonLoading()"
+        [label]="getMatchButtonText()"
+        (click)="$event.stopPropagation()"
+        (clicked)="onJoinQuick()"
+      />
+
+      <!-- Insufficient -->
+      @if (isInsufficientBalance()) {
+        <div class="text-left text-sm font-semibold text-red-500 animate-fade-down animate-duration-200">
+          <div>{{ insufficientBalance() }}</div>
+          <div>
+            Required:
+            <span class="text-zinc-200">{{ requiredBalanceString() }}</span>
+          </div>
+        </div>
+      }
+      @if (isPlayerUseCampaign()) {
+        <div class="text-left text-sm font-semibold text-red-500 animate-fade-down animate-duration-200">
+          Please use Cash Wallet to join the event.
+        </div>
+       }
+    </div>
+
+    <!-- EVENT -->
+    <div
+      #eventContent
+      class="relative w-full min-h-60 pt-1 pb-2 flex flex-col items-center gap-1 transition-opacity duration-300" 
+      [class.opacity-0]="currentTab() !== 'event'"
+      [class.invisible]="currentTab() !== 'event'"
+      (click)="onClickEventDetails()"
+    >
+      <!-- Icon -->
+      <ap-icon
+        name="gift"
+        class="size-14 mt-2 text-purple-300 cursor-pointer"
+      />
+
+      <!-- Details -->
+      <div class="flex items-center text-zinc-300 font-semibold tracking-wide -mb-3">
+        <button
+          type="button"
+          class="appearance-none bg-transparent border-0 p-0 m-0 cursor-pointer"
+        >
+          <div class="border-b border-zinc-300 flex items-center gap-1">
+            <ap-icon name="exclamation-circle default" class="size-4" />
+            <span class="text-xs">
+              {{ getEventDetailsButtonText() }}
+            </span>
+          </div>
+        </button>
+      </div>
+
+      <!-- User Point -->
+      @if (selectedEventUserPoint() !== null) {
+        <div
+          class="w-36 flex items-center space-x-1 bg-purple-950/50 border-2 border-purple-300 rounded-md px-2 py-1 mt-4 -mb-2"
+        >
+          <ap-icon name="prizes" class="text-purple-300 size-5" />
+          <div class="font-semibold font-anton text-xl tracking-wider text-purple-100">
+            {{ trn.currencySymbol() }}{{ selectedEventUserPoint()! | number: '1.0-3' }}
+          </div>
+        </div>
+      }
+
+      <!-- Bonus -->
+      <ap-trn-card-bonus
+        class="mt-4 cursor-pointer"
+        [isLoading]="isTotalPrizeLoading()"
+        [currency]="trn.currencySymbol()"
+        [amount]="selectedEventTotalPrize()"
+        variant="event"
+        [multiplierTitle]="betMultiplierTitle()"
+        [multiplier]="betMultiplierEvent()"
+      />
+
+      <!-- Join -->
+      <ap-button
+        class="w-[85%] mt-2 mb-2"
+        size="small"
+        icon="search"
+        accentColor="purple"
+        [disabled]="isJoinEventDisabled()"
+        [loading]="isButtonLoading()"
+        [label]="joinEventButtonText()"
+        (clicked)="onJoinEvent(); $event.stopPropagation()"
+      />
+
+      <!-- Insufficient -->
+      @if (isInsufficientBalance()) {
+        <div class="text-left text-sm font-semibold text-red-500 animate-fade-down animate-duration-200">
+          <div>{{ insufficientBalance() }}</div>
+          <div>
+            Required:
+            <span class="text-zinc-200">{{ requiredBalanceString() }}</span>
+          </div>
+        </div>
+      }
+      @if (isPlayerUseCampaign()) {
+        <div class="text-left text-sm font-semibold text-red-500 animate-fade-down animate-duration-200">
+          Please use Cash Wallet to join the event.
+        </div>
+      }
+    </div>
+
+  </div>
+</div>
+
+@if (showEventSelection() ) {
+  <div class="absolute top-12 left-3 w-screen sm:w-2xl text-zinc-300 duration-300 select-none h-[78vh] flex flex-col border-2 rounded-lg z-overlay" 
+    (click)="$event.stopPropagation()"
+    [ngClass]="{
+      'border-yellow-300': currentTab() === 'quick',
+      'border-purple-300': currentTab() === 'event'
+    }"
+  >
+    <div class="relative bg-zinc-900/70 w-full text-center font-semibold h-16 text-3xl sm:text-4xl pt-3 pb-2 shrink-0 rounded-t-lg">
+      {{ header() }}
+    </div>
+    <div class="bg-zinc-800/70 relative rounded-b-xl flex-1 overflow-y-auto ">
+      <div class="px-4 py-4 text-center select-none flex flex-col justify-center items-center">
+        <div class="relative w-full flex flex-col gap-4">
+          @for (trn of trnList(); track trn.id) {
+            <ap-trn-game-list
+              [getCountdownStartTitle]="getCountdownStartTitle()"
+              [getCountdownEndTitle]="getCountdownEndTitle()"
+              [getDaysLabel]="getDaysLabel()"
+              [getHoursLabel]="getHoursLabel()"
+              [getMinutesLabel]="getMinutesLabel()"
+              [getSecondsLabel]="getSecondsLabel()"
+              [hasParticipated]="hasJoinedEvent(trn)"
+              [trnData]="trn"
+              (click)="onEventClick(trn);"
+            />
+          }
+        </div>
+      </div>
+    </div>
+    <ap-button
+      class="absolute top-2 right-2 opacity-50 text-zinc-400 hover:text-zinc-100 cursor-pointer transition-colors duration-200"
+      variant="content-rounded"
+      accentColor="zinc"
+      icon="x-mark"
+      (click)="showEventSelection.set(false); $event.stopPropagation()"
+    />
+    
+  </div>
+}

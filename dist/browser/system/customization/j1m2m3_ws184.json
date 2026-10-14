@@ -1,0 +1,25 @@
+{
+    "version":"1.0",
+    "slot":{
+        "10044":{
+            "assets": {
+                "value": "jbo"
+            }
+        },
+        "10075":{
+            "assets": {
+                "value": "jbo"
+            }
+        },
+        "18044":{
+            "assets": {
+                "value": "jbo"
+            }
+        },
+        "18075":{
+            "assets": {
+                "value": "jbo"
+            }
+        }
+    }
+}

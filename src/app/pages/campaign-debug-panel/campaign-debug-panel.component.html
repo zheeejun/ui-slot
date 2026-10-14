@@ -1,0 +1,140 @@
+<div class="relative w-xs flex flex-col gap-1 p-2 text-white bg-black/50 rounded-xl text-sm">
+  <div class="font-bold text-yellow-300">Campaign Debug</div>
+  
+  <!-- 切換 Campaign Mode -->
+  <div class="flex flex-col gap-1">
+    <span class="text-xs text-gray-400">Campaign Mode</span>
+    <ap-select [options]="campaignModeOptions" [selected]="campaignMode()" (onSelect)="onSelectCampaignMode($event)" />
+  </div>
+
+  <hr class="border-white/30" />
+
+  <!-- Action Panel -->
+  <div class="flex flex-col gap-1">
+    <span class="text-xs text-gray-400">Action</span>
+    <input
+      type="text"
+      [value]="actionName()"
+      (input)="actionName.set($any($event.target).value)"
+      placeholder="action name"
+      class="p-1 text-xs bg-zinc-800 border border-yellow-400/70 rounded"
+    />
+    <span class="text-xs text-gray-400">Command Id</span>
+    <input
+      type="text"
+      [value]="commandId()"
+      (input)="commandId.set($any($event.target).value)"
+      placeholder="command id"
+      class="p-1 text-xs bg-zinc-800 border border-yellow-400/70 rounded"
+    />
+    <span class="text-xs text-gray-400">Payload (JSON)</span>
+    <textarea
+      [value]="payloadString()"
+      (input)="payloadString.set($any($event.target).value)"
+      placeholder="payload json"
+      rows="3"
+      class="p-1 text-xs bg-zinc-800 border border-yellow-400/70 rounded resize-y"
+    ></textarea>
+  </div>
+
+  <!-- Send Panel Get Action -->
+  <button (click)="sendAction()" class="p-1 text-xs bg-blue-500 rounded hover:bg-blue-600">Send Action</button>
+
+  <!-- 目前狀態 -->
+  <div class="flex flex-col gap-0.5 text-xs text-gray-300">
+    <span>showTab: {{ ctrl.showTab() }}</span>
+    <span>campaignList: {{ ctrl.campaignList().length }}</span>
+  </div>
+
+  <hr class="border-white/30" />
+
+  <!-- 選擇 Campaign -->
+  <div class="flex flex-col gap-1">
+    <span class="text-xs text-gray-400">Select Current Campaign</span>
+    <ap-select [options]="campaignOptions()" [selected]="currentCampaignId()" (onSelect)="onSelectCampaign($event)" />
+  </div>
+
+  <!-- Campaign 清單預覽 
+  @if (ctrl.campaignList().length > 0) {
+    <hr class="border-white/30" />
+    <div class="flex flex-col gap-0.5 text-xs">
+      <span class="text-gray-400">Campaign List:</span>
+      @for (c of ctrl.campaignList(); track c.id) {
+        <div
+          class="flex justify-between px-1 rounded"
+          [class.bg-yellow-600]="c.id === currentCampaignId()"
+        >
+          <span>{{ c.name }}</span>
+          <span class="text-gray-400">{{ c.status }}</span>
+        </div>
+      }
+    </div>
+  }-->
+
+  <hr class="border-white/30" />
+
+  <!-- 顯示currentCampaign的狀態 -->
+  @if (ctrl.currentCampaign(); as c) {
+    <div class="flex flex-col gap-0.5 text-xs">
+      <span class="text-gray-400 font-semibold">Current Campaign:</span>
+      <span>id: <span class="text-white">{{ c.id }}</span></span>
+      <span>name: <span class="text-white">{{ c.name }}</span></span>
+      <span>type: <span class="text-yellow-300">{{ c.type }}</span></span>
+      <span>status: <span class="text-yellow-300">{{ c.status }}</span></span>
+      <span>displayType: <span class="text-white">{{ c.displayType }}</span></span>
+      <span>balance: <span class="text-green-300">{{ c.balance }}</span></span>
+      <span>totalAmount: <span class="text-white">{{ c.totalAmount }}</span></span>
+      <span>progress: <span class="text-white">{{ c.progressCurrent }} / {{ c.progressTotal }} (rem: {{ c.progressRemaining }})</span></span>
+      <!-- campaign time details -->
+      <hr class="border-white/30" />
+      <span>beginTime: <span class="text-white">{{ c.beginTime| date:'yyyy-MM-dd HH:mm:ss' }}</span></span>
+      <span>endTime: <span class="text-white">{{ c.endTime| date:'yyyy-MM-dd HH:mm:ss' }}</span></span>
+      <span>lastBetTime: <span class="text-white">{{ c.lastBetTime| date:'yyyy-MM-dd HH:mm:ss' }}</span></span>
+      <hr class="border-white/30" />
+      @if (c.type === 'freeSpins') {
+        <span>spinBet: <span class="text-white">{{ c.spinBet }}</span></span>
+        <span>spinCount: <span class="text-white">{{ c.spinCount }}</span></span>
+      }
+      @if (c.condition) {
+        <span class="text-gray-400 mt-0.5">condition:</span>
+        @if (c.condition.betCount) {
+          <span class="pl-2">betCount: {{ c.condition.betCount.current }} / {{ c.condition.betCount.target }}</span>
+        }
+        @if (c.condition.turnover) {
+          <span class="pl-2">turnover: {{ c.condition.turnover.current }} / {{ c.condition.turnover.target }}</span>
+        }
+      }
+      @if (c.withdrawal) {
+        <span class="text-gray-400 mt-0.5">withdrawal:</span>
+        <span class="pl-2">turnover: {{ c.withdrawal.turnover }} / {{ c.withdrawal.turnoverThreshold }}</span>
+        <span class="pl-2">balance threshold: {{ c.withdrawal.balanceThreshold }}</span>
+        <span class="pl-2">limit: {{ c.withdrawal.limit }}</span>
+        <span class="pl-2">amount: {{ c.withdrawal.amount }}</span>
+      }
+      @if (selectedGroup()) {
+        <!-- campaign group details -->
+        <hr class="border-white/30" />
+        <span class="text-gray-400 font-semibold">Current Campaign Group:</span>
+        <span>id: <span class="text-white">{{ selectedGroup()?.id }}</span></span>
+        <span>title: <span class="text-white">{{ selectedGroup()?.title }}</span></span>
+        <span>description: <span class="text-white">{{ selectedGroup()?.description }}</span></span>
+        <span>endTime: <span class="text-white">{{ selectedGroup()?.endTime | date:'yyyy-MM-dd HH:mm:ss' }}</span></span>
+        <!-- Banner Image-->
+        <img [src]="selectedGroup()?.image" alt="Campaign Group Banner" class="w-full rounded" />
+      }
+    </div>
+  } @else {
+    <span class="text-xs text-gray-500">(no campaign selected)</span>
+  }
+
+  <hr class="border-white/30" />
+
+  <div class="flex flex-col gap-1">
+    <button (click)="onCleanClickedGroups()" class="p-1 text-xs bg-red-500 rounded hover:bg-red-600">Clean Clicked Groups</button>
+    <button (click)="onCleanCampaignMessageShown()" class="p-1 text-xs bg-red-500 rounded hover:bg-red-600">Clean Campaign Message Shown</button>
+  </div>
+
+  <hr class="border-white/30" />
+
+</div>
+

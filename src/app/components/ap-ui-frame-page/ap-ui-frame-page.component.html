@@ -1,0 +1,41 @@
+<div
+  class="relative flex size-full popup-overlay justify-center items-center "
+>
+  <div
+    class="relative size-full bg-zinc-800 border-zinc-500 lg:border-2 lg:rounded-xl lg:shadow-xl lg:max-w-5xl lg:max-h-[50rem] transition-all"
+  >
+    <div
+      class="absolute w-full flex items-center justify-center h-16 lg:rounded-t-xl bg-zinc-900"
+    >
+      <h1 class="uppercase">{{ header() }}</h1>
+    </div>
+
+    <ap-button
+      class="absolute left-4 top-4"
+      [size]="'small'"
+      [icon]="'back-2-line'"
+      [variant]="'outlined-rounded'"
+      [accentColor]="'zinc'"
+      [hidden]="!enableBack()"
+      [attr.data-testid]="id() + '-window-back'"
+      (click)="back.emit()"
+    />
+
+    <ap-button
+      class="absolute right-4 top-4"
+      [size]="'small'"
+      [icon]="'x-mark'"
+      [variant]="'outlined-rounded'"
+      [accentColor]="'zinc'"
+      [hidden]="!enableClose()"
+      [attr.data-testid]="id() + '-window-close'"
+      (click)="close.emit()"
+    />
+
+    <div
+      class="absolute w-full top-16 bottom-0 lg:rounded-b-xl overflow-hidden"
+    >
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

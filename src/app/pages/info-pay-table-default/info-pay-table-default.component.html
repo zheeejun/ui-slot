@@ -1,0 +1,34 @@
+<div class="page-container">
+  <div id="symbols-section" class="page-content">
+    @for (entry of info.paytableEntries(); track $index) {
+      @switch (entry.category) {
+        @case ("title") {
+          <section [ngClass]="positionClass(entry.position, true)">
+            <h3 class="text-yellow-200">{{ entry.content }}</h3>
+          </section>
+        }
+        @case ("subtitle") {
+          <section [ngClass]="positionClass(entry.position)">
+            <h4>{{ entry.content }}</h4>
+          </section>
+        }
+        @case ("image") {
+          <section [ngClass]="positionClass(entry.position)">
+            <img
+              [src]="info.getImageUrl(entry.content) + `?v=${version()}`"
+              [alt]="entry.content"
+              class="mx-auto"
+            />
+          </section>
+        }
+        @case ("content") {
+          <section [ngClass]="positionClass(entry.position)">
+            <ul class="list-space">
+              <li>{{ entry.content }}</li>
+            </ul>
+          </section>
+        }
+      }
+    }
+  </div>
+</div>

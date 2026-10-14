@@ -1,0 +1,26 @@
+<div
+  class="relative inline-flex items-center justify-center hover-scale cursor-pointer"
+  (click)="openLink()"
+>
+  <div class="promo-code-ring rounded-full">
+    <div
+      class="bg-[radial-gradient(circle,_#FFF8DC_0%,_#F3D992_40%,_#BD9A4B_100%)"
+      [class]="
+        backgroundColor() +
+        ' rounded-full p-3 w-' +
+        size() +
+        ' h-' +
+        size() +
+        ' flex items-center justify-center'
+      "
+    >
+      <div class="w-full h-full rounded-sm relative overflow-hidden">
+        <img
+          src="assets/images/img_qrcode_ad.png"
+          alt="QR Code"
+          class="w-full h-full object-scale-down"
+        />
+      </div>
+    </div>
+  </div>
+</div>

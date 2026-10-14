@@ -1,0 +1,41 @@
+<div class="grid grid-cols-18 gap-2 items-end">
+  <ap-input-box
+    class="col-span-9 min-w-0"
+    type="number"
+    [accentColor]="'slate'"
+    [label]="inputLabel()"
+    [currencyImage]="currencyImage()"
+    [value]="betString()"
+    [disabled]="computedDisabled()"
+    [step]="interval()"
+    (blur)="onBlur($event)"
+    (increase)="onIncreased($event)"
+    (decrease)="onDecreased($event)"
+    (onInput)="onInputChanged($event)"
+  />
+  <div
+    class="col-span-9 grid grid-cols-[max-content_max-content_minmax(0,1fr)] gap-1.5"
+  >
+    <ap-button
+      class="[&>button]:px-2.5 [&>button_.ap-button-label]:whitespace-nowrap"
+      [label]="halfLabel()"
+      accentColor="slate"
+      [disabled]="computedDisabled()"
+      (clicked)="onHalfBet()"
+    />
+    <ap-button
+      class="[&>button]:px-2.5 [&>button_.ap-button-label]:whitespace-nowrap"
+      [label]="doubleLabel()"
+      accentColor="slate"
+      [disabled]="computedDisabled()"
+      (clicked)="onDoubleBet()"
+    />
+    <ap-button
+      class="w-full [&>button]:w-full [&>button_.ap-button-label]:whitespace-nowrap"
+      [label]="maxLabel()"
+      accentColor="slate"
+      [disabled]="computedDisabled()"
+      (clicked)="onMaxBet()"
+    />
+  </div>
+</div>

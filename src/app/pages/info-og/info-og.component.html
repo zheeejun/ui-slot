@@ -1,0 +1,54 @@
+<ap-ui-frame-page
+  [header]="header()"
+  (close)="close.emit()"
+>
+  <div class="relative z-sticky flex h-full flex-col">
+    <ap-tab-menu-text
+      [tabs]="tabs()"
+      [selectedTab]="activedTab()"
+      [accentColor]="'slate'"
+      (tabChange)="changeTab($event)"
+    />
+    <div class="min-h-0 flex-1 overflow-y-auto pt-12">
+      @if (activedTab() === "Feature") {
+        <div class="page-container">
+          <div class="page-content">
+            @for (item of featureItems(); track item.descriptionKey) {
+              <section class="px-4">
+                <ul class="list-space list-none text-slate-400">
+                  <li>
+                    {{ getFeatureDescription(item) }}
+                  </li>
+                </ul>
+              </section>
+            }
+          </div>
+        </div>
+      } @else if (activedTab() === "Guide") {
+        <div class="page-container">
+          <div class="page-content">
+            @for (item of guideItems(); track item.titleKey) {
+              <ap-info-guide-og
+                class="pointer-events-none"
+                [image]="item.imageType"
+                [currencyImage]="currencyImage()"
+                [title]="item.titleKey | appI18n: item.titleFallback"
+                [getItem1]="item.item1Key | appI18n: item.item1Fallback"
+                [getItem2]="
+                  item.item2Key
+                    ? (item.item2Key | appI18n: item.item2Fallback)
+                    : ''
+                "
+              />
+            }
+          </div>
+          @if (gameVersion()) {
+            <div class="mt-4 block text-center text-xs text-zinc-400">
+              {{ gameVersion() }}
+            </div>
+          }
+        </div>
+      }
+    </div>
+  </div>
+</ap-ui-frame-page>

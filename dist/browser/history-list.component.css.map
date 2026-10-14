@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/pages/history-list/history-list.component.css"],
+  "sourcesContent": [".history-list-calendar {\n  left: 50%;\n  transform: translateX(-50%);\n}\n\n@media (min-width: 640px) {\n  .history-list-calendar {\n    left: 5rem;\n    transform: none;\n  }\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,QAAA;AACA,aAAA,WAAA;AACF;AAEA,OAAA,CAAA,SAAA,EAAA;AACE,GANF;AAOI,UAAA;AACA,eAAA;AACF;AACF;",
+  "names": []
+}

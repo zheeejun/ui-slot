@@ -1,0 +1,39 @@
+<div
+  class="play-mode-gradient inline-flex select-none items-center justify-center gap-2 px-2 py-1"
+>
+  <h3
+    class="flex items-center justify-center text-center font-bold leading-none text-stroke break-normal tracking-wide"
+  >
+    {{ label() }}
+  </h3>
+
+  <div class="flex space-x-2">
+    @if (showIcon()) {
+      <button
+        class="inline-flex cursor-pointer items-center justify-center p-0"
+        type="button"
+        aria-label="Music"
+        (click)="isMusicPressed.set(!isMusicPressed()); enableMusicSound.emit()"
+      >
+        <ap-icon-music-circle 
+          class="inline-flex items-center justify-center size-8"
+          [variant]="isMusicPressed() ? 'pressed' : 'default'"
+        />
+      </button>
+    }
+
+    @if (showCloseButton()) {
+      <button
+        class="inline-flex cursor-pointer items-center justify-center p-0"
+        type="button"
+        aria-label="Close"
+        (click)="close.emit()"
+      >
+        <ap-icon-close-circle
+          class="inline-flex items-center justify-center size-8"
+          variant="default"
+        />
+      </button>
+    }
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<div
+  class="relative flex w-full h-16 items-center justify-center select-none font-anton transition-all"
+  [ngClass]="{ 'scale-250 opacity-0 duration-500': animation() === 'out' }"
+>
+  <!-- Background bar -->
+  <div
+    class="absolute w-full h-full bg-linear-to-r from-zinc-900/30 via-zinc-900/95 to-zinc-900/30 transition-opacity"
+    [ngClass]="{
+      'animate-fade animate-once animate-duration-200': animation() === 'in',
+    }"
+  ></div>
+
+  <!-- Text -->
+  <div
+    class="absolute inset-0 flex items-center justify-center text-center text-4xl tracking-[.05em] uppercase transition-all drop-shadow-lg"
+    [ngClass]="{
+      'animate-jump-in animate-ease-in-out animate-once duration-500 scale-120':
+        animation() === 'in',
+      'text-yellow-300 font-anton': accentColor() === 'yellow',
+      'text-purple-400 font-anton': accentColor() === 'purple',
+    }"
+  >
+    {{ message() }}
+  </div>
+</div>

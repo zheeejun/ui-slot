@@ -1,0 +1,92 @@
+<div
+  class="relative flex h-72 w-60 flex-col rounded-xl bg-white"
+  (click)="closeInfoModal()"
+>
+  <!-- Info icon + popup -->
+  <div class="absolute top-1 right-1 z-popover">
+    <ap-icon
+      [name]="'exclamation-circle'"
+      appPointerDownSound
+      data-no-click-sound
+      class="size-6 text-zinc-400 hover:text-zinc-500 cursor-pointer color-transition"
+      (click)="openInfoModal($event)"
+    />
+    @if (showInfoModal()) {
+      <div
+        class="absolute right-1 top-full w-40 border-info rounded-lg bg-white p-2 shadow-md z-popover fade-out"
+        (click)="$event.stopPropagation()"
+      >
+        <h6 class="text-left text-zinc-600">{{ content() }}</h6>
+      </div>
+    }
+  </div>
+
+  <!-- Content area -->
+  <div class="flex flex-1 flex-col px-4 text-center">
+    <div class="flex flex-1 flex-col">
+      @if (image()) {
+        <img
+          [src]="image()"
+          class="mx-auto size-28"
+          style="transform: translateY(-50%)"
+        />
+      } @else {
+        <ap-icon-rocket
+          class="mx-auto block size-28"
+          style="transform: translateY(-50%)"
+        />
+      }
+      <div
+        class="-mt-10 flex min-h-12 items-center justify-center text-zinc-900"
+      >
+        <h2 class="line-clamp-2 leading-tight">{{ title() }}</h2>
+      </div>
+
+      <div
+        class="mt-2 min-h-8 overflow-hidden font-semibold text-zinc-800"
+        [ngClass]="{
+          'text-lg': isPriceLongMobile(price()),
+          'text-xl': !isPriceLongMobile(price()),
+          'sm:text-xl': isPriceLongDesktop(price()),
+          'sm:text-2xl': !isPriceLongDesktop(price()),
+        }"
+      >
+        {{ price() | moneyText }}
+        <time class="text-zinc-500">/{{ unitText() }}</time>
+      </div>
+    </div>
+    <div class="mx-auto mb-6 mt-2 flex items-center justify-center">
+      @if (isSloganLong()) {
+        <h5 class="italic text-zinc-500 break-all line-clamp-2">{{ slogan() }}</h5>
+      } @else {
+        <h3 class="italic text-zinc-500 break-keep line-clamp-2">{{ slogan() }}</h3>
+      }
+    </div>
+  </div>
+
+  <!-- Toggle button -->
+  <button
+    (click)="onButtonClick()"
+    [disabled]="disabled()"
+    class="w-full flex items-center justify-center space-x-2 px-4 py-2 rounded-b-xl transition-colors cursor-pointer"
+    [class.bg-blue-600]="activated() && !disabled()"
+    [class.hover:bg-blue-500]="activated() && !disabled()"
+    [class.bg-zinc-500]="!activated() && !disabled()"
+    [class.hover:bg-zinc-400]="!activated() && !disabled()"
+    [class.bg-zinc-400]="disabled()"
+    [class.cursor-not-allowed]="disabled()"
+  >
+    <h2 class="text-white uppercase">{{ buttonText() }}</h2>
+    <span
+      class="chance-toggle-track relative h-7 w-15 rounded-full color-transition shrink-0"
+      [class.chance-toggle-track-active]="activated()"
+      [class.chance-toggle-track-inactive]="!activated()"
+    >
+      <div
+        class="chance-toggle-knob absolute left-1 h-5.5 w-5.5 rounded-full bg-white shadow color-transition"
+        [class.chance-toggle-knob-active]="activated()"
+        [class.chance-toggle-knob-inactive]="!activated()"
+      ></div>
+    </span>
+  </button>
+</div>

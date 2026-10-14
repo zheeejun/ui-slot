@@ -1,0 +1,24 @@
+@layer utilities {
+  /* Text Shadow */
+  .text-stroke-black {
+    color: oklch(96.7% 0.001 286.375);
+    text-shadow:
+      1px 1px 1px rgb(24, 24, 27),
+      -1px 1px 1px rgb(24, 24, 27),
+      1px -1px 1px rgb(24, 24, 27),
+      -1px -1px 1px rgb(24, 24, 27);
+  }
+
+  .stroke-black {
+    text-shadow:
+      1px 1px 1px rgba(39, 26, 18, 0.96),
+      -1px 1px 1px rgba(39, 26, 18, 0.96),
+      1px -1px 1px rgba(39, 26, 18, 0.96),
+      -1px -1px 1px rgba(39, 26, 18, 0.96);
+  }
+
+  /* Overlay */
+  .popup-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}

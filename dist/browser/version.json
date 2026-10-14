@@ -1,0 +1,21 @@
+{
+  "version": "1.0.98",
+  "time": "2026-03-17T05:28:42.739Z",
+  "branch": "master",
+  "sha": "13e3c1bcc089be4ed22ac0f5212d05b38bba4f4f",
+  "BuildMode": "Debug",
+  "submodules": [
+    {
+      "name": "ap-components-lib",
+      "path": "src/ap-components-lib",
+      "branch": "master",
+      "sha": "2d6ed0ef5e164499afe141e9e9a042ff6f6b0fb2"
+    },
+    {
+      "name": "chiikawa",
+      "path": "src/chiikawa",
+      "branch": "remotes/origin/HEAD-2-g4acdd215",
+      "sha": "4acdd2156dbe015afca2e068ecbc044bf185de1d"
+    }
+  ]
+}

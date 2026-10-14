@@ -1,0 +1,10 @@
+@layer utilities {
+  /* Page Layout */
+  .page-container {
+    @apply flex size-full flex-col overflow-y-auto bg-zinc-900 p-4;
+  }
+
+  .page-content {
+    @apply mx-auto flex max-w-xl flex-col gap-4;
+  }
+}

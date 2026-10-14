@@ -1,0 +1,20 @@
+
+anim_led.png
+size: 256,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/light
+  rotate: false
+  xy: 79, 3
+  size: 68, 79
+  orig: 80, 80
+  offset: 5, 1
+  index: -1
+img/star
+  rotate: true
+  xy: 2, 2
+  size: 80, 75
+  orig: 80, 80
+  offset: 0, 0
+  index: -1

@@ -1,0 +1,234 @@
+<img
+  [src]="historyDetailImage()"
+  class="shrink-0 mx-auto sm:size-28 size-24 object-cover mb-4"
+/>
+<div class="flex w-full flex-col gap-4 lg:flex-row overflow-y-auto">
+  <!-- Game History -->
+  <div
+    [class]="
+      'w-full flex-1 space-y-4 rounded-xl p-4 ' +
+      (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+    " style="border: 1px solid #3f3f46;"
+  >
+    <div class="flex space-x-2 items-center text-slate-300">
+      <ap-icon-chicken class="info-icon" />
+      <h3>{{ getGameTitle() }}</h3>
+    </div>
+    <ap-og-input
+      [label]="'og_guide_4' | appI18n: 'Difficulty'"
+      [currencyImage]="false"
+      class="pointer-events-none"
+      type="game"
+      [value]="difficultyOptionLabel()"
+      [disabled]="true"
+    />
+    <ap-og-input
+      type="serverSeed"
+      [currencyImage]="false"
+      [label]="
+        appI18n.gameStr('history_event_0') ??
+        appI18n.instant('history_event_0', 'Step Number')
+      "
+      [value]="stepNumberText()"
+      [disabled]="true"
+    />
+    <ap-og-input
+      type="serverSeed"
+      [currencyImage]="false"
+      [label]="
+        appI18n.gameStr('history_event_1') ??
+        appI18n.instant('history_event_1', 'Win Multiplier')
+      "
+      [value]="winMultiplierText()"
+      [disabled]="true"
+    />
+    <ap-og-input
+      type="serverSeed"
+      [currencyImage]="false"
+      [label]="
+        appI18n.gameStr('history_event_2') ??
+        appI18n.instant('history_event_2', 'Bonus Point')
+      "
+      [value]="bonusWheelPositionText()"
+      [disabled]="true"
+    />
+    <ap-og-input
+      type="serverSeed"
+      [currencyImage]="false"
+      [label]="
+        appI18n.gameStr('history_event_3') ??
+        appI18n.instant('history_event_3', 'Bonus Multiplier')
+      "
+      [value]="bonusRateText()"
+      [disabled]="true"
+    />
+    <ap-og-input
+      type="serverSeed"
+      [currencyImage]="false"
+      [label]="
+        appI18n.gameStr('history_event_4') ??
+        appI18n.instant('history_event_4', 'Death Point')
+      "
+      [value]="deathPointText()"
+      [disabled]="true"
+    />
+    <ap-og-input
+      type="serverSeed"
+      [currencyImage]="false"
+      [label]="
+        appI18n.gameStr('history_event_5') ??
+        appI18n.instant('history_event_5', 'Max Multiplier')
+      "
+      [value]="maxMultiplierText()"
+      [disabled]="true"
+    />
+  </div>
+  <!-- 公平性驗證 -->
+  <div
+    [class]="
+      'w-full flex-1 space-y-4 rounded-xl p-4 ' +
+      (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+    "  style="border: 1px solid #3f3f46;"
+  >
+    <div class="flex space-x-2 items-center text-slate-300">
+      <ap-icon name="scale" class="info-icon" />
+      <h3>{{ "og_fair_hisTitle" | appI18n: "Provable Fairness" }}</h3>
+    </div>
+
+    <div class="flex gap-2 items-end">
+      <ap-input-box
+        class="min-w-0 flex-1"
+        [disabled]="true"
+        [label]="'og_fair_serverSeed' | appI18n: 'Server Seed'"
+        [placeholder]="'og_fair_changeSeedInfo' | appI18n: 'Seed hasn’t been changed yet.'"
+        [value]="gameServerSeedText()"
+      />
+      @if (validServerSeed()) {
+        <div class="relative inline-flex">
+          <div
+            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none"
+          >
+            <ap-toast
+              #serverSeedToast
+              [message]="copyToastMessage()"
+              accentColor="slate"
+            />
+          </div>
+          <ap-button
+            [icon]="'copy'"
+            accentColor="slate"
+            (clicked)="clickServerSeedCopy($event)"
+          />
+        </div>
+      }
+    </div>
+
+    <div class="flex gap-2 items-end">
+      <ap-input-box
+        class="min-w-0 flex-1"
+        [disabled]="true"
+        [label]="
+          'og_fair_his_serverSeedHashed' | appI18n: 'Server Seed(Hashed)'
+        "
+        [value]="gameServerSeedHashedText()"
+      />
+      <div class="relative inline-flex">
+        <div
+          class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none"
+        >
+          <ap-toast
+            #serverSeedHashToast
+            [message]="copyToastMessage()"
+            accentColor="slate"
+          />
+        </div>
+        <ap-button
+          [icon]="'copy'"
+          accentColor="slate"
+          (clicked)="clickServerSeedHashCopy($event)"
+        />
+      </div>
+    </div>
+    <div class="flex gap-2 items-end">
+      <ap-input-box
+        class="min-w-0 flex-1"
+        [disabled]="true"
+        [label]="'og_fair_clientSeed' | appI18n: 'Client Seed'"
+        [value]="gameClientSeedText()"
+      />
+      <div class="relative inline-flex">
+        <div
+          class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none"
+        >
+          <ap-toast
+            #clientSeedToast
+            [message]="copyToastMessage()"
+            accentColor="slate"
+          />
+        </div>
+        <ap-button
+          [icon]="'copy'"
+          accentColor="slate"
+          (clicked)="clickClientSeedCopy($event)"
+        />
+      </div>
+    </div>
+    <div class="flex gap-2 items-end">
+      <ap-input-box
+        class="min-w-0 flex-1"
+        [disabled]="true"
+        [label]="'og_fair_nonce' | appI18n: 'Nonce'"
+        [value]="gameNonceText()"
+      />
+      <div class="relative inline-flex">
+        <div
+          class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 pointer-events-none"
+        >
+          <ap-toast
+            #nonceToast
+            [message]="copyToastMessage()"
+            variant="origin"
+          />
+        </div>
+        <ap-button
+          [icon]="'copy'"
+          accentColor="slate"
+          (clicked)="clickNonceCopy($event)"
+        />
+      </div>
+    </div>
+    @if (enableProvableLink()) {
+      <div class="flex-col flex space-y-2 pt-4">
+        @if (validServerSeed()) {
+          <button
+            class="mx-auto cursor-pointer text-zinc-400 underline"
+            (click)="clickVerify()"
+          >
+            {{
+              "og_fair_verifyBet"
+                | appI18n: "Verify Bet"
+            }}
+          </button>        
+        }
+        @else {
+          <button
+            class="mx-auto cursor-pointer text-zinc-400 underline"
+            (click)="clickSeed()"
+          >
+            {{
+              "og_fair_rotateInfo"
+                | appI18n: "Change your seed pairings to verify this bet. "
+            }}
+          </button>
+        }
+
+        <button
+          class="mx-auto cursor-pointer text-zinc-400 underline"
+          (click)="clickProvable()"
+        >
+          {{ "og_fair_viewInfo" | appI18n: "What is Provable Fairness?" }}
+        </button>
+      </div>
+    }
+  </div>
+</div>

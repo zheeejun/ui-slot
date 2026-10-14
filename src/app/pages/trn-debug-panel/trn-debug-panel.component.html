@@ -1,0 +1,68 @@
+
+<div
+  class="relative w-xs flex flex-col gap-1 p-2 text-white bg-black/50 rounded-xl text-sm"
+>
+  <div class="flex items-center gap-2 text-xs">
+    <ap-toggle-switch  [checked]="trn.debugForceEnable()" (checkedChange)="trn.debugForceEnable.set($event)"/>
+    Force Enabled
+  </div>
+  <ap-select
+    [options]="trnStatusOptions"
+    (onSelect)="togglePage($event)"
+  >
+  </ap-select>
+  <div class="flex items-center">
+    <ap-input-box
+      placeholder="Action"
+      [value]="customAction()"
+      (onInput)="customAction.set($event)"
+    />
+    <ap-button
+      size="x-small"
+      label="Custom Action"
+      (clicked)="sendCustomAction(customAction())"
+    />
+  </div>
+  <ap-button size="x-small" label="Event List" (clicked)="clickEventList()" />
+  <ap-select
+    [options]="debugTrnIdOptions()"
+    (onSelect)="debugTrnId.set($event)"
+  />
+  <ap-button size="x-small" label="Join Event" (clicked)="sendJoinEvent()" />
+  <div class="flex gap-2 items-center text-xs">
+    Page
+    <ap-input-box class="w-12" (onInput)="inputPage.set(+$event)"/>
+    Size
+    <ap-input-box class="w-12"  (onInput)="inputSize.set(+$event)"/>
+    <ap-button size="x-small" label="Leader Board" (clicked)="sendEvnetLeaderboard()" />
+  </div>
+  <div class="flex gap-2 items-center text-xs">
+    Limit
+    <ap-input-box class="w-12" (onInput)="inputLimit.set(+$event)"/>
+    Offset
+    <ap-input-box class="w-12"  (onInput)="inputOffset.set(+$event)"/>
+    <ap-button size="x-small" label="Play History" (clicked)="sendPlayerHistory()" />
+  </div>
+  <div class="flex items-center gap-2 text-xs">
+    Balance: {{ spinResultBalance() }}
+    <ap-button size="x-small" label="Tournament Spin" (clicked)="sendTrnSpin()"></ap-button>
+  </div>
+  @for (item of signalList; track item.label) {
+    <div class="flex items-center gap-2 text-xs">
+      <ap-button
+        size="x-small"
+        label="Toggle"
+        (clicked)="toggleSignal(item.key)"
+      />
+      {{ item.label }}
+    </div>
+  }
+  <div class="flex items-center gap-2">
+    <ap-button size="x-small" label="Generate List" (clicked)="generateRoomState()"></ap-button>
+  </div>
+  @if (isDebugLoading()) {
+    <div class="absolute inset-0 bg-black/50">
+      <ap-loading-overlay />
+    </div>
+  }
+</div>

@@ -1,0 +1,188 @@
+
+anim_bgfx.png
+size: 1024,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GL (1485)
+  rotate: true
+  xy: 126, 2
+  size: 118, 117
+  orig: 128, 128
+  offset: 9, 3
+  index: -1
+GL (42)
+  rotate: true
+  xy: 570, 38
+  size: 52, 47
+  orig: 64, 64
+  offset: 5, 11
+  index: -1
+GL (806)
+  rotate: true
+  xy: 2, 2
+  size: 118, 122
+  orig: 128, 128
+  offset: 6, 0
+  index: -1
+GL (911)
+  rotate: false
+  xy: 740, 129
+  size: 124, 124
+  orig: 128, 128
+  offset: 2, 2
+  index: -1
+out_glow_1
+  rotate: false
+  xy: 696, 69
+  size: 51, 51
+  orig: 64, 64
+  offset: 7, 6
+  index: -1
+par_star_big
+  rotate: true
+  xy: 470, 19
+  size: 101, 98
+  orig: 128, 128
+  offset: 13, 18
+  index: -1
+particle_big_paper
+  rotate: false
+  xy: 700, 19
+  size: 22, 28
+  orig: 24, 30
+  offset: 1, 0
+  index: -1
+particle_paper
+  rotate: true
+  xy: 371, 16
+  size: 104, 97
+  orig: 128, 128
+  offset: 12, 20
+  index: -1
+rib_b_0
+  rotate: false
+  xy: 619, 57
+  size: 45, 33
+  orig: 45, 33
+  offset: 0, 0
+  index: -1
+rib_b_1
+  rotate: true
+  xy: 666, 43
+  size: 47, 18
+  orig: 47, 18
+  offset: 0, 0
+  index: -1
+rib_b_base
+  rotate: false
+  xy: 371, 3
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+rib_r_0
+  rotate: false
+  xy: 619, 22
+  size: 45, 33
+  orig: 45, 33
+  offset: 0, 0
+  index: -1
+rib_r_1
+  rotate: false
+  xy: 617, 2
+  size: 47, 18
+  orig: 47, 18
+  offset: 0, 0
+  index: -1
+rib_r_base
+  rotate: false
+  xy: 387, 3
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+rib_y_0
+  rotate: false
+  xy: 570, 3
+  size: 45, 33
+  orig: 45, 33
+  offset: 0, 0
+  index: -1
+rib_y_1
+  rotate: false
+  xy: 686, 49
+  size: 47, 18
+  orig: 47, 18
+  offset: 0, 0
+  index: -1
+rib_y_base
+  rotate: false
+  xy: 403, 3
+  size: 14, 11
+  orig: 14, 11
+  offset: 0, 0
+  index: -1
+shadow
+  rotate: false
+  xy: 245, 9
+  size: 124, 111
+  orig: 131, 134
+  offset: 4, 2
+  index: -1
+star_blue
+  rotate: true
+  xy: 2, 122
+  size: 131, 121
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+star_blue_broken
+  rotate: true
+  xy: 125, 122
+  size: 131, 121
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+star_cover
+  rotate: false
+  xy: 666, 9
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1
+star_red
+  rotate: true
+  xy: 248, 122
+  size: 131, 121
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+star_red_broken
+  rotate: true
+  xy: 371, 122
+  size: 131, 121
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+star_yellow
+  rotate: true
+  xy: 494, 122
+  size: 131, 121
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+star_yellow_broken
+  rotate: true
+  xy: 617, 122
+  size: 131, 121
+  orig: 131, 134
+  offset: 0, 0
+  index: -1
+traj
+  rotate: true
+  xy: 570, 92
+  size: 28, 124
+  orig: 48, 128
+  offset: 10, 1
+  index: -1

@@ -1,0 +1,7 @@
+@for (c of cards; track c.title) {
+<h2 class="text-orange-400">{{ c.title }}</h2>
+<ap-ui-card-dev align="center">
+  <!-- 動態插入對應的卡片元件 -->
+  <ng-container [ngComponentOutlet]="c.component"／></ng-container>
+</ap-ui-card-dev>
+}

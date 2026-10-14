@@ -1,0 +1,94 @@
+<div class="relative h-full flex-col p-4 space-y-4 overflow-auto">
+  <ap-toast
+    #copyToast
+    class="fixed z-toast -translate-x-1/2 -translate-y-full pb-2"
+    [style.left.px]="toastPosition().left"
+    [style.top.px]="toastPosition().top"
+    [accentColor]="'slate'"
+    [message]="copyToastMessage()"
+  />
+  <div class="flex-col flex space-y-2">
+    <ap-og-input
+      inputType="text"
+      [currencyImage]="false"
+      [maxLength]="64"
+      [label]="
+        'og_fair_activeClientSeed' | appI18n: 'Active Client Seed'
+      "
+      [placeholder]="activeClientSeed()"
+      [disabled]="true"
+      [actionIcon]="'copy'"
+      [actionValue]="activeClientSeed()"
+      (click)="positionToastAtButton($event)"
+      (pressed)="copyTransaction($event); copyToast.show()"
+    />
+    <ap-og-input
+      inputType="text"
+      [currencyImage]="false"
+      [maxLength]="64"
+      [label]="
+        'og_fair_activeServerSeed'
+          | appI18n: 'Active Server Seed(Hashed)'
+      "
+      [placeholder]="activeServerSeedHash()"
+      [disabled]="true"
+      [actionIcon]="'copy'"
+      [actionValue]="activeServerSeedHash()"
+      (click)="positionToastAtButton($event)"
+      (pressed)="copyTransaction($event); copyToast.show()"
+    />
+    <ap-og-input
+      inputType="text"
+      [currencyImage]="false"
+      [maxLength]="64"
+      [label]="
+        'og_fair_totalBets' | appI18n: 'Total bets made with pair'
+      "
+      [placeholder]="activeNonce()"
+      [disabled]="true"
+      [actionIcon]="'copy'"
+      [actionValue]="activeNonce()"
+      (click)="positionToastAtButton($event)"
+      (pressed)="copyTransaction($event); copyToast.show()"
+    />
+  </div>
+  <!-- 更換種子 -->
+  <div class="flex-col space-y-4">
+    <h2 class="text-center text-slate-300">
+      {{
+        appI18n.instant("og_fair_rotateSeed", "Rotate Seed Pair")
+      }}
+    </h2>
+    <div class="flex-col flex space-y-2">
+      <ap-og-input
+        inputType="alnum"
+        [currencyImage]="false"
+        [maxLength]="64"
+        [label]="
+          'og_fair_newClientSeed' | appI18n: 'New Client Seed'
+        "
+        [value]="nextClientSeed()"
+        [disabled]="isLoading()"
+        [actionIcon]="isLoading() ? 'loading' : null"
+        [actionLabel]="isLoading() ? null : 'og_fair_change' | appI18n: 'Change'"
+        [actionDisabled]="invaildClientSeed() || isLoading()"
+        (valueChange)="nextClientSeed.set($event)"
+        (pressed)="clickChangeClientSeed();"
+      />
+      <ap-og-input
+        inputType="alnum"
+        [currencyImage]="false"
+        [maxLength]="64"
+        [label]="
+          'og_fair_nextServerSeed'
+            | appI18n: 'Next Server Seed(Hashed)'
+        "
+        [placeholder]="nextServerSeedHash()"
+        [actionIcon]="'copy'"
+        [actionValue]="nextServerSeedHash()"
+        (click)="positionToastAtButton($event)"
+        (pressed)="copyTransaction($event); copyToast.show()"
+      />
+    </div>
+  </div>
+</div>

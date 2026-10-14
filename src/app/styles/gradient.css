@@ -1,0 +1,88 @@
+@layer utilities {
+  /* Text Gradients */
+  .text-yellow-gradient {
+    background: linear-gradient(180deg, #fde68a 0%, #d09600 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0;
+  }
+
+  .text-purple-gradient {
+    background: linear-gradient(180deg, #d7c3fc 0%, #7457f0 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-stroke: 0;
+  }
+
+  .text-gradient-gold {
+    background: linear-gradient(180deg, #e6d2a5 40%, #8b6e2c 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Background Gradients */
+  .bg-gradient-gold {
+    background: linear-gradient(180deg, #ecd8a3 40%, #bd9a4b 100%);
+  }
+
+  .bg-gradient-yellow {
+    background: linear-gradient(180deg, #E6D2A5 0%, #D4AF37 50%, #8B6E2C 100%);
+  }
+
+  .bg-gradient-purple {
+    background: linear-gradient(180deg, #D8B4FE 0%, #A855F7 40%, #7C3AED 100%);
+  }
+
+  /* Card Frames */
+  .campaign-card-frame {
+    box-sizing: border-box;
+    border: 0.2rem solid transparent;
+    background-color: #27272a;
+    background-image:
+      linear-gradient(#27272a, #27272a),
+      linear-gradient(180deg, #fff085, #d09600);
+    background-origin: padding-box, border-box;
+    background-clip: padding-box, border-box;
+  }
+
+  /* Promo Code Ring */
+  .promo-code-ring {
+    padding: 0.25rem;
+    background: linear-gradient(180deg, #ecd8a3 0%, #ecd8a3 50%, #bd9a4b 100%);
+  }
+
+  /* Divider */
+  .divider-gradient-yellow {
+    height: 0.125rem;
+    background-image: linear-gradient(to right, #27272a 0%, #fbbf24 50%, #27272a 100%);
+  }
+
+  .divider-gradient-slate {
+    height: 0.125rem;
+    background-image: linear-gradient(to right, #27272a 0%, oklch(55.4% 0.046 257.417) 50%, #27272a 100%);
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    background-image: linear-gradient(
+      180deg,
+      #fbbf24 0%,
+      #fbbf24 50%,
+      #fbbf24 100%
+    );
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+    border-radius: 20px;
+  }
+
+  .progress-bar-yellow {
+    background-image: linear-gradient(180deg, #FBBF24 50%, #F08407 100%);
+  }
+
+  .progress-bar-purple {
+    background-image: linear-gradient(180deg, #C084FC 50%, #9333EA 100%);
+  }
+}

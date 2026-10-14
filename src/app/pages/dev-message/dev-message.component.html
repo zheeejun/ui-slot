@@ -1,0 +1,50 @@
+<ap-ui-card-dev id="ap-message" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Message</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="messageCategories"
+        [getCodeSnippet]="getMessageCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-message
+              class="block w-full"
+              [message]="variant.message ?? 'Message'"
+              [variant]="variant.variant ?? 'secondary'"
+              [autoDismiss]="false"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-toast" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Toast</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="toastCategories"
+        [getCodeSnippet]="getToastCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-toast
+              class="block w-full"
+              [message]="variant.message ?? 'Message'"
+              [accentColor]="variant.accentColor ?? 'zinc'"
+              [autoShow]="true"
+              [autoDismiss]="false"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

@@ -1,0 +1,41 @@
+<div class="page-container">
+  <div class="page-content">
+    @for (entry of info.featureEntries(); track $index) {
+      @switch (entry.category) {
+        @case ("title") {
+          <section [ngClass]="positionClass(entry.position)">
+            <h3 class="text-yellow-200">{{ entry.content }}</h3>
+          </section>
+        }
+        @case ("subtitle") {
+          <section [ngClass]="positionClass(entry.position)">
+            <h4>{{ entry.content }}</h4>
+          </section>
+        }
+        @case ("image") {
+          <section [ngClass]="positionClass(entry.position)">
+            <img
+              [src]="info.getImageUrl(entry.content) + `?v=${version()}`"
+              [alt]="entry.content"
+              class="mx-auto"
+            />
+          </section>
+        }
+        @case ("content") {
+          <section [ngClass]="positionClass(entry.position)">
+            <ul class="list-space">
+              <li>{{ entry.content }}</li>
+            </ul>
+          </section>
+        }
+        @case ("buyFeature") {
+          <ap-bf-card-feature
+            class="flex mx-auto pointer-events-none scale-80 mt-6"
+            [card]="buyFeatureCard()"
+            [price]="wallet.multiplyUserBet(buyFeatureCard().rate)"
+          />
+        }
+      }
+    }
+  </div>
+</div>

@@ -1,0 +1,139 @@
+<div
+  [class]="
+    'history-ticket-card relative rounded-xl ' +
+    (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+  " style="border: 1px solid #3f3f46;"
+>
+  <!-- Header: Game Info, Date, Actions -->
+  <div class="px-2 py-2 sm:px-4 sm:py-2 justify-center">
+    <div
+      class="grid gap-2 sm:grid-cols-[minmax(0,1fr)_minmax(0,auto)_minmax(0,1fr)] sm:items-center sm:gap-6"
+    >
+      <div class="min-w-0 text-center sm:text-left">
+        <h5 class="mt-1 truncate font-medium text-zinc-100">
+          {{ displayName() }}{{ roundNumberText() }}
+        </h5>
+      </div>
+      <!-- Mobile -->
+      <div class="min-w-0 text-center sm:justify-self-center">
+        <div class="space-y-1">
+          <div
+            class="inline-flex max-w-full items-center gap-3 px-3 py-1 text-zinc-400"
+          >
+            <button
+              class="flex shrink-0 cursor-pointer items-center justify-center space-x-1 transition-colors border-bottom-zinc"
+              (click)="clickCopyTicket($event)"
+            >
+              <ap-icon name="copy" class="size-4 shrink-0" />
+              <p class="truncate">{{ ticket() }}</p>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Desktop -->
+      <div class="min-w-0 text-center">
+        <div
+          class="history-detail-header-actions mt-1.5 flex flex-wrap items-center sm:justify-end justify-center gap-3"
+        >
+          @if (showRoundSelector()) {
+            <ap-select
+              class="history-detail-round-select w-full max-w-[16rem] sm:w-44 md:w-52"
+              [accentColor]="'yellow'"
+              [disabled]="roundSelectorDisabled()"
+              [options]="roundOptions()"
+              [selected]="currentRound().toString()"
+              (onSelect)="selectRound($event)"
+            />
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Top Bar: Bet, Balance, Win -->
+  <div class="history-ticket-divider"></div>
+  <div class="top-bar-summary grid grid-cols-2 sm:grid-cols-3">
+    <!-- Bet column -->
+    <div
+      [class]="
+        'top-bar-summary-cell flex min-w-0 flex-col items-center justify-start px-2 py-4 text-center sm:px-4 sm:border-b-0 border-r sm:border-r rounded-bl-2xl sm:rounded-bl-2xl ' +
+        (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+      "
+    >
+      <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+        {{ betSummaryTitle() }}
+      </h6>
+      <div
+        class="relative mt-2 flex min-w-0 flex-row items-center justify-start gap-2.5 sm:flex-col sm:gap-1"
+      >
+        <h4 class="font-semibold text-white">
+          {{ bet() | moneyText }}
+        </h4>
+        <h5 class="text-zinc-400">
+          {{ lineBet()! | moneyText }}
+        </h5>
+      </div>
+    </div>
+
+    <!-- Win/Lose column -->
+    <div
+      [class]="
+        'top-bar-summary-cell flex min-w-0 flex-col items-center justify-start px-2 py-4 text-center sm:px-4 sm:border-b-0 sm:border-r ' +
+        (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+      "
+    >
+      <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+        {{ winSummaryTitle() }}
+      </h6>
+      <div
+        class="relative mt-2 flex min-w-0 flex-row items-center justify-center gap-2.5 sm:flex-col sm:gap-1"
+      >
+        <h4
+          class="font-semibold w-full text-center"
+          [ngClass]="isWin() ? 'text-emerald-400' : 'text-white'"
+        >
+          {{ winText() }}
+        </h4>
+        <h4
+          class="invisible absolute opacity-0 pointer-events-none sm:static sm:opacity-100"
+        >
+          {{ winText() }}
+        </h4>
+      </div>
+    </div>
+
+    <!-- Balance column -->
+    <div
+      [class]="
+        'top-bar-summary-cell flex min-w-0 flex-col items-center justify-start px-2 py-4 text-center sm:px-4 sm:border-b-0 col-span-2 border-t sm:col-span-1 sm:border-l sm:border-t-0 sm:border-r-0 sm:border-l-0 rounded-br-2xl rounded-bl-2xl sm:rounded-br-2xl sm:rounded-bl-none ' +
+        (isDetailThemeDark() ? 'bg-zinc-900' : 'bg-zinc-800')
+      "
+    >
+      <h6 class="font-semibold uppercase tracking-wider text-zinc-500">
+        {{ balanceTitle() }}
+      </h6>
+      <div
+        class="relative mt-2 flex min-w-0 flex-row items-center justify-center gap-2.5 sm:flex-col sm:gap-1"
+      >
+        <h4
+          class="font-semibold text-white"
+          [ngClass]="{
+            hidden: balanceNewIsHidden(),
+            'whitespace-nowrap': balanceNewIsLong(),
+          }"
+        >
+          {{ balanceNewText() }}
+        </h4>
+        <h5
+          class="text-zinc-400"
+          [ngClass]="{
+            hidden: balanceOldIsHidden(),
+            'whitespace-nowrap': balanceOldIsLong(),
+          }"
+        >
+          {{ balanceOldText() }}
+        </h5>
+      </div>
+    </div>
+  </div>
+</div>

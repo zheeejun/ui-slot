@@ -1,0 +1,29 @@
+@if (showContent()) {
+  <event-campaign-content />
+} @else if (campaignGroups().length === 0) {
+  <div class="relative page-container flex flex-col justify-center fade-down">
+    <div
+      class="flex flex-col items-center justify-center h-full pointer-events-none"
+    >
+      <div class="flex flex-col items-center">
+        <ap-icon name="gift default" class="image-icon" />
+      </div>
+      <h2 class="italic text-zinc-500">{{ getNoDataText() }}</h2>
+    </div>
+  </div>
+} @else {
+  <div class="page-container fade-down">
+    <div class="flex flex-wrap justify-center p-6 gap-8 sm:space-y-8">
+      @for (group of campaignGroups(); track group.id) {
+        @if (group.visible) {
+          <ap-campaign-card
+            class="hover-scale"
+            [isNew]="checkNew(group.id)"
+            [campaignGroup]="group"
+            (click)="onClickCard(group.id)"
+          />
+        }
+      }
+    </div>
+  </div>
+}

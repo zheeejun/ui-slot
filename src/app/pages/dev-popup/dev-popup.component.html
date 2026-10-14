@@ -1,0 +1,198 @@
+<h1>Popup</h1>
+
+<div class="flex flex-wrap gap-3 mb-6 mt-3">
+  @for (demo of popupDemos; track demo.key) {
+    <ap-button
+      [label]="demo.label"
+      [variant]="activePopup() !== demo.key ? 'outlined' : 'content'"
+      [accentColor]="activePopup() === demo.key ? 'yellow' : 'zinc'"
+      (clicked)="openPopup(demo.key)"
+    />
+  }
+</div>
+
+@if (activePopup() === null) {
+  <div class="rounded-xl border border-zinc-700 bg-zinc-900/60 px-6 py-10 text-center text-zinc-400">
+    Select a popup layout to preview it.
+  </div>
+}
+
+@if (activePopup() !== null) {
+  <div class="fixed inset-0 z-overlay">
+    @if (activePopup() === 'frame-default') {
+      <div class="absolute inset-0 popup-overlay"(click)="closePopup()"></div>
+      <div class="absolute inset-0 grid place-items-center px-4">
+        <ap-ui-frame-popup
+          [header]="'Frame Popup'"
+          [size]="'mobile'"
+          class="w-11/12 md:w-3/4 lg:w-1/2"
+          (close)="closePopup()"
+        >
+          <div class="bg-zinc-800 px-6 py-8 text-center space-y-4">
+            <h3 class="text-zinc-100">Popup body layout preview</h3>
+            <p class="text-zinc-400">This is the base frame used by the popup family.</p>
+            <div class="flex justify-center">
+              <ap-button [label]="'Close'" [accentColor]="'yellow'" (clicked)="closePopup()" />
+            </div>
+          </div>
+        </ap-ui-frame-popup>
+      </div>
+    }
+
+    @if (activePopup() === 'popup-insufficient') {
+      <div class="absolute inset-0 popup-overlay" (click)="closePopup()"></div>
+      <div class="absolute inset-0 grid place-items-center px-4">
+        <ap-ui-frame-popup
+          [header]="'Message'"
+          [size]="'mobile'"
+          class="w-11/12 md:w-3/4 lg:w-1/2"
+          (close)="closePopup()"
+        >
+          <div class="p-4 text-center space-y-4">
+            <ap-icon name="insufficient" class="text-yellow-400 popup-icon mx-auto" />
+            <div class="h-px w-full divider-gradient-yellow"></div>
+            <h4 class="text-zinc-300">Insufficient Balance</h4>
+          </div>
+          <div class="flex justify-center p-6">
+            <ap-button
+              class="w-1/2 [&>button]:w-full"
+              [label]="'Confirm'"
+              [accentColor]="'yellow'"
+              (click)="closePopup()"
+            />
+          </div>
+        </ap-ui-frame-popup>
+      </div>
+    }
+
+    @if (activePopup() === 'popup-reward') {
+      <div class="absolute inset-0 popup-overlay" (click)="closePopup()"></div>
+      <div class="absolute inset-0 grid place-items-center px-4">
+        <ap-ui-frame-popup
+          [header]="'Daily Reward'"
+          [size]="'mobile'"
+          class="w-11/12 md:w-3/4 lg:w-1/2"
+          (close)="closePopup()"
+        >
+          <div class="p-4 text-center space-y-4">
+            <ap-icon name="two-coins" class="text-yellow-400 popup-icon mx-auto" />
+            <div class="h-px w-full divider-gradient-yellow"></div>
+            <div class="font-bold text-gradient-gold text-2xl mt-2">Stand a chance to win Daily Cash Drops!</div>
+            <div class="flex justify-center items-center space-x-1 mt-2">
+              <ap-icon name="star" class="size-3 text-yellow-200" />
+              <ap-icon name="star" class="size-4 text-yellow-200" />
+              <ap-icon name="star" class="size-3 text-yellow-200" />
+            </div>
+            <div class="mt-4">
+              <ap-cashdrop-card-component-countdown />
+              <div class="text-yellow-200 text-xs font-normal mt-1 italic">Event Remaining</div>
+            </div>
+            <ul class="list-none text-left text-md md:text-sm space-y-2 w-64 font-normal text-yellow-200 mt-2 mx-auto">
+              <li>Expiry Date: 2026-06-09 16:46:39</li>
+              <li>Number of prizes: 100</li>
+              <li>Max prize: 100</li>
+              <li>Min Bet: $100,000</li>
+            </ul>
+          </div>
+          <div class="flex justify-center p-6">
+            <ap-button
+              class="w-1/2 [&>button]:w-full"
+              [label]="'Claim Prize'"
+              [accentColor]="'yellow'"
+              (click)="closePopup()"
+            />
+          </div>
+        </ap-ui-frame-popup>
+      </div>
+    }
+
+    @if (activePopup() === 'popup-promo') {
+      <div class="absolute inset-0 popup-overlay" (click)="closePopup()"></div>
+      <div class="absolute inset-0 grid place-items-center px-4">
+        <ap-ui-frame-popup
+          [header]="'Congratulations!'"
+          [size]="'mobile'"
+          class="w-11/12 md:w-3/4 lg:w-1/2"
+          (close)="closePopup()"
+        >
+          <div class="p-4 text-center space-y-4">
+            <ap-icon name="gift" class="text-yellow-400 popup-icon mx-auto" />
+            <div class="h-px w-full divider-gradient-yellow"></div>
+            <h4 class="text-zinc-300">Your promo reward has been added to the account.</h4>
+          </div>
+          <div class="flex justify-center p-6">
+            <ap-button
+              class="w-1/2 [&>button]:w-full"
+              [label]="'OK'"
+              [accentColor]="'yellow'"
+              (click)="closePopup()"
+            />
+          </div>
+        </ap-ui-frame-popup>
+      </div>
+    }
+
+    @if (activePopup() === 'history-replay') {
+      <ap-history-popup-replay (close)="closePopup()" (confirm)="closePopup()" />
+    }
+
+    @if (activePopup() === 'history-replay-end') {
+      <ap-history-popup-replay-end
+        [showWatchAgain]="true"
+        [showCopyLink]="true"
+        [showCloseButton]="true"
+        (watchAgain)="closePopup()"
+        (copyLink)="null"
+        (close)="closePopup()"
+      />
+    }
+
+    @if (activePopup() === 'history-share') {
+      <ap-history-popup-share
+        [header]="'SHARE'"
+        [linkLabel]="'Copy Link'"
+        [item]="mockHistoryItem"
+        [getShareUrl]="getMockShareUrl.bind(this)"
+        (copyLink)="null"
+        (close)="closePopup()"
+      />
+    }
+
+    @if (activePopup() === 'bf-confirm-feature') {
+      <ap-bf-popup-confirm-feature
+        [header]="'Buy Feature'"
+        [card]="mockBuyFeatureCard"
+        [price]="199"
+        [description]="'Click &quot;Confirm&quot; to complete your purchase.'"
+        [confirmText]="'CONFIRM'"
+        [cancelText]="'CANCEL'"
+        (confirm)="closePopup()"
+        (close)="closePopup()"
+      />
+    }
+
+    @if (activePopup() === 'bf-confirm-chance') {
+      <ap-bf-popup-confirm-chance
+        [header]="'Buy Chance'"
+        [card]="mockBuyChanceCard"
+        [price]="99"
+        [description]="'Click &quot;Confirm&quot; to complete your purchase.'"
+        [confirmText]="'CONFIRM'"
+        [cancelText]="'CANCEL'"
+        (confirm)="closePopup()"
+        (close)="closePopup()"
+      />
+    }
+
+    @if (activePopup() === 'bf-play-demo') {
+      <ap-bf-popup-play-demo-confirm
+        [header]="'Play Demo'"
+        [description]="'To begin watching, please confirm if you would like to play.'"
+        [confirmText]="'Confirm'"
+        [cancelText]="'Cancel'"
+        (confirm)="closePopup()"
+        (close)="closePopup()"
+      />
+    }
+  </div>
+}

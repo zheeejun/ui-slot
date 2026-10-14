@@ -1,0 +1,90 @@
+<div
+  class="relative flex w-60 h-72 flex-col rounded-xl bg-white"
+  (click)="closeInfoModal()"
+>
+  @if (image()) {
+    <div
+      class="relative mx-auto h-28 w-28 overflow-hidden"
+      style="transform: translateY(-50%)"
+    >
+      <img
+        [src]="image()"
+        class="absolute inset-0 size-full object-contain"
+      />
+    </div>
+  } @else {
+    <ap-loading-overlay class="absolute" style="transform: translateY(-50%)" />
+  }
+  <!-- Info icon + popup -->
+  <div class="absolute top-1 right-1 z-popover">
+    <ap-icon
+      [name]="'exclamation-circle'"
+      appPointerDownSound
+      data-no-click-sound
+      class="size-6 text-zinc-400 hover:text-zinc-500 cursor-pointer color-transition"
+      (click)="openInfoModal($event)"
+    />
+    @if (showInfoModal()) {
+      <div
+        class="absolute right-1 top-full w-40 rounded-lg border-info bg-white p-2 shadow-md z-popover fade-out"
+        (click)="$event.stopPropagation()"
+      >
+        <h6 class="text-left text-zinc-600">
+          {{ content() }}
+        </h6>
+      </div>
+    }
+  </div>
+
+  <!-- Content area -->
+
+  <div
+    class="absolute inset-x-0 top-[4.5rem] flex flex-1 flex-col px-4 text-center"
+  >
+    <div class="flex flex-1 flex-col">
+      <div class="flex min-h-12 items-center justify-center text-zinc-900">
+        <h2 class="line-clamp-2 leading-tight">{{ title() }}</h2>
+      </div>
+
+      <div
+        class="mt-2 min-h-8 font-semibold text-zinc-800 overflow-hidden"
+        [ngClass]="{
+          'font-bold': showPlayDemo(),
+          'text-lg': isPriceLongMobile(price()),
+          'text-xl': !isPriceLongMobile(price()),
+          'sm:text-xl': isPriceLongDesktop(price()),
+          'sm:text-2xl': !isPriceLongDesktop(price()),
+        }"
+      >
+        {{ price() | moneyText }}
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute inset-x-0 bottom-0 flex flex-col">
+    @if (showPlayDemo()) {
+      <button
+        class="mx-auto mb-6 mt-2 flex items-center justify-center gap-1 whitespace-nowrap border-underline-pink cursor-pointer text-pink-500"
+        (click)="playDemo.emit(0)"
+      >
+        <ap-icon name="play-circle" class="size-6" />
+        <h3 class="italic">
+          {{ playDemoLabel() }}
+        </h3>
+      </button>
+    }
+
+    <button
+      (click)="onButtonClick()"
+      [disabled]="disabled()"
+      class="w-full py-2 rounded-b-xl transition-colors cursor-pointer"
+      [class.bg-pink-600]="!disabled()"
+      [class.hover:bg-pink-500]="!disabled()"
+      [class.bg-zinc-400]="disabled()"
+      [class.text-zinc-200]="disabled()"
+      [class.cursor-not-allowed]="disabled()"
+    >
+      <h2 class="text-white uppercase">{{ buttonText() }}</h2>
+    </button>
+  </div>
+</div>

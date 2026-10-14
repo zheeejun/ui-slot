@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["og-fairness.component.ts"],
+  "sourcesContent": ["\n      :host ::ng-deep ap-ui-frame-popup.provable-actions > div > ap-button:last-of-type {\n        left: 0.75rem;\n        right: auto;\n      }\n    "],
+  "mappings": ";AACM,MAAA,UAAA,iBAAA,CAAA,iBAAA,EAAA,IAAA,EAAA,SAAA;AACE,QAAA;AACA,SAAA;AACF;",
+  "names": []
+}

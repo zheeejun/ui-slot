@@ -1,0 +1,29 @@
+{
+    "version":"1.0",
+    "slot":{
+        "10044":{
+            "assets": {
+                "value": "jk8"
+            },
+            "brand_site": {
+                "JKMAJU142,default": {}
+            }
+        },
+        "10075":{
+            "assets": {
+                "value": "jk8"
+            },
+            "brand_site": {
+                "JKMAJU142,default": {}
+            }
+        },
+        "10083":{
+            "assets": {
+                "value": "jk8"
+            },
+            "brand_site": {
+                "JKMAJU142,default": {}
+            }
+        }
+    }
+}

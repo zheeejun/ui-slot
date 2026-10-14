@@ -1,0 +1,160 @@
+<div class="flex flex-col gap-1">
+  <!-- 遊戲模式切換 -->
+  @if (type() === "modeTab") {
+    <ap-ui-tab-group
+      class="w-full block [&>div]:max-w-none [&>div]:mx-0"
+      [tabs]="tabOptions()"
+      [selectedTab]="selectedTab()"
+      [disabled]="disabled()"
+      accentColor="slate"
+      (tabChange)="tabChange.emit($event)"
+    />
+
+    <!-- 總盈利 -->
+  } @else if (type() === "totalProfit") {
+    <div class="flex flex-col gap-1">
+      <div
+        class="flex items-center justify-start gap-1 text-zinc-700 dark:text-zinc-300"
+      >
+        <div>{{ inputLabel() }}</div>
+        @if (labelSecondary()) {
+          <div class="shrink-0">{{ labelSecondary() }}</div>
+        }
+      </div>
+      <ap-input-box
+        type="number"
+        [accentColor]="'slate'"
+        [disabled]="true"
+        [currencyImage]="currencyImage()"
+        [value]="value()"
+        (onInput)="valueChange.emit($event)"
+      />
+    </div>
+  }
+  <!-- 贏分/輸分時 -->
+  @else if (type() === "onWin" || type() === "onLoss") {
+    <div class="block select-none text-zinc-700 dark:text-zinc-300">
+      {{ inputLabel() }}
+    </div>
+    <div class="flex items-stretch space-x-2">
+      <div class="shrink-0">
+        <div class="inline-flex h-full max-w-full rounded-lg bg-zinc-800">
+          @for (tab of tabOptions(); track tab.id) {
+            <ap-button
+              class="shrink-0 [&>button]:h-full [&>button]:rounded-md"
+              [size]="'small'"
+              [disabled]="disabled()"
+              [class]="
+                selectedTab() === tab.id
+                  ? ''
+                  : '[&>button]:text-zinc-400 [&>button:hover]:bg-zinc-700 [&>button:hover]:text-zinc-200'
+              "
+              [label]="tab.label"
+              [variant]="selectedTab() === tab.id ? 'content' : 'text'"
+              accentColor="slate"
+              (clicked)="selectedTabChange.emit(tab.id)"
+            />
+          }
+        </div>
+      </div>
+      <div
+        class="min-w-0 flex-1 [&>ap-input-box]:block [&>ap-input-box]:h-full"
+      >
+        <ap-input-box
+          type="number"
+          suffix="%"
+          [allowNegative]="true"
+          [value]="value()"
+          [disabled]="isValueDisabled()"
+          accentColor="slate"
+          [min]="inputMin()"
+          [max]="inputMax()"
+          [step]="selectedStep()"
+          (onInput)="valueChange.emit($event)"
+        />
+      </div>
+    </div>
+  }
+  <!-- 自動提現步數 -->
+  @else if (type() === "autoCashOut") {
+    <ap-select
+      [label]="inputLabel()"
+      [options]="autoCashOutOptions()"
+      [selected]="value()"
+      accentColor="slate"
+      [disabled]="disabled()"
+      (onSelect)="valueChange.emit($event)"
+    />
+  }
+  <!-- 投注次數 -->
+  @else if (type() === "numberOfBets") {
+    <ap-input-box
+      [label]="inputLabel()"
+      type="number"
+      [infinity]="showInfinity()"
+      [value]="value()"
+      [placeholder]="rawInputPlaceholder()"
+      accentColor="slate"
+      [min]="inputMin()"
+      [max]="inputMax()"
+      [step]="selectedStep()"
+      [disabled]="disabled()"
+      (onInput)="valueChange.emit($event)"
+    />
+  } @else if (type() === "nonce") {
+    <ap-input-box
+      [label]="inputLabel()"
+      type="number"
+      [value]="value()"
+      [placeholder]="rawInputPlaceholder()"
+      accentColor="slate"
+      [min]="inputMin()"
+      [max]="inputMax()"
+      [maxLength]="maxLength()"
+      [step]="selectedStep()"
+      [disabled]="disabled()"
+      (onInput)="valueChange.emit($event)"
+    />
+  } @else {
+    @if (selectedOptions(); as options) {
+      <ap-select
+        [label]="inputLabel()"
+        [options]="options"
+        [selected]="value()"
+        accentColor="slate"
+        [disabled]="disabled()"
+        (onSelect)="valueChange.emit($event)"
+      />
+    } @else {
+      <div class="flex gap-2 items-end">
+        <ap-input-box
+          class="min-w-0 flex-1"
+          [label]="inputLabel()"
+          [currencyImage]="currencyImage()"
+          [type]="resolvedInputType()"
+          [value]="value()"
+          [placeholder]="rawInputPlaceholder()"
+          accentColor="slate"
+          [min]="inputMin()"
+          [maxLength]="maxLength()"
+          [allowedCharacterPattern]="resolvedAllowedCharacterPattern()"
+          [step]="selectedStep()"
+          [suffix]="suffix()"
+          [disabled]="disabled()"
+          (onInput)="valueChange.emit($event)"
+        />
+
+        @if (hasAction()) {
+          <ap-button
+            [icon]="actionIcon() ?? ''"
+            [label]="actionLabel() ?? ''"
+            [variant]="actionVariant()"
+            [disabled]="actionDisabled()"
+            accentColor="slate"
+            (clicked)="onPressed()"
+          />
+        }
+      </div>
+    }
+  }
+</div>

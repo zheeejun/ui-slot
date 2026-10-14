@@ -1,0 +1,75 @@
+<ap-ui-card-dev id="ap-bf-card-bet-control" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Bet Control</h2>
+    </div>
+    <div class="mx-auto space-y-4 px-6">
+      <ap-category-selection 
+        [categories]="betControlCategories"
+        [getCodeSnippet]="getBetControlSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-bf-card-bet-control class="scale-70"
+              [bet]="variant.bet"
+              [isMin]="variant.isMin ?? false"
+              [isMax]="variant.isMax ?? false"
+              (increase)="increaseBet(variant)"
+              (decrease)="decreaseBet(variant)"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-bf-card-feature" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Buy Feature</h2>
+    </div>
+    <div class="mx-auto space-y-4 px-6">
+      <ap-category-selection
+        [categories]="buyFeatureCategories"
+        [getCodeSnippet]="getBuyFeatureSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-80 items-center justify-center p-4">
+            <ap-bf-card-feature class="scale-70"
+              [card]="variant.card"
+              [price]="variant.price"
+              [disabled]="variant.disabled ?? false"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>
+
+<ap-ui-card-dev id="ap-bf-card-chance" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Buy Chance</h2>
+    </div>
+    <div class="mx-auto space-y-4 px-6">
+      <ap-category-selection
+        [categories]="buyChanceCategories"
+        [getCodeSnippet]="getBuyChanceSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-80 items-center justify-center p-4">
+            <ap-bf-card-chance class="scale-70"
+              [card]="variant.card"
+              [currency]="variant.card.currency"
+              [price]="variant.price"
+              [disabled]="variant.disabled ?? false"
+              [(activated)]="variant.activated"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+    </div>
+  </div>
+</ap-ui-card-dev>

@@ -1,0 +1,27 @@
+
+<ap-loading-overlay class="absolute"/>
+<game-iframe class="absolute inset-0" uiMode="ap-bridge"/>
+@if (showAll()) {
+  <div class="contents" [class.hidden]="hideAll()">
+    <!-- Replay啟動提示 -->
+    @if (showHistoryReplayTopBar()) { <ap-history-replay-top-bar class="absolute top-0 left-0 right-0 z-50" /> }
+    <!-- Tournament 相關-->
+    @if (showTournament()) { <trn-all class="absolute"  /> }
+    @if (showAPLogo()){<ap-ui-logo-name class="absolute top-1 right-1" />}
+    @if (showGameLogo()){<ap-ui-game-name class="absolute top-1 left-1" />}
+    @if(showRemainingTurnoverPanel()) {
+      <ap-remaining-turnover class="absolute left-1/2 -translate-x-1/2" [style.bottom.px]="gameBottom()" [style.width.px]="gameWidth()"
+        [turnover]="remainingTurnover()"
+        [endTime]="remainingEndTime()"
+      />
+    }
+    <!-- Event Center -->
+    @if (showEventCenter()) {
+      <event-center class="absolute inset-0 animate-fade animate-duration-300"/>
+    }
+    @if (showInfo()) {
+      <page-info class="absolute inset-0" (close)="showInfo.set(false)" [hideNoteItem2]="true" />
+    }
+    @if (showLatestCampaign()) { <campaign-popup class="absolute top-0 left-0" /> }
+  </div>
+}

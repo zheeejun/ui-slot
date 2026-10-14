@@ -1,0 +1,25 @@
+.chance-toggle-track {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.chance-toggle-track-active {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.chance-toggle-track-inactive {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.chance-toggle-knob {
+  transform: translate(0, 0.125rem);
+}
+
+.chance-toggle-knob-active {
+  transform: translate(1.75rem, 0.125rem);
+}
+
+.chance-toggle-knob-inactive {
+  transform: translate(0, 0.125rem);
+}

@@ -1,0 +1,14 @@
+<!-- @container：文字大小以父層寬度(cqw)等比縮放-->
+<div class="@container w-full">
+  <div
+    class="flex w-full items-center justify-between gap-[2cqw] px-[2cqw] py-[0.3cqw] text-zinc-300 bg-black/50 text-[2.5cqw]"
+  >
+    <div class="whitespace-nowrap leading-tight">
+      {{ label() }} {{ turnover() | moneyText }}
+    </div>
+    <div class="flex items-center space-x-1">
+      <ap-icon name="clock" [style.height]="iconSize()" />
+      <div class="whitespace-nowrap leading-tight">{{ endTimeString() }}</div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,69 @@
+
+anim_sym_h2.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+cloth
+  rotate: false
+  xy: 233, 21
+  size: 154, 203
+  orig: 230, 224
+  offset: 41, 14
+  index: -1
+cloth_b
+  rotate: false
+  xy: 449, 295
+  size: 58, 41
+  orig: 230, 224
+  offset: 81, 177
+  index: -1
+cloth_b2
+  rotate: true
+  xy: 449, 341
+  size: 139, 54
+  orig: 230, 224
+  offset: 39, 4
+  index: -1
+h2_shadow
+  rotate: false
+  xy: 5, 5
+  size: 223, 219
+  orig: 230, 224
+  offset: 7, 0
+  index: -1
+skeft_004074
+  rotate: false
+  xy: 263, 246
+  size: 30, 29
+  orig: 32, 32
+  offset: 1, 2
+  index: -1
+skeft_018589
+  rotate: false
+  xy: 5, 229
+  size: 253, 251
+  orig: 256, 256
+  offset: 3, 5
+  index: -1
+sleeve_L
+  rotate: false
+  xy: 392, 71
+  size: 71, 98
+  orig: 230, 224
+  offset: 153, 94
+  index: -1
+sleeve_R
+  rotate: false
+  xy: 392, 174
+  size: 65, 101
+  orig: 230, 224
+  offset: 7, 84
+  index: -1
+sun
+  rotate: false
+  xy: 263, 280
+  size: 181, 200
+  orig: 200, 213
+  offset: 8, 4
+  index: -1

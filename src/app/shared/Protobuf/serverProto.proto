@@ -1,0 +1,127 @@
+//LOG
+//
+//20220519
+//elder wang add
+//eMessageEnum ,info::enum eCodeEnum
+//
+//20220526
+//elder wang add
+//MyDefine:ProtocolVersion
+
+syntax = "proto3";
+
+package serverProto;
+
+//import "google/protobuf/descriptor.proto";
+
+//extend google.protobuf.FieldOptions
+//{
+//  optional string ProtocolVersion = 12345;
+//}
+
+//message MyDefine
+//{
+//  option (ProtocolVersion) = "20220526_000";
+//}
+
+enum eMessageEnum
+{
+  eME_S2C_INFO = 0;
+  eME_C2S_LOGIN_REQUEST = 1;
+  eME_S2C_LOGIN_RESULT = 2;
+  eME_C2S_SPIN_REQUEST = 3;
+  eME_S2C_SPIN_RESULT = 4;
+  eME_MAX = 5;
+}
+
+
+
+
+// 0 其他訊息
+message info{
+  enum eCodeEnum
+  {
+    eCE_JP = 0;
+    eCE_ERROR = 1;
+    eCE_HISTORY_INFO = 2;
+    eCE_UPDATE_BALANCE = 3;
+    eCE_GAME_INFO = 4;
+    eCE_JP_WIN_DATA = 7;
+    eCE_CASH_DROP_INFO = 10;
+    eCE_MAX = 8;
+  }
+  uint32 code=1;
+  string msg=2;
+}
+
+// 1
+message login {
+  string auth=1;
+  string game_id=2;
+}
+
+// 2
+message login_result{
+  string error_code=1;
+  string version=2;
+  string currency=3;
+  int64 money=4;
+  string note=5;
+  repeated int64 bet_list=6;
+}
+
+// 3
+message spin {
+  int64 bet=1;
+  string note=2;
+}
+
+// 4
+message spin_result{
+  round_data main_game=1;
+  repeated round_data free_game=2;
+  string error_code=3;
+  int64 balance=4;
+  string note=5;
+  string jp=6;
+}
+
+// 一輪圖騰
+message reel_symbol{
+  repeated string symbol=1;
+}
+
+// 一輪位置
+message reel_pos{
+  repeated uint32 pos_index=1;
+}
+
+// 中獎線細節
+// symbol       中獎圖騰
+// line         哪條線(中獎線索引)
+// qty          幾連線(顆數)
+// win_score    該條線得分
+message win_detail{
+  string symbol=1;
+  int32 line=2;
+  int32 qty=3;
+  int64 win_score=4;
+}
+
+// 盤面
+// win_score    這盤的得分
+// reel         每一輪的圖騰
+// win_data     該盤面中獎細節(每一條線)
+// event        事件
+message plate_data{
+  int64 win_score=1;
+  repeated reel_symbol reel=2;
+  repeated win_detail win_data=3;
+  repeated reel_pos win_pos=4;
+  string event=5;
+}
+
+// 一整 round 的內容(如果會消除，就會有很多盤內容)
+message round_data{
+  repeated plate_data plate=1;
+}

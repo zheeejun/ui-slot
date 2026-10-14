@@ -1,0 +1,32 @@
+@layer utilities {
+  /* Popup */
+  .loading-overlay {
+    @apply animate-ease-linear animate-duration-300;
+  }
+
+  /* Open Pages */
+  .fade-down {
+    @apply animate-fade-down animate-duration-500;
+  }
+
+  /* Open Info */
+  .fade-out {
+    @apply animate-fade animate-duration-200;
+  }
+
+  /* Color Transition */
+  .color-transition {
+    @apply transition-all duration-200;
+  }
+
+  /* Card Hover Scale */
+  .hover-scale {
+    @apply duration-200;
+  }
+  .hover-scale:hover {
+    @apply scale-102;
+  }
+  .hover-scale:active {
+    @apply scale-95;
+  }
+}

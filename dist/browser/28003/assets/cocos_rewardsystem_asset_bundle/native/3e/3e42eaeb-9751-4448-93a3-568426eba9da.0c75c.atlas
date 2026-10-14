@@ -1,0 +1,230 @@
+
+anim_collect.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/loop_light/loop_light_00000
+  rotate: false
+  xy: 350, 2
+  size: 175, 72
+  orig: 175, 90
+  offset: 0, 7
+  index: -1
+img/loop_light/loop_light_00002
+  rotate: false
+  xy: 1005, 189
+  size: 175, 76
+  orig: 175, 90
+  offset: 0, 5
+  index: -1
+img/loop_light/loop_light_00004
+  rotate: false
+  xy: 704, 4
+  size: 175, 78
+  orig: 175, 90
+  offset: 0, 4
+  index: -1
+img/loop_light/loop_light_00006
+  rotate: false
+  xy: 525, 77
+  size: 173, 81
+  orig: 175, 90
+  offset: 2, 2
+  index: -1
+img/loop_light/loop_light_00008
+  rotate: false
+  xy: 179, 37
+  size: 169, 84
+  orig: 175, 90
+  offset: 4, 1
+  index: -1
+img/loop_light/loop_light_00010
+  rotate: false
+  xy: 700, 84
+  size: 163, 85
+  orig: 175, 90
+  offset: 7, 1
+  index: -1
+img/loop_light/loop_light_00012
+  rotate: true
+  xy: 917, 355
+  size: 155, 86
+  orig: 175, 90
+  offset: 11, 0
+  index: -1
+img/loop_light/loop_light_00014
+  rotate: true
+  xy: 1222, 38
+  size: 151, 87
+  orig: 175, 90
+  offset: 14, 0
+  index: -1
+img/loop_light/loop_light_00016
+  rotate: true
+  xy: 1311, 38
+  size: 151, 87
+  orig: 175, 90
+  offset: 13, 0
+  index: -1
+img/loop_light/loop_light_00018
+  rotate: false
+  xy: 987, 267
+  size: 155, 86
+  orig: 175, 90
+  offset: 11, 0
+  index: -1
+img/loop_light/loop_light_00020
+  rotate: false
+  xy: 865, 91
+  size: 162, 85
+  orig: 175, 90
+  offset: 7, 1
+  index: -1
+img/loop_light/loop_light_00022
+  rotate: false
+  xy: 494, 160
+  size: 168, 84
+  orig: 175, 90
+  offset: 4, 1
+  index: -1
+img/loop_light/loop_light_00024
+  rotate: false
+  xy: 654, 259
+  size: 173, 81
+  orig: 175, 90
+  offset: 2, 3
+  index: -1
+img/loop_light/loop_light_00026
+  rotate: false
+  xy: 828, 178
+  size: 175, 79
+  orig: 175, 90
+  offset: 0, 4
+  index: -1
+img/loop_light/loop_light_00028
+  rotate: false
+  xy: 1029, 111
+  size: 175, 76
+  orig: 175, 90
+  offset: 0, 6
+  index: -1
+img/loop_light/loop_light_00030
+  rotate: false
+  xy: 527, 2
+  size: 175, 73
+  orig: 175, 90
+  offset: 0, 7
+  index: -1
+img/loop_light/loop_light_00032
+  rotate: false
+  xy: 1045, 33
+  size: 175, 76
+  orig: 175, 90
+  offset: 0, 5
+  index: -1
+img/loop_light/loop_light_00034
+  rotate: false
+  xy: 740, 432
+  size: 175, 78
+  orig: 175, 90
+  offset: 0, 4
+  index: -1
+img/loop_light/loop_light_00036
+  rotate: false
+  xy: 2, 39
+  size: 175, 82
+  orig: 175, 90
+  offset: 0, 2
+  index: -1
+img/loop_light/loop_light_00038
+  rotate: false
+  xy: 323, 160
+  size: 169, 84
+  orig: 175, 90
+  offset: 3, 1
+  index: -1
+img/loop_light/loop_light_00040
+  rotate: false
+  xy: 881, 4
+  size: 162, 85
+  orig: 175, 90
+  offset: 6, 1
+  index: -1
+img/loop_light/loop_light_00042
+  rotate: false
+  xy: 829, 264
+  size: 156, 86
+  orig: 175, 90
+  offset: 10, 0
+  index: -1
+img/loop_light/loop_light_00044
+  rotate: true
+  xy: 1233, 359
+  size: 151, 87
+  orig: 175, 90
+  offset: 12, 0
+  index: -1
+img/loop_light/loop_light_00046
+  rotate: true
+  xy: 1144, 279
+  size: 153, 87
+  orig: 175, 90
+  offset: 11, 0
+  index: -1
+img/loop_light/loop_light_00048
+  rotate: false
+  xy: 1182, 191
+  size: 154, 86
+  orig: 175, 90
+  offset: 11, 0
+  index: -1
+img/loop_light/loop_light_00050
+  rotate: false
+  xy: 664, 171
+  size: 162, 86
+  orig: 175, 90
+  offset: 7, 0
+  index: -1
+img/loop_light/loop_light_00052
+  rotate: true
+  xy: 654, 342
+  size: 168, 84
+  orig: 175, 90
+  offset: 4, 1
+  index: -1
+img/loop_light/loop_light_00054
+  rotate: false
+  xy: 350, 76
+  size: 173, 82
+  orig: 175, 90
+  offset: 2, 2
+  index: -1
+img/loop_light/loop_light_00056
+  rotate: false
+  xy: 740, 352
+  size: 175, 78
+  orig: 175, 90
+  offset: 0, 4
+  index: -1
+img/loop_light/loop_light_00058
+  rotate: false
+  xy: 1005, 434
+  size: 175, 76
+  orig: 175, 90
+  offset: 0, 5
+  index: -1
+img/win_light
+  rotate: false
+  xy: 2, 246
+  size: 650, 264
+  orig: 650, 300
+  offset: 0, 0
+  index: -1
+img/win_light_01
+  rotate: false
+  xy: 2, 123
+  size: 319, 121
+  orig: 650, 300
+  offset: 137, 73
+  index: -1

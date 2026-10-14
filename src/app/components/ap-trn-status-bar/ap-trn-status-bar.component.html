@@ -1,0 +1,15 @@
+<div
+  class="w-full py-0.5 px-2 flex items-center justify-center gap-1 bg-linear-to-r from-zinc-900/30 via-zinc-900/95 to-zinc-900/30"
+>
+  <ap-icon
+    [name]="accentColor() === 'yellow' ? iconQuick() : iconEvent()"
+    class="nav-icon shrink-0"
+    [ngClass]="{
+      'text-yellow-300 ': accentColor() === 'yellow',
+      'text-purple-300 ': accentColor() === 'purple',
+    }"
+  />
+  <h6 [class]="'font-bold tracking-wider  ' + getTextColor()">
+    {{ getDisplayText() }}
+  </h6>
+</div>

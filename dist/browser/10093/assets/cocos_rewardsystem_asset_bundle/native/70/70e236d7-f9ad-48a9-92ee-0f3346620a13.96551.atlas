@@ -1,0 +1,41 @@
+
+anim_btn_spin.png
+size: 395,262
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/click_light
+  rotate: false
+  xy: 2, 67
+  size: 227, 193
+  orig: 240, 240
+  offset: 10, 22
+  index: -1
+img/led_normal
+  rotate: false
+  xy: 246, 10
+  size: 100, 100
+  orig: 160, 160
+  offset: 30, 29
+  index: -1
+img/light_line
+  rotate: true
+  xy: 2, 4
+  size: 61, 242
+  orig: 120, 256
+  offset: 25, 0
+  index: -1
+img/normal_all
+  rotate: false
+  xy: 231, 112
+  size: 149, 148
+  orig: 160, 160
+  offset: 6, 4
+  index: -1
+img/word_normal
+  rotate: true
+  xy: 348, 2
+  size: 108, 45
+  orig: 160, 160
+  offset: 27, 56
+  index: -1

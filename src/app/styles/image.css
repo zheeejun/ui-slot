@@ -1,0 +1,25 @@
+@layer utilities {
+  /* No Data */
+  .image-icon {
+    @apply size-40 text-zinc-400;
+  }
+  /* buy-feature */
+  .card-icon {
+    @apply size-24 block mx-auto lg:size-28 object-scale-down drop-shadow-lg;
+  }
+  .popup-icon {
+    @apply size-18;
+  }
+  .coin-icon {
+    @apply size-12;
+  }
+  .button-icon {
+    @apply size-8 transition-colors cursor-pointer;
+  }
+  .info-icon {
+    @apply size-6;
+  }
+  .nav-icon {
+    @apply size-4 object-scale-down;
+  }
+}

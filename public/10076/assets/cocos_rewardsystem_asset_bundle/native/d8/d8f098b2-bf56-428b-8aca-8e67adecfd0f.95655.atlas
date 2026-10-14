@@ -1,0 +1,146 @@
+
+anim_fireworks.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/win_light_b/win_light_b_00000
+  rotate: true
+  xy: 372, 3
+  size: 110, 134
+  orig: 230, 225
+  offset: 67, 16
+  index: -1
+img/win_light_b/win_light_b_00001
+  rotate: true
+  xy: 729, 10
+  size: 121, 141
+  orig: 230, 225
+  offset: 61, 14
+  index: -1
+img/win_light_b/win_light_b_00002
+  rotate: true
+  xy: 581, 2
+  size: 129, 146
+  orig: 230, 225
+  offset: 58, 14
+  index: -1
+img/win_light_b/win_light_b_00003
+  rotate: true
+  xy: 872, 4
+  size: 137, 157
+  orig: 230, 225
+  offset: 51, 9
+  index: -1
+img/win_light_b/win_light_b_00004
+  rotate: true
+  xy: 1031, 2
+  size: 144, 166
+  orig: 230, 225
+  offset: 47, 9
+  index: -1
+img/win_light_b/win_light_b_00005
+  rotate: false
+  xy: 1089, 166
+  size: 156, 166
+  orig: 230, 225
+  offset: 41, 10
+  index: -1
+img/win_light_b/win_light_b_00006
+  rotate: false
+  xy: 769, 330
+  size: 165, 180
+  orig: 230, 225
+  offset: 42, 4
+  index: -1
+img/win_light_b/win_light_b_00007
+  rotate: false
+  xy: 936, 334
+  size: 166, 176
+  orig: 230, 225
+  offset: 41, 10
+  index: -1
+img/win_light_b/win_light_b_00008
+  rotate: false
+  xy: 764, 143
+  size: 176, 184
+  orig: 230, 225
+  offset: 35, 6
+  index: -1
+img/win_light_b/win_light_b_00009
+  rotate: false
+  xy: 586, 329
+  size: 181, 181
+  orig: 230, 225
+  offset: 30, 10
+  index: -1
+img/win_light_b/win_light_b_00010
+  rotate: true
+  xy: 581, 133
+  size: 188, 181
+  orig: 230, 225
+  offset: 24, 11
+  index: -1
+img/win_light_b/win_light_b_00011
+  rotate: true
+  xy: 390, 323
+  size: 187, 194
+  orig: 230, 225
+  offset: 24, 0
+  index: -1
+img/win_light_b/win_light_b_00012
+  rotate: false
+  xy: 2, 110
+  size: 190, 198
+  orig: 230, 225
+  offset: 23, 0
+  index: -1
+img/win_light_b/win_light_b_00013
+  rotate: true
+  xy: 194, 115
+  size: 193, 192
+  orig: 230, 225
+  offset: 24, 7
+  index: -1
+img/win_light_b/win_light_b_00014
+  rotate: true
+  xy: 2, 310
+  size: 200, 192
+  orig: 230, 225
+  offset: 23, 7
+  index: -1
+img/win_light_b/win_light_b_00015
+  rotate: true
+  xy: 388, 123
+  size: 192, 191
+  orig: 230, 225
+  offset: 32, 7
+  index: -1
+img/win_light_b/win_light_b_00016
+  rotate: true
+  xy: 196, 317
+  size: 193, 192
+  orig: 230, 225
+  offset: 30, 7
+  index: -1
+img/win_light_b/win_light_b_00017
+  rotate: true
+  xy: 942, 148
+  size: 184, 145
+  orig: 230, 225
+  offset: 40, 7
+  index: -1
+img/win_light_b/win_light_b_00018
+  rotate: false
+  xy: 194, 3
+  size: 176, 110
+  orig: 230, 225
+  offset: 48, 41
+  index: -1
+img/win_light_b/win_light_b_00019
+  rotate: false
+  xy: 2, 52
+  size: 115, 56
+  orig: 230, 225
+  offset: 47, 95
+  index: -1

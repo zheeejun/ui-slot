@@ -1,0 +1,51 @@
+import {
+  DomSanitizer
+} from "./chunk-FH2ESRL7.js";
+import {
+  Component,
+  computed,
+  inject,
+  setClassMetadata,
+  ɵsetClassDebugInfo,
+  ɵɵdefineComponent,
+  ɵɵelement,
+  ɵɵproperty,
+  ɵɵsanitizeHtml
+} from "./chunk-QGU3BS3L.js";
+
+// src/app/icons/ap-icon-chicken/ap-icon-chicken.component.ts
+var ApIconChickenComponent = class _ApIconChickenComponent {
+  sanitizer = inject(DomSanitizer);
+  svg = {
+    default: `<svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M19.275 20.3125C19.275 20.8098 19.0775 21.2867 18.7258 21.6383C18.3742 21.99 17.8973 22.1875 17.4 22.1875C16.9027 22.1875 16.4258 21.99 16.0742 21.6383C15.7225 21.2867 15.525 20.8098 15.525 20.3125C15.525 19.8152 15.7225 19.3383 16.0742 18.9867C16.4258 18.635 16.9027 18.4375 17.4 18.4375C17.8973 18.4375 18.3742 18.635 18.7258 18.9867C19.0775 19.3383 19.275 19.8152 19.275 20.3125Z" fill="currentColor"/>
+<path d="M26.4875 2.5C30.6575 2.59625 32.7 7.5425 30.075 10.6275C32.4446 12.5461 34.0604 15.2399 34.6375 18.2337L37.945 33.065C38.0162 33.3875 38.0462 33.715 38.0612 34L38.0625 34.0313V34.0625C38.0636 34.9914 37.7886 35.8996 37.2724 36.6718C36.7562 37.4441 36.0221 38.0454 35.1634 38.3995C34.3046 38.7536 33.36 38.8444 32.4496 38.6604C31.5391 38.4764 30.7039 38.026 30.05 37.3662C29.614 37.8042 29.0958 38.1518 28.5253 38.3892C27.9547 38.6267 27.343 38.7493 26.725 38.75C26.1068 38.7506 25.4946 38.6287 24.9239 38.3912C24.3532 38.1536 23.8352 37.8053 23.4 37.3662C22.964 37.8042 22.4458 38.1518 21.8753 38.3892C21.3047 38.6267 20.693 38.7493 20.075 38.75C19.4567 38.7505 18.8445 38.6283 18.2737 38.3906C17.703 38.1528 17.1851 37.8043 16.75 37.365C16.3109 37.8093 15.787 38.1609 15.2093 38.3988C14.6317 38.6368 14.0122 38.7562 13.3875 38.75C11.02 38.7337 9.12749 36.95 8.78999 34.715C8.44885 34.9027 8.06563 35.0008 7.67624 35C6.02999 35 4.91874 33.325 5.53874 31.795L6.65124 29.1375C6.79249 28.8025 7.00874 28.5137 7.27624 28.2912C5.86374 27.9137 4.49124 27.2338 3.28749 26.0188C2.65499 25.385 2.43999 24.6513 2.53374 23.905C2.59624 23.4113 2.80999 22.8987 2.95124 22.5612L3.01374 22.4088L3.03374 22.3587L3.05874 22.3125C3.84249 20.7575 4.78874 19.5037 5.96749 18.5837C6.9638 17.8085 8.12564 17.2738 9.36249 17.0212C9.38749 16.9421 9.41374 16.8629 9.44124 16.7838C9.02428 16.0965 8.78659 15.3155 8.74999 14.5125C8.70156 13.4336 9.01464 12.3694 9.63959 11.4885C10.2645 10.6077 11.1656 9.96067 12.2 9.65C12.6125 9.525 12.8875 9.15 12.8875 8.725V8.7125C12.8875 6.0375 15.05 3.875 17.725 3.875C18.425 3.875 19.0875 4.025 19.6875 4.2875C20.6375 4.7125 21.7625 4.55 22.5625 3.875C23.6146 2.99463 24.9406 2.50842 26.3125 2.5H26.4875ZM8.73749 24.375H5.18249C6.18999 25.34 7.37874 25.82 8.73749 26.0538V24.375ZM8.73749 23.125V21.075C8.73749 20.6458 8.75749 20.2212 8.79749 19.8012C8.33484 19.9922 7.90041 20.2453 7.50624 20.5538C6.75749 21.1388 6.07624 21.97 5.45374 23.125H8.73749ZM32.185 18.7213C31.7149 16.2578 30.3725 14.0464 28.404 12.4925C26.4355 10.9386 23.9728 10.1464 21.4675 10.2612C15.7425 10.5075 11.2375 15.3138 11.2375 21.075V34C11.2375 35.2438 12.225 36.2425 13.4087 36.25H13.4137C13.7706 36.2512 14.1225 36.1656 14.4389 36.0005C14.7553 35.8355 15.0268 35.5959 15.23 35.3025L15.2325 35.2988C15.9662 34.2738 17.5275 34.2238 18.2762 35.3113C18.6812 35.8838 19.3337 36.25 20.075 36.25C20.4291 36.2482 20.7777 36.1615 21.0913 35.9971C21.405 35.8326 21.6746 35.5953 21.8775 35.305L21.8825 35.2988C22.615 34.2738 24.1775 34.2238 24.9262 35.3113C25.3312 35.8838 25.9837 36.25 26.725 36.25C27.0791 36.2482 27.4277 36.1615 27.7413 35.9971C28.055 35.8326 28.3246 35.5953 28.5275 35.305L28.5325 35.2988C29.265 34.2738 30.8275 34.2238 31.5762 35.3113C31.9812 35.8838 32.6337 36.25 33.375 36.25C34.575 36.25 35.5462 35.2875 35.5625 34.0913C35.5558 33.9296 35.5366 33.7687 35.505 33.61L32.1887 18.7413L32.185 18.7213Z" fill="currentColor"/>
+</svg>`
+  };
+  svgHtml = computed(() => this.sanitizer.bypassSecurityTrustHtml(this.svg["default"]));
+  static \u0275fac = function ApIconChickenComponent_Factory(__ngFactoryType__) {
+    return new (__ngFactoryType__ || _ApIconChickenComponent)();
+  };
+  static \u0275cmp = /* @__PURE__ */ \u0275\u0275defineComponent({ type: _ApIconChickenComponent, selectors: [["ap-icon-chicken"]], decls: 1, vars: 1, consts: [[1, "size-full", "[&>svg]:size-full", 3, "innerHTML"]], template: function ApIconChickenComponent_Template(rf, ctx) {
+    if (rf & 1) {
+      \u0275\u0275element(0, "div", 0);
+    }
+    if (rf & 2) {
+      \u0275\u0275property("innerHTML", ctx.svgHtml(), \u0275\u0275sanitizeHtml);
+    }
+  }, styles: ["\n\n[_nghost-%COMP%] {\n  display: inline-block;\n  aspect-ratio: 1;\n}\n.inner-svg[_ngcontent-%COMP%] {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=ap-icon.root.css.map */"] });
+};
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(ApIconChickenComponent, [{
+    type: Component,
+    args: [{ selector: "ap-icon-chicken", imports: [], template: '<div class="size-full [&>svg]:size-full" [innerHTML]="svgHtml()"></div>', styles: ["/* src/app/icons/ap-icon.root.css */\n:host {\n  display: inline-block;\n  aspect-ratio: 1;\n}\n.inner-svg {\n  width: 100%;\n  height: 100%;\n}\n/*# sourceMappingURL=ap-icon.root.css.map */\n"] }]
+  }], null, null);
+})();
+(() => {
+  (typeof ngDevMode === "undefined" || ngDevMode) && \u0275setClassDebugInfo(ApIconChickenComponent, { className: "ApIconChickenComponent", filePath: "src/app/icons/ap-icon-chicken/ap-icon-chicken.component.ts", lineNumber: 10 });
+})();
+
+export {
+  ApIconChickenComponent
+};
+//# sourceMappingURL=chunk-74H6U7EF.js.map

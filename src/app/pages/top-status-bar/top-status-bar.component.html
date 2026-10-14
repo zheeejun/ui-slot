@@ -1,0 +1,13 @@
+@if (isVisible()) {
+  <div
+    class="play-mode-gradient inline-flex items-center justify-center gap-4 px-2 py-1 w-80 fade-out"
+  >
+    <div
+      class="flex items-center justify-center text-center font-bold leading-none text-stroke tracking-wide"
+      [style.fontSize]="fontSize()"
+    >
+      {{ label() }}
+    </div>
+  </div>
+}
+

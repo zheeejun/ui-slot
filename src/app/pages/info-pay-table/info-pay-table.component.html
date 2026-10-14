@@ -1,0 +1,320 @@
+<div
+  #contentScroller
+  class="flex h-full max-h-full flex-col overflow-y-auto bg-zinc-900 p-0 pb-4"
+  (mousedown)="onDragStart($event)"
+  (mousemove)="onDragMove($event)"
+  (mouseup)="onDragEnd()"
+  (mouseleave)="onDragEnd()"
+>
+  <!-- Section 1: Tab Buttons -->
+  <div class="sticky z-sticky top-0 bg-zinc-900 px-4 pt-6 shrink-0">
+    <ap-ui-tab-group
+      [tabs]="tabs()"
+      [selectedTab]="selectedTab()"
+      (tabChange)="selectTab($event)"
+    />
+  </div>
+  <!-- Symbols -->
+  <div
+    id="symbols-section"
+    class="w-full max-w-3xl mx-auto flex flex-col items-center gap-6 px-4 select-none"
+  >
+    <!-- Title + Divider -->
+    <div class="flex flex-col justify-center items-center w-full text-center">
+      <div class="flex flex-col items-center w-full">
+        <h2 class="text-yellow-200">{{ symbolLabel() }}</h2>
+        <div class="h-px w-full divider-gradient-yellow"></div>
+      </div>
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-8 w-full">
+      @for (symbolImage of symbolImages(); track $index) {
+        <ap-info-pay-table-symbol
+          [symbolHeader]="symbolHeader()"
+          [paylineHeader]="paylineHeader()"
+          [symbolImage]="symbolImage"
+          [tableData]="tableData"
+        />
+      }
+    </div>
+    <div class="w-full flex flex-col mt-4">
+      @for (entry of info.paytableEntries(); track $index) {
+        @switch (entry.category) {
+          @case ("title") {
+            <div
+              class="w-full text-2xl font-semibold text-yellow-200 mt-4"
+              [ngClass]="{
+                'justify-start text-left': entry.position === 'left',
+                'justify-center text-center': entry.position === 'center',
+                'justify-end text-right': entry.position === 'right',
+              }"
+            >
+              {{ entry.content }}
+            </div>
+          }
+          @case ("subtitle") {
+            <div
+              class="w-full font-semibold text-white mt-2"
+              [ngClass]="{
+                'text-left': entry.position === 'left',
+                'text-center': entry.position === 'center',
+                'text-right': entry.position === 'right',
+              }"
+            >
+              {{ entry.content }}
+            </div>
+          }
+          @case ("image") {
+            <div
+              class="w-full mt-4"
+              [ngClass]="{
+                'text-left': entry.position === 'left',
+                'text-center': entry.position === 'center',
+                'text-right': entry.position === 'right',
+              }"
+            >
+              <img
+                [src]="this.info.getImageUrl(entry.content) + `?v=${version()}`"
+                [alt]="entry.content"
+                class="inline-block object-contain"
+              />
+            </div>
+          }
+          @case ("content") {
+            <div
+              class="w-full flex"
+              [ngClass]="{
+                'text-left': entry.position === 'left',
+                'text-center': entry.position === 'center',
+                'text-right': entry.position === 'right',
+              }"
+            >
+              <ul class="text-white leading-relaxed max-w-3xl space-y-2">
+                <li>{{ entry.content }}</li>
+              </ul>
+            </div>
+          }
+        }
+      }
+    </div>
+
+    <!-- Paylines -->
+    <div
+      id="paylines-section"
+      class="w-full max-w-3xl mx-auto flex flex-col items-center gap-6 px-4 mt-16"
+    >
+      <!-- Title + Divider -->
+      <div class="flex flex-col justify-center items-center w-full text-center">
+        <div class="flex flex-col items-center w-full">
+          <h2 class="text-yellow-200">{{ paylineLabel() }}</h2>
+          <div class="h-px w-full divider-gradient-yellow"></div>
+        </div>
+      </div>
+
+      <div class="flex flex-wrap justify-center sm:gap-6 gap-8 w-full">
+        <!-- 1-5 -->
+        <ap-info-pay-table-payline
+          [paylineNumber]="1"
+          [activeCells]="payline1"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="2"
+          [activeCells]="payline2"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="3"
+          [activeCells]="payline3"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="4"
+          [activeCells]="payline4"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="5"
+          [activeCells]="payline5"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+        <!-- 6-10 -->
+        <ap-info-pay-table-payline
+          [paylineNumber]="6"
+          [activeCells]="payline5"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="7"
+          [activeCells]="payline2"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="8"
+          [activeCells]="payline4"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="9"
+          [activeCells]="payline1"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="10"
+          [activeCells]="payline3"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+        <!-- 11-15 -->
+        <ap-info-pay-table-payline
+          [paylineNumber]="11"
+          [activeCells]="payline4"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="12"
+          [activeCells]="payline5"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="13"
+          [activeCells]="payline3"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="14"
+          [activeCells]="payline1"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="15"
+          [activeCells]="payline2"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <!-- 16-20 -->
+        <ap-info-pay-table-payline
+          [paylineNumber]="16"
+          [activeCells]="payline1"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="17"
+          [activeCells]="payline2"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="18"
+          [activeCells]="payline3"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="19"
+          [activeCells]="payline4"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+
+        <ap-info-pay-table-payline
+          [paylineNumber]="20"
+          [activeCells]="payline5"
+          [clickable]="true"
+          (cellClick)="onCellClick($event)"
+        />
+      </div>
+
+      <div class="w-full flex flex-col mt-4">
+        @for (entry of info.paytableEntries(); track $index) {
+          @switch (entry.category) {
+            @case ("title") {
+              <div
+                class="w-full text-2xl font-semibold text-yellow-200 mt-4"
+                [ngClass]="{
+                  'justify-start text-left': entry.position === 'left',
+                  'justify-center text-center': entry.position === 'center',
+                  'justify-end text-right': entry.position === 'right',
+                }"
+              >
+                {{ entry.content }}
+              </div>
+            }
+            @case ("subtitle") {
+              <div
+                class="w-full font-semibold text-white mt-2"
+                [ngClass]="{
+                  'text-left': entry.position === 'left',
+                  'text-center': entry.position === 'center',
+                  'text-right': entry.position === 'right',
+                }"
+              >
+                {{ entry.content }}
+              </div>
+            }
+            @case ("image") {
+              <div
+                class="w-full mt-4"
+                [ngClass]="{
+                  'text-left': entry.position === 'left',
+                  'text-center': entry.position === 'center',
+                  'text-right': entry.position === 'right',
+                }"
+              >
+                <img
+                  [src]="this.info.getImageUrl(entry.content) + `?v=${version()}`"
+                  [alt]="entry.content"
+                  class="inline-block object-contain"
+                />
+              </div>
+            }
+            @case ("content") {
+              <div
+                class="w-full flex"
+                [ngClass]="{
+                  'text-left': entry.position === 'left',
+                  'text-center': entry.position === 'center',
+                  'text-right': entry.position === 'right',
+                }"
+              >
+                <ul class="text-white leading-relaxed max-w-3xl space-y-2">
+                  <li>{{ entry.content }}</li>
+                </ul>
+              </div>
+            }
+          }
+        }
+      </div>
+    </div>
+  </div>
+</div>

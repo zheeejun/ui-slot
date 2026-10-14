@@ -1,0 +1,52 @@
+/** Download fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+/** Importing Tailwind CSS */
+@import "tailwindcss";
+@import "./app/styles/theme-colors-legacy.css";
+@import "tailwindcss-animated";
+
+/** Custom dark mode variant */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/** Custom z-index utilities */
+@utility z-base     { z-index: 0; }
+@utility z-sticky   { z-index: 10; }
+@utility z-dropdown { z-index: 1000; }
+@utility z-popover  { z-index: 1100; }
+@utility z-overlay  { z-index: 1900; }
+@utility z-modal    { z-index: 2000; }
+@utility z-toast    { z-index: 3000; }
+@utility z-error    { z-index: 4000; }
+@utility z-devtools { z-index: 9999; }
+
+/** Importing custom styles */
+@import "./app/styles/scrollbar.css";
+@import "./app/styles/spacing.css";
+@import "./app/styles/tags.css";
+@import "./app/styles/utilities.css";
+@import "./app/styles/font.css";
+@import "./app/styles/animation.css";
+@import "./app/styles/image.css";
+@import "./app/styles/border.css";
+@import "./app/styles/gradient.css";
+@import "./app/styles/layout.css";
+
+ /* Global styles */
+html, body {
+  display: block;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* 可選，防止出現捲軸 */
+  background-color: black; /* 預設背景色 */
+  touch-action: manipulation; /* 防止觸控操作 */
+}
+
+/* iOS Safari 不會繼承 touch-action，需套到每個元素才能完整禁用雙擊縮放 */
+*, *::before, *::after {
+  touch-action: manipulation;
+}

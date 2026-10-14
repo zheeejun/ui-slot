@@ -1,0 +1,23 @@
+:host{
+  display: block;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-container {
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tab-container > div {
+  scroll-snap-align: start;
+}
+
+.grabbing { cursor: grabbing !important; }

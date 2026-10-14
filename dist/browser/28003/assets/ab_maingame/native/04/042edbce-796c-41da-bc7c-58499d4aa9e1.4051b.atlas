@@ -1,0 +1,27 @@
+
+anim_multiple_eff.png
+size: 256,256
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+GL-(3904)
+  rotate: false
+  xy: 47, 138
+  size: 88, 82
+  orig: 102, 102
+  offset: 6, 14
+  index: -1
+circle
+  rotate: false
+  xy: 137, 137
+  size: 83, 83
+  orig: 102, 102
+  offset: 10, 9
+  index: -1
+dot
+  rotate: true
+  xy: 2, 178
+  size: 42, 43
+  orig: 42, 43
+  offset: 0, 0
+  index: -1

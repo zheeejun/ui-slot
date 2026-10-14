@@ -1,0 +1,58 @@
+<div
+  class="w-full py-2 sm:px-8 px-4 grid grid-cols-[1fr_auto_1fr] items-center select-none bg-zinc-950/75 transition-all border-bottom-zinc"
+>
+  <!-- Back to Game -->
+  <div class="flex gap-2 items-center cursor-pointer justify-self-start">
+    <ap-button
+      [accentColor]="'white'"
+      [size]="'x-small'"
+      [icon]="'chevron-left'"
+      [variant]="'content-rounded'"
+    />
+    <h4 class="text-white sm:block">Back to Game</h4>
+  </div>
+
+  <!-- Transaction Details -->
+  <div class="flex space-x-4">
+    <div
+      class="flex items-center gap-1 justify-self-center text-center"
+    >
+      <ap-icon name="document-text" class="info-icon" />
+      <div class="font-medium text-md text-left">
+        {{ detailItem()?.transaction || "Transactions" }}
+      </div>
+    </div>
+
+    <!--  Action Buttons -->
+    <div class="flex space-x-4 justify-self-end">
+      <div class="flex gap-2 items-center cursor-pointer">
+        <ap-button
+          [icon]="'replay'"
+          [variant]="'content-rounded'"
+          [size]="'x-small'"
+          [accentColor]="'zinc'"
+        />
+        <h4 class="hidden sm:block">Replay</h4>
+      </div>
+      <div class="flex gap-2 items-center cursor-pointer">
+        <ap-button
+          [icon]="'share'"
+          [variant]="'content-rounded'"
+          [size]="'x-small'"
+          [accentColor]="'zinc'"
+        />
+        <h4 class="hidden sm:block">Share</h4>
+      </div>
+      <div class="flex gap-2 items-center cursor-pointer">
+        <ap-button
+          (click)="detailItem() && copyTransaction(detailItem()!, $event)"
+          [icon]="'copy'"
+          [variant]="'content-rounded'"
+          [size]="'x-small'"
+          [accentColor]="'zinc'"
+        />
+        <h4 class="hidden sm:block">Copy</h4>
+      </div>
+    </div>
+  </div>
+</div>

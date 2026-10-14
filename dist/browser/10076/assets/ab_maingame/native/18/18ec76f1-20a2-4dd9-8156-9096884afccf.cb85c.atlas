@@ -1,0 +1,90 @@
+
+anim_main_bg.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+flag_blue_l
+  rotate: true
+  xy: 308, 165
+  size: 130, 127
+  orig: 130, 127
+  offset: 0, 0
+  index: -1
+flag_n_blue_l
+  rotate: true
+  xy: 308, 33
+  size: 130, 127
+  orig: 130, 127
+  offset: 0, 0
+  index: -1
+flag_n_orange_l
+  rotate: false
+  xy: 2, 102
+  size: 151, 139
+  orig: 151, 139
+  offset: 0, 0
+  index: -1
+flag_n_purple_l
+  rotate: false
+  xy: 2, 2
+  size: 125, 98
+  orig: 125, 98
+  offset: 0, 0
+  index: -1
+flag_n_red_l
+  rotate: false
+  xy: 204, 308
+  size: 139, 135
+  orig: 139, 135
+  offset: 0, 0
+  index: -1
+flag_orange_l
+  rotate: false
+  xy: 155, 102
+  size: 151, 139
+  orig: 151, 139
+  offset: 0, 0
+  index: -1
+flag_purple_l
+  rotate: false
+  xy: 129, 2
+  size: 125, 98
+  orig: 125, 98
+  offset: 0, 0
+  index: -1
+flag_red_l
+  rotate: false
+  xy: 345, 308
+  size: 139, 135
+  orig: 139, 135
+  offset: 0, 0
+  index: -1
+light
+  rotate: false
+  xy: 2, 243
+  size: 200, 200
+  orig: 200, 200
+  offset: 0, 0
+  index: -1
+meteor
+  rotate: false
+  xy: 291, 297
+  size: 88, 9
+  orig: 100, 21
+  offset: 6, 5
+  index: -1
+rope
+  rotate: false
+  xy: 238, 294
+  size: 51, 12
+  orig: 51, 12
+  offset: 0, 0
+  index: -1
+star
+  rotate: false
+  xy: 204, 274
+  size: 32, 32
+  orig: 32, 32
+  offset: 0, 0
+  index: -1

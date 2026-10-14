@@ -1,0 +1,188 @@
+
+okbet_logo.png
+size: 2048,128
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+img/a_01
+  rotate: false
+  xy: 1431, 76
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+img/a_02
+  rotate: false
+  xy: 1433, 24
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+img/a_1
+  rotate: false
+  xy: 520, 6
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+img/a_1m
+  rotate: false
+  xy: 642, 6
+  size: 120, 120
+  orig: 120, 120
+  offset: 0, 0
+  index: -1
+img/ani/ap_logo_00000
+  rotate: false
+  xy: 15, 7
+  size: 1, 1
+  orig: 1, 1
+  offset: 0, 0
+  index: -1
+img/ani/ap_logo_00001
+  rotate: true
+  xy: 2, 4
+  size: 4, 11
+  orig: 254, 170
+  offset: 141, 68
+  index: -1
+img/ani/ap_logo_00002
+  rotate: true
+  xy: 1164, 3
+  size: 19, 65
+  orig: 254, 170
+  offset: 126, 67
+  index: -1
+img/ani/ap_logo_00003
+  rotate: true
+  xy: 1164, 24
+  size: 19, 75
+  orig: 254, 170
+  offset: 126, 67
+  index: -1
+img/ani/ap_logo_00004
+  rotate: true
+  xy: 979, 16
+  size: 27, 79
+  orig: 254, 170
+  offset: 118, 67
+  index: -1
+img/ani/ap_logo_00005
+  rotate: false
+  xy: 1381, 46
+  size: 48, 80
+  orig: 254, 170
+  offset: 106, 67
+  index: -1
+img/ani/ap_logo_00006
+  rotate: false
+  xy: 1310, 45
+  size: 69, 81
+  orig: 254, 170
+  offset: 95, 67
+  index: -1
+img/ani/ap_logo_00007
+  rotate: false
+  xy: 1218, 45
+  size: 90, 81
+  orig: 254, 170
+  offset: 83, 67
+  index: -1
+img/ani/ap_logo_00008
+  rotate: false
+  xy: 1107, 45
+  size: 109, 81
+  orig: 254, 170
+  offset: 73, 67
+  index: -1
+img/ani/ap_logo_00009
+  rotate: false
+  xy: 979, 45
+  size: 126, 81
+  orig: 254, 170
+  offset: 64, 67
+  index: -1
+img/ani/ap_logo_00010
+  rotate: false
+  xy: 353, 10
+  size: 165, 116
+  orig: 254, 170
+  offset: 31, 32
+  index: -1
+img/ani/ap_logo_00011
+  rotate: false
+  xy: 179, 10
+  size: 172, 116
+  orig: 254, 170
+  offset: 28, 32
+  index: -1
+img/ani/ap_logo_00012
+  rotate: false
+  xy: 2, 10
+  size: 175, 116
+  orig: 254, 170
+  offset: 26, 32
+  index: -1
+img/d_01
+  rotate: false
+  xy: 1485, 24
+  size: 46, 50
+  orig: 50, 50
+  offset: 2, 0
+  index: -1
+img/l_01
+  rotate: true
+  xy: 1060, 3
+  size: 40, 50
+  orig: 50, 50
+  offset: 5, 0
+  index: -1
+img/n_01
+  rotate: false
+  xy: 1533, 24
+  size: 46, 50
+  orig: 50, 50
+  offset: 2, 0
+  index: -1
+img/p_01
+  rotate: true
+  xy: 1112, 3
+  size: 40, 50
+  orig: 50, 50
+  offset: 5, 0
+  index: -1
+img/p_1
+  rotate: false
+  xy: 873, 6
+  size: 104, 120
+  orig: 120, 120
+  offset: 8, 0
+  index: -1
+img/p_1m
+  rotate: false
+  xy: 764, 6
+  size: 107, 120
+  orig: 120, 120
+  offset: 6, 0
+  index: -1
+img/t_01
+  rotate: false
+  xy: 1535, 76
+  size: 46, 50
+  orig: 50, 50
+  offset: 2, 0
+  index: -1
+img/v_01
+  rotate: false
+  xy: 1483, 76
+  size: 50, 50
+  orig: 50, 50
+  offset: 0, 0
+  index: -1
+img/y_01
+  rotate: true
+  xy: 1381, 2
+  size: 42, 50
+  orig: 50, 50
+  offset: 4, 0
+  index: -1

@@ -1,0 +1,75 @@
+<!--Quick-->
+@if (currentTrn()?.type === "quick") {
+  <div class="px-4 sm:px-6 pt-4 sm:pt-6">
+    <ap-trn-game-list
+      [trnData]="currentTrn()"
+      [getQuickTimeLabel]="getQuickTimeLabel()"
+    />
+    <div class="flex flex-col items-center p-8 gap-8">
+      <ap-button
+        [accentColor]="'yellow'"
+        [label]="getHowToPlayBtnText()"
+        (click)="openTutorial.emit()"
+      />
+      <ap-trn-info-table
+        [description]="firstDescription()"
+        [type]="'betRange'"
+        [title]="betRangeTitle()"
+        [betRanges]="betRanges()"
+        class="whitespace-pre-line"
+      />
+
+      <ap-trn-info-table
+        [variant]="'quick'"
+        [description]="secondDescription()"
+        [title]="matchRangeTitle()"
+        [condition1]="getCondition1()"
+        [condition2]="getCondition2()"
+        [condition3]="getCondition3()"
+        [condition4]="getCondition4()"
+        [minEntryBalance]="minEntryBalance()"
+        [playersPerMatch]="playersPerMatch()"
+        [matchDuration]="formatDuration(matchDuration())"
+        [prizeBoost]="prizeBoost()"
+      />
+    </div>
+  </div>
+}
+
+<!--Event-->
+@if (currentTrn()?.type === "event") {
+  <!-- 背景表格 -->
+  <!--div class="relative w-full bg-zinc-800 flex flex-col min-h-screen rounded-t-2xl shadow-xl mt-8 select-none"-->
+  <div class="px-4 sm:px-6 pt-4 sm:pt-6">
+    <ap-trn-game-list
+      [trnData]="currentTrn()"
+      [getDaysLabel]="getDaysLabel()"
+      [getHoursLabel]="getHoursLabel()"
+      [getMinutesLabel]="getMinutesLabel()"
+      [getSecondsLabel]="getSecondsLabel()"
+      [getCountdownStartTitle]="getCountdownStartTitle()"
+      [getCountdownEndTitle]="getCountdownEndTitle()"
+      [hasParticipated]="true"
+    />
+    <div class="flex flex-col items-center p-8 gap-8">
+      <ap-button
+        [accentColor]="'purple'"
+        [label]="getHowToPlayBtnText()"
+        (click)="onOpenTutorial()"
+      />
+      <ap-trn-info-table
+        [variant]="'event'"
+        [description]="secondDescription()"
+        [title]="matchRangeTitle()"
+        [condition1]="getCondition1()"
+        [condition2]="getCondition2()"
+        [condition3]="getCondition3()"
+        [condition4]="getCondition4()"
+        [minEntryBalance]="minEntryBalance()"
+        [playersPerMatch]="playersPerMatch()"
+        [matchDuration]="formatDuration(matchDuration())"
+        [prizeBoost]="prizeBoost()"
+      />
+    </div>
+  </div>
+}

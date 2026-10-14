@@ -1,0 +1,1 @@
+export type OgLayoutType = 'landscape' | 'square' |'portrait'; 

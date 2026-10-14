@@ -1,0 +1,25 @@
+<div class="relative inline-block align-bottom">
+  <div
+    class="relative rounded-2xl p-[0.3rem]"
+    [ngClass]="{
+      'bg-gradient-yellow': accentColor() === 'yellow',
+      'bg-gradient-purple': accentColor() === 'purple',
+    }"
+  >
+    <div
+      class="flex h-18 w-32 items-center justify-center gap-1 rounded-xl bg-zinc-900 px-2 py-3 ring-1 ring-zinc-600"
+    >
+      <div class="flex items-center justify-center">
+        <ap-icon name="user" class="info-icon" />
+      </div>
+      <div class="relative mt-4 flex items-center">
+        <div
+          class="-translate-y-1/4 text-4xl font-semibold tracking-wide text-white"
+        >
+          {{ currentCount() }}
+        </div>
+        <h4 class="tracking-wide text-zinc-400">/{{ totalCount() }}</h4>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,52 @@
+:host {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+   /* Safari：限制此面板的觸控手勢，避免點擊按鈕時縮放整頁。 */
+  touch-action: none;
+  /* 讓底部面板不攔截滑鼠事件, 記得子物件的按鈕要自己加上可點擊的屬性 */
+  pointer-events: none;
+}
+
+/* 繞圈特效，蓋在 spin button/auto-spin button 最上方 */
+.ga-spin-progress-ring {
+  inset: -0.2rem;
+  width: calc(100% + 0.4rem);
+  height: calc(100% + 0.4rem);
+  z-index: 1;
+  overflow: visible;
+  color: rgba(255, 255, 255, 0.8);
+  pointer-events: none;
+  transform: translateY(-0.2rem) rotate(-90deg);
+}
+
+.ga-spin-progress-ring--auto-spin-times {
+  transform: scale(var(--ga-auto-spin-scale, 1)) translateY(-0.2rem) rotate(-90deg);
+}
+
+.ga-spin-progress-ring circle {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4;
+  stroke-dasharray: 100;
+  stroke-dashoffset: 100;
+  animation: ga-spin-progress-fill 3s linear forwards;
+}
+
+@keyframes ga-spin-progress-fill {
+  0% {
+    stroke-dashoffset: 100;
+    opacity: 1;
+  }
+
+  99% {
+    stroke-dashoffset: 0;
+    opacity: 1;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0;
+  }
+}

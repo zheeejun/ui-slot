@@ -1,0 +1,131 @@
+<div class="relative flex flex-col h-full pt-2 overflow-hidden">
+  <div class="relative flex-1 min-h-0 overflow-hidden">
+    <div
+      class="relative size-full bg-zinc-900 gap-1 px-1 md:px-20 overflow-y-auto"
+    >
+      <table
+        class="relative w-full table-fixed border-separate border-spacing-0 text-zinc-200"
+      >
+        <!--Title-->
+        <thead class="sticky top-0 z-sticky">
+          <tr class="text-md border-b border-zinc-600 text-zinc-300">
+            <th class="sticky top-0 z-sticky w-[25%] bg-zinc-800 text-center">
+              {{ getGameLabel() }}
+            </th>
+            <th class="sticky top-0 z-sticky w-[15%] bg-zinc-800 text-center">
+              {{ getStatusLabel() }}
+            </th>
+            <!--Time-->
+            <th
+              class="sticky top-0 z-sticky w-[25%] bg-zinc-800 py-1 px-1 text-center"
+            >
+              <button
+                (click)="onTimeSortClick()"
+                class="w-full min-h-8 flex items-center gap-1 hover:text-zinc-100 cursor-pointer transition-colors justify-center"
+              >
+                <ap-icon [name]="getTimeSortIcon()" class="size-5" />{{
+                  getTimeLabel()
+                }}
+              </button>
+            </th>
+            <!--Rank-->
+            <th
+              class="sticky top-0 z-sticky w-[15%] bg-zinc-800 py-1 px-1 text-center"
+            >
+              <button
+                (click)="onRankSortClick()"
+                class="w-full min-h-8 flex items-center gap-1 hover:text-zinc-100 cursor-pointer transition-colors justify-center"
+              >
+                <ap-icon [name]="getRankSortIcon()" class="size-5" />{{
+                  getRankLabel()
+                }}
+              </button>
+            </th>
+            <!--Prize-->
+            <th
+              class="sticky top-0 z-sticky w-[25%] bg-zinc-800 py-1 px-1 text-center"
+            >
+              <button
+                (click)="onPrizeSortClick()"
+                class="w-full min-h-8 flex items-center gap-1 hover:text-zinc-100 cursor-pointer transition-colors justify-center"
+              >
+                <ap-icon [name]="getPrizeSortIcon()" class="size-5" />{{
+                  getPrizeLabel()
+                }}
+              </button>
+            </th>
+          </tr>
+        </thead>
+        <!-- Content -->
+        <tbody>
+          @for (item of sortedItems(); track $index) {
+            <tr
+              [class]="
+                ' relative animate-fade-down animate-duration-300 hover:bg-zinc-600/50 ' +
+                ($index % 2 === 0 ? ' bg-zinc-900' : ' bg-zinc-800')
+              "
+              [attr.data-original-index]="
+                (currentPage() - 1) * itemsPerPage() + $index + 1
+              "
+            >
+              <td
+                [class]="
+                  'py-2 px-2 wrap-break-word overflow-hidden align-top ' +
+                  getGameListClass(item.variant)
+                "
+              >
+                <div class="flex flex-wrap relative items-center sm:gap-2">
+                  <div class="w-14 h-8 rounded shrink-0 overflow-hidden">
+                    @if (item.image) {
+                      <img
+                        [src]="item.image"
+                        [alt]="item.game + ' banner'"
+                        class="w-full h-full object-cover"
+                        loading="lazy"
+                      />
+                    }
+                  </div>
+                  <div
+                    class="sm:hidden mt-1 sm:mt-0 sm:flex-1 sm:min-w-0 font-medium sm:text-sm text-xs"
+                  >
+                    {{ shortenGameName(item.game, 12) }}
+                  </div>
+                  <div class="hidden sm:inline sm:text-sm text-xs">
+                    {{ item.game }}
+                  </div>
+                </div>
+              </td>
+              <td class="py-2 px-1 text-center font-medium text-sm">
+                {{ item.status }}
+              </td>
+              <td class="py-2 px-1 text-center font-medium text-xs">
+                <div>{{ item.time | date: "yyyy-MM-dd" }}</div>
+                <div>{{ item.time | date: "HH:mm" }}</div>
+              </td>
+              <td class="py-2 px-1 text-center font-medium text-sm">
+                No.{{ item.rank }}
+              </td>
+              <td class="py-2 px-1 pr-4 text-center font-medium text-sm">
+                {{ item.currency }}{{ item.prizeAmount }}
+              </td>
+            </tr>
+          }
+        </tbody>
+        @if (isLoading()) {
+          <div class="absolute inset-0 bg-black/50"></div>
+        }
+      </table>
+    </div>
+  </div>
+
+  <div class="relative shrink-0 py-2">
+    <ap-ui-pagination
+      [variant]="'quick'"
+      [config]="paginationConfig()"
+      (pageChanged)="paginationChanged($event)"
+    />
+  </div>
+  @if (isLoading()) {
+    <ap-loading-overlay class="absolute inset-0" />
+  }
+</div>

@@ -1,0 +1,25 @@
+<ap-ui-card-dev id="ap-promo-code-code" align="center">
+  <div class="w-full">
+    <div class="flex items-center justify-between px-6 py-4 text-orange-400">
+      <h2 class="text-left">Promo Code</h2>
+    </div>
+    <div class="mx-auto max-w-7xl space-y-4 px-6">
+      <ap-category-selection
+        [categories]="promoQRCodeCategories"
+        [getCodeSnippet]="getPromoQRCodeSnippet.bind(this)"
+      >
+        <ng-template #variantTemplate let-variant>
+          <div class="flex min-h-24 items-center justify-center p-4">
+            <ap-promo-code-code
+              class="block w-full"
+              [qrcodeAlt]="variant.qrcodeAlt ?? 'QR Code'"
+              [size]="variant.size ?? '24'"
+              [borderColor]="variant.borderColor ?? 'border-yellow-600'"
+              [backgroundColor]="variant.backgroundColor ?? 'bg-[radial-gradient(circle,_#FFF8DC_0%,_#F3D992_40%,_#BD9A4B_100%)]'"
+            />
+          </div>
+        </ng-template>
+      </ap-category-selection>
+  </div>
+  </div>
+</ap-ui-card-dev>

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/components/ap-ui-replay-mode/ap-ui-replay-mode.component.css"],
+  "sourcesContent": [".play-mode-gradient {\n  background-color: transparent;\n  background-image: -webkit-linear-gradient(\n    left,\n    rgba(0, 0, 0, 0) 0%,\n    #000 50%,\n    rgba(0, 0, 0, 0) 100%\n  );\n  background-image: linear-gradient(\n    90deg,\n    rgba(0, 0, 0, 0) 0%,\n    #000 50%,\n    rgba(0, 0, 0, 0) 100%\n  );\n}\n\n.text-stroke {\n  color: #fff;\n  text-shadow:\n    1.2px 1.2px 1.2px rgba(0, 0, 0, 0.9),\n    -1.2px 1.2px 1.2px rgba(0, 0, 0, 0.9),\n    1.2px -1.2px 1.2px rgba(0, 0, 0, 0.9),\n    -1.2px -1.2px 1.2px rgba(0, 0, 0, 0.9);\n}\n"],
+  "mappings": ";AAAA,CAAA;AACE,oBAAA;AACA,oBAAA;AAMA;IAAA;WAAA;yBAAA;cAAA;;AAMF;AAEA,CAAA;AACE,SAAA;AACA;;;;;AAKF;",
+  "names": []
+}

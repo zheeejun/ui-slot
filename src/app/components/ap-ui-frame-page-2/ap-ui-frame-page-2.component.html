@@ -1,0 +1,67 @@
+<div
+  class="relative flex size-full popup-overlay justify-center items-center select-none"
+>
+  <div
+    class="relative size-full bg-black/60 lg:max-w-5xl lg:max-h-[50rem] transition-all"
+  >
+    <!-- Header bar -->
+    <div
+      class="absolute w-full flex items-stretch h-14 border-b border-zinc-700"
+    >
+      <!-- Back button -->
+      @if (enableBack()) {
+        <div class="flex items-center px-3 shrink-0">
+          <ap-button
+            [size]="'small'"
+            [icon]="'back-2-line'"
+            [variant]="'content-rounded'"
+            [accentColor]="'zinc'"
+            (click)="back.emit()"
+          />
+        </div>
+      }
+
+      <!-- Tabs -->
+      @if (hasTabs()) {
+        <div class="flex-1 flex items-stretch overflow-x-auto">
+          @for (tab of tabs(); track tab.value) {
+            <button
+              class="relative flex items-center px-5 text-sm font-semibold uppercase transition-colors duration-150 whitespace-nowrap cursor-pointer font-poppins border-r border-zinc-700/40"
+              [ngClass]="activeTab() === tab.value ? 'text-orange-400' : 'text-zinc-500 hover:bg-orange-400/20'"
+              (click)="activeTab.set(tab.value)"
+            >
+              {{ tab.label }}
+              @if (activeTab() === tab.value) {
+                <span
+                  class="absolute bottom-0 left-0 right-0 h-0.5 bg-orange-400"
+                ></span>
+              }
+            </button>
+          }
+        </div>
+      } @else {
+        <div class="flex-1 flex items-center justify-center">
+          <h1 class="uppercase font-poppins">{{ header() }}</h1>
+        </div>
+      }
+
+      <!-- Close button -->
+      @if (enableClose()) {
+        <div class="flex items-center px-3 shrink-0 border-l border-zinc-700/40">
+          <ap-button
+            [size]="'small'"
+            [icon]="'x-mark'"
+            [variant]="'content-rounded'"
+            [accentColor]="'zinc'"
+            (click)="close.emit()"
+          />
+        </div>
+      }
+    </div>
+
+    <!-- Content -->
+    <div class="absolute w-full top-18 bottom-0 overflow-hidden">
+      <ng-content></ng-content>
+    </div>
+  </div>
+</div>

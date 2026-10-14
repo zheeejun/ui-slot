@@ -1,0 +1,23 @@
+<div
+  class="relative flex items-center flex-nowrap gap-1"
+  [ngClass]="getContainerLayout()"
+>
+  <ap-icon
+    [name]="accentColor() === 'yellow' ? iconQuick() : iconEvent()"
+    [ngClass]="[
+      getIconSize(),
+      accentColor() === 'yellow' ? 'text-yellow-200' : 'text-purple-200'
+    ]"
+    class="shrink-0"
+  />
+  <div
+    class="font-anton tracking-wider"
+    [ngClass]="[
+      getTextSize(),
+      getTextLayout(),
+      accentColor() === 'yellow' ? 'text-yellow-200' : 'text-purple-200'
+    ]"
+  >
+    {{ title() }}
+  </div>
+</div>

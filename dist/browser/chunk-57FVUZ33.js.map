@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["src/app/services/router-ctrl/router-ctrl.service.ts"],
+  "sourcesContent": ["import { inject, Injectable } from '@angular/core';\nimport { ActivatedRoute, Router } from '@angular/router';\n\n/**\n * 把常用的 router.navigate() 功能包裝起來，方便在 component 內使用\n */\n@Injectable({\n  providedIn: 'root'\n})\nexport class RouterCtrlService {\n  router = inject(Router);\n  route = inject(ActivatedRoute);\n  /** 相對路徑轉址, 並且帶入目前的 query 參數 */\n  navigateRelative(path: string) {\n    this.router.navigate([path], {\n      relativeTo: this.route,\n      replaceUrl: true,\n      queryParams: window.location.search ? Object.fromEntries(new URLSearchParams(window.location.search)) : {} }\n    );\n  }\n  constructor() { }\n}\n"],
+  "mappings": ";;;;;;;;;;;;AASM,IAAO,oBAAP,MAAO,mBAAiB;EAC5B,SAAS,OAAO,MAAM;EACtB,QAAQ,OAAO,cAAc;;EAE7B,iBAAiB,MAAY;AAC3B,SAAK,OAAO,SAAS,CAAC,IAAI,GAAG;MAC3B,YAAY,KAAK;MACjB,YAAY;MACZ,aAAa,OAAO,SAAS,SAAS,OAAO,YAAY,IAAI,gBAAgB,OAAO,SAAS,MAAM,CAAC,IAAI,CAAA;KAAI;EAEhH;EACA,cAAA;EAAgB;;qCAXL,oBAAiB;EAAA;4EAAjB,oBAAiB,SAAjB,mBAAiB,WAAA,YAFhB,OAAM,CAAA;;;sEAEP,mBAAiB,CAAA;UAH7B;WAAW;MACV,YAAY;KACb;;;",
+  "names": []
+}

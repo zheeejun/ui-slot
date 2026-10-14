@@ -1,0 +1,8 @@
+@if (showVersion()) {
+  @if (version()) {
+    <div class="bg-black/50 text-white p-1 m-2 rounded">{{ version() }}</div>
+  }
+}
+@else {
+  <div class="size-6" (click)="onClick()"></div>
+}
