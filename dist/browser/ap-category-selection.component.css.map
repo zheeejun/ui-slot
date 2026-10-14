@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/ap-components-lib/ap-category-selection/ap-category-selection.component.css"],
   "sourcesContent": [":host {\n  display: block;\n}\n"],
-  "mappings": ";AAAA;AACE,WAAS;AACX;",
+  "mappings": ";AAAA;AACE,WAAA;AACF;",
   "names": []
 }

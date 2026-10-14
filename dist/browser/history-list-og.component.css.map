@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/pages/history-list-og/history-list-og.component.css"],
   "sourcesContent": [".history-list-calendar {\n  left: 50%;\n  transform: translateX(-50%);\n  bottom: 1rem;\n  overflow-y: auto;\n}\n\n@media (min-width: 640px) {\n  .history-list-calendar {\n    left: 5rem;\n    transform: none;\n    bottom: auto;\n    overflow-y: visible;\n  }\n}\n"],
-  "mappings": ";AAAA,CAAC;AACC,QAAM;AACN,aAAW,WAAW;AACtB,UAAQ;AACR,cAAY;AACd;AAEA,OAAO,CAAC,SAAS,EAAE;AACjB,GARD;AASG,UAAM;AACN,eAAW;AACX,YAAQ;AACR,gBAAY;AACd;AACF;",
+  "mappings": ";AAAA,CAAA;AACE,QAAA;AACA,aAAA,WAAA;AACA,UAAA;AACA,cAAA;AACF;AAEA,OAAA,CAAA,SAAA,EAAA;AACE,GARF;AASI,UAAA;AACA,eAAA;AACA,YAAA;AACA,gBAAA;AACF;AACF;",
   "names": []
 }

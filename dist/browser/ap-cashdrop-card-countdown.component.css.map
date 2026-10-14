@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-cashdrop-card-countdown/ap-cashdrop-card-countdown.component.css"],
   "sourcesContent": [".cashdrop-card-gold-frame {\n  padding: 0.14rem;\n  background: linear-gradient(180deg, #ecd8a3 40%, rgb(189, 154, 75) 100%);\n}\n\n.cashdrop-card-body {\n  width: 16.8rem;\n  height: 6.8rem;\n  display: grid;\n  grid-template-columns: 4rem 1fr;\n  padding: 0.5rem;\n  gap: 0.5rem;\n}\n\n.cashdrop-card-body-default {\n  background: linear-gradient(180deg, rgb(39 39 42) 0%, rgb(24 24 27) 100%);\n}\n\n.cashdrop-card-body-selected {\n  background: linear-gradient(180deg, rgb(56, 56, 65) 0%, rgb(39 39 42) 100%);\n}\n\n"],
-  "mappings": ";AAAA,CAAC;AACC,WAAS;AACT;AAAA,IAAY;AAAA,MAAgB,MAAhB;AAAA,MAAwB,QAAQ,GAAhC;AAAA,MAAqC,IAAI,GAAG,EAAE,GAAG,EAAE,IAAI;AACrE;AAEA,CAAC;AACC,SAAO;AACP,UAAQ;AACR,WAAS;AACT,yBAAuB,KAAK;AAC5B,WAAS;AACT,OAAK;AACP;AAEA,CAAC;AACC;AAAA,IAAY;AAAA,MAAgB,MAAhB;AAAA,MAAwB,IAAI,GAAG,GAAG,IAAI,EAAtC;AAAA,MAA0C,IAAI,GAAG,GAAG,IAAI;AACtE;AAEA,CAAC;AACC;AAAA,IAAY;AAAA,MAAgB,MAAhB;AAAA,MAAwB,IAAI,EAAE,EAAE,EAAE,EAAE,IAAI,EAAxC;AAAA,MAA4C,IAAI,GAAG,GAAG,IAAI;AACxE;",
+  "mappings": ";AAAA,CAAA;AACE,WAAA;AACA;IAAA;MAAA,MAAA;MAAA,QAAA,GAAA;MAAA,IAAA,GAAA,EAAA,GAAA,EAAA,IAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,UAAA;AACA,WAAA;AACA,yBAAA,KAAA;AACA,WAAA;AACA,OAAA;AACF;AAEA,CAAA;AACE;IAAA;MAAA,MAAA;MAAA,IAAA,GAAA,GAAA,IAAA,EAAA;MAAA,IAAA,GAAA,GAAA,IAAA;AACF;AAEA,CAAA;AACE;IAAA;MAAA,MAAA;MAAA,IAAA,EAAA,EAAA,EAAA,EAAA,IAAA,EAAA;MAAA,IAAA,GAAA,GAAA,IAAA;AACF;",
   "names": []
 }

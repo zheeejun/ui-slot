@@ -1,7 +1,7 @@
 {
   "version": 3,
   "sources": ["src/app/layouts/layout-cover/layout-cover.component.css"],
-  "sourcesContent": [":host{\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  -webkit-user-select: none;\n  user-select: none;\n  touch-action: pan-x pan-y; /* \u7981\u7528\u96D9\u6307\u7E2E\u653E (pinch-zoom)\uFF0C\u4FDD\u7559\u5E73\u79FB */\n}\n\n"],
-  "mappings": ";AAAA;AACE,WAAS;AACT,YAAU;AACV,SAAO;AACP,UAAQ;AACR,oBAAkB;AAClB,uBAAqB;AACrB,eAAa;AACb,gBAAc,MAAM;AACtB;",
+  "sourcesContent": [":host{\n  display: block;\n  position: relative;\n  width: 100%;\n  height: 100%;\n  background-color: black;\n  -webkit-user-select: none;\n  user-select: none;\n  touch-action: pan-x pan-y; /* 禁用雙指縮放 (pinch-zoom)，保留平移 */\n}\n\n"],
+  "mappings": ";AAAA;AACE,WAAA;AACA,YAAA;AACA,SAAA;AACA,UAAA;AACA,oBAAA;AACA,uBAAA;AACA,eAAA;AACA,gBAAA,MAAA;AACF;",
   "names": []
 }

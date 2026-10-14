@@ -1,7 +1,7 @@
 {
   "version": 3,
-  "sources": ["angular:styles/component:css;9aa7e13197e71134a0af6c31f5adfce1c8edb4dfda4de7f9fbeeb0c132491927;/Users/jessielin/ui-slot/src/ap-components-lib/ap-tab-menu-text/ap-tab-menu-text.component.ts"],
+  "sources": ["ap-tab-menu-text.component.ts"],
   "sourcesContent": [":host { display: 'block' }"],
-  "mappings": ";AAAA;AAAQ,WAAS;AAAQ;",
+  "mappings": ";AAAA;AAAQ,WAAA;AAAiB;",
   "names": []
 }

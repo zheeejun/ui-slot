@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/pages/trn-matching/trn-matching.component.css"],
   "sourcesContent": [".in-match::after {\n  content: \".\";\n  animation: dots 1.5s steps(3, end) infinite;\n}\n\n@keyframes dots {\n  0%   { content: \".\"; }\n  33%  { content: \"..\"; }\n  66%  { content: \"...\"; }\n  100% { content: \".\"; }\n}"],
-  "mappings": ";AAAA,CAAC,QAAQ;AACP,WAAS;AACT,aAAW,KAAK,KAAK,MAAM,CAAC,EAAE,KAAK;AACrC;AAEA,WAHa;AAIX;AAAO,aAAS;AAAK;AACrB;AAAO,aAAS;AAAM;AACtB;AAAO,aAAS;AAAO;AACvB;AAAO,aAAS;AAAK;AACvB;",
+  "mappings": ";AAAA,CAAA,QAAA;AACE,WAAA;AACA,aAAA,KAAA,KAAA,MAAA,CAAA,EAAA,KAAA;AACF;AAEA,WAHE;AAIA;AAAO,aAAA;AAAc;AACrB;AAAO,aAAA;AAAe;AACtB;AAAO,aAAA;AAAgB;AACvB;AAAO,aAAA;AAAc;AACvB;",
   "names": []
 }

@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-ui-frame-page/ap-ui-frame-page.component.css"],
   "sourcesContent": [":host{\n  display: block;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n}"],
-  "mappings": ";AAAA;AACE,WAAS;AACT,YAAU;AACV,SAAO;AACP,UAAQ;AACV;",
+  "mappings": ";AAAA;AACE,WAAA;AACA,YAAA;AACA,SAAA;AACA,UAAA;AACF;",
   "names": []
 }

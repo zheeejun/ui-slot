@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/components/ap-bf-card-chance/ap-bf-card-chance.component.css"],
   "sourcesContent": [".chance-toggle-track {\n  border: 1px solid rgba(255, 255, 255, 0.2);\n}\n\n.chance-toggle-track-active {\n  background-color: rgba(255, 255, 255, 0.2);\n  border-color: rgba(255, 255, 255, 0.3);\n}\n\n.chance-toggle-track-inactive {\n  background-color: rgba(255, 255, 255, 0.1);\n  border-color: rgba(255, 255, 255, 0.2);\n}\n\n.chance-toggle-knob {\n  transform: translate(0, 0.125rem);\n}\n\n.chance-toggle-knob-active {\n  transform: translate(1.75rem, 0.125rem);\n}\n\n.chance-toggle-knob-inactive {\n  transform: translate(0, 0.125rem);\n}\n"],
-  "mappings": ";AAAA,CAAC;AACC,UAAQ,IAAI,MAAM,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AACxC;AAEA,CAAC;AACC,oBAAkB,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AACtC,gBAAc,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AACpC;AAEA,CAAC;AACC,oBAAkB,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AACtC,gBAAc,KAAK,GAAG,EAAE,GAAG,EAAE,GAAG,EAAE;AACpC;AAEA,CAAC;AACC,aAAW,UAAU,CAAC,EAAE;AAC1B;AAEA,CAAC;AACC,aAAW,UAAU,OAAO,EAAE;AAChC;AAEA,CAAC;AACC,aAAW,UAAU,CAAC,EAAE;AAC1B;",
+  "mappings": ";AAAA,CAAA;AACE,UAAA,IAAA,MAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACF;AAEA,CAAA;AACE,oBAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACA,gBAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACF;AAEA,CAAA;AACE,oBAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACA,gBAAA,KAAA,GAAA,EAAA,GAAA,EAAA,GAAA,EAAA;AACF;AAEA,CAAA;AACE,aAAA,UAAA,CAAA,EAAA;AACF;AAEA,CAAA;AACE,aAAA,UAAA,OAAA,EAAA;AACF;AAEA,CAAA;AACE,aAAA,UAAA,CAAA,EAAA;AACF;",
   "names": []
 }

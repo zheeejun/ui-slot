@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/app/pages/event-cashdrop-toast/event-cashdrop-toast.component.css"],
   "sourcesContent": ["@keyframes fadeOut {\n  from { opacity: 1; }\n  to { opacity: 0; }\n}\n\n.animate-fade-out {\n  animation: fadeOut 0.5s ease-out forwards;\n}\n\n.animate-countdown {\n  width: 100%;\n  animation: countdown linear forwards;\n}\n\n@keyframes countdown {\n  from {\n    width: 100%;\n  }\n  to {\n    width: 0%;\n  }\n}\n"],
-  "mappings": ";AAAA,WAAW;AACT;AAAO,aAAS;AAAG;AACnB;AAAK,aAAS;AAAG;AACnB;AAEA,CAAC;AACC,aAAW,QAAQ,KAAK,SAAS;AACnC;AAEA,CAAC;AACC,SAAO;AACP,aAAW,UAAU,OAAO;AAC9B;AAEA,WAHa;AAIX;AACE,WAAO;AACT;AACA;AACE,WAAO;AACT;AACF;",
+  "mappings": ";AAAA,WAAA;AACE;AAAO,aAAA;AAAY;AACnB;AAAK,aAAA;AAAY;AACnB;AAEA,CAAA;AACE,aAAA,QAAA,KAAA,SAAA;AACF;AAEA,CAAA;AACE,SAAA;AACA,aAAA,UAAA,OAAA;AACF;AAEA,WAHE;AAIA;AACE,WAAA;AACF;AACA;AACE,WAAA;AACF;AACF;",
   "names": []
 }

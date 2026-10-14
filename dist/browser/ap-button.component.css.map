@@ -2,6 +2,6 @@
   "version": 3,
   "sources": ["src/ap-components-lib/ap-button/ap-button.component.css"],
   "sourcesContent": [":host {\n  display: inline-block;\n}\n\n:host(.hidden) {\n  display: none;\n}\n\nbutton {\n  -webkit-appearance: none;\n  appearance: none;\n}\n"],
-  "mappings": ";AAAA;AACE,WAAS;AACX;AAEA,MAAM,CAAC;AACL,WAAS;AACX;AAEA;AACE,sBAAoB;AACpB,cAAY;AACd;",
+  "mappings": ";AAAA;AACE,WAAA;AACF;AAEA,MAAA,CAAA;AACE,WAAA;AACF;AAEA;AACE,sBAAA;AACA,cAAA;AACF;",
   "names": []
 }
